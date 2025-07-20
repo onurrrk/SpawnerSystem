@@ -1,0 +1,14 @@
+name: SpawnerSystem
+version: ${project.version}
+main: me.spawner.Spawner
+api-version: '1.20'
+author: onur1692
+description: Gelişmiş, yapılandırılabilir spawner plugini.
+depend: [Towny]
+folia-supported: true
+
+commands:
+  spsystem:
+    description: Spawner Sistemi ana komutu.
+    aliases: [sps]
+    permission: spawner.admin
