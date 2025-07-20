@@ -1,4 +1,4 @@
-# 🪓 Spawner System
+# 📎 Spawner System
 
 An advanced **multi-mode spawner breaking and placing system** for Minecraft servers. It comes with detailed logging, Towny integration, and a special pickaxe system.
 
