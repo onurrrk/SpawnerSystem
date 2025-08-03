@@ -14,7 +14,7 @@ An advanced **multi-mode spawner breaking and placing system** for Minecraft ser
   - Breaks when usage count runs out.
 
 - **JSON Logging:**
-  - All spawner break and place actions are logged in detail at `/plugins/Spawner/sp.json`.
+  - All spawner break and place actions are logged in detail at `/plugins/SpawnerSystem/sp.json`.
 
 - **Fully Customizable Config:**
   - Prefix, system mode, special pickaxe name/lore, and all messages can be edited in the config file.
