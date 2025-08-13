@@ -1,23 +1,29 @@
 # 📎 Spawner System
 
-An advanced **multi-mode spawner breaking and placing system** for Minecraft servers. It comes with detailed logging, Towny integration, and a special pickaxe system.
+An advanced **multi-mode spawner breaking and placing system** for Minecraft servers.  
+Comes with detailed logging, customizable settings, and an advanced pickaxe system.
+
 
 ## 🚀 Features
 
-- **3 Different System Modes:**
+- **2 Different System Modes**
   - **classic:** Only Silk Touch enchanted pickaxes can break spawners.
-  - **advanced:** Only a special pickaxe given by admins with limited uses can break spawners.
-  - **towny:** Spawners inside Towny towns can only be broken by authorized members; natural spawners are protected.
+  - **advanced:** Only a special pickaxe given by administrators with limited uses can break spawners.
 
-- **Special Spawner Pickaxe:**
-  - Given by admin command with limited uses.
-  - Breaks when usage count runs out.
+- **Special Spawner Pickaxe**
+  - Given via admin command with a limited number of uses.
+  - Automatically breaks when its usage count reaches zero.
+  - Can only be used in **advanced** mode.
+  - Can be set as unbreakable (no durability loss).
 
-- **JSON Logging:**
-  - All spawner break and place actions are logged in detail at `/plugins/SpawnerSystem/sp.json`.
+- **JSON Logging System**
+  - Can be enabled or disabled through the config.
+  - Logs all spawner breaking and placing actions in detail inside the `/plugins/SpawnerSystem/logs` folder.
 
-- **Fully Customizable Config:**
-  - Prefix, system mode, special pickaxe name/lore, and all messages can be edited in the config file.
+- **Fully Customizable Config**
+  - Prefix, system mode, special pickaxe name/lore, and all messages can be edited via the config file.
+  - **Natural spawner breaking permission** can be toggled on or off.
+
 
 ## ⚙️ Supported Forks
 
@@ -29,53 +35,54 @@ An advanced **multi-mode spawner breaking and placing system** for Minecraft ser
 | ✅ Folia     | Fully Supported |
 | ⚠️ Bukkit    | Partially Supported |
 
+
 ## ⚙️ Configuration
 
 ```yaml
-# ------------------------------------------------- #
-#           Spawner System Ayarları                 #
-# ------------------------------------------------- #
+# -------------------------------------------------
+#            Spawner System Settings
+# -------------------------------------------------
 
-# Plugin mesajlarının başına eklenecek ön ek.
 prefix: "&8[&aSpawner&8] &r"
 
-# Pluginin çalışma sistemini buradan seçebilirsiniz.
-# sistem: "klasik"
-#   - Sadece İpeksi Dokunuş (Silk Touch) büyüsüne sahip kazmalarla spawnerlar kırılabilir.
-#   - Doğal spawnerlar da bu modda kırılabilir.
+# Choose the plugin operation mode:
+# system: "classic"
+#   - Spawners can be broken only with Silk Touch enchanted pickaxes.
+#   - Natural spawners can be broken if natural-spawner-break is true.
 #
-# sistem: "gelismis"
-#   - Sadece /spsystem kazmaver komutuyla alınan özel "SP Kazma" ile spawnerlar kırılabilir.
-#   - Doğal spawnerlar da bu modda kırılabilir.
-#
-# sistem: "towny"
-#   - "klasik" sistem gibi İpeksi Dokunuş ile kırılır.
-#   - ÖNEMLİ: Bu modda, doğal olarak haritada oluşan spawnerlar KORUMA ALTINDADIR ve kırılamaz.
-sistem: "gelismis"
+# system: "advanced"
+#   - Spawners can be broken only with the special "SP Pickaxe" obtained via /spsystem pickaxegive.
+#   - Natural spawners can be broken if natural-spawner-break is true.
 
-# "gelismis" modda kullanılacak özel kazmanın ayarları
-spawner-kazma-item:
-  isim: "&b&lSpawner Kazma"
-  aciklama:
-    - "&7Bu kazma ile spawner kırabilirsin."
+system: "advanced"
+
+natural-spawner-break: true
+
+logs-enabled: true
+
+# Special pickaxe settings used in "advanced" mode
+spawner-pickaxe-item:
+  name: "&b&lSpawner Pickaxe"
+  lore:
+    - "&7Use this pickaxe to break spawners."
     - "&e"
-    - "&aKalan Kullanım: &c%uses%"
-mesajlar:
-  yetki-yok: "&cBu komutu kullanmak için yetkin yok."
-  reload-basarili: "&aSpawner Sistemi ayarları başarıyla yeniden yüklendi."
-  yanlis-alt-komut: "&a/spsystem <reload|kazmaver>"
-  yanlis-kullanim-kazma: "&aKullanım: /spsystem kazmaver <oyuncu> <1-100>"
-  komut-devre-disi: "&c'kazmaver' komutu sadece 'gelismis' sistem modunda kullanılabilir."
-  oyuncu-bulunamadi: "&cOyuncu bulunamadı: %player%"
-  sayi-degil: "&cKullanım hakkı bir sayı olmalıdır."
-  maksimum-can-siniri: "&cMaksimum kullanım hakkı 100 olabilir."
-  kazma-verildi-gonderen: "&a%player% adlı oyuncuya %uses% kullanımlık SP Kazma verildi."
-  kazma-verildi-alan: "&bSana özel bir spawmer kazması verildi!"
-  spawner-alindi: "&aSpawner'ı başarıyla envanterine aldın!"
-  kazma-kirildi: "&aSpawner kazman kırıldı!"
-  towny-yetki-yok: "&cBu spawner &e%town% &ckasabasına ait. Kırmak için kasaba üyesi olmalısın!"
-  gelismis-yanlis-kazma: "&cSpawnerları sadece &b&lSP Kazma &cile kırabilirsin!"
-  klasik-ipeksi-gerekli: "&cSpawnerları sadece &bİpeksi Dokunuş&c büyülü bir kazma ile kırabilirsin!"
-  dogal-spawner-kirilamaz: "&cDoğal olarak oluşmuş spawnerlar koruma altındadır ve kırılamaz."
-  sp-kazma-sadece-spawner: "&cBu özel kazma sadece spawner kırmak için kullanılabilir!"
-  envanter-dolu: "&aEnvanterin doluydu, bu yüzden spawner yere bırakıldı!"
+    - "&aUses left: &c%uses%"
+
+messages:
+  no-permission: "&cYou don't have permission to use this command."
+  reload-success: "&aSpawner system configuration reloaded successfully."
+  wrong-subcommand: "&aUsage: /spsystem <reload|pickaxegive>"
+  wrong-pickaxe-usage: "&aUsage: /spsystem pickaxegive <player> <1-100>"
+  command-disabled: "&cThe 'pickaxegive' command is only available in 'advanced' mode."
+  player-not-found: "&cPlayer not found: %player%"
+  not-a-number: "&cUsage amount must be a number."
+  max-uses-limit: "&cMaximum usage allowed is 100."
+  pickaxe-given-sender: "&aGiven %uses% uses SP Pickaxe to %player%."
+  pickaxe-given-recipient: "&bYou have received a special spawner pickaxe!"
+  spawner-collected: "&aSpawner successfully added to your inventory!"
+  pickaxe-broken: "&aYour spawner pickaxe broke!"
+  natural-spawner-break-denied: "&cNatural spawners are protected and cannot be broken."
+  sp-pickaxe-only: "&cThis special pickaxe can only be used to break spawners!"
+  inventory-full: "&aYour inventory was full, so the spawner was dropped on the ground!"
+  classic-silk-required: "&cYou can only break spawners with a Silk Touch enchanted pickaxe!"
+  advanced-pickaxe-required: "&cYou can only break spawners with the special SP Pickaxe!"
