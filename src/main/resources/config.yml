@@ -19,6 +19,9 @@ natural-spawner-break: true
 
 logs-enabled: true
 
+# Empty Spawner Breaking system
+allow-empty-spawner-break: true 
+
 # Special pickaxe settings used in "advanced" mode
 spawner-pickaxe-item:
   name: "&b&lSpawner Pickaxe"
@@ -26,11 +29,24 @@ spawner-pickaxe-item:
     - "&7Use this pickaxe to break spawners."
     - "&e"
     - "&aUses left: &c%uses%"
+    
+ # Mode tags for lore replacement
+mode-tags:
+  advanced: "SP Pickaxe"
+  classic: "Silk Touch Pickaxe"
+
+# Spawner item customization (used for both giving and breaking)
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Place this spawner to spawn"
+    - "&7Can be broken with: &e%mode%"
+    - "&7Entity Type: &a%type%"
 
 messages:
   no-permission: "&cYou don't have permission to use this command."
   reload-success: "&aSpawner system configuration reloaded successfully."
-  wrong-subcommand: "&aUsage: /spsystem <reload|pickaxegive>"
+  wrong-subcommand: "&aUsage: /spsystem <reload|pickaxegive|givespawner>"
   wrong-pickaxe-usage: "&aUsage: /spsystem pickaxegive <player> <1-100>"
   command-disabled: "&cThe 'pickaxegive' command is only available in 'advanced' mode."
   player-not-found: "&cPlayer not found: %player%"
@@ -45,3 +61,6 @@ messages:
   inventory-full: "&aYour inventory was full, so the spawner was dropped on the ground!"
   classic-silk-required: "&cYou can only break spawners with a Silk Touch enchanted pickaxe!"
   advanced-pickaxe-required: "&cYou can only break spawners with the special SP Pickaxe!"
+  empty-spawner-break-denied: "&cYou cannot break this empty spawner!"
+  spawner-given-sender: "&aGave %type% spawner to %player%."
+  spawner-given-recipient: "&bYou received a %type% spawner!"
