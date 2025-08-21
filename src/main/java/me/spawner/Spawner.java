@@ -3,7 +3,6 @@ package me.spawner;
 import me.spawner.utils.JsonLogger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.block.CreatureSpawner;
@@ -27,10 +26,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.StringUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -42,6 +38,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
 
     private String systemMode;
     private boolean naturalSpawnerBreak;
+    private boolean allowEmptySpawnerBreak;
     private JsonLogger jsonLogger;
 
     @Override
@@ -51,7 +48,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         getCommand("spsystem").setExecutor(this);
         getCommand("spsystem").setTabCompleter(this);
         getServer().getPluginManager().registerEvents(this, this);
-        getLogger().info("MiemacraftSpawner plugin enabled in '" + systemMode + "' mode!");
+        getLogger().info("SpawnerSystem plugin enabled in '" + systemMode + "' mode!");
     }
 
     private void loadConfigValues() {
@@ -59,6 +56,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         reloadConfig();
         systemMode = getConfig().getString("system", "advanced").toLowerCase();
         naturalSpawnerBreak = getConfig().getBoolean("natural-spawner-break", false);
+        allowEmptySpawnerBreak = getConfig().getBoolean("allow-empty-spawner-break", true);
     }
 
     private String getMessage(String path) {
@@ -119,8 +117,40 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
             }
 
             target.getInventory().addItem(createSpawnerPickaxe(uses));
-            sender.sendMessage(getMessage("pickaxe-given-sender").replace("%player%", target.getName()).replace("%uses%", String.valueOf(uses)));
+            sender.sendMessage(getMessage("pickaxe-given-sender")
+                    .replace("%player%", target.getName())
+                    .replace("%uses%", String.valueOf(uses)));
             target.sendMessage(getMessage("pickaxe-given-recipient"));
+            return true;
+        }
+
+        if (subCommand.equals("givespawner")) {
+            if (args.length < 3) {
+                sender.sendMessage(getMessage("wrong-subcommand"));
+                return true;
+            }
+
+            Player target = Bukkit.getPlayer(args[1]);
+            if (target == null) {
+                sender.sendMessage(getMessage("player-not-found").replace("%player%", args[1]));
+                return true;
+            }
+
+            EntityType type;
+            try {
+                type = EntityType.valueOf(args[2].toUpperCase());
+            } catch (IllegalArgumentException e) {
+                sender.sendMessage(ChatColor.RED + "Invalid mob type: " + args[2]);
+                return true;
+            }
+
+            ItemStack spawnerItem = createSpawnerItem(type);
+            target.getInventory().addItem(spawnerItem);
+            sender.sendMessage(getMessage("spawner-given-sender")
+                    .replace("%player%", target.getName())
+                    .replace("%type%", type.name()));
+            target.sendMessage(getMessage("spawner-given-recipient")
+                    .replace("%type%", type.name()));
             return true;
         }
 
@@ -133,13 +163,25 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
                                       @NotNull String alias, @NotNull String[] args) {
         if (!sender.hasPermission("spawner.admin")) return new ArrayList<>();
         if (args.length == 1) {
-            return StringUtil.copyPartialMatches(args[0], Arrays.asList("reload", "pickaxegive"), new ArrayList<>());
+            return StringUtil.copyPartialMatches(args[0],
+                    Arrays.asList("reload", "pickaxegive", "givespawner"),
+                    new ArrayList<>());
         }
-        if (args.length == 2 && args[0].equalsIgnoreCase("pickaxegive")) {
-            return StringUtil.copyPartialMatches(args[1], Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()), new ArrayList<>());
+        if (args.length == 2 && (args[0].equalsIgnoreCase("pickaxegive")
+                || args[0].equalsIgnoreCase("givespawner"))) {
+            return StringUtil.copyPartialMatches(args[1],
+                    Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()),
+                    new ArrayList<>());
         }
         if (args.length == 3 && args[0].equalsIgnoreCase("pickaxegive")) {
-            return StringUtil.copyPartialMatches(args[2], IntStream.rangeClosed(1, 100).mapToObj(String::valueOf).collect(Collectors.toList()), new ArrayList<>());
+            return StringUtil.copyPartialMatches(args[2],
+                    IntStream.rangeClosed(1, 100).mapToObj(String::valueOf).collect(Collectors.toList()),
+                    new ArrayList<>());
+        }
+        if (args.length == 3 && args[0].equalsIgnoreCase("givespawner")) {
+            return StringUtil.copyPartialMatches(args[2],
+                    Arrays.stream(EntityType.values()).map(Enum::name).collect(Collectors.toList()),
+                    new ArrayList<>());
         }
         return new ArrayList<>();
     }
@@ -150,6 +192,11 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         if (event.getBlockPlaced().getState() instanceof CreatureSpawner spawnerState) {
             jsonLogger.log(event.getPlayer(), event.getBlockPlaced(), "PLACED");
             spawnerState.getPersistentDataContainer().set(PLAYER_PLACED_KEY, PersistentDataType.BOOLEAN, true);
+
+            if (event.getItemInHand().getItemMeta() instanceof BlockStateMeta bsm) {
+                CreatureSpawner state = (CreatureSpawner) bsm.getBlockState();
+                spawnerState.setSpawnedType(state.getSpawnedType());
+            }
             spawnerState.update();
         }
     }
@@ -173,12 +220,21 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
             return;
         }
 
-        // Natural spawner protection
         boolean isNaturalSpawner = !spawnerState.getPersistentDataContainer().has(PLAYER_PLACED_KEY);
         if (isNaturalSpawner && !naturalSpawnerBreak) {
             player.sendMessage(getMessage("natural-spawner-break-denied"));
             event.setCancelled(true);
             return;
+        }
+
+        EntityType brokenType = spawnerState.getSpawnedType();
+
+        if (brokenType == null) {
+            if (!allowEmptySpawnerBreak) {
+                player.sendMessage(getMessage("empty-spawner-break-denied"));
+                event.setCancelled(true);
+                return;
+            }
         }
 
         switch (systemMode) {
@@ -217,19 +273,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         event.setDropItems(false);
         event.setExpToDrop(0);
 
-        ItemStack spawnerItem = new ItemStack(Material.SPAWNER);
-        if (spawnerItem.getItemMeta() instanceof BlockStateMeta bsm) {
-            CreatureSpawner newSpawnerState = (CreatureSpawner) bsm.getBlockState();
-            EntityType brokenType = spawnerState.getSpawnedType();
-
-            if (brokenType != null) {
-                newSpawnerState.setSpawnedType(brokenType);
-            }
-
-            bsm.setBlockState(newSpawnerState);
-            spawnerItem.setItemMeta(bsm);
-        }
-
+        ItemStack spawnerItem = (brokenType != null) ? createSpawnerItem(brokenType) : createEmptySpawner();
         Map<Integer, ItemStack> leftovers = player.getInventory().addItem(spawnerItem);
         if (!leftovers.isEmpty()) {
             leftovers.values().forEach(item -> player.getWorld().dropItemNaturally(player.getLocation(), item));
@@ -237,6 +281,59 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         } else {
             player.sendMessage(getMessage("spawner-collected"));
         }
+    }
+
+    private ItemStack createSpawnerItem(EntityType type) {
+        ItemStack spawner = new ItemStack(Material.SPAWNER);
+        ItemMeta meta = spawner.getItemMeta();
+
+        String modeTag = getConfig().getString("mode-tags." + systemMode, systemMode);
+
+        String name = getConfig().getString("spawner-item.name", "&a%type% Spawner")
+                .replace("%type%", type.name());
+        List<String> lore = getConfig().getStringList("spawner-item.lore")
+                .stream()
+                .map(line -> line.replace("%type%", type.name())
+                        .replace("%mode%", modeTag))
+                .collect(Collectors.toList());
+
+        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+        meta.setLore(lore.stream()
+                .map(line -> ChatColor.translateAlternateColorCodes('&', line))
+                .collect(Collectors.toList()));
+
+        if (meta instanceof BlockStateMeta) {
+            BlockStateMeta bsm = (BlockStateMeta) meta;
+            CreatureSpawner state = (CreatureSpawner) bsm.getBlockState();
+            state.setSpawnedType(type);
+            bsm.setBlockState(state);
+        }
+
+        spawner.setItemMeta(meta);
+        return spawner;
+    }
+
+    private ItemStack createEmptySpawner() {
+        ItemStack spawner = new ItemStack(Material.SPAWNER);
+        ItemMeta meta = spawner.getItemMeta();
+
+        String modeTag = getConfig().getString("mode-tags." + systemMode, systemMode);
+
+        String name = getConfig().getString("spawner-item.name", "&a%type% Spawner")
+                .replace("%type%", "Empty");
+        List<String> lore = getConfig().getStringList("spawner-item.lore")
+                .stream()
+                .map(line -> line.replace("%type%", "Empty")
+                        .replace("%mode%", modeTag))
+                .collect(Collectors.toList());
+
+        meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', name));
+        meta.setLore(lore.stream()
+                .map(line -> ChatColor.translateAlternateColorCodes('&', line))
+                .collect(Collectors.toList()));
+
+        spawner.setItemMeta(meta);
+        return spawner;
     }
 
     private ItemStack createSpawnerPickaxe(int uses) {
