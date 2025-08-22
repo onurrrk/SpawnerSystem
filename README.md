@@ -31,11 +31,11 @@ Includes detailed logging, customizable settings, and an advanced pickaxe system
 
 ## ⚡ Commands
 
-| Command | Permission | Description | Example Usage |
+| Command | Permission | Description | Aliases Usage |
 |---------|------------|-------------|---------------|
-| `/spsystem reload` | spawner.admin | Reloads the config file | `/spsystem reload` |
-| `/spsystem pickaxegive <player> <uses>` | spawner.admin | Gives a special spawner pickaxe to a player (only in advanced mode)
-| `/spsystem givespawner <player> <mob>` | spawner.admin | Gives a spawner of a specific mob type to a player | 
+| `/spsystem reload` | spawner.admin | Reloads the config file | `/sps reload` |
+| `/spsystem pickaxegive <player> <uses>` | spawner.admin | Gives a special spawner pickaxe to a player (only in advanced mode) | `/sps pickaxegive <player> <uses>` |
+| `/spsystem givespawner <player> <mob>` | spawner.admin | Gives a spawner of a specific mob type to a player | `/sps givespawner <player> <mob>` |
 
 ## ⚙️ Supported Forks
 
