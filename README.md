@@ -29,9 +29,6 @@ Includes detailed logging, customizable settings, and an advanced pickaxe system
   - **Empty spawner breaking system** can be enabled or disabled, and the dropped spawner type is determined by the config.  
   - All messages are fetched from the config for easy translation or text change.
 
-- **Language Support (Optional)**  
-  - Can be added in the future: display spawner names in different languages (EN, TR, ES, AR, etc.) via config.
-
 ## ⚡ Commands
 
 | Command | Permission | Description | Example Usage |
