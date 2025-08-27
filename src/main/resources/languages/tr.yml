@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Dil Dosyası
+# ===============================
+
+# Tüm eklenti mesajları için önek (prefix)
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner Kazması Ayarları
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Kazması"
+  lore:
+    - "&7Spawner kırmak için bu kazmayı kullan."
+    - "&e"
+    - "&aKalan kullanım: &c%uses%"
+
+# =========================================
+# Mod Etiketleri (Gelişmiş veya Klasik)
+# =========================================
+mode-tags:
+  advanced: "Spawner Kazması"
+  classic: "İpeksi Dokunuş Kazması"
+
+# =========================================
+# Spawner Eşyası Ayarları
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Bu spawnerı yerleştirerek canavar çıkarabilirsin."
+    - "&7Sadece şu ile kırılabilir: &e%mode%"
+    - "&7Varlık Türü: &a%type%"
+
+# =========================================
+# Eklenti Mesajları
+# =========================================
+messages:
+  no-permission: "&cBu komutu kullanmak için iznin yok."
+  reload-success: "&aSpawner sistemi yapılandırması başarıyla yenilendi."
+  wrong-subcommand: "&aKullanım: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aKullanım: /spsystem pickaxegive <oyuncu> <1-100>"
+  command-disabled: "&c'pickaxegive' komutu yalnızca 'gelişmiş' modda kullanılabilir."
+  player-not-found: "&cOyuncu bulunamadı: %player%"
+  not-a-number: "&cKullanım sayısı bir sayı olmalıdır."
+  max-uses-limit: "&cMaksimum kullanım sayısı 100'dür."
+  pickaxe-given-sender: "&a%player% oyuncusuna %uses% kullanımlık Spawner Kazması verildi."
+  pickaxe-given-recipient: "&bÖzel bir spawner kazması aldınız!"
+  spawner-collected: "&aSpawner envanterine başarıyla eklendi!"
+  pickaxe-broken: "&aSpawner kazmanız kırıldı!"
+  natural-spawner-break-denied: "&cDoğal spawnerlar korumalıdır ve kırılamaz."
+  sp-pickaxe-only: "&cBu özel kazma sadece spawner kırmak için kullanılabilir!"
+  inventory-full: "&aEnvanterin doluydu, spawner yere bırakıldı!"
+  classic-silk-required: "&cSpawnerları sadece İpeksi Dokunuş büyülü bir kazma ile kırabilirsin!"
+  advanced-pickaxe-required: "&cSpawnerları sadece özel Spawner Kazması ile kırabilirsin!"
+  empty-spawner-break-denied: "&cBoş spawnerları kıramazsın!"
+  spawner-given-sender: "&a%player% oyuncusuna %type% spawner verildi."
+  spawner-given-recipient: "&bBir %type% spawner aldınız!"
