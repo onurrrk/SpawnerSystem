@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Archivo de Idioma
+# ===============================
+
+# Prefijo para todos los mensajes del plugin
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Configuración del Pico Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lPico Spawner"
+  lore:
+    - "&7Usa este pico para romper spawners."
+    - "&e"
+    - "&aUsos restantes: &c%uses%"
+
+# =========================================
+# Etiquetas de Modo (Avanzado o Clásico)
+# =========================================
+mode-tags:
+  advanced: "Pico Spawner"
+  classic: "Pico Toque de Seda"
+
+# =========================================
+# Configuración del Ítem Spawner
+# =========================================
+spawner-item:
+  name: "&aSpawner de %type%"
+  lore:
+    - "&7Coloca este spawner para generar mobs."
+    - "&7Solo puede romperse con: &e%mode%"
+    - "&7Tipo de entidad: &a%type%"
+
+# =========================================
+# Mensajes del Plugin
+# =========================================
+messages:
+  no-permission: "&cNo tienes permiso para usar este comando."
+  reload-success: "&aLa configuración del sistema Spawner se ha recargado correctamente."
+  wrong-subcommand: "&aUso: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aUso: /spsystem pickaxegive <jugador> <1-100>"
+  command-disabled: "&cEl comando 'pickaxegive' solo está disponible en modo 'avanzado'."
+  player-not-found: "&cJugador no encontrado: %player%"
+  not-a-number: "&cLa cantidad de uso debe ser un número."
+  max-uses-limit: "&cEl número máximo de usos permitido es 100."
+  pickaxe-given-sender: "&aSe le ha dado a %player% un pico Spawner con %uses% usos."
+  pickaxe-given-recipient: "&b¡Has recibido un pico spawner especial!"
+  spawner-collected: "&aSpawner agregado a tu inventario con éxito."
+  pickaxe-broken: "&a¡Tu pico spawner se rompió!"
+  natural-spawner-break-denied: "&cLos spawners naturales están protegidos y no se pueden romper."
+  sp-pickaxe-only: "&c¡Este pico especial solo puede usarse para romper spawners!"
+  inventory-full: "&aTu inventario estaba lleno, así que el spawner se dejó caer en el suelo."
+  classic-silk-required: "&c¡Solo puedes romper spawners con un pico encantado con Toque de Seda!"
+  advanced-pickaxe-required: "&c¡Solo puedes romper spawners con el Pico Spawner especial!"
+  empty-spawner-break-denied: "&c¡No puedes romper este spawner vacío!"
+  spawner-given-sender: "&aSe le ha dado a %player% un spawner de %type%."
+  spawner-given-recipient: "&b¡Has recibido un spawner de %type%!"

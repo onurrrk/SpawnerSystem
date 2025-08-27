@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Čeština
+# ===============================
+
+# Prefix pro všechny zprávy pluginu
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Nastavení Spawnovacího Krumpáče
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Krumpáč"
+  lore:
+    - "&7Použijte tento krumpáč k rozbití spawneru."
+    - "&e"
+    - "&aZbývající použití: &c%uses%"
+
+# =========================================
+# Tagy režimu (Pokročilý nebo Klasický)
+# =========================================
+mode-tags:
+  advanced: "Spawner Krumpáč"
+  classic: "Krumpáč Hedvábný Dotek"
+
+# =========================================
+# Nastavení Spawnovacího Předmětu
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Umístěním tohoto spawneru se spawnuje mob."
+    - "&7Lze rozbít pouze tímto: &e%mode%"
+    - "&7Typ entity: &a%type%"
+
+# =========================================
+# Zprávy pluginu
+# =========================================
+messages:
+  no-permission: "&cNemáte oprávnění použít tento příkaz."
+  reload-success: "&aKonfigurace Spawner systému byla úspěšně načtena."
+  wrong-subcommand: "&aPoužití: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aPoužití: /spsystem pickaxegive <hráč> <1-100>"
+  command-disabled: "&cPříkaz 'pickaxegive' je dostupný pouze v 'pokročilém' režimu."
+  player-not-found: "&cHráč nenalezen: %player%"
+  not-a-number: "&cPočet použití musí být číslo."
+  max-uses-limit: "&cMaximální počet použití je 100."
+  pickaxe-given-sender: "&a%player% obdržel Spawner Krumpáč s %uses% použití."
+  pickaxe-given-recipient: "&bObdrželi jste speciální spawner krumpáč!"
+  spawner-collected: "&aSpawner úspěšně přidán do inventáře!"
+  pickaxe-broken: "&aVáš Spawner Krumpáč se zlomil!"
+  natural-spawner-break-denied: "&cPřírodní spawnery jsou chráněné a nelze je rozbít."
+  sp-pickaxe-only: "&cTento speciální krumpáč může rozbíjet pouze spawner!"
+  inventory-full: "&aInventář je plný, spawner byl upuštěn!"
+  classic-silk-required: "&cSpawner lze rozbít pouze hedvábným krumpáčem!"
+  advanced-pickaxe-required: "&cSpawner lze rozbít pouze speciálním Spawner Krumpáčem!"
+  empty-spawner-break-denied: "&cNelze rozbít prázdný spawner!"
+  spawner-given-sender: "&a%player% obdržel %type% spawner."
+  spawner-given-recipient: "&bObdrželi jste %type% spawner!"

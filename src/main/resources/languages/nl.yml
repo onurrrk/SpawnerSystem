@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Nederlands (Dutch)
+# ===============================
+
+# Prefix voor alle plugin-berichten
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner-pickaxe instellingen
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner-pikhouweel"
+  lore:
+    - "&7Gebruik deze pikhouweel om de spawner te breken."
+    - "&e"
+    - "&aResterende gebruik: &c%uses%"
+
+# =========================================
+# Mod-tags (Geavanceerd of Klassiek)
+# =========================================
+mode-tags:
+  advanced: "Spawner-pikhouweel"
+  classic: "Zijde-aanraking pikhouweel"
+
+# =========================================
+# Spawner-item instellingen
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Plaats deze spawner om monsters te spawnen."
+    - "&7Kan alleen gebroken worden met: &e%mode%"
+    - "&7Entiteitstype: &a%type%"
+
+# =========================================
+# Plugin-berichten
+# =========================================
+messages:
+  no-permission: "&cJe hebt geen toestemming om dit commando te gebruiken."
+  reload-success: "&aSpawner-systeemconfiguratie succesvol herladen."
+  wrong-subcommand: "&aGebruik: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aGebruik: /spsystem pickaxegive <speler> <1-100>"
+  command-disabled: "&cDe 'pickaxegive'-opdracht is alleen beschikbaar in de 'geavanceerde' modus."
+  player-not-found: "&cSpeler niet gevonden: %player%"
+  not-a-number: "&cAantal gebruiken moet een nummer zijn."
+  max-uses-limit: "&cMaximaal aantal gebruiken is 100."
+  pickaxe-given-sender: "&a%player% heeft een spawner-pikhouweel met %uses% gebruik gekregen."
+  pickaxe-given-recipient: "&bJe hebt een speciale spawner-pikhouweel ontvangen!"
+  spawner-collected: "&aSpawner succesvol aan je inventaris toegevoegd!"
+  pickaxe-broken: "&aJe spawner-pikhouweel is gebroken!"
+  natural-spawner-break-denied: "&cNatuurlijke spawners zijn beschermd en kunnen niet worden gebroken."
+  sp-pickaxe-only: "&cDeze speciale pikhouweel kan alleen spawners breken!"
+  inventory-full: "&aJe inventaris is vol, de spawner is op de grond gevallen!"
+  classic-silk-required: "&cSpawners kunnen alleen worden gebroken met een Zijde-aanraking pikhouweel!"
+  advanced-pickaxe-required: "&cSpawners kunnen alleen worden gebroken met een speciale Spawner-pikhouweel!"
+  empty-spawner-break-denied: "&cJe kunt een lege spawner niet breken!"
+  spawner-given-sender: "&a%player% heeft een %type% spawner gekregen."
+  spawner-given-recipient: "&bJe hebt een %type% spawner ontvangen!"

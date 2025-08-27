@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Azərbaycan (Azerbaijani)
+# ===============================
+
+# Plugin mesajlarının ön eki
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner baltası ayarları
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Baltası"
+  lore:
+    - "&7Spawner-i qırmaq üçün bu baltanı istifadə edin."
+    - "&e"
+    - "&aQalan istifadə: &c%uses%"
+
+# =========================================
+# Mod etiketləri (İnkişaf etmiş və ya Klasik)
+# =========================================
+mode-tags:
+  advanced: "Spawner Baltası"
+  classic: "İpək Toxunuşlu Balta"
+
+# =========================================
+# Spawner əşyası ayarları
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Bu spawner-i yerləşdirərək canavar çıxara bilərsiniz."
+    - "&7Sadəcə ilə qırıla bilər: &e%mode%"
+    - "&7Canavar növü: &a%type%"
+
+# =========================================
+# Plugin mesajları
+# =========================================
+messages:
+  no-permission: "&cBu əmri icra etmək üçün icazəniz yoxdur."
+  reload-success: "&aSpawner sistemi uğurla yenidən yükləndi."
+  wrong-subcommand: "&aİstifadə: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aİstifadə: /spsystem pickaxegive <oyuncu> <1-100>"
+  command-disabled: "&c'pickaxegive' əmri yalnız 'advanced' rejimdə istifadə edilə bilər."
+  player-not-found: "&cOyunçu tapılmadı: %player%"
+  not-a-number: "&cİstifadə sayı rəqəm olmalıdır."
+  max-uses-limit: "&cMaksimum istifadə sayı 100-dür."
+  pickaxe-given-sender: "&a%player% oyunçusuna %uses% istifadəlik Spawner Baltası verildi."
+  pickaxe-given-recipient: "&bXüsusi bir spawner baltası aldınız!"
+  spawner-collected: "&aSpawner uğurla inventarınıza əlavə edildi!"
+  pickaxe-broken: "&aSpawner baltanız qırıldı!"
+  natural-spawner-break-denied: "&cTəbii spawner-lar qorunur və qırıla bilməz."
+  sp-pickaxe-only: "&cBu xüsusi balta yalnız spawner qırmaq üçün istifadə edilə bilər!"
+  inventory-full: "&aİnventar doludur, spawner yerə düşdü!"
+  classic-silk-required: "&cSpawner-ları yalnız İpək Toxunuşlu balta ilə qıra bilərsiniz!"
+  advanced-pickaxe-required: "&cSpawner-ları yalnız xüsusi Spawner Baltası ilə qıra bilərsiniz!"
+  empty-spawner-break-denied: "&cBoş spawner-ları qıra bilməzsiniz!"
+  spawner-given-sender: "&a%player% oyunçusuna %type% spawner verildi."
+  spawner-given-recipient: "&bBir %type% spawner aldınız!"

@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Кыргызча
+# ===============================
+
+# Бардык плагин билдирүүлөрү үчүн префикс
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner Тырмакчасы Орнотуулары
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Тырмакча"
+  lore:
+    - "&7Бул тырмакчаны spawner сытуу үчүн колдон."
+    - "&e"
+    - "&aКалган колдонуу: &c%uses%"
+
+# =========================================
+# Режим тэгдери (Өркүндөтүлгөн же Класстагы)
+# =========================================
+mode-tags:
+  advanced: "Spawner Тырмакча"
+  classic: "Silk Touch Тырмакча"
+
+# =========================================
+# Spawner предметтери Орнотуулары
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Бул spawnerди коюу менен мобдор чыгат."
+    - "&7Пайдалануу жолу: &e%mode%"
+    - "&7Сущность тиби: &a%type%"
+
+# =========================================
+# Плагин билдирүүлөрү
+# =========================================
+messages:
+  no-permission: "&cБул буйрукту колдонууга уруксат жок."
+  reload-success: "&aSpawner системасы ийгиликтүү жаңыртылды."
+  wrong-subcommand: "&aКолдонуу: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aКолдонуу: /spsystem pickaxegive < оюнчу> <1-100>"
+  command-disabled: "&c'pickaxegive' буйругу болгону 'өркүндөтүлгөн' режимде иштейт."
+  player-not-found: "&cОюнчу табылган жок: %player%"
+  not-a-number: "&cКолдонуу саны сан болушу керек."
+  max-uses-limit: "&cКолдонуу саны максималдуу 100."
+  pickaxe-given-sender: "&a%player% Spawner Тырмакчаны %uses% колдонуу менен алды."
+  pickaxe-given-recipient: "&bСиз атайын spawner тырмакчасын алдыңыз!"
+  spawner-collected: "&aSpawner ийгиликтүү инвентарыңызга кошулду!"
+  pickaxe-broken: "&aСиздин Spawner Тырмакчаңыз сынды!"
+  natural-spawner-break-denied: "&cТабигый spawnerлер корголгон жана сынык кыла албайсыз."
+  sp-pickaxe-only: "&cБул атайын тырмакча болгону spawnerди сыноо үчүн!"
+  inventory-full: "&aИнвентарыңыз толгон, spawner жерге түштү!"
+  classic-silk-required: "&cSpawnerди Silk Touch Тырмакча менен гана сыноо болот!"
+  advanced-pickaxe-required: "&cSpawnerди атайын Spawner Тырмакча менен гана сыноо болот!"
+  empty-spawner-break-denied: "&cБош spawnerди сыноо мүмкүн эмес!"
+  spawner-given-sender: "&a%player% %type% spawner алды."
+  spawner-given-recipient: "&bСиз %type% spawner алдыңыз!"

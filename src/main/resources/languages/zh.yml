@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System 简体中文 (Chinese)
+# ===============================
+
+# 插件消息前缀
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# 生成器镐设置
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&l生成器镐"
+  lore:
+    - "&7使用此镐来破坏生成器。"
+    - "&e"
+    - "&a剩余使用次数: &c%uses%"
+
+# =========================================
+# 模式标签（高级或经典）
+# =========================================
+mode-tags:
+  advanced: "生成器镐"
+  classic: "丝触镐"
+
+# =========================================
+# 生成器物品设置
+# =========================================
+spawner-item:
+  name: "&a%type% 生成器"
+  lore:
+    - "&7放置此生成器以生成怪物。"
+    - "&7只能使用: &e%mode% 来破坏"
+    - "&7怪物类型: &a%type%"
+
+# =========================================
+# 插件消息
+# =========================================
+messages:
+  no-permission: "&c您没有权限使用此命令。"
+  reload-success: "&aSpawner 系统配置已成功重新加载。"
+  wrong-subcommand: "&a用法: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&a用法: /spsystem pickaxegive <玩家> <1-100>"
+  command-disabled: "&c'pickaxegive' 命令只能在 '高级' 模式下使用。"
+  player-not-found: "&c找不到玩家: %player%"
+  not-a-number: "&c使用次数必须为数字。"
+  max-uses-limit: "&c最大使用次数为 100。"
+  pickaxe-given-sender: "&a已给予 %player% %uses% 次使用的生成器镐。"
+  pickaxe-given-recipient: "&b您已获得一把特殊生成器镐！"
+  spawner-collected: "&a生成器已成功添加到您的背包！"
+  pickaxe-broken: "&a生成器镐已损坏！"
+  natural-spawner-break-denied: "&c自然生成的生成器受到保护，无法破坏。"
+  sp-pickaxe-only: "&c此特殊镐只能用于破坏生成器！"
+  inventory-full: "&a背包已满，生成器掉落在地面！"
+  classic-silk-required: "&c生成器只能用丝触镐破坏！"
+  advanced-pickaxe-required: "&c生成器只能用特殊生成器镐破坏！"
+  empty-spawner-break-denied: "&c无法破坏空的生成器！"
+  spawner-given-sender: "&a已给予 %player% %type% 生成器。"
+  spawner-given-recipient: "&b您已获得 %type% 生成器！"

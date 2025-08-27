@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System 日本語 (Japanese)
+# ===============================
+
+# プラグインメッセージの接頭辞
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# スポナーピッケルの設定
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lスポナーピッケル"
+  lore:
+    - "&7スポナーを壊すにはこのピッケルを使ってください。"
+    - "&e"
+    - "&a残り使用回数: &c%uses%"
+
+# =========================================
+# モードタグ（高度またはクラシック）
+# =========================================
+mode-tags:
+  advanced: "スポナーピッケル"
+  classic: "シルクタッチのピッケル"
+
+# =========================================
+# スポナーアイテム設定
+# =========================================
+spawner-item:
+  name: "&a%type% スポナー"
+  lore:
+    - "&7このスポナーを置くとモンスターを生成します。"
+    - "&7以下でのみ破壊可能: &e%mode%"
+    - "&7モンスターの種類: &a%type%"
+
+# =========================================
+# プラグインメッセージ
+# =========================================
+messages:
+  no-permission: "&cこのコマンドを実行する権限がありません。"
+  reload-success: "&aSpawner システムの設定を正常に再読み込みしました。"
+  wrong-subcommand: "&a使用法: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&a使用法: /spsystem pickaxegive <プレイヤー> <1-100>"
+  command-disabled: "&c'pickaxegive' コマンドは 'advanced' モードでのみ使用可能です。"
+  player-not-found: "&cプレイヤーが見つかりません: %player%"
+  not-a-number: "&c使用回数は数字でなければなりません。"
+  max-uses-limit: "&c最大使用回数は100です。"
+  pickaxe-given-sender: "&a%player% に %uses% 回使用可能なスポナーピッケルを付与しました。"
+  pickaxe-given-recipient: "&b特別なスポナーピッケルを受け取りました！"
+  spawner-collected: "&aスポナーがインベントリに正常に追加されました！"
+  pickaxe-broken: "&aスポナーピッケルが壊れました！"
+  natural-spawner-break-denied: "&c自然生成されたスポナーは保護されており、破壊できません。"
+  sp-pickaxe-only: "&cこの特別なピッケルはスポナー専用です！"
+  inventory-full: "&aインベントリがいっぱいのため、スポナーが地面に落ちました！"
+  classic-silk-required: "&cスポナーはシルクタッチのピッケルでのみ破壊可能です！"
+  advanced-pickaxe-required: "&cスポナーは特別なスポナーピッケルでのみ破壊可能です！"
+  empty-spawner-break-denied: "&c空のスポナーは破壊できません！"
+  spawner-given-sender: "&a%player% に %type% スポナーを付与しました。"
+  spawner-given-recipient: "&b%type% スポナーを受け取りました！"

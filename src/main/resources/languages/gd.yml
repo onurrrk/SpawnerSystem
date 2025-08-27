@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Ελληνικά
+# ===============================
+
+# Πρόθεμα για όλα τα μηνύματα του plugin
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Ρυθμίσεις Τσεκούρι Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Τσεκούρι"
+  lore:
+    - "&7Χρησιμοποιήστε αυτό το τσεκούρι για να σπάσετε το spawner."
+    - "&e"
+    - "&aΥπόλοιπες χρήσεις: &c%uses%"
+
+# =========================================
+# Ετικέτες λειτουργίας (Προχωρημένο ή Κλασικό)
+# =========================================
+mode-tags:
+  advanced: "Spawner Τσεκούρι"
+  classic: "Τσεκούρι Μεταξωτής Αφή"
+
+# =========================================
+# Ρυθμίσεις Αντικειμένου Spawner
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Τοποθετήστε αυτό το spawner για να εμφανίσετε τέρατα."
+    - "&7Μπορεί να σπάσει μόνο με: &e%mode%"
+    - "&7Τύπος οντότητας: &a%type%"
+
+# =========================================
+# Μηνύματα Plugin
+# =========================================
+messages:
+  no-permission: "&cΔεν έχετε άδεια να χρησιμοποιήσετε αυτή την εντολή."
+  reload-success: "&aΗ διαμόρφωση του Spawner συστήματος επαναφορτώθηκε επιτυχώς."
+  wrong-subcommand: "&aΧρήση: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aΧρήση: /spsystem pickaxegive <παίκτης> <1-100>"
+  command-disabled: "&cΗ εντολή 'pickaxegive' είναι διαθέσιμη μόνο σε 'προχωρημένη' λειτουργία."
+  player-not-found: "&cΟ παίκτης δεν βρέθηκε: %player%"
+  not-a-number: "&cΟ αριθμός χρήσεων πρέπει να είναι αριθμός."
+  max-uses-limit: "&cΤο μέγιστο πλήθος χρήσεων είναι 100."
+  pickaxe-given-sender: "&aΟ %player% έλαβε Spawner Τσεκούρι με %uses% χρήσεις."
+  pickaxe-given-recipient: "&bΈχετε λάβει ένα ειδικό τσεκούρι spawner!"
+  spawner-collected: "&aΤο spawner προστέθηκε επιτυχώς στο απόθεμά σας!"
+  pickaxe-broken: "&aΤο Spawner Τσεκούρι σας έσπασε!"
+  natural-spawner-break-denied: "&cΟι φυσικοί spawner είναι προστατευμένοι και δεν μπορούν να σπάσουν."
+  sp-pickaxe-only: "&cΑυτό το ειδικό τσεκούρι μπορεί να σπάσει μόνο spawner!"
+  inventory-full: "&aΤο απόθεμά σας είναι γεμάτο, το spawner έπεσε στο έδαφος!"
+  classic-silk-required: "&cΟι spawner μπορούν να σπάσουν μόνο με Τσεκούρι Μεταξωτής Αφή!"
+  advanced-pickaxe-required: "&cΟι spawner μπορούν να σπάσουν μόνο με ειδικό Spawner Τσεκούρι!"
+  empty-spawner-break-denied: "&cΔεν μπορείτε να σπάσετε έναν άδειο spawner!"
+  spawner-given-sender: "&aΟ %player% έλαβε %type% spawner."
+  spawner-given-recipient: "&bΈχετε λάβει %type% spawner!"

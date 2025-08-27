@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Sprachdatei
+# ===============================
+
+# Präfix für alle Plugin-Nachrichten
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner-Spitzhacke Einstellungen
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Spitzhacke"
+  lore:
+    - "&7Benutze diese Spitzhacke, um Spawner abzubauen."
+    - "&e"
+    - "&aVerbleibende Nutzungen: &c%uses%"
+
+# =========================================
+# Mod-Tags (Erweitert oder Klassisch)
+# =========================================
+mode-tags:
+  advanced: "Spawner Spitzhacke"
+  classic: "Seidenberührung Spitzhacke"
+
+# =========================================
+# Spawner-Gegenstand Einstellungen
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Platziere diesen Spawner, um Kreaturen zu spawnen."
+    - "&7Kann nur mit folgendem abgebaut werden: &e%mode%"
+    - "&7Entity-Typ: &a%type%"
+
+# =========================================
+# Plugin-Nachrichten
+# =========================================
+messages:
+  no-permission: "&cDu hast keine Berechtigung, diesen Befehl auszuführen."
+  reload-success: "&aSpawner-System Konfiguration erfolgreich neu geladen."
+  wrong-subcommand: "&aVerwendung: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aVerwendung: /spsystem pickaxegive <Spieler> <1-100>"
+  command-disabled: "&cDer Befehl 'pickaxegive' ist nur im 'erweiterten' Modus verfügbar."
+  player-not-found: "&cSpieler nicht gefunden: %player%"
+  not-a-number: "&cDie Anzahl muss eine Zahl sein."
+  max-uses-limit: "&cMaximale Anzahl an Nutzungen ist 100."
+  pickaxe-given-sender: "&a%player% wurde eine Spawner Spitzhacke mit %uses% Nutzungen gegeben."
+  pickaxe-given-recipient: "&bDu hast eine spezielle Spawner-Spitzhacke erhalten!"
+  spawner-collected: "&aSpawner erfolgreich in dein Inventar hinzugefügt!"
+  pickaxe-broken: "&aDeine Spawner-Spitzhacke ist zerbrochen!"
+  natural-spawner-break-denied: "&cNatürliche Spawner sind geschützt und können nicht abgebaut werden."
+  sp-pickaxe-only: "&cDiese spezielle Spitzhacke kann nur zum Abbauen von Spawnern verwendet werden!"
+  inventory-full: "&aDein Inventar war voll, daher wurde der Spawner auf den Boden gelegt!"
+  classic-silk-required: "&cSpawner können nur mit einer Seidenberührung-Spitzhacke abgebaut werden!"
+  advanced-pickaxe-required: "&cSpawner können nur mit der speziellen Spawner Spitzhacke abgebaut werden!"
+  empty-spawner-break-denied: "&cDu kannst diesen leeren Spawner nicht abbauen!"
+  spawner-given-sender: "&a%player% wurde ein %type% Spawner gegeben."
+  spawner-given-recipient: "&bDu hast einen %type% Spawner erhalten!"

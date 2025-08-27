@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Magyar
+# ===============================
+
+# Prefix minden plugin üzenethez
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner csákány beállítások
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Csákány"
+  lore:
+    - "&7Használd ezt a csákányt a spawner megtöréséhez."
+    - "&e"
+    - "&aMaradék használat: &c%uses%"
+
+# =========================================
+# Mód címkék (Fejlett vagy Klasszikus)
+# =========================================
+mode-tags:
+  advanced: "Spawner Csákány"
+  classic: "Selyem Tapintás Csákány"
+
+# =========================================
+# Spawner tárgy beállítások
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Ezzel a spawnerrel mobokat hozhatsz létre."
+    - "&7Csak a következővel törhető: &e%mode%"
+    - "&7Entity típus: &a%type%"
+
+# =========================================
+# Plugin üzenetek
+# =========================================
+messages:
+  no-permission: "&cNincs engedélyed a parancs használatára."
+  reload-success: "&aA Spawner rendszer konfigurációja sikeresen újratöltve."
+  wrong-subcommand: "&aHasználat: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aHasználat: /spsystem pickaxegive <játékos> <1-100>"
+  command-disabled: "&cA 'pickaxegive' parancs csak a 'fejlett' módban elérhető."
+  player-not-found: "&cA játékos nem található: %player%"
+  not-a-number: "&cA használatok számának számnak kell lennie."
+  max-uses-limit: "&cA maximális használatok száma 100."
+  pickaxe-given-sender: "&a%player% kapott %uses% használatú Spawner Csákányt."
+  pickaxe-given-recipient: "&bEgy speciális spawner csákányt kaptál!"
+  spawner-collected: "&aA spawner sikeresen hozzáadva a készletedhez!"
+  pickaxe-broken: "&aA Spawner Csákány eltört!"
+  natural-spawner-break-denied: "&cA természetes spawner védett és nem törhető."
+  sp-pickaxe-only: "&cEz a speciális csákány csak spawnerhez használható!"
+  inventory-full: "&aA készleted tele van, a spawner leesett!"
+  classic-silk-required: "&cA spawner csak Selyem Tapintás Csákánnyal törhető!"
+  advanced-pickaxe-required: "&cA spawner csak speciális Spawner Csákánnyal törhető!"
+  empty-spawner-break-denied: "&cÜres spawner nem törhető!"
+  spawner-given-sender: "&a%player% kapott %type% spawnert."
+  spawner-given-recipient: "&bEgy %type% spawnert kaptál!"

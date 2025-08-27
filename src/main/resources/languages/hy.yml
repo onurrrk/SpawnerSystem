@@ -1,0 +1,58 @@
+# ===============================
+# Spawner System Հայերեն (Armenian)
+# ===============================
+
+# Պլագինի բոլոր հաղորդագրությունների նախածանց
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Spawner Սպիտակահարված Բառատուփի կարգավորումներ
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lSpawner Խորան"
+  lore:
+    - "&7Օգտագործեք այս խորանը spawner-ը կոտրելու համար:"
+    - "&e"
+    - "&aՄնացած օգտագործումներ: &c%uses%"
+
+# =========================================
+# Մոդի պիտակներ (Ավանդական կամ Ընդլայնված)
+# =========================================
+mode-tags:
+  advanced: "Spawner Խորան"
+  classic: "Silk Touch Խորան"
+
+# =========================================
+# Spawner Անվանումների կարգավորումներ
+# =========================================
+spawner-item:
+  name: "&a%type% Spawner"
+  lore:
+    - "&7Տեղադրեք այս spawner-ը՝ հրեշներ ստեղծելու համար:"
+    - "&7Կոտրվում է միայն այսով: &e%mode%"
+    - "&7Անվանում տեսակ: &a%type%"
+
+# =========================================
+# Պլագինի հաղորդագրություններ
+# =========================================
+messages:
+  no-permission: "&cԴուք չունեք իրավունք օգտագործելու այս հրամանը:"
+  reload-success: "&aSpawner համակարգի կարգավորումները հաջողությամբ վերբեռնվեցին:"
+  wrong-subcommand: "&aՕգտագործում: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aՕգտագործում: /spsystem pickaxegive <player> <1-100>"
+  command-disabled: "&c'pickaxegive' հրամանը հասանելի է միայն 'ընդլայնված' ռեժիմում:"
+  player-not-found: "&cԱնհայտ խաղացող: %player%"
+  not-a-number: "&cՕգտագործումների քանակը պետք է լինի թիվ:"
+  max-uses-limit: "&cԳերագույն օգտագործումների թիվը 100 է:"
+  pickaxe-given-sender: "&a%player% ստացավ Spawner Խորան %uses% օգտագործմամբ:"
+  pickaxe-given-recipient: "&bԴուք ստացաք հատուկ Spawner Խորան:"
+  spawner-collected: "&aSpawner-ը հաջողությամբ ավելացվել է ձեր inventaris-ում:"
+  pickaxe-broken: "&aՁեր Spawner Խորանը կոտրվել է:"
+  natural-spawner-break-denied: "&cԲնական spawner-ները պաշտպանված են և չեն կարող կոտրվել:"
+  sp-pickaxe-only: "&cԱյս հատուկ խորանը կարող է միայն spawner-ներ կոտրել:"
+  inventory-full: "&aՁեր inventaris-ը լի է, spawner-ը ընկավ زمین:"
+  classic-silk-required: "&cSpawner-ները կարելի է կոտրել միայն Silk Touch Խորանով:"
+  advanced-pickaxe-required: "&cSpawner-ները կարելի է կոտրել միայն հատուկ Spawner Խորանով:"
+  empty-spawner-break-denied: "&cԴուք չեք կարող կոտրել դատարկ spawner:"
+  spawner-given-sender: "&a%player% ստացավ %type% spawner:"
+  spawner-given-recipient: "&bԴուք ստացաք %type% spawner:"
