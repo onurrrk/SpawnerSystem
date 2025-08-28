@@ -6,7 +6,7 @@ Includes detailed logging, customizable settings, and an advanced pickaxe system
 ## 🌐 Multi-Language Support (v1.6^)
 Spawner System now supports **21 different languages** to make it easier for servers around the world to use and configure:  
 
-🇺🇸 **English (en)** | 🇹🇷 **Turkish (tr)** | 🇩🇪 **German (de)** | 🇪🇸 **Spanish (es)** | 🇷🇺 **Russian (ru)** | 🇨🇳 **Chinese (zh)** | 🇯🇵 **Japanese (ja)** | 🇦🇿 **Azerbaijani (az)** | 🇫🇷 **French (fr)** | 🇸🇦 **Arabic (ar)** | 🇳🇱 **Dutch (nl)** | 🇮🇩 **Indonesian (id)** | 🇦🇲 **Armenian (hy)** | 🇮🇹 **Italian (it)** | 🇨🇿 **Czech (cs)** | 🇬🇷 **Greek (el)** | 🏴 **Scottish Gaelic (gd)** | 🇭🇺 **Hungarian (hu)** | 🇰🇬 **Kyrgyz (ky)** | 🇰🇷 **Korean (ko)** | 🇸🇪 **Swedish (sv)**  
+🇺🇸 **English (en)** | 🇹🇷 **Turkish (tr)** | 🇩🇪 **German (de)** | 🇪🇸 **Spanish (es)** | 🇷🇺 **Russian (ru)** | 🇨🇳 **Chinese (zh)** | 🇯🇵 **Japanese (ja)** | 🇦🇿 **Azerbaijani (az)** | 🇫🇷 **French (fr)** | 🇸🇦 **Arabic (ar)** | 🇳🇱 **Dutch (nl)** | 🇮🇩 **Indonesian (id)** | 🇦🇲 **Armenian (hy)** | 🇮🇹 **Italian (it)** | 🇨🇿 **Czech (cs)** | 🇬🇷 **Greek (el)** | 🏴󠁧󠁢󠁳󠁣󠁴󠁿 **Scottish Gaelic (gd)** | 🇭🇺 **Hungarian (hu)** | 🇰🇬 **Kyrgyz (ky)** | 🇰🇷 **Korean (ko)** | 🇸🇪 **Swedish (sv)**  
 
 The language can be easily selected from the **config file**, and all translation files are located in: **/plugins/SpawnerSystem/languages**
 
