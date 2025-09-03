@@ -1,58 +1,175 @@
 # ===============================
-# Spawner System Svenska
+# Spawner Системасы Кыргызча
 # ===============================
 
-# Prefix för alla pluginmeddelanden
+# Плагиндин баардык билдирүүлөрү үчүн префикс
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# Inställningar för Spawner-pickaxe
+# Spawner Киркасы Иштетүү
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&lSpawner Hacka"
+  name: "&b&lSpawner Киркасы"
   lore:
-    - "&7Använd denna hacka för att bryta spawner."
+    - "&7Spawnerди бузуу үчүн бул кирканы колдонуңуз."
     - "&e"
-    - "&aKvarvarande användningar: &c%uses%"
+    - "&aКалган колдонулуш: &c%uses%"
 
 # =========================================
-# Modtaggar (Avancerad eller Klassisk)
+# Режим тегдери (Advanced же Classic)
 # =========================================
 mode-tags:
-  advanced: "Spawner Hacka"
-  classic: "Silkes Touch Hacka"
+  advanced: "Spawner Киркасы"
+  classic: "Silk Touch Киркасы"
 
 # =========================================
-# Inställningar för Spawner-objekt
+# Spawner Объектинин Иштетүүлөрү
 # =========================================
 spawner-item:
   name: "&a%type% Spawner"
   lore:
-    - "&7Placera denna spawner för att spawn mobs."
-    - "&7Kan endast brytas med: &e%mode%"
-    - "&7Entity-typ: &a%type%"
+    - "&7Монструларды чыгаруу үчүн бул спавнерди коюңуз."
+    - "&7Тек гана мындан менен бузулушу мүмкүн: &e%mode%"
+    - "&7Объект түрү: &a%type%"
 
 # =========================================
-# Plugin-meddelanden
+# Spawner Голограммасынын Иштетүүлөрү
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7%mode% менен бузууга болот "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+ 
+# =========================================
+# Mob Голограммасынын Иштетүүлөрү
+# =========================================
+mob-remove-warning:
+  - "&cБул mob өчүрүлөт"
+  - "&eАймакты таштабаса, %time% секунд ичинде."
+  
+# =========================================
+# Плагиндин билдирүүлөрү
 # =========================================
 messages:
-  no-permission: "&cDu har inte behörighet att använda detta kommando."
-  reload-success: "&aSpawner-systemets konfiguration laddades om framgångsrikt."
-  wrong-subcommand: "&aAnvändning: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aAnvändning: /spsystem pickaxegive <spelare> <1-100>"
-  command-disabled: "&c'pickaxegive' kommandot är endast tillgängligt i 'avancerad' läge."
-  player-not-found: "&cSpelaren hittades inte: %player%"
-  not-a-number: "&cAntalet användningar måste vara ett nummer."
-  max-uses-limit: "&cMaximalt antal användningar är 100."
-  pickaxe-given-sender: "&a%player% fick Spawner Hacka med %uses% användningar."
-  pickaxe-given-recipient: "&bDu har fått en speciell spawner hacka!"
-  spawner-collected: "&aSpawner lades till i ditt inventory!"
-  pickaxe-broken: "&aDin Spawner Hacka gick sönder!"
-  natural-spawner-break-denied: "&cNaturliga spawners är skyddade och kan inte brytas."
-  sp-pickaxe-only: "&cDenna speciella hacka kan endast bryta spawner!"
-  inventory-full: "&aDitt inventory är fullt, spawner släpptes!"
-  classic-silk-required: "&cSpawner kan endast brytas med Silk Touch Hacka!"
-  advanced-pickaxe-required: "&cSpawner kan endast brytas med special Spawner Hacka!"
-  empty-spawner-break-denied: "&cDu kan inte bryta en tom spawner!"
-  spawner-given-sender: "&a%player% fick %type% spawner."
-  spawner-given-recipient: "&bDu har fått %type% spawner!"
+  no-permission: "&cБул команда колдонууга уруксатыңыз жок."
+  reload-success: "&aSpawner системасынын конфигурациясы ийгиликтүү кайрадан жүктөлдү."
+  wrong-subcommand: "&aКолдонуу: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aКолдонуу: /spsystem pickaxegive <ойунчу> <1-100>"
+  command-disabled: "&c'pickaxegive' командасы 'advanced' (жетилтирилген) режимде гана жеткиликтүү."
+  player-not-found: "&cОюнчу табылган жок: %player%"
+  not-a-number: "&cКолдонулуштардын саны сан болушу керек."
+  max-uses-limit: "&cКолдонулуштардын максималдуу саны 100."
+  pickaxe-given-sender: "&a%player% %uses% колдонулушу бар Spawner Киркасы алды."
+  pickaxe-given-recipient: "&bСиз өзгөчө Spawner Киркасы алдыңыз!"
+  spawner-collected: "&aSpawner ийгиликтүү инвентарыңызга кошулду!"
+  pickaxe-broken: "&aСиздин Spawner Киркаңыз сынды!"
+  natural-spawner-break-denied: "&cТабигый spawnerлер коргоого алынган жана бузулбайт."
+  sp-pickaxe-only: "&cБул өзгөчө кирка тектеш spawnerлерди гана бузууга мүмкүндүк берет!"
+  inventory-full: "&aИнвентарыңыз толуп калды, spawner жерге түштү!"
+  classic-silk-required: "&cSpawnerлерди тек гана Silk Touch Киркасы менен бузууга болот!"
+  advanced-pickaxe-required: "&cSpawnerлерди тек гана өзгөчө Spawner Киркасы менен бузууга болот!"
+  empty-spawner-break-denied: "&cБош spawnerди бузууга болбойт!"
+  spawner-given-sender: "&a%player% %type% spawner алды."
+  spawner-given-recipient: "&bСиз %type% spawner алдыңыз!"
+  chunk-limit-exceeded: "&cБул чанкка дагы спавнерлерди коюуга болбойт!"
+  egg-chunk-limit-exceeded: "&cБул chunkта сиз %type% түрүнөн эң көп дегенде %limit% mob спавндей аласыз!"
+  
+# =========================================
+# Entity түрлөрү
+# =========================================
+entity-types:
+  ALLAY: Алай
+  ARMADILLO: Армадилло
+  ARMOR_STAND: Курал-жарак таягы
+  AXOLOTL: Аксолотль
+  BAT: Жарганат
+  BEE: Аары
+  BLAZE: Блейз
+  BOAT: Кайык
+  BOGGED: Батпактуу
+  BREEZE: Желчик
+  CAMEL: Төө
+  CAT: Мышык
+  CAVE_SPIDER: Үңкүр жөргөмүш
+  CHICKEN: Тоок
+  COD: Треска
+  COW: Уй
+  CREEPER: Крипер
+  CREAKING: Кырылдоочу
+  DOLPHIN: Дельфин
+  DONKEY: Эшек
+  DROWNED: Чөгүп калган
+  ELDER_GUARDIAN: Улуу коргоочу
+  ENDERMAN: Эндерман
+  ENDERMITE: Эндермит
+  ENDER_DRAGON: Эндер ажыдаары
+  EVOKER: Чакыруучу
+  EXPERIENCE_BOTTLE: Тажрыйба шишеси
+  EXPERIENCE_ORB: Тажрыйба шары
+  FOX: Түлкү
+  FROG: Бака
+  GHAST: Гаст
+  GIANT: Дөө
+  GLOW_SQUID: Жаркырак кальмар
+  GOAT: Эчки
+  GUARDIAN: Коргоочу
+  HOGLIN: Хоглин
+  HORSE: Ат
+  HUSK: Кургак
+  ILLUSIONER: Иллюзионист
+  IRON_GOLEM: Темир голем
+  LLAMA: Лама
+  MAGMA_CUBE: Магма кубу
+  MINECART: Шахта арбасы
+  MINECART_CHEST: Сандыктуу шахта арбасы
+  MINECART_COMMAND: Буйрук блогу менен шахта арбасы
+  MINECART_FURNACE: Меш менен шахта арбасы
+  MINECART_HOPPER: Жылгыч менен шахта арбасы
+  MINECART_SPAWNER: Спаунер менен шахта арбасы
+  MINECART_TNT: ТНТ менен шахта арбасы
+  MULE: Качыр
+  MUSHROOM_COW: Козу карын уй
+  OCELOT: Оцелот
+  PANDA: Панда
+  PARROT: Тоту
+  PHANTOM: Фантом
+  PIG: Чочко
+  PIGLIN: Пиглин
+  PIGLIN_BRUTE: Пиглин бруту
+  PILLAGER: Талаңчы
+  POLAR_BEAR: Ак аюу
+  PUFFERFISH: Шишимик балык
+  RABBIT: Коён
+  RAVAGER: Жапайы
+  SALMON: Семга
+  SHEEP: Кой
+  SHULKER: Шалкер
+  SILVERFISH: Күмүш балык
+  SKELETON: Скелет
+  SKELETON_HORSE: Скелет ат
+  SLIME: Слайм
+  SNIFFER: Жыттоочу
+  SNOWMAN: Кар киши
+  SPIDER: Жөргөмүш
+  SQUID: Кальмар
+  STRAY: Адашкан
+  STRIDER: Страйдер
+  TADPOLE: Бакача
+  TRADER_LLAMA: Соодагер ламасы
+  TROPICAL_FISH: Тропикалык балык
+  TURTLE: Таш бака
+  VEX: Векс
+  VILLAGER: Айыл өлкөсү
+  VINDICATOR: Кек алуучу
+  WANDERING_TRADER: Кезген соодагер
+  WARDEN: Каракчы
+  WITCH: Мазакчы
+  WITHER: Витер
+  WITHER_SKELETON: Витер скелети
+  WOLF: Карышкыр
+  ZOGLIN: Зоглин
+  ZOMBIE: Зомби
+  ZOMBIE_HORSE: Зомби ат
+  ZOMBIE_VILLAGER: Зомби айыл өлкөсү
+  ZOMBIFIED_PIGLIN: Зомбиленген пиглин

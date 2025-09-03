@@ -6,12 +6,12 @@
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# Spawner baltası ayarları
+# Spawner kazması ayarları
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&lSpawner Baltası"
+  name: "&b&lSpawner Kazması"
   lore:
-    - "&7Spawner-i qırmaq üçün bu baltanı istifadə edin."
+    - "&7Spawner-i qırmaq üçün bu kazmanı istifadə edin."
     - "&e"
     - "&aQalan istifadə: &c%uses%"
 
@@ -19,8 +19,8 @@ spawner-pickaxe-item:
 # Mod etiketləri (İnkişaf etmiş və ya Klasik)
 # =========================================
 mode-tags:
-  advanced: "Spawner Baltası"
-  classic: "İpək Toxunuşlu Balta"
+  advanced: "Spawner Kazması"
+  classic: "İpək Toxunuşlu Kazma"
 
 # =========================================
 # Spawner əşyası ayarları
@@ -33,6 +33,22 @@ spawner-item:
     - "&7Canavar növü: &a%type%"
 
 # =========================================
+# Spawner Hologram Ayarları
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7%mode% ilə qırmaq olar"
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob Hologram Ayarları
+# =========================================
+mob-remove-warning:
+  - "&cBu mob silinəcək"
+  - "&eƏgər ərazini tərk etməsə, %time% saniyə ərzində."
+  
+# =========================================
 # Plugin mesajları
 # =========================================
 messages:
@@ -44,15 +60,116 @@ messages:
   player-not-found: "&cOyunçu tapılmadı: %player%"
   not-a-number: "&cİstifadə sayı rəqəm olmalıdır."
   max-uses-limit: "&cMaksimum istifadə sayı 100-dür."
-  pickaxe-given-sender: "&a%player% oyunçusuna %uses% istifadəlik Spawner Baltası verildi."
-  pickaxe-given-recipient: "&bXüsusi bir spawner baltası aldınız!"
+  pickaxe-given-sender: "&a%player% oyunçusuna %uses% istifadəlik Spawner Kazması verildi."
+  pickaxe-given-recipient: "&bXüsusi bir spawner kazması aldınız!"
   spawner-collected: "&aSpawner uğurla inventarınıza əlavə edildi!"
-  pickaxe-broken: "&aSpawner baltanız qırıldı!"
+  pickaxe-broken: "&aSpawner kazmanız qırıldı!"
   natural-spawner-break-denied: "&cTəbii spawner-lar qorunur və qırıla bilməz."
-  sp-pickaxe-only: "&cBu xüsusi balta yalnız spawner qırmaq üçün istifadə edilə bilər!"
+  sp-pickaxe-only: "&cBu xüsusi kazma yalnız spawner qırmaq üçün istifadə edilə bilər!"
   inventory-full: "&aİnventar doludur, spawner yerə düşdü!"
-  classic-silk-required: "&cSpawner-ları yalnız İpək Toxunuşlu balta ilə qıra bilərsiniz!"
-  advanced-pickaxe-required: "&cSpawner-ları yalnız xüsusi Spawner Baltası ilə qıra bilərsiniz!"
+  classic-silk-required: "&cSpawner-ları yalnız İpək Toxunuşlu kazma ilə qıra bilərsiniz!"
+  advanced-pickaxe-required: "&cSpawner-ları yalnız xüsusi Spawner Kazması ilə qıra bilərsiniz!"
   empty-spawner-break-denied: "&cBoş spawner-ları qıra bilməzsiniz!"
   spawner-given-sender: "&a%player% oyunçusuna %type% spawner verildi."
   spawner-given-recipient: "&bBir %type% spawner aldınız!"
+  chunk-limit-exceeded: "&cBu chunkda daha çox spawner yerləşdirə bilməzsiniz!"
+  egg-chunk-limit-exceeded: "&cBu chunkda %type% növündən ən çox %limit% mob spavn edə bilərsiniz!"
+  
+# =========================================
+# Varlıq Növləri
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Zireh Dəsti
+  AXOLOTL: Aksolotl
+  BAT: Yarasa
+  BEE: Arı
+  BLAZE: Blaze
+  BOAT: Qayıq
+  BOGGED: Bataqlıq
+  BREEZE: Briz
+  CAMEL: Dəvə
+  CAT: Pişik
+  CAVE_SPIDER: Mağara Hörümçəyi
+  CHICKEN: Toyuq
+  COD: Treska
+  COW: İnək
+  CREEPER: Creeper
+  CREAKING: Cırıltı
+  DOLPHIN: Delfin
+  DONKEY: Eşşək
+  DROWNED: Batmış
+  ELDER_GUARDIAN: Yaşlı Gözətçi
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Ender Əjdahası
+  EVOKER: Evoker
+  EXPERIENCE_BOTTLE: Təcrübə Şüşəsi
+  EXPERIENCE_ORB: Təcrübə Topu
+  FOX: Tülkü
+  FROG: Qurbağa
+  GHAST: Ghast
+  GIANT: Nəhəng
+  GLOW_SQUID: Parlayan Kalmar
+  GOAT: Keçi
+  GUARDIAN: Gözətçi
+  HOGLIN: Hoqlin
+  HORSE: At
+  HUSK: Quru
+  ILLUSIONER: İllüziyaçı
+  IRON_GOLEM: Dəmir Golem
+  LLAMA: Lama
+  MAGMA_CUBE: Maqma Kubu
+  MINECART: Vagon
+  MINECART_CHEST: Sandıqlı Vagon
+  MINECART_COMMAND: Əmər Bloklu Vagon
+  MINECART_FURNACE: Sobalu Vagon
+  MINECART_HOPPER: Haznəli Vagon
+  MINECART_SPAWNER: Spawnerli Vagon
+  MINECART_TNT: TNT-li Vagon
+  MULE: Qatır
+  MUSHROOM_COW: Göbələk İnəyi
+  OCELOT: Oselot
+  PANDA: Panda
+  PARROT: Tutuquşu
+  PHANTOM: Fantom
+  PIG: Donuz
+  PIGLIN: Piqlin
+  PIGLIN_BRUTE: Piqlin Brutu
+  PILLAGER: Yağmacı
+  POLAR_BEAR: Qütb Ayısı
+  PUFFERFISH: Şişən Balıq
+  RABBIT: Dovşan
+  RAVAGER: Dağıdıcı
+  SALMON: Qızılbalıq
+  SHEEP: Qoyun
+  SHULKER: Şalker
+  SILVERFISH: Gümüş Balığı
+  SKELETON: Skelet
+  SKELETON_HORSE: Skelet At
+  SLIME: Slaym
+  SNIFFER: İyləyici
+  SNOWMAN: Qar Adamı
+  SPIDER: Hörümçək
+  SQUID: Kalmar
+  STRAY: Avara
+  STRIDER: Strayder
+  TADPOLE: Çömçəquyruq
+  TRADER_LLAMA: Tacir Laması
+  TROPICAL_FISH: Tropik Balıq
+  TURTLE: Tısbağa
+  VEX: Veks
+  VILLAGER: Kəndli
+  VINDICATOR: Müdafiəçi
+  WANDERING_TRADER: Səyyar Tacir
+  WARDEN: Mühafizəçi
+  WITCH: Cadugər
+  WITHER: Vizer
+  WITHER_SKELETON: Vizer Skeleti
+  WOLF: Canavar
+  ZOGLIN: Zoqlin
+  ZOMBIE: Zombi
+  ZOMBIE_HORSE: Zombi At
+  ZOMBIE_VILLAGER: Zombi Kəndli
+  ZOMBIFIED_PIGLIN: Zombiləşmiş Piqlin

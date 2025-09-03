@@ -1,0 +1,175 @@
+# ===============================
+# Ficheiro de Idioma do Sistema de Spawners
+# ===============================
+
+# Prefixo para todas as mensagens do plugin
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Configurações do Item Picareta de Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lPicareta de Spawner"
+  lore:
+    - "&7Usa esta picareta para partir spawners."
+    - "&e"
+    - "&aUsos restantes: &c%uses%"
+
+# =========================================
+# Tags de Modo (Avançado ou Clássico)
+# =========================================
+mode-tags:
+  advanced: "Picareta de Spawner"
+  classic: "Picareta com Toque de Seda"
+
+# =========================================
+# Configurações do Item Spawner
+# =========================================
+spawner-item:
+  name: "&aSpawner de %type%"
+  lore:
+    - "&7Coloca este spawner para gerar monstros."
+    - "&7Pode ser partido com: &e%mode%"
+    - "&7Tipo de entidade: &a%type%"
+
+# =========================================
+# Configurações do Holograma do Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&aSpawner de %type% "
+  break_with: "&7Pode ser partido com %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Configurações de Holograma de Mob
+# =========================================
+mob-remove-warning:
+  - "&cEste mob será removido"
+  - "&eDentro de %time% s se não sair da área."
+  
+# =========================================
+# Mensagens do Plugin
+# =========================================
+messages:
+  no-permission: "&cNão tens permissão para usar este comando."
+  reload-success: "&aConfiguração do sistema de spawner recarregada con sucesso."
+  wrong-subcommand: "&aUso: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aUso: /spsystem pickaxegive <jogador> <1-100>"
+  command-disabled: "&cO comando 'pickaxegive' está disponível apenas no modo 'avançado'."
+  player-not-found: "&cJogador não encontrado: %player%"
+  not-a-number: "&cA quantidade de usos deve ser um número."
+  max-uses-limit: "&cO limite máximo de usos é 100."
+  pickaxe-given-sender: "&aDeste a Picareta de Spawner com %uses% usos a %player%."
+  pickaxe-given-recipient: "&bRecebeste uma picareta especial de spawner!"
+  spawner-collected: "&aSpawner adicionado ao teu inventário com sucesso!"
+  pickaxe-broken: "&aA tua picareta de spawner partiu-se!"
+  natural-spawner-break-denied: "&cSpawners naturais estão protegidos e não podem ser partidos."
+  sp-pickaxe-only: "&cEsta picareta especial só pode ser usada para partir spawners!"
+  inventory-full: "&aO teu inventário estava cheio, então o spawner foi largado no chão!"
+  classic-silk-required: "&cSó podes partir spawners con una picareta encantada com Toque de Seda!"
+  advanced-pickaxe-required: "&cSó podes partir spawners com a Picareta de Spawner especial!"
+  empty-spawner-break-denied: "&cNão podes partir este spawner vazio!"
+  spawner-given-sender: "&aDeste um spawner de %type% a %player%."
+  spawner-given-recipient: "&bRecebeste um spawner de %type%!"
+  chunk-limit-exceeded: "&cNão podes colocar mais spawners neste chunk!"
+  egg-chunk-limit-exceeded: "&cNeste chunk, você só pode spawnar %limit% mobs do tipo %type%!"
+  
+# =========================================
+# Tipos de Entidades
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Tatu
+  ARMOR_STAND: Suporte de Armadura
+  AXOLOTL: Axolote
+  BAT: Morcego
+  BEE: Abelha
+  BLAZE: Blaze
+  BOAT: Barco
+  BOGGED: Alagado
+  BREEZE: Brisa
+  CAMEL: Camelo
+  CAT: Gato
+  CAVE_SPIDER: Aranha da Caverna
+  CHICKEN: Galinha
+  COD: Bacalhau
+  COW: Vaca
+  CREEPER: Creeper
+  CREAKING: Rangente
+  DOLPHIN: Golfinho
+  DONKEY: Burro
+  DROWNED: Afogado
+  ELDER_GUARDIAN: Guardião Ancião
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dragão do End
+  EVOKER: Evocador
+  EXPERIENCE_BOTTLE: Frasco de Experiência
+  EXPERIENCE_ORB: Orbe de Experiência
+  FOX: Raposa
+  FROG: Sapo
+  GHAST: Ghast
+  GIANT: Gigante
+  GLOW_SQUID: Lula Brilhante
+  GOAT: Cabra
+  GUARDIAN: Guardião
+  HOGLIN: Hoglin
+  HORSE: Cavalo
+  HUSK: Husk
+  ILLUSIONER: Ilusionista
+  IRON_GOLEM: Golem de Ferro
+  LLAMA: Lhama
+  MAGMA_CUBE: Cubo de Magma
+  MINECART: Carrinho de Minas
+  MINECART_CHEST: Carrinho com Baú
+  MINECART_COMMAND: Carrinho com Bloco de Comando
+  MINECART_FURNACE: Carrinho com Fornalha
+  MINECART_HOPPER: Carrinho com Funil
+  MINECART_SPAWNER: Carrinho com Gerador
+  MINECART_TNT: Carrinho com TNT
+  MULE: Mula
+  MUSHROOM_COW: Vaca Cogumelo
+  OCELOT: Jaguatirica
+  PANDA: Panda
+  PARROT: Papagaio
+  PHANTOM: Fantasma
+  PIG: Porco
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Bruto
+  PILLAGER: Saqueador
+  POLAR_BEAR: Urso Polar
+  PUFFERFISH: Baiacu
+  RABBIT: Coelho
+  RAVAGER: Devastador
+  SALMON: Salmão
+  SHEEP: Ovelha
+  SHULKER: Shulker
+  SILVERFISH: Traça
+  SKELETON: Esqueleto
+  SKELETON_HORSE: Cavalo Esqueleto
+  SLIME: Slime
+  SNIFFER: Farejador
+  SNOWMAN: Boneco de Neve
+  SPIDER: Aranha
+  SQUID: Lula
+  STRAY: Stray
+  STRIDER: Strider
+  TADPOLE: Girino
+  TRADER_LLAMA: Lhama do Comerciante
+  TROPICAL_FISH: Peixe Tropical
+  TURTLE: Tartaruga
+  VEX: Vex
+  VILLAGER: Aldeão
+  VINDICATOR: Vingador
+  WANDERING_TRADER: Comerciante Ambulante
+  WARDEN: Guardião
+  WITCH: Bruxa
+  WITHER: Wither
+  WITHER_SKELETON: Esqueleto Wither
+  WOLF: Lobo
+  ZOGLIN: Zoglin
+  ZOMBIE: Zumbi
+  ZOMBIE_HORSE: Cavalo Zumbi
+  ZOMBIE_VILLAGER: Aldeão Zumbi
+  ZOMBIFIED_PIGLIN: Piglin Zombificado

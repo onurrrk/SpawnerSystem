@@ -33,6 +33,22 @@ spawner-item:
     - "&7نوع الكائن: &a%type%"
 
 # =========================================
+# إعدادات الهولوجرام للسباونر
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% سبونر "
+  break_with: "&7يمكن كسره باستخدام %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# إعدادات الهولوجرام للكائنات
+# =========================================
+mob-remove-warning:
+  - "&cسيتم إزالة هذا الكائن"
+  - "&eخلال %time% ثانية إذا لم يغادر المنطقة."
+  
+# =========================================
 # رسائل الإضافة
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cلا يمكنك كسر سبونر فارغ!"
   spawner-given-sender: "&aتم إعطاء %player% سبونر %type%."
   spawner-given-recipient: "&bلقد استلمت سبونر %type%!"
+  chunk-limit-exceeded: "&cلا يمكنك وضع المزيد من السباونر في هذه القطعة!"
+  egg-chunk-limit-exceeded: "&cفي هذه القطعة، يمكنك فقط إنشاء %limit% من الكائنات من نوع %type%!"
+  
+# =========================================
+# أنواع الكيانات
+# =========================================
+entity-types:
+  ALLAY: أللي
+  ARMADILLO: أرماديلو
+  ARMOR_STAND: حامل الدروع
+  AXOLOTL: أكسولوتل
+  BAT: خفاش
+  BEE: نحلة
+  BLAZE: بليز
+  BOAT: قارب
+  BOGGED: المستنقعي
+  BREEZE: نسيم
+  CAMEL: جمل
+  CAT: قط
+  CAVE_SPIDER: عنكبوت الكهوف
+  CHICKEN: دجاجة
+  COD: سمك القد
+  COW: بقرة
+  CREEPER: كريبر
+  CREAKING: صار
+  DOLPHIN: دلفين
+  DONKEY: حمار
+  DROWNED: غارق
+  ELDER_GUARDIAN: الحارس الكبير
+  ENDERMAN: إندرمان
+  ENDERMITE: إندرميت
+  ENDER_DRAGON: تنين الإندر
+  EVOKER: المستحضر
+  EXPERIENCE_BOTTLE: زجاجة الخبرة
+  EXPERIENCE_ORB: كرة الخبرة
+  FOX: ثعلب
+  FROG: ضفدع
+  GHAST: غاست
+  GIANT: عملاق
+  GLOW_SQUID: حبار متوهج
+  GOAT: ماعز
+  GUARDIAN: حارس
+  HOGLIN: هوغلين
+  HORSE: حصان
+  HUSK: هاسك
+  ILLUSIONER: الوهمي
+  IRON_GOLEM: جولم حديدي
+  LLAMA: لاما
+  MAGMA_CUBE: مكعب ماجما
+  MINECART: عربة منجم
+  MINECART_CHEST: عربة منجم بصندوق
+  MINECART_COMMAND: عربة منجم بكتلة أوامر
+  MINECART_FURNACE: عربة منجم بفرن
+  MINECART_HOPPER: عربة منجم بقمع
+  MINECART_SPAWNER: عربة منجم بمُنتِج
+  MINECART_TNT: عربة منجم بمادة تي إن تي
+  MULE: بغل
+  MUSHROOM_COW: بقرة فطرية
+  OCELOT: أوصلوت
+  PANDA: باندا
+  PARROT: ببغاء
+  PHANTOM: فانتوم
+  PIG: خنزير
+  PIGLIN: بيغلين
+  PIGLIN_BRUTE: بيغلين وحشي
+  PILLAGER: نهّاب
+  POLAR_BEAR: دب قطبي
+  PUFFERFISH: سمكة منتفخة
+  RABBIT: أرنب
+  RAVAGER: مدمر
+  SALMON: سلمون
+  SHEEP: خروف
+  SHULKER: شولكر
+  SILVERFISH: سمكة فضية
+  SKELETON: هيكل عظمي
+  SKELETON_HORSE: حصان هيكل عظمي
+  SLIME: سلايم
+  SNIFFER: المستنشق
+  SNOWMAN: رجل ثلج
+  SPIDER: عنكبوت
+  SQUID: حبار
+  STRAY: تائه
+  STRIDER: سترايدر
+  TADPOLE: شرغوف
+  TRADER_LLAMA: لاما تاجر
+  TROPICAL_FISH: سمكة استوائية
+  TURTLE: سلحفاة
+  VEX: فيكس
+  VILLAGER: قروي
+  VINDICATOR: منتقم
+  WANDERING_TRADER: تاجر متجول
+  WARDEN: الحارس
+  WITCH: ساحرة
+  WITHER: ويذر
+  WITHER_SKELETON: هيكل ويذر العظمي
+  WOLF: ذئب
+  ZOGLIN: زوغلين
+  ZOMBIE: زومبي
+  ZOMBIE_HORSE: حصان زومبي
+  ZOMBIE_VILLAGER: قروي زومبي
+  ZOMBIFIED_PIGLIN: بيغلين زومبي

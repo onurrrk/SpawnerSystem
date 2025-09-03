@@ -1,0 +1,175 @@
+# ===============================
+# پرونده زبان سیستم اسپانر
+# ===============================
+
+# پیشوند برای همه پیام های پلاگین
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# تنظیمات آیتم کلنگ اسپانر
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lکلنگ اسپانر"
+  lore:
+    - "&7از این کلنگ برای شکستن اسپانرها استفاده کن."
+    - "&e"
+    - "&aتعداد استفاده باقی مانده: &c%uses%"
+
+# =========================================
+# برچسب های حالت (پیشرفته یا کلاسیک)
+# =========================================
+mode-tags:
+  advanced: "کلنگ اسپانر"
+  classic: "کلنگ لمسی ابریشمی"
+
+# =========================================
+# تنظیمات آیتم اسپانر
+# =========================================
+spawner-item:
+  name: "&aاسپانر %type%"
+  lore:
+    - "&7این اسپانر را قرار بده تا موجود spawn کند"
+    - "&7قابل شکستن با: &e%mode%"
+    - "&7نوع موجود: &a%type%"
+
+# =========================================
+# تنظیمات هولوگرام اسپانر
+# =========================================
+spawnable-status:
+  mob_type: "&aاسپانر %type% "
+  break_with: "&7قابل شکستن با %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# تنظیمات هولوگرام Mob
+# =========================================
+mob-remove-warning:
+  - "&cاین mob حذف خواهد شد"
+  - "&eدر صورت ترک نکردن منطقه، طی %time% ثانیه"
+  
+# =========================================
+# پیام های پلاگین
+# =========================================
+messages:
+  no-permission: "&cشما مجوز استفاده از این دستور را ندارید."
+  reload-success: "&aپیکربندی سیستم اسپانر با موفقیت بارگذاری مجدد شد."
+  wrong-subcommand: "&aکاربرد: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aکاربرد: /spsystem pickaxegive <بازیکن> <1-100>"
+  command-disabled: "&cدستور 'pickaxegive' فقط در حالت 'پیشرفته' در دسترس است."
+  player-not-found: "&cبازیکن پیدا نشد: %player%"
+  not-a-number: "&cمقدار استفاده باید یک عدد باشد."
+  max-uses-limit: "&cحداکثر استفاده مجاز 100 است."
+  pickaxe-given-sender: "&aکلنگ اسپانر با %uses% استفاده به %player% داده شد."
+  pickaxe-given-recipient: "&bشما یک کلنگ اسپانر ویژه دریافت کردید!"
+  spawner-collected: "&aاسپانر با موفقیت به موجودی شما اضافه شد!"
+  pickaxe-broken: "&aکلنگ اسپانر شما شکست!"
+  natural-spawner-break-denied: "&cاسپانرهای طبیعی محافظت شده اند و قابل شکستن نیستند."
+  sp-pickaxe-only: "&cاین کلنگ ویژه فقط برای شکستن اسپانرها قابل استفاده است!"
+  inventory-full: "&aموجودی شما پر بود، بنابراین اسپانر روی زمین افتاد!"
+  classic-silk-required: "&cشما فقط می‌توانید اسپانرها را با یک کلنگ اِنچِنت شده با لمسی ابریشمی بشکنید!"
+  advanced-pickaxe-required: "&cشما فقط می‌توانید اسپانرها را با کلنگ اسپانر ویژه بشکنید!"
+  empty-spawner-break-denied: "&cشما نمی‌توانید این اسپانر خالی را بشکنید!" 
+  spawner-given-sender: "&aاسپانر %type% به %player% داده شد."
+  spawner-given-recipient: "&bشما یک اسپانر %type% دریافت کردید!" 
+  chunk-limit-exceeded: "&cشما نمی‌توانید اسپانرهای بیشتری در این چانک قرار دهید!" 
+  egg-chunk-limit-exceeded: "&cدر این چانک، شما فقط می‌توانید حداکثر %limit% موب از نوع %type% اسپان کنید!"
+  
+# =========================================
+# انواع موجودیت ها
+# =========================================
+entity-types:
+  ALLAY: الی
+  ARMADILLO: آرمادیلو
+  ARMOR_STAND: پایه زره
+  AXOLOTL: آکسولوتل
+  BAT: خفاش
+  BEE: زنبور
+  BLAZE: بلیز
+  BOAT: قایق
+  BOGGED: باتلاقی
+  BREEZE: نسیم
+  CAMEL: شتر
+  CAT: گربه
+  CAVE_SPIDER: عنکبوت غار
+  CHICKEN: مرغ
+  COD: ماهی کاد
+  COW: گاو
+  CREEPER: کریپر
+  CREAKING: جیرجیرکننده
+  DOLPHIN: دلفین
+  DONKEY: الاغ
+  DROWNED: غرق شده
+  ELDER_GUARDIAN: نگهبان بزرگ
+  ENDERMAN: اندرمن
+  ENDERMITE: اندرمایت
+  ENDER_DRAGON: اژدهای اندر
+  EVOKER: احضارکننده
+  EXPERIENCE_BOTTLE: بطری تجربه
+  EXPERIENCE_ORB: گوی تجربه
+  FOX: روباه
+  FROG: قورباغه
+  GHAST: غاست
+  GIANT: غول
+  GLOW_SQUID: ماهی مرکب درخشنده
+  GOAT: بز
+  GUARDIAN: نگهبان
+  HOGLIN: هاگلین
+  HORSE: اسب
+  HUSK: پوسته
+  ILLUSIONER: иллюзионист
+  IRON_GOLEM: گولم آهنی
+  LLAMA: لاما
+  MAGMA_CUBE: مکعب ماگما
+  MINECART: ماین کارت
+  MINECART_CHEST: ماین کارت با صندوق
+  MINECART_COMMAND: ماین کارت با بلوک دستور
+  MINECART_FURNACE: ماین کارت با کوره
+  MINECART_HOPPER: ماین کارت با قیف
+  MINECART_SPAWNER: ماین کارت با اسپانر
+  MINECART_TNT: ماین کارت با TNT
+  MULE: قاطر
+  MUSHROOM_COW: گاو قارچی
+  OCELOT: اوسلوت
+  PANDA: پاندا
+  PARROT: طوطی
+  PHANTOM: فانتوم
+  PIG: خوک
+  PIGLIN: پیگلین
+  PIGLIN_BRUTE: پیگلین وحشی
+  PILLAGER: غارتگر
+  POLAR_BEAR: خرس قطبی
+  PUFFERFISH: ماهی بادکنکی
+  RABBIT: خرگوش
+  RAVAGER: ویرانگر
+  SALMON: ماهی سالمون
+  SHEEP: گوسفند
+  SHULKER: شالکر
+  SILVERFISH: ماهی نقرهای
+  SKELETON: اسکلت
+  SKELETON_HORSE: اسب اسکلتی
+  SLIME: اسلایم
+  SNIFFER: بوکش
+  SNOWMAN: آدم برفی
+  SPIDER: عنکبوت
+  SQUID: ماهی مرکب
+  STRAY: سرگردان
+  STRIDER: استرایدر
+  TADPOLE: بچه قورباغه
+  TRADER_LLAMA: لامای تاجر
+  TROPICAL_FISH: ماهی گرمسیری
+  TURTLE: لاک پشت
+  VEX: وکس
+  VILLAGER: روستایی
+  VINDICATOR: انتقامجو
+  WANDERING_TRADER: تاجر دورهگرد
+  WARDEN: نگهبان
+  WITCH: جادوگر
+  WITHER: ویتر
+  WITHER_SKELETON: اسکلت ویتر
+  WOLF: گرگ
+  ZOGLIN: زوگلین
+  ZOMBIE: زامبی
+  ZOMBIE_HORSE: اسب زامبی
+  ZOMBIE_VILLAGER: روستایی زامبی
+  ZOMBIFIED_PIGLIN: پیگلین زامبی شده

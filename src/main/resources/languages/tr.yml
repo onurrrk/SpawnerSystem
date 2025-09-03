@@ -29,8 +29,24 @@ spawner-item:
   name: "&a%type% Spawner"
   lore:
     - "&7Bu spawnerı yerleştirerek canavar çıkarabilirsin."
-    - "&7Sadece şu ile kırılabilir: &e%mode%"
+    - "&7Sadece Şununla kırılabilir: &e%mode%"
     - "&7Varlık Türü: &a%type%"
+
+# =========================================
+# Spawner Hologram Ayarları
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7%mode% ile kırılabilir "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+  
+# =========================================
+# Yaratık Hologram Ayarları
+# =========================================
+mob-remove-warning:
+  - "&cBu yaratık bölgeden ayrılmazsa"
+  - "&e%time%s içinde silinecek."
 
 # =========================================
 # Eklenti Mesajları
@@ -56,3 +72,101 @@ messages:
   empty-spawner-break-denied: "&cBoş spawnerları kıramazsın!"
   spawner-given-sender: "&a%player% oyuncusuna %type% spawner verildi."
   spawner-given-recipient: "&bBir %type% spawner aldınız!"
+  chunk-limit-exceeded: "&cBu chunk'a daha fazla spawner yerleştiremezsin!"
+  egg-chunk-limit-exceeded: "&cBu chunk'ta %type% türünden en fazla %limit% mob spawn edebilirsin!"
+  
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Tatu
+  ARMOR_STAND: Zırh Standı
+  AXOLOTL: Aksolotl
+  BAT: Yarasa
+  BEE: Arı
+  BLAZE: Blaze
+  BOAT: Tekne
+  BOGGED: Bogged
+  BREEZE: Breeze
+  CAMEL: Deve
+  CAT: Kedi
+  CAVE_SPIDER: Mağara Örümceği
+  CHICKEN: Tavuk
+  COD: Morina Balığı
+  COW: İnek
+  CREEPER: Creeper
+  CREAKING: Creaking
+  DOLPHIN: Yunus
+  DONKEY: Eşek
+  DROWNED: Boğulmuş
+  ELDER_GUARDIAN: Kadim Gardiyan
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Ender Ejderhası
+  EVOKER: Büyücü
+  EXPERIENCE_BOTTLE: Deneyim Şişesi
+  EXPERIENCE_ORB: Deneyim Küresi
+  FOX: Tilki
+  FROG: Kurbağa
+  GHAST: Ghast
+  GIANT: Dev
+  GLOW_SQUID: Işıklı Mürekkep Balığı
+  GOAT: Keçi
+  GUARDIAN: Gardiyan
+  HOGLIN: Hoglin
+  HORSE: At
+  HUSK: Kurutulmuş Zombi
+  ILLUSIONER: Büyücü Illusioner
+  IRON_GOLEM: Demir Golem
+  LLAMA: Lama
+  MAGMA_CUBE: Magma Küpü
+  MINECART: Vagon
+  MINECART_CHEST: Sandıklı Vagon
+  MINECART_COMMAND: Komut Bloklu Vagon
+  MINECART_FURNACE: Fırınlı Vagon
+  MINECART_HOPPER: Hunili Vagon
+  MINECART_SPAWNER: Üretici Vagon
+  MINECART_TNT: TNT'li Vagon
+  MULE: Katır
+  MUSHROOM_COW: Mantar İneği
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papağan
+  PHANTOM: Hayalet
+  PIG: Domuz
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Zorbası
+  PILLAGER: Yağmacı
+  POLAR_BEAR: Kutup Ayısı
+  PUFFERFISH: Kirpi Balığı
+  RABBIT: Tavşan
+  RAVAGER: Yıkıcı
+  SALMON: Somon
+  SHEEP: Koyun
+  SHULKER: Shulker
+  SILVERFISH: Gümüş Balığı
+  SKELETON: İskelet
+  SKELETON_HORSE: İskelet At
+  SLIME: Balçık
+  SNIFFER: Koklayıcı
+  SNOWMAN: Kardan Adam
+  SPIDER: Örümcek
+  SQUID: Mürekkep Balığı
+  STRAY: Dolaşan İskelet
+  STRIDER: Lav Yürüyücüsü
+  TADPOLE: Kurbağa Larvası
+  TRADER_LLAMA: Tüccar Laması
+  TROPICAL_FISH: Tropikal Balık
+  TURTLE: Kaplumbağa
+  VEX: Vex
+  VILLAGER: Köylü
+  VINDICATOR: İnfazcı
+  WANDERING_TRADER: Gezen Tüccar
+  WARDEN: Gardiyan Warden
+  WITCH: Cadı
+  WITHER: Wither
+  WITHER_SKELETON: Wither İskeleti
+  WOLF: Kurt
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombi
+  ZOMBIE_HORSE: Zombi At
+  ZOMBIE_VILLAGER: Zombi Köylü
+  ZOMBIFIED_PIGLIN: Zombileşmiş Piglin

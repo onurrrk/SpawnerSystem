@@ -33,6 +33,22 @@ spawner-item:
     - "&7モンスターの種類: &a%type%"
 
 # =========================================
+# スポナー ホログラム設定
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% スポナー "
+  break_with: "&7%mode% で壊すことができます "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# モブ ホログラム設定
+# =========================================
+mob-remove-warning:
+  - "&cこのモブは削除されます"
+  - "&eエリアから出ない場合、%time%秒以内に"
+  
+# =========================================
 # プラグインメッセージ
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&c空のスポナーは破壊できません！"
   spawner-given-sender: "&a%player% に %type% スポナーを付与しました。"
   spawner-given-recipient: "&b%type% スポナーを受け取りました！"
+  chunk-limit-exceeded: "&cこのチャンクにはこれ以上スポナーを設置できません!"
+  egg-chunk-limit-exceeded: "&cこのチャンクでは、%type% を最大 %limit% 体までスポーンできます！"
+  
+# =========================================
+# エンティティの種類
+# =========================================
+entity-types:
+  ALLAY: アレイ
+  ARMADILLO: アルマジロ
+  ARMOR_STAND: 防具立て
+  AXOLOTL: ウーパールーパー
+  BAT: コウモリ
+  BEE: ミツバチ
+  BLAZE: ブレイズ
+  BOAT: ボート
+  BOGGED: ボグド
+  BREEZE: ブリーズ
+  CAMEL: ラクダ
+  CAT: 猫
+  CAVE_SPIDER: 洞窟のクモ
+  CHICKEN: ニワトリ
+  COD: タラ
+  COW: 牛
+  CREEPER: クリーパー
+  CREAKING: きしむ
+  DOLPHIN: イルカ
+  DONKEY: ロバ
+  DROWNED: ドラウンド
+  ELDER_GUARDIAN: エルダーガーディアン
+  ENDERMAN: エンダーマン
+  ENDERMITE: エンダーマイト
+  ENDER_DRAGON: エンダードラゴン
+  EVOKER: エヴォーカー
+  EXPERIENCE_BOTTLE: 経験値の瓶
+  EXPERIENCE_ORB: 経験値のオーブ
+  FOX: キツネ
+  FROG: カエル
+  GHAST: ガスト
+  GIANT: ジャイアント
+  GLOW_SQUID: グロウイカ
+  GOAT: ヤギ
+  GUARDIAN: ガーディアン
+  HOGLIN: ホグリン
+  HORSE: 馬
+  HUSK: ハスク
+  ILLUSIONER: イリュージョナー
+  IRON_GOLEM: アイアンゴーレム
+  LLAMA: ラマ
+  MAGMA_CUBE: マグマキューブ
+  MINECART: トロッコ
+  MINECART_CHEST: チェスト付きトロッコ
+  MINECART_COMMAND: コマンドブロック付きトロッコ
+  MINECART_FURNACE: かまど付きトロッコ
+  MINECART_HOPPER: ホッパー付きトロッコ
+  MINECART_SPAWNER: スポナー付きトロッコ
+  MINECART_TNT: TNT付きトロッコ
+  MULE: ラバ
+  MUSHROOM_COW: ムーシュルーム牛
+  OCELOT: オセロット
+  PANDA: パンダ
+  PARROT: オウム
+  PHANTOM: ファントム
+  PIG: 豚
+  PIGLIN: ピグリン
+  PIGLIN_BRUTE: ピグリンブルート
+  PILLAGER: ピリジャー
+  POLAR_BEAR: シロクマ
+  PUFFERFISH: フグ
+  RABBIT: ウサギ
+  RAVAGER: ラヴェジャー
+  SALMON: サーモン
+  SHEEP: 羊
+  SHULKER: シュルカー
+  SILVERFISH: シルバーフィッシュ
+  SKELETON: スケルトン
+  SKELETON_HORSE: スケルトン馬
+  SLIME: スライム
+  SNIFFER: 嗅ぎタケ
+  SNOWMAN: 雪だるま
+  SPIDER: クモ
+  SQUID: イカ
+  STRAY: ストレイ
+  STRIDER: ストライダー
+  TADPOLE: オタマジャクシ
+  TRADER_LLAMA: 行商人のラマ
+  TROPICAL_FISH: 熱帯魚
+  TURTLE: カメ
+  VEX: ベックス
+  VILLAGER: 村人
+  VINDICATOR: ヴィンディケーター
+  WANDERING_TRADER: 行商人
+  WARDEN: ウォーデン
+  WITCH: 魔女
+  WITHER: ウィザー
+  WITHER_SKELETON: ウィザースケルトン
+  WOLF: オオカミ
+  ZOGLIN: ゾグリン
+  ZOMBIE: ゾンビ
+  ZOMBIE_HORSE: ゾンビ馬
+  ZOMBIE_VILLAGER: ゾンビ村人
+  ZOMBIFIED_PIGLIN: ゾンビピグリン

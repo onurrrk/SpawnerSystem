@@ -1,58 +1,175 @@
 # ===============================
-# Spawner System Nederlands (Dutch)
+# Sistem Spawner Bahasa Indonesia
 # ===============================
 
-# Prefix voor alle plugin-berichten
+# Prefiks untuk semua pesan plugin
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# Spawner-pickaxe instellingen
+# Pengaturan Kapak Spawner
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&lSpawner-pikhouweel"
+  name: "&b&lKapak Spawner"
   lore:
-    - "&7Gebruik deze pikhouweel om de spawner te breken."
+    - "&7Gunakan kapak ini untuk memecah spawner."
     - "&e"
-    - "&aResterende gebruik: &c%uses%"
+    - "&aPenggunaan tersisa: &c%uses%"
 
 # =========================================
-# Mod-tags (Geavanceerd of Klassiek)
+# Label Mode (Advanced atau Classic)
 # =========================================
 mode-tags:
-  advanced: "Spawner-pikhouweel"
-  classic: "Zijde-aanraking pikhouweel"
+  advanced: "Kapak Spawner"
+  classic: "Kapak Sentuhan Sutra"
 
 # =========================================
-# Spawner-item instellingen
+# Pengaturan Item Spawner
 # =========================================
 spawner-item:
-  name: "&a%type% Spawner"
+  name: "&aSpawner %type%"
   lore:
-    - "&7Plaats deze spawner om monsters te spawnen."
-    - "&7Kan alleen gebroken worden met: &e%mode%"
-    - "&7Entiteitstype: &a%type%"
+    - "&7Tempatkan spawner ini untuk memunculkan monster."
+    - "&7Hanya bisa dihancurkan dengan: &e%mode%"
+    - "&7Jenis entitas: &a%type%"
 
 # =========================================
-# Plugin-berichten
+# Pengaturan Hologram Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&aSpawner %type% "
+  break_with: "&7Dapat dihancurkan dengan %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Pengaturan Hologram Mob
+# =========================================
+mob-remove-warning:
+  - "&cMob ini akan dihapus"
+  - "&eDalam %time% d jika tidak meninggalkan area."
+  
+# =========================================
+# Pesan Plugin
 # =========================================
 messages:
-  no-permission: "&cJe hebt geen toestemming om dit commando te gebruiken."
-  reload-success: "&aSpawner-systeemconfiguratie succesvol herladen."
-  wrong-subcommand: "&aGebruik: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aGebruik: /spsystem pickaxegive <speler> <1-100>"
-  command-disabled: "&cDe 'pickaxegive'-opdracht is alleen beschikbaar in de 'geavanceerde' modus."
-  player-not-found: "&cSpeler niet gevonden: %player%"
-  not-a-number: "&cAantal gebruiken moet een nummer zijn."
-  max-uses-limit: "&cMaximaal aantal gebruiken is 100."
-  pickaxe-given-sender: "&a%player% heeft een spawner-pikhouweel met %uses% gebruik gekregen."
-  pickaxe-given-recipient: "&bJe hebt een speciale spawner-pikhouweel ontvangen!"
-  spawner-collected: "&aSpawner succesvol aan je inventaris toegevoegd!"
-  pickaxe-broken: "&aJe spawner-pikhouweel is gebroken!"
-  natural-spawner-break-denied: "&cNatuurlijke spawners zijn beschermd en kunnen niet worden gebroken."
-  sp-pickaxe-only: "&cDeze speciale pikhouweel kan alleen spawners breken!"
-  inventory-full: "&aJe inventaris is vol, de spawner is op de grond gevallen!"
-  classic-silk-required: "&cSpawners kunnen alleen worden gebroken met een Zijde-aanraking pikhouweel!"
-  advanced-pickaxe-required: "&cSpawners kunnen alleen worden gebroken met een speciale Spawner-pikhouweel!"
-  empty-spawner-break-denied: "&cJe kunt een lege spawner niet breken!"
-  spawner-given-sender: "&a%player% heeft een %type% spawner gekregen."
-  spawner-given-recipient: "&bJe hebt een %type% spawner ontvangen!"
+  no-permission: "&cAnda tidak memiliki izin untuk menggunakan perintah ini."
+  reload-success: "&aKonfigurasi Sistem Spawner berhasil dimuat ulang."
+  wrong-subcommand: "&aGunakan: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aGunakan: /spsystem pickaxegive <pemain> <1-100>"
+  command-disabled: "&cPerintah 'pickaxegive' hanya tersedia dalam mode 'advanced'."
+  player-not-found: "&cPemain tidak ditemukan: %player%"
+  not-a-number: "&cJumlah penggunaan harus berupa angka."
+  max-uses-limit: "&cJumlah maksimum penggunaan adalah 100."
+  pickaxe-given-sender: "&a%player% menerima Kapak Spawner dengan %uses% penggunaan."
+  pickaxe-given-recipient: "&bAnda menerima Kapak Spawner khusus!"
+  spawner-collected: "&aSpawner berhasil ditambahkan ke inventaris Anda!"
+  pickaxe-broken: "&aKapak Spawner Anda patah!"
+  natural-spawner-break-denied: "&cSpawner alami dilindungi dan tidak dapat dihancurkan."
+  sp-pickaxe-only: "&cKapak khusus ini hanya bisa memecah spawner!"
+  inventory-full: "&aInventaris Anda penuh, spawner jatuh ke tanah!"
+  classic-silk-required: "&cSpawner hanya bisa dihancurkan dengan Kapak Sentuhan Sutra!"
+  advanced-pickaxe-required: "&cSpawner hanya bisa dihancurkan dengan Kapak Spawner khusus!"
+  empty-spawner-break-denied: "&cAnda tidak bisa memecah spawner kosong!"
+  spawner-given-sender: "&a%player% menerima spawner %type%."
+  spawner-given-recipient: "&bAnda menerima spawner %type%!"
+  chunk-limit-exceeded: "&cKamu tidak bisa menaruh lebih banyak spawner di chunk ini!"
+  egg-chunk-limit-exceeded: "&cDi chunk ini, kamu hanya bisa memunculkan maksimal %limit% mob bertipe %type%!"
+  
+# =========================================
+# Jenis Entitas
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Stand Armor
+  AXOLOTL: Axolotl
+  BAT: Kelelawar
+  BEE: Lebah
+  BLAZE: Blaze
+  BOAT: Perahu
+  BOGGED: Rawa
+  BREEZE: Angin sepoi
+  CAMEL: Unta
+  CAT: Kucing
+  CAVE_SPIDER: Laba-laba gua
+  CHICKEN: Ayam
+  COD: Ikan kod
+  COW: Sapi
+  CREEPER: Creeper
+  CREAKING: Berderit
+  DOLPHIN: Lumba-lumba
+  DONKEY: Keledai
+  DROWNED: Tenggelam
+  ELDER_GUARDIAN: Penjaga tua
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Naga Ender
+  EVOKER: Pemanggil
+  EXPERIENCE_BOTTLE: Botol pengalaman
+  EXPERIENCE_ORB: Orb pengalaman
+  FOX: Rubah
+  FROG: Katak
+  GHAST: Ghast
+  GIANT: Raksasa
+  GLOW_SQUID: Cumi bercahaya
+  GOAT: Kambing
+  GUARDIAN: Penjaga
+  HOGLIN: Hoglin
+  HORSE: Kuda
+  HUSK: Husk
+  ILLUSIONER: Ilusionis
+  IRON_GOLEM: Golem besi
+  LLAMA: Llama
+  MAGMA_CUBE: Kubus magma
+  MINECART: Kereta tambang
+  MINECART_CHEST: Kereta tambang dengan peti
+  MINECART_COMMAND: Kereta tambang dengan blok perintah
+  MINECART_FURNACE: Kereta tambang dengan tungku
+  MINECART_HOPPER: Kereta tambang dengan corong
+  MINECART_SPAWNER: Kereta tambang dengan spawner
+  MINECART_TNT: Kereta tambang dengan TNT
+  MULE: Bagal
+  MUSHROOM_COW: Sapi jamur
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Burung beo
+  PHANTOM: Phantom
+  PIG: Babi
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin brutal
+  PILLAGER: Perampok
+  POLAR_BEAR: Beruang kutub
+  PUFFERFISH: Ikan buntal
+  RABBIT: Kelinci
+  RAVAGER: Perusak
+  SALMON: Ikan salmon
+  SHEEP: Domba
+  SHULKER: Shulker
+  SILVERFISH: Gegat
+  SKELETON: Kerangka
+  SKELETON_HORSE: Kuda kerangka
+  SLIME: Slime
+  SNIFFER: Pengecap
+  SNOWMAN: Manusia salju
+  SPIDER: Laba-laba
+  SQUID: Cumi-cumi
+  STRAY: Stray
+  STRIDER: Strider
+  TADPOLE: Berudu
+  TRADER_LLAMA: Llama pedagang
+  TROPICAL_FISH: Ikan tropis
+  TURTLE: Kura-kura
+  VEX: Vex
+  VILLAGER: Penduduk
+  VINDICATOR: Pembalas
+  WANDERING_TRADER: Pedagang keliling
+  WARDEN: Penjaga
+  WITCH: Penyihir
+  WITHER: Wither
+  WITHER_SKELETON: Kerangka wither
+  WOLF: Serigala
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Kuda zombie
+  ZOMBIE_VILLAGER: Penduduk zombie
+  ZOMBIFIED_PIGLIN: Piglin terzombifikasi

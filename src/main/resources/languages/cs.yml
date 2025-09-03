@@ -31,7 +31,23 @@ spawner-item:
     - "&7Umístěním tohoto spawneru se spawnuje mob."
     - "&7Lze rozbít pouze tímto: &e%mode%"
     - "&7Typ entity: &a%type%"
+    
+# =========================================
+# Nastavení hologramu spawneru
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Lze zničit pomocí %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
 
+# =========================================
+# Nastavení Hologramu Moba
+# =========================================
+mob-remove-warning:
+  - "&cTento mob bude odstraněn"
+  - "&eDo %time% s, pokud neopustí oblast."
+  
 # =========================================
 # Zprávy pluginu
 # =========================================
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cNelze rozbít prázdný spawner!"
   spawner-given-sender: "&a%player% obdržel %type% spawner."
   spawner-given-recipient: "&bObdrželi jste %type% spawner!"
+  chunk-limit-exceeded: "&cV tomto chunku nemůžeš umístit více spawnerů!"
+  egg-chunk-limit-exceeded: "&cV tomto chunku můžeš spawnout pouze %limit% mobů typu %type%!"
+  
+# =========================================
+# Typy Entit
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Pásovec
+  ARMOR_STAND: Stojan na zbroj
+  AXOLOTL: Axolotl
+  BAT: Netopýr
+  BEE: Včela
+  BLAZE: Síto
+  BOAT: Člun
+  BOGGED: Bažinatý
+  BREEZE: Vánek
+  CAMEL: Velbloud
+  CAT: Kočka
+  CAVE_SPIDER: Jeskynní pavouk
+  CHICKEN: Slepice
+  COD: Treska
+  COW: Kráva
+  CREEPER: Creeper
+  CREAKING: Vrzavý
+  DOLPHIN: Delfín
+  DONKEY: Osel
+  DROWNED: Utopenec
+  ELDER_GUARDIAN: Starší Strážce
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdrak
+  EVOKER: Vyzývatel
+  EXPERIENCE_BOTTLE: Láhev zkušeností
+  EXPERIENCE_ORB: Koule zkušeností
+  FOX: Liška
+  FROG: Žába
+  GHAST: Ghast
+  GIANT: Obr
+  GLOW_SQUID: Světélkující chobotnice
+  GOAT: Koza
+  GUARDIAN: Strážce
+  HOGLIN: Hoglin
+  HORSE: Kůň
+  HUSK: Pustiník
+  ILLUSIONER: Iluzionista
+  IRON_GOLEM: Železný golem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmová kostka
+  MINECART: Vozík
+  MINECART_CHEST: Vozík s truhlou
+  MINECART_COMMAND: Vozík s příkazovým blokem
+  MINECART_FURNACE: Vozík s pecí
+  MINECART_HOPPER: Vozík s násypkou
+  MINECART_SPAWNER: Vozík se spawnerem
+  MINECART_TNT: Vozík s TNT
+  MULE: Mula
+  MUSHROOM_COW: Houbová kráva
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papoušek
+  PHANTOM: Přízrak
+  PIG: Prase
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brut
+  PILLAGER: Nájezdník
+  POLAR_BEAR: Lední medvěd
+  PUFFERFISH: Čtverzubec
+  RABBIT: Králík
+  RAVAGER: Pustošitel
+  SALMON: Losos
+  SHEEP: Ovce
+  SHULKER: Shulker
+  SILVERFISH: Rybenka
+  SKELETON: Kostlivec
+  SKELETON_HORSE: Kostěný kůň
+  SLIME: Sliz
+  SNIFFER: Čenicháč
+  SNOWMAN: Sněhulák
+  SPIDER: Pavouk
+  SQUID: Chobotnice
+  STRAY: Tulák
+  STRIDER: Chodec
+  TADPOLE: Pulec
+  TRADER_LLAMA: Obchodní lama
+  TROPICAL_FISH: Tropická ryba
+  TURTLE: Želva
+  VEX: Protiva
+  VILLAGER: Vesničan
+  VINDICATOR: Mstitel
+  WANDERING_TRADER: Potulný obchodník
+  WARDEN: Strážce
+  WITCH: Čarodějnice
+  WITHER: Wither
+  WITHER_SKELETON: Wither kostlivec
+  WOLF: Vlk
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombie kůň
+  ZOMBIE_VILLAGER: Zombie vesničan
+  ZOMBIFIED_PIGLIN: Zombifikovaný Piglin

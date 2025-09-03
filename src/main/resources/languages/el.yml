@@ -33,6 +33,22 @@ spawner-item:
     - "&7Τύπος οντότητας: &a%type%"
 
 # =========================================
+# Ρυθμίσεις Χologram Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Μπορεί να καταστραφεί με %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Ρυθμίσεις Ολογράμματος Mob
+# =========================================
+mob-remove-warning:
+  - "&cΑυτό το mob θα αφαιρεθεί"
+  - "&eΜέσα σε %time% δευτερόλεπτα αν δεν φύγει από την περιοχή."
+  
+# =========================================
 # Μηνύματα Plugin
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cΔεν μπορείτε να σπάσετε έναν άδειο spawner!"
   spawner-given-sender: "&aΟ %player% έλαβε %type% spawner."
   spawner-given-recipient: "&bΈχετε λάβει %type% spawner!"
+  chunk-limit-exceeded: "&cΔεν μπορείς να τοποθετήσεις περισσότερα spawners σε αυτό το chunk!"
+  egg-chunk-limit-exceeded: "&cΣε αυτό το chunk, μπορείς να spawnάρεις μόνο %limit% mob τύπου %type%!"
+  
+# =========================================
+# Τύποι Οντοτήτων
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Αρμαντίλο
+  ARMOR_STAND: Βάση Πανοπλίας
+  AXOLOTL: Αξολότλ
+  BAT: Νυχτερίδα
+  BEE: Μέλισσα
+  BLAZE: Blaze
+  BOAT: Βάρκα
+  BOGGED: Βάλτος
+  BREEZE: Αύρα
+  CAMEL: Καμήλα
+  CAT: Γάτα
+  CAVE_SPIDER: Σαρανταποδαρούσα Σπηλαίου
+  CHICKEN: Κοτόπουλο
+  COD: Μπακαλιάρος
+  COW: Αγελάδα
+  CREEPER: Creeper
+  CREAKING: Τρίζων
+  DOLPHIN: Δελφίνι
+  DONKEY: Γάιδαρος
+  DROWNED: Πνιγμένος
+  ELDER_GUARDIAN: Γηραιός Φύλακας
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Δράκος του End
+  EVOKER: Επικαλούμενος
+  EXPERIENCE_BOTTLE: Μπουκάλι Εμπειρίας
+  EXPERIENCE_ORB: Σφαίρα Εμπειρίας
+  FOX: Αλεπού
+  FROG: Βάτραχος
+  GHAST: Ghast
+  GIANT: Γίγαντας
+  GLOW_SQUID: Λαμπερό Καλαμάρι
+  GOAT: Κατσίκα
+  GUARDIAN: Φύλακας
+  HOGLIN: Hoglin
+  HORSE: Άλογο
+  HUSK: Husk
+  ILLUSIONER: Ιλλουζιονίστας
+  IRON_GOLEM: Σιδηρούς Golem
+  LLAMA: Λάμα
+  MAGMA_CUBE: Κύβος Μάγματος
+  MINECART: Βαγονέτο
+  MINECART_CHEST: Βαγονέτο με Σεντούκι
+  MINECART_COMMAND: Βαγονέτο με Μπλοκ Εντολών
+  MINECART_FURNACE: Βαγονέτο με Κάμινο
+  MINECART_HOPPER: Βαγονέτο με Χωνί
+  MINECART_SPAWNER: Βαγονέτο με Spawner
+  MINECART_TNT: Βαγονέτο με TNT
+  MULE: Μουλάρι
+  MUSHROOM_COW: Αγελάδα Μανιτάρι
+  OCELOT: Οσελότ
+  PANDA: Πάντα
+  PARROT: Παπαγάλος
+  PHANTOM: Φάντασμα
+  PIG: Γουρούνι
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Βάρβαρος
+  PILLAGER: Ληστής
+  POLAR_BEAR: Πολική Αρκούδα
+  PUFFERFISH: Ψάρι Φουσκωτό
+  RABBIT: Κουνέλι
+  RAVAGER: Καταστροφέας
+  SALMON: Σολομός
+  SHEEP: Πρόβατο
+  SHULKER: Shulker
+  SILVERFISH: Ασημόψαρο
+  SKELETON: Σκελετός
+  SKELETON_HORSE: Άλογο Σκελετός
+  SLIME: Γλίτσα
+  SNIFFER: Μυξοθήρας
+  SNOWMAN: Χιονάνθρωπος
+  SPIDER: Αράχνη
+  SQUID: Καλαμάρι
+  STRAY: Αλήτης
+  STRIDER: Strider
+  TADPOLE: Γυρίνος
+  TRADER_LLAMA: Λάμα Εμπόρου
+  TROPICAL_FISH: Τροπικό Ψάρι
+  TURTLE: Χελώνα
+  VEX: Vex
+  VILLAGER: Χωρικός
+  VINDICATOR: Εκδικητής
+  WANDERING_TRADER: Περιπλανώμενος Έμπορος
+  WARDEN: Φύλακας
+  WITCH: Μάγισσα
+  WITHER: Wither
+  WITHER_SKELETON: Σκελετός Wither
+  WOLF: Λύκος
+  ZOGLIN: Zoglin
+  ZOMBIE: Ζόμπι
+  ZOMBIE_HORSE: Άλογο Ζόμπι
+  ZOMBIE_VILLAGER: Χωρικός Ζόμπi
+  ZOMBIFIED_PIGLIN: Ζομπιφικ

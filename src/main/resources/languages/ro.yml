@@ -1,0 +1,175 @@
+# ===============================
+# Fișierul de Limbă al Sistemului de Spawnere
+# ===============================
+
+# Prefix pentru toate mesajele pluginului
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Setările Itemului de Târnacop pentru Spawnere
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lTârnacop de Spawnere"
+  lore:
+    - "&7Folosește acest târnacop pentru a spawne spawnere."
+    - "&e"
+    - "&aUtilizări rămase: &c%uses%"
+
+# =========================================
+# Etichete de Mod (Avansat sau Clasic)
+# =========================================
+mode-tags:
+  advanced: "Târnacop de Spawnere"
+  classic: "Târnacop cu Atingeri de Mătase"
+
+# =========================================
+# Setările Itemului Spawner
+# =========================================
+spawner-item:
+  name: "&aSpawner %type%"
+  lore:
+    - "&7Plasează acest spawner pentru a genera"
+    - "&7Poate fi spart cu: &e%mode%"
+    - "&7Tip entitate: &a%type%"
+
+# =========================================
+# Setările Hologramelor pentru Spawnere
+# =========================================
+spawnable-status:
+  mob_type: "&aSpawner %type% "
+  break_with: "&7Poate fi spart cu %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Setări Hologram pentru Mob
+# =========================================
+mob-remove-warning:
+  - "&cAcest mob va fi eliminat"
+  - "&eÎn %time% s dacă nu părăsește zona."
+  
+# =========================================
+# Mesaje ale Pluginului
+# =========================================
+messages:
+  no-permission: "&cNu ai permisiunea de a utiliza această comandă."
+  reload-success: "&aConfigurația sistemului de spawnere a fost reîncărcată cu succes."
+  wrong-subcommand: "&aUtilizare: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aUtilizare: /spsystem pickaxegive <jucător> <1-100>"
+  command-disabled: "&cComanda 'pickaxegive' este disponibilă doar în modul 'avansat'."
+  player-not-found: "&cJucător negăsit: %player%"
+  not-a-number: "&cNumărul de utilizări trebuie să fie un număr."
+  max-uses-limit: "&cNumărul maxim de utilizări permis este 100."
+  pickaxe-given-sender: "&aAi dat un Târnacop de Spawnere cu %uses% utilizări lui %player%."
+  pickaxe-given-recipient: "&bAi primit un târnacop special pentru spawnere!"
+  spawner-collected: "&aSpawner adăugat cu succes în inventar!"
+  pickaxe-broken: "&aTârnacopul tău de spawnere s-a rupt!"
+  natural-spawner-break-denied: "&cSpawnerele naturale sunt protejate și nu pot fi sparte."
+  sp-pickaxe-only: "&cAcest târnacop special poate fi folosit doar pentru a sparge spawnere!"
+  inventory-full: "&aInventarul tău era plin, așa că spawnerul a fost aruncat pe jos!"
+  classic-silk-required: "&cPoți sparge spawnerele doar cu un târnacop fermecat cu Atingeri de Mătase!"
+  advanced-pickaxe-required: "&cPoți sparge spawnerele doar cu Târnacopul special de Spawnere!"
+  empty-spawner-break-denied: "&cNu poți sparge acest spawner gol!"
+  spawner-given-sender: "&aAi dat un spawner %type% lui %player%."
+  spawner-given-recipient: "&bAi primit un spawner %type%!"
+  chunk-limit-exceeded: "&cNu poți plasa mai multe spawnere în acest chunk!"
+  egg-chunk-limit-exceeded: "&cÎn acest chunk, poți spawna doar %limit% mobs de tipul %type%!"
+  
+# =========================================
+# Tipuri de Entități
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Suport de armură
+  AXOLOTL: Axolotl
+  BAT: Liliac
+  BEE: Albină
+  BLAZE: Blaze
+  BOAT: Barcă
+  BOGGED: Mlaștină
+  BREEZE: Briză
+  CAMEL: Cămilă
+  CAT: Pisică
+  CAVE_SPIDER: Păianjen de peșteră
+  CHICKEN: Găină
+  COD: Cod
+  COW: Vacă
+  CREEPER: Creeper
+  CREAKING: Scârțâitor
+  DOLPHIN: Delfin
+  DONKEY: Măgar
+  DROWNED: Înecat
+  ELDER_GUARDIAN: Gardian Bătrân
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dragonul Ender
+  EVOKER: Evocator
+  EXPERIENCE_BOTTLE: Sticlă de experiență
+  EXPERIENCE_ORB: Sferă de experiență
+  FOX: Vulpe
+  FROG: Broască
+  GHAST: Ghast
+  GIANT: Uriaș
+  GLOW_SQUID: Calmar luminos
+  GOAT: Capră
+  GUARDIAN: Gardian
+  HOGLIN: Hoglin
+  HORSE: Cal
+  HUSK: Husk
+  ILLUSIONER: Iluzionist
+  IRON_GOLEM: Golem de fier
+  LLAMA: Lama
+  MAGMA_CUBE: Cub de magmă
+  MINECART: Vagonetă
+  MINECART_CHEST: Vagonetă cu cufăr
+  MINECART_COMMAND: Vagonetă cu bloc de comenzi
+  MINECART_FURNACE: Vagonetă cu cuptor
+  MINECART_HOPPER: Vagonetă cu pâlnie
+  MINECART_SPAWNER: Vagonetă cu generator
+  MINECART_TNT: Vagonetă cu TNT
+  MULE: Catâr
+  MUSHROOM_COW: Vacă cu ciuperci
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papagal
+  PHANTOM: Fantomă
+  PIG: Porc
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin brutal
+  PILLAGER: Jefuitor
+  POLAR_BEAR: Urs polar
+  PUFFERFISH: Pește balon
+  RABBIT: Iepure
+  RAVAGER: Devastator
+  SALMON: Somon
+  SHEEP: Oaie
+  SHULKER: Shulker
+  SILVERFISH: Peștișor argintiu
+  SKELETON: Schelet
+  SKELETON_HORSE: Cal schelet
+  SLIME: Slime
+  SNIFFER: Mirositor
+  SNOWMAN: Om de zăpadă
+  SPIDER: Păianjen
+  SQUID: Calmar
+  STRAY: Rătăcitor
+  STRIDER: Străjer
+  TADPOLE: Mormoloc
+  TRADER_LLAMA: Lama negustorului
+  TROPICAL_FISH: Pește tropical
+  TURTLE: Țestoasă
+  VEX: Vex
+  VILLAGER: Sătean
+  VINDICATOR: Răzbunător
+  WANDERING_TRADER: Negustor ambulant
+  WARDEN: Gardian
+  WITCH: Vrăjitoare
+  WITHER: Wither
+  WITHER_SKELETON: Schelet wither
+  WOLF: Lup
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Cal zombie
+  ZOMBIE_VILLAGER: Sătean zombie
+  ZOMBIFIED_PIGLIN: Piglin zombificat

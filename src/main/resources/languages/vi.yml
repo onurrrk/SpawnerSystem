@@ -1,0 +1,175 @@
+# ===============================
+# Tập Tin Ngôn Ngữ Hệ Thống Spawner
+# ===============================
+
+# Tiền tố cho tất cả thông báo của plugin
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Cài Đặt Vật Phẩm Cúp Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lCúp Phá Spawner"
+  lore:
+    - "&7Dùng cúp này để phá spawner."
+    - "&e"
+    - "&aSố lần dùng còn lại: &c%uses%"
+
+# =========================================
+# Thẻ Chế Độ (Nâng Cao hoặc Cổ Điển)
+# =========================================
+mode-tags:
+  advanced: "Cúp Phá Spawner"
+  classic: "Cúp có Phù Phép Silk Touch"
+
+# =========================================
+# Cài Đặt Vật Phẩm Spawner
+# =========================================
+spawner-item:
+  name: "&aSpawner %type%"
+  lore:
+    - "&7Đặt spawer này để spawn"
+    - "&7Có thể phá bằng: &e%mode%"
+    - "&7Loại sinh vật: &a%type%"
+
+# =========================================
+# Cài Đặt Hologram Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&aSpawner %type% "
+  break_with: "&7Có thể phá bằng %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Cài Đặt Hologram Mob
+# =========================================
+mob-remove-warning:
+  - "&cMob này sẽ bị xóa"
+  - "&eTrong vòng %time% giây nếu không rời khỏi khu vực."
+  
+# =========================================
+# Thông Báo Plugin
+# =========================================
+messages:
+  no-permission: "&cBạn không có quyền sử dụng lệnh này."
+  reload-success: "&aCấu hình hệ thống spawner đã được tải lại thành công."
+  wrong-subcommand: "&aCách dùng: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aCách dùng: /spsystem pickaxegive <người chơi> <1-100>"
+  command-disabled: "&cLệnh 'pickaxegive' chỉ khả dụng trong chế độ 'nâng cao'."
+  player-not-found: "&cKhông tìm thấy người chơi: %player%"
+  not-a-number: "&cSố lần sử dụng phải là một con số."
+  max-uses-limit: "&cSố lần sử dụng tối đa được cho phép là 100."
+  pickaxe-given-sender: "&aĐã đưa Cúp Phá Spawner có %uses% lần dùng cho %player%."
+  pickaxe-given-recipient: "&bBạn đã nhận được một cây cúp phá spawner đặc biệt!"
+  spawner-collected: "&aĐã thêm spawner vào kho đồ thành công!"
+  pickaxe-broken: "&aCúp phá spawner của bạn đã hỏng!"
+  natural-spawner-break-denied: "&cSpawner tự nhiên được bảo vệ và không thể phá."
+  sp-pickaxe-only: "&cCúp đặc biệt này chỉ có thể được dùng để phá spawner!"
+  inventory-full: "&aKho đồ của bạn đã đầy, spawner đã được thả xuống đất!"
+  classic-silk-required: "&cBạn chỉ có thể phá spawner bằng một cây cúp được phù phép Silk Touch!"
+  advanced-pickaxe-required: "&cBạn chỉ có thể phá spawner bằng Cúp Phá Spawner đặc biệt!"
+  empty-spawner-break-denied: "&cBạn không thể phá spawner trống này!"
+  spawner-given-sender: "&aĐã đưa spawner %type% cho %player%."
+  spawner-given-recipient: "&bBạn đã nhận được một spawner %type%!"
+  chunk-limit-exceeded: "&cBạn không thể đặt thêm máy sinh quái trong chunk này nữa!"
+  egg-chunk-limit-exceeded: "&cTrong chunk này, bạn chỉ có thể spawn tối đa %limit% mob loại %type%!"
+  
+# =========================================
+# Loại Thực Thể
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Thú có mai
+  ARMOR_STAND: Giá treo giáp
+  AXOLOTL: Kỳ giông Mexico
+  BAT: Dơi
+  BEE: Ong
+  BLAZE: Quỷ lửa
+  BOAT: Thuyền
+  BOGGED: Đầm lầy
+  BREEZE: Gió nhẹ
+  CAMEL: Lạc đà
+  CAT: Mèo
+  CAVE_SPIDER: Nhện hang động
+  CHICKEN: Gà
+  COD: Cá tuyết
+  COW: Bò
+  CREEPER: Creeper
+  CREAKING: Có tiếng kêu
+  DOLPHIN: Cá heo
+  DONKEY: Lừa
+  DROWNED: Kẻ chết đuối
+  ELDER_GUARDIAN: Người bảo vệ già
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Rồng Ender
+  EVOKER: Kẻ triệu hồi
+  EXPERIENCE_BOTTLE: Chai kinh nghiệm
+  EXPERIENCE_ORB: Quả cầu kinh nghiệm
+  FOX: Cáo
+  FROG: Ếch
+  GHAST: Ghast
+  GIANT: Người khổng lồ
+  GLOW_SQUID: Mực phát sáng
+  GOAT: Dê
+  GUARDIAN: Người bảo vệ
+  HOGLIN: Hoglin
+  HORSE: Ngựa
+  HUSK: Xác khô
+  ILLUSIONER: Ảo thuật gia
+  IRON_GOLEM: Người sắt
+  LLAMA: Lạc đà không bướu
+  MAGMA_CUBE: Khối magma
+  MINECART: Xe mỏ
+  MINECART_CHEST: Xe mỏ có rương
+  MINECART_COMMAND: Xe mỏ có khối lệnh
+  MINECART_FURNACE: Xe mỏ có lò nung
+  MINECART_HOPPER: Xe mỏ có phễu
+  MINECART_SPAWNER: Xe mỏ có spawner
+  MINECART_TNT: Xe mỏ có TNT
+  MULE: Con la
+  MUSHROOM_COW: Bò nấm
+  OCELOT: Mèo rừng
+  PANDA: Gấu trúc
+  PARROT: Vẹt
+  PHANTOM: Ảo ảnh
+  PIG: Heo
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin hung dữ
+  PILLAGER: Kẻ cướp
+  POLAR_BEAR: Gấu Bắc Cực
+  PUFFERFISH: Cá nóc
+  RABBIT: Thỏ
+  RAVAGER: Kẻ tàn phá
+  SALMON: Cá hồi
+  SHEEP: Cừu
+  SHULKER: Shulker
+  SILVERFISH: Bạc
+  SKELETON: Bộ xương
+  SKELETON_HORSE: Ngựa xương
+  SLIME: Chất nhờn
+  SNIFFER: Kẻ đánh hơi
+  SNOWMAN: Người tuyết
+  SPIDER: Nhện
+  SQUID: Mực
+  STRAY: Kẻ lang thang
+  STRIDER: Kẻ sải bước
+  TADPOLE: Nòng nọc
+  TRADER_LLAMA: Lạc đà thương nhân
+  TROPICAL_FISH: Cá nhiệt đới
+  TURTLE: Rùa
+  VEX: Vex
+  VILLAGER: Dân làng
+  VINDICATOR: Kẻ bênh vực
+  WANDERING_TRADER: Thương nhân lang thang
+  WARDEN: Quản giáo
+  WITCH: Phù thủy
+  WITHER: Wither
+  WITHER_SKELETON: Bộ xương Wither
+  WOLF: Sói
+  ZOGLIN: Zoglin
+  ZOMBIE: Thây ma
+  ZOMBIE_HORSE: Ngựa thây ma
+  ZOMBIE_VILLAGER: Dân làng thây ma
+  ZOMBIFIED_PIGLIN: Piglin thây ma

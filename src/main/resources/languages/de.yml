@@ -33,6 +33,22 @@ spawner-item:
     - "&7Entity-Typ: &a%type%"
 
 # =========================================
+# Spawner-Hologramm-Einstellungen
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Kann mit %mode% abgebaut werden "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob-Hologramm-Einstellungen
+# =========================================
+mob-remove-warning:
+  - "&cDieser Mob wird entfernt"
+  - "&eInnerhalb von %time% s, wenn er das Gebiet nicht verlässt."
+  
+# =========================================
 # Plugin-Nachrichten
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cDu kannst diesen leeren Spawner nicht abbauen!"
   spawner-given-sender: "&a%player% wurde ein %type% Spawner gegeben."
   spawner-given-recipient: "&bDu hast einen %type% Spawner erhalten!"
+  chunk-limit-exceeded: "&cDu kannst in diesem Chunk keine weiteren Spawner platzieren!"
+  egg-chunk-limit-exceeded: "&cIn diesem Chunk kannst du maximal %limit% Mob-Spawns vom Typ %type% haben!"
+  
+# =========================================
+# Entity-Typen
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Gürteltier
+  ARMOR_STAND: Rüstungsständer
+  AXOLOTL: Axolotl
+  BAT: Fledermaus
+  BEE: Biene
+  BLAZE: Lohe
+  BOAT: Boot
+  BOGGED: Sumpfiger
+  BREEZE: Brise
+  CAMEL: Kamel
+  CAT: Katze
+  CAVE_SPIDER: Höhlenspinne
+  CHICKEN: Huhn
+  COD: Kabeljau
+  COW: Kuh
+  CREEPER: Creeper
+  CREAKING: Knarrend
+  DOLPHIN: Delphin
+  DONKEY: Esel
+  DROWNED: Ertrunkener
+  ELDER_GUARDIAN: Großer Wächter
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdrache
+  EVOKER: Magier
+  EXPERIENCE_BOTTLE: Erfahrungsflasche
+  EXPERIENCE_ORB: Erfahrungskugel
+  FOX: Fuchs
+  FROG: Frosch
+  GHAST: Ghast
+  GIANT: Riese
+  GLOW_SQUID: Leuchttintenfisch
+  GOAT: Ziege
+  GUARDIAN: Wächter
+  HOGLIN: Hoglin
+  HORSE: Pferd
+  HUSK: Wüstenzombie
+  ILLUSIONER: Illusionist
+  IRON_GOLEM: Eisengolem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmawürfel
+  MINECART: Lore
+  MINECART_CHEST: Lore mit Truhe
+  MINECART_COMMAND: Lore mit Befehlsblock
+  MINECART_FURNACE: Lore mit Ofen
+  MINECART_HOPPER: Lore mit Trichter
+  MINECART_SPAWNER: Lore mit Spawner
+  MINECART_TNT: Lore mit TNT
+  MULE: Maultier
+  MUSHROOM_COW: Pilzkuh
+  OCELOT: Ozelot
+  PANDA: Panda
+  PARROT: Papagei
+  PHANTOM: Phantom
+  PIG: Schwein
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin-Barbar
+  PILLAGER: Plünderer
+  POLAR_BEAR: Eisbär
+  PUFFERFISH: Kugelfisch
+  RABBIT: Hase
+  RAVAGER: Verwüster
+  SALMON: Lachs
+  SHEEP: Schaf
+  SHULKER: Shulker
+  SILVERFISH: Silberfischchen
+  SKELETON: Skelett
+  SKELETON_HORSE: Skelettpferd
+  SLIME: Schleim
+  SNIFFER: Schnüffler
+  SNOWMAN: Schneemann
+  SPIDER: Spinne
+  SQUID: Tintenfisch
+  STRAY: Streuner
+  STRIDER: Schreiter
+  TADPOLE: Kaulquappe
+  TRADER_LLAMA: Händlerlama
+  TROPICAL_FISH: Tropenfisch
+  TURTLE: Schildkröte
+  VEX: Plagegeist
+  VILLAGER: Dorfbewohner
+  VINDICATOR: Verteidiger
+  WANDERING_TRADER: Wanderhändler
+  WARDEN: Wächter
+  WITCH: Hexe
+  WITHER: Wither
+  WITHER_SKELETON: Witherskelett
+  WOLF: Wolf
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombiepferd
+  ZOMBIE_VILLAGER: Zombiedorfbewohner
+  ZOMBIFIED_PIGLIN: Zombifizierter Piglin

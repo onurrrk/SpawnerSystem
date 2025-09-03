@@ -33,6 +33,22 @@ spawner-item:
     - "&7Entity típus: &a%type%"
 
 # =========================================
+# Spawner hologram beállítások
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Törhető %mode% használatával "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob Hologram Beállítások
+# =========================================
+mob-remove-warning:
+  - "&cEz a mob eltávolításra kerül"
+  - "&e%time% másodpercen belül, ha nem hagyja el a területet."
+  
+# =========================================
 # Plugin üzenetek
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cÜres spawner nem törhető!"
   spawner-given-sender: "&a%player% kapott %type% spawnert."
   spawner-given-recipient: "&bEgy %type% spawnert kaptál!"
+  chunk-limit-exceeded: "&cNem helyezhetsz el több spawnert ebben a chunkban!"
+  egg-chunk-limit-exceeded: "&cEbben a chunkban maximum %limit% %type% típusú mobot spawnolhatsz!"
+  
+# =========================================
+# Entity Típusok
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Páncélállvány
+  AXOLOTL: Axolotl
+  BAT: Denevér
+  BEE: Méh
+  BLAZE: Blaze
+  BOAT: Csónak
+  BOGGED: Mocsaras
+  BREEZE: Szellő
+  CAMEL: Teve
+  CAT: Macska
+  CAVE_SPIDER: Barlangi Pók
+  CHICKEN: Csirke
+  COD: Tőkehal
+  COW: Tehén
+  CREEPER: Creeper
+  CREAKING: Recsegő
+  DOLPHIN: Delfin
+  DONKEY: Szamár
+  DROWNED: Fülöncsípett
+  ELDER_GUARDIAN: Idős Őrző
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Sárkányúr
+  EVOKER: Idéző
+  EXPERIENCE_BOTTLE: Tapasztalati Üveg
+  EXPERIENCE_ORB: Tapasztalati Gömb
+  FOX: Róka
+  FROG: Béka
+  GHAST: Ghast
+  GIANT: Óriás
+  GLOW_SQUID: Világító Tintahal
+  GOAT: Kecske
+  GUARDIAN: Őrző
+  HOGLIN: Hoglin
+  HORSE: Ló
+  HUSK: Husk
+  ILLUSIONER: Illúzionista
+  IRON_GOLEM: Vasgólem
+  LLAMA: Láma
+  MAGMA_CUBE: Magmakocka
+  MINECART: Bányászati kocsi
+  MINECART_CHEST: Ládás bányászkocsi
+  MINECART_COMMAND: Parancsblokkos bányászkocsi
+  MINECART_FURNACE: Kemencés bányászkocsi
+  MINECART_HOPPER: Tölcséres bányászkocsi
+  MINECART_SPAWNER: Spawneres bányászkocsi
+  MINECART_TNT: TNT-s bányászkocsi
+  MULE: Öszvér
+  MUSHROOM_COW: Gomba tehén
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papagáj
+  PHANTOM: Fantom
+  PIG: Malac
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brutális
+  PILLAGER: Fosztogató
+  POLAR_BEAR: Jegesmedve
+  PUFFERFISH: Gömbhal
+  RABBIT: Nyúl
+  RAVAGER: Pusztító
+  SALMON: Lazac
+  SHEEP: Juht
+  SHULKER: Shulker
+  SILVERFISH: Ezüstmoly
+  SKELETON: Csontváz
+  SKELETON_HORSE: Csontváz ló
+  SLIME: Nyálkagömb
+  SNIFFER: Szaglászó
+  SNOWMAN: Hóember
+  SPIDER: Pók
+  SQUID: Tintahal
+  STRAY: Kóbor
+  STRIDER: Strider
+  TADPOLE: Ebihal
+  TRADER_LLAMA: Kereskedő láma
+  TROPICAL_FISH: Trópusi hal
+  TURTLE: Teknős
+  VEX: Vex
+  VILLAGER: Falusi
+  VINDICATOR: Megtorló
+  WANDERING_TRADER: Vándorkereskedő
+  WARDEN: Felügyelő
+  WITCH: Boszorkány
+  WITHER: Wither
+  WITHER_SKELETON: Wither csontváz
+  WOLF: Farkas
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombi
+  ZOMBIE_HORSE: Zombi ló
+  ZOMBIE_VILLAGER: Zombi falusi
+  ZOMBIFIED_PIGLIN: Zombifikált Piglin

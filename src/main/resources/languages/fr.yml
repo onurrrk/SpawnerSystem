@@ -33,6 +33,22 @@ spawner-item:
     - "&7Type d'entité: &a%type%"
 
 # =========================================
+# Paramètres de l'hologramme du Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Peut être cassé avec %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Paramètres d'Hologramme de Mob
+# =========================================
+mob-remove-warning:
+  - "&cCe mob sera supprimé"
+  - "&eDans %time% s s'il ne quitte pas la zone."
+  
+# =========================================
 # Messages du plugin
 # =========================================
 messages:
@@ -47,7 +63,7 @@ messages:
   pickaxe-given-sender: "&a%player% a reçu une pioche de Spawner avec %uses% utilisations."
   pickaxe-given-recipient: "&bVous avez reçu une pioche de Spawner spéciale !"
   spawner-collected: "&aLe spawner a été ajouté à votre inventaire avec succès !"
-  pickaxe-broken: "&aVotre pioche de Spawner est cassée !"
+  pickaxe-broken: "&aVotre pioche de Spawner is cassée !"
   natural-spawner-break-denied: "&cLes spawners naturels sont protégés et ne peuvent pas être cassés."
   sp-pickaxe-only: "&cCette pioche spéciale peut seulement casser des spawners !"
   inventory-full: "&aVotre inventaire est plein, le spawner est tombé au sol !"
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cVous ne pouvez pas casser un spawner vide !"
   spawner-given-sender: "&a%player% a reçu un spawner %type%."
   spawner-given-recipient: "&bVous avez reçu un spawner %type% !"
+  chunk-limit-exceeded: "&cVous ne pouvez pas placer plus de spawners dans ce chunk!"
+  egg-chunk-limit-exceeded: "&cDans ce chunk, vous ne pouvez spawn que %limit% mobs de type %type% !"
+  
+# =========================================
+# Types d'Entités
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Tatou
+  ARMOR_STAND: Porte-Armure
+  AXOLOTL: Axolotl
+  BAT: Chauve-souris
+  BEE: Abeille
+  BLAZE: Blaze
+  BOAT: Bateau
+  BOGGED: Marécageux
+  BREEZE: Brise
+  CAMEL: Chameau
+  CAT: Chat
+  CAVE_SPIDER: Araignée des Cavernes
+  CHICKEN: Poule
+  COD: Morue
+  COW: Vache
+  CREEPER: Creeper
+  CREAKING: Grincement
+  DOLPHIN: Dauphin
+  DONKEY: Âne
+  DROWNED: Noyé
+  ELDER_GUARDIAN: Gardien Ancien
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dragon de l'Ender
+  EVOKER: Invocateur
+  EXPERIENCE_BOTTLE: Fiole d'Expérience
+  EXPERIENCE_ORB: Orbe d'Expérience
+  FOX: Renard
+  FROG: Grenouille
+  GHAST: Ghast
+  GIANT: Géant
+  GLOW_SQUID: Calmar Lumineux
+  GOAT: Chèvre
+  GUARDIAN: Gardien
+  HOGLIN: Hoglin
+  HORSE: Cheval
+  HUSK: Husk
+  ILLUSIONER: Illusionniste
+  IRON_GOLEM: Golem de Fer
+  LLAMA: Lama
+  MAGMA_CUBE: Cube de Magma
+  MINECART: Wagon
+  MINECART_CHEST: Wagon avec Coffre
+  MINECART_COMMAND: Wagon avec Bloc de Commande
+  MINECART_FURNACE: Wagon avec Four
+  MINECART_HOPPER: Wagon avec Entonnoir
+  MINECART_SPAWNER: Wagon avec Générateur
+  MINECART_TNT: Wagon avec TNT
+  MULE: Mule
+  MUSHROOM_COW: Vache Champignon
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Perroquet
+  PHANTOM: Phantom
+  PIG: Cochon
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brutal
+  PILLAGER: Pilleur
+  POLAR_BEAR: Ours Polaire
+  PUFFERFISH: Poisson Globe
+  RABBIT: Lapin
+  RAVAGER: Ravageur
+  SALMON: Saumon
+  SHEEP: Mouton
+  SHULKER: Shulker
+  SILVERFISH: Poisson d'Argent
+  SKELETON: Squelette
+  SKELETON_HORSE: Cheval Squelette
+  SLIME: Slime
+  SNIFFER: Renifleur
+  SNOWMAN: Bonhomme de Neige
+  SPIDER: Araignée
+  SQUID: Calmar
+  STRAY: Errant
+  STRIDER: Arpenteur
+  TADPOLE: Têtard
+  TRADER_LLAMA: Lama de Marchand
+  TROPICAL_FISH: Poisson Tropical
+  TURTLE: Tortue
+  VEX: Vex
+  VILLAGER: Villageois
+  VINDICATOR: Vindicateur
+  WANDERING_TRADER: Marchand Ambulant
+  WARDEN: Gardien
+  WITCH: Sorcière
+  WITHER: Wither
+  WITHER_SKELETON: Squelette Wither
+  WOLF: Loup
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Cheval Zombie
+  ZOMBIE_VILLAGER: Villageois Zombie
+  ZOMBIFIED_PIGLIN: Piglin Zombifié

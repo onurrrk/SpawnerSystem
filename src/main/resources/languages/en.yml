@@ -31,6 +31,22 @@ spawner-item:
     - "&7Place this spawner to spawn"
     - "&7Can be broken with: &e%mode%"
     - "&7Entity Type: &a%type%"
+ 
+# =========================================
+# Spawner Hologram Settings
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Can be broken with %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob Hologram Settings
+# =========================================
+mob-remove-warning:
+  - "&cThis mob will be removed"
+  - "&eWithin %time%s if it doesn't leave the area."
 
 # =========================================
 # Plugin Messages
@@ -56,3 +72,101 @@ messages:
   empty-spawner-break-denied: "&cYou cannot break this empty spawner!"
   spawner-given-sender: "&aGave %type% spawner to %player%."
   spawner-given-recipient: "&bYou received a %type% spawner!"
+  chunk-limit-exceeded: "&cYou cannot place more spawners in this chunk!"
+  egg-chunk-limit-exceeded: "&cYou cannot spawn more than %limit% mobs of type %type% in this chunk!"
+  
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Armor Stand
+  AXOLOTL: Axolotl
+  BAT: Bat
+  BEE: Bee
+  BLAZE: Blaze
+  BOAT: Boat
+  BOGGED: Bogged
+  BREEZE: Breeze
+  CAMEL: Camel
+  CAT: Cat
+  CAVE_SPIDER: Cave Spider
+  CHICKEN: Chicken
+  COD: Cod
+  COW: Cow
+  CREEPER: Creeper
+  CREAKING: Creaking
+  DOLPHIN: Dolphin
+  DONKEY: Donkey
+  DROWNED: Drowned
+  ELDER_GUARDIAN: Elder Guardian
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Ender Dragon
+  EVOKER: Evoker
+  EXPERIENCE_BOTTLE: Experience Bottle
+  EXPERIENCE_ORB: Experience Orb
+  FOX: Fox
+  FROG: Frog
+  GHAST: Ghast
+  GIANT: Giant
+  GLOW_SQUID: Glow Squid
+  GOAT: Goat
+  GUARDIAN: Guardian
+  HOGLIN: Hoglin
+  HORSE: Horse
+  HUSK: Husk
+  ILLUSIONER: Illusioner
+  IRON_GOLEM: Iron Golem
+  LLAMA: Llama
+  MAGMA_CUBE: Magma Cube
+  MINECART: Minecart
+  MINECART_CHEST: Minecart with Chest
+  MINECART_COMMAND: Minecart with Command Block
+  MINECART_FURNACE: Minecart with Furnace
+  MINECART_HOPPER: Minecart with Hopper
+  MINECART_SPAWNER: Minecart with Spawner
+  MINECART_TNT: Minecart with TNT
+  MULE: Mule
+  MUSHROOM_COW: Mushroom Cow
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Parrot
+  PHANTOM: Phantom
+  PIG: Pig
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brute
+  PILLAGER: Pillager
+  POLAR_BEAR: Polar Bear
+  PUFFERFISH: Pufferfish
+  RABBIT: Rabbit
+  RAVAGER: Ravager
+  SALMON: Salmon
+  SHEEP: Sheep
+  SHULKER: Shulker
+  SILVERFISH: Silverfish
+  SKELETON: Skeleton
+  SKELETON_HORSE: Skeleton Horse
+  SLIME: Slime
+  SNIFFER: Sniffer
+  SNOWMAN: Snowman
+  SPIDER: Spider
+  SQUID: Squid
+  STRAY: Stray
+  STRIDER: Strider
+  TADPOLE: Tadpole
+  TRADER_LLAMA: Trader Llama
+  TROPICAL_FISH: Tropical Fish
+  TURTLE: Turtle
+  VEX: Vex
+  VILLAGER: Villager
+  VINDICATOR: Vindicator
+  WANDERING_TRADER: Wandering Trader
+  WARDEN: Warden
+  WITCH: Witch
+  WITHER: Wither
+  WITHER_SKELETON: Wither Skeleton
+  WOLF: Wolf
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombie Horse
+  ZOMBIE_VILLAGER: Zombie Villager
+  ZOMBIFIED_PIGLIN: Zombified Piglin

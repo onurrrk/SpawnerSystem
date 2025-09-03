@@ -6,53 +6,170 @@
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# Spawner Սպիտակահարված Բառատուփի կարգավորումներ
+# Spawner Բալթու կարգավորումներ
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&lSpawner Խորան"
+  name: "&b&lSpawner Բալթի"
   lore:
-    - "&7Օգտագործեք այս խորանը spawner-ը կոտրելու համար:"
+    - "&7Օգտագործեք այս բալթին spawner-ը կոտրելու համար:"
     - "&e"
-    - "&aՄնացած օգտագործումներ: &c%uses%"
+    - "&aՄնացած օգտագործումներ՝ &c%uses%"
 
 # =========================================
-# Մոդի պիտակներ (Ավանդական կամ Ընդլայնված)
+# Ռեժիմի պիտակներ (Ավանդական կամ Ընդլայնված)
 # =========================================
 mode-tags:
-  advanced: "Spawner Խորան"
-  classic: "Silk Touch Խորան"
+  advanced: "Spawner Բալթի"
+  classic: "Մետաքսե Բալթի"
 
 # =========================================
-# Spawner Անվանումների կարգավորումներ
+# Spawner Առարկայի կարգավորումներ
 # =========================================
 spawner-item:
   name: "&a%type% Spawner"
   lore:
     - "&7Տեղադրեք այս spawner-ը՝ հրեշներ ստեղծելու համար:"
-    - "&7Կոտրվում է միայն այսով: &e%mode%"
-    - "&7Անվանում տեսակ: &a%type%"
+    - "&7Կոտրվում է միայն այսով՝ &e%mode%"
+    - "&7Գոյացող հրեշ՝ &a%type%"
 
+# =========================================
+# Spawner հոլոգրամի կարգավորումներ
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Կարող է կոտրվել՝ %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob հոլոգրամի կարգավորումներ
+# =========================================
+mob-remove-warning:
+  - "&cԱյս mob-ը կհեռացվի"
+  - "&e%time% վայրկյանում, եթե չլքի տարածքը"
+  
 # =========================================
 # Պլագինի հաղորդագրություններ
 # =========================================
 messages:
-  no-permission: "&cԴուք չունեք իրավունք օգտագործելու այս հրամանը:"
-  reload-success: "&aSpawner համակարգի կարգավորումները հաջողությամբ վերբեռնվեցին:"
-  wrong-subcommand: "&aՕգտագործում: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aՕգտագործում: /spsystem pickaxegive <player> <1-100>"
+  no-permission: "&cԴուք չունեք հարկավոր իրավունքը այս հրամանն օգտագործելու համար:"
+  reload-success: "&aSpawner համակարգի կարգավորումները հաջողությամբ վերաբեռնվեցին:"
+  wrong-subcommand: "&aՕգտագործում՝ /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aՕգտագործում՝ /spsystem pickaxegive <խաղացող> <1-100>"
   command-disabled: "&c'pickaxegive' հրամանը հասանելի է միայն 'ընդլայնված' ռեժիմում:"
-  player-not-found: "&cԱնհայտ խաղացող: %player%"
+  player-not-found: "&cԽաղացողը գտնված չէ՝ %player%"
   not-a-number: "&cՕգտագործումների քանակը պետք է լինի թիվ:"
-  max-uses-limit: "&cԳերագույն օգտագործումների թիվը 100 է:"
-  pickaxe-given-sender: "&a%player% ստացավ Spawner Խորան %uses% օգտագործմամբ:"
-  pickaxe-given-recipient: "&bԴուք ստացաք հատուկ Spawner Խորան:"
-  spawner-collected: "&aSpawner-ը հաջողությամբ ավելացվել է ձեր inventaris-ում:"
-  pickaxe-broken: "&aՁեր Spawner Խորանը կոտրվել է:"
+  max-uses-limit: "&cԱռավելագույն օգտագործումների քանակը 100-ն է:"
+  pickaxe-given-sender: "&a%player%-ը ստացավ Spawner Բալթի՝ %uses% օգտագործումներով:"
+  pickaxe-given-recipient: "&bԴուք ստացաք հատուկ Spawner Բալթի:"
+  spawner-collected: "&aSpawner-ը հաջողությամբ ավելացվեց ձեր պարկում:"
+  pickaxe-broken: "&aՁեր Spawner Բալթին կոտրվեց:"
   natural-spawner-break-denied: "&cԲնական spawner-ները պաշտպանված են և չեն կարող կոտրվել:"
-  sp-pickaxe-only: "&cԱյս հատուկ խորանը կարող է միայն spawner-ներ կոտրել:"
-  inventory-full: "&aՁեր inventaris-ը լի է, spawner-ը ընկավ زمین:"
-  classic-silk-required: "&cSpawner-ները կարելի է կոտրել միայն Silk Touch Խորանով:"
-  advanced-pickaxe-required: "&cSpawner-ները կարելի է կոտրել միայն հատուկ Spawner Խորանով:"
+  sp-pickaxe-only: "&cԱյս հատուկ բալթին կարող է կոտրել միայն spawner-ներ:"
+  inventory-full: "&aՁեր պարկը լի է՝ spawner-ը գետնին ընկավ:"
+  classic-silk-required: "&cSpawner-ները կարող են կոտրվել միայն Մետաքսե Բալթիով:"
+  advanced-pickaxe-required: "&cSpawner-ները կարող են կոտրվել միայն հատուկ Spawner Բալթիով:"
   empty-spawner-break-denied: "&cԴուք չեք կարող կոտրել դատարկ spawner:"
-  spawner-given-sender: "&a%player% ստացավ %type% spawner:"
+  spawner-given-sender: "&a%player%-ը ստացավ %type% spawner:"
   spawner-given-recipient: "&bԴուք ստացաք %type% spawner:"
+  chunk-limit-exceeded: "&cԴուք չեք կարող ավելի շատ սպավներ տեղադրել այս չանկում!"
+  egg-chunk-limit-exceeded: "&cԱյս չանկում դուք կարող եք սպավնել առավելագույնը %limit% %type% տիպի մոբեր!"
+  
+# =========================================
+# Կենտությունների Տեսակներ
+# =========================================
+entity-types:
+  ALLAY: Ալլեյ
+  ARMADILLO: Արմադիլո
+  ARMOR_STAND: Զրահի կանգուն
+  AXOLOTL: Աքսոլոտլ
+  BAT: Մ蝙蝠
+  BEE: Մեղու
+  BLAZE: Բլեյզ
+  BOAT: Նավակ
+  BOGGED: Ճահճային
+  BREEZE: Մեղմ քամի
+  CAMEL: Միրդ
+  CAT: Կատու
+  CAVE_SPIDER: Քարանձավի սարդ
+  CHICKEN: Հավ
+  COD: Ծածան
+  COW: Կով
+  CREEPER: Կրիփեր
+  CREAKing: Ճռռացող
+  DOLPHIN: Դելֆին
+  DONKEY: Էշ
+  DROWNED: Խորտակված
+  ELDER_GUARDIAN: Ավագ պահապան
+  ENDERMAN: Էնդերմեն
+  ENDERMITE: Էնդերմայթ
+  ENDER_DRAGON: Էնդեր վիշապ
+  EVOKER: Կանչող
+  EXPERIENCE_BOTTLE: Փորձի շիշ
+  EXPERIENCE_ORB: Փորձի գունդ
+  FOX: Աղվես
+  FROG: Գորտ
+  GHAST: Գաստ
+  GIANT: Հսկա
+  GLOW_SQUID: Պայծառ կաղամար
+  GOAT: Այծ
+  GUARDIAN: Պահապան
+  HOGLIN: Հոգլին
+  HORSE: Ձի
+  HUSK: Չորացած
+  ILLUSIONER: Իլյուզիոնիստ
+  IRON_GOLEM: Երկաթե գոլեմ
+  LLAMA: Լամա
+  MAGMA_CUBE: Մագմայի խորանարդ
+  MINECART: Հանքաքարի սայլ
+  MINECART_CHEST: Սայլ պահարանով
+  MINECART_COMMAND: Սայլ հրամանի բլոկով
+  MINECART_FURNACE: Սայլ վառարանով
+  MINECART_HOPPER: Սայլ ձագարով
+  MINECART_SPAWNER: Սայլ սպավներով
+  MINECART_TNT: Սայլ TNT-ով
+  MULE: Ջորի
+  MUSHROOM_COW: Սնկային կով
+  OCELOT: Օցելոտ
+  PANDA: Պանդա
+  PARROT: Թութակ
+  PHANTOM: Ֆանտոմ
+  PIG: Խոզ
+  PIGLIN: Պիգլին
+  PIGLIN_BRUTE: Պիգլին բրուտ
+  PILLAGER: Կողոպտիչ
+  POLAR_BEAR: Սպիտակ արջ
+  PUFFERFISH: Փքացող ձուկ
+  RABBIT: Ճագար
+  RAVAGER: Ավերիչ
+  SALMON: Սաղմոն
+  SHEEP: Գառ
+  SHULKER: Շալկեր
+  SILVERFISH: Արծաթե ձուկ
+  SKELETON: Կմախք
+  SKELETON_HORSE: Կմախք ձի
+  SLIME: Սլայմ
+  SNIFFER: Հոտառություն
+  SNOWMAN: Ձնեմարդ
+  SPIDER: Սարդ
+  SQUID: Կաղամար
+  STRAY: Թափառական
+  STRIDER: Ստրայդեր
+  TADPOLE: Ճպուռ
+  TRADER_LLAMA: Առևտրականի լամա
+  TROPICAL_FISH: Արեւադարձային ձուկ
+  TURTLE: Կրիա
+  VEX: Վեքս
+  VILLAGER: Գյուղացի
+  VINDICATOR: Պաշտպան
+  WANDERING_TRADER: Թափառող առևտրական
+  WARDEN: Խնամակալ
+  WITCH: Վհուկ
+  WITHER: Վիդեր
+  WITHER_SKELETON: Վիդեր կմախք
+  WOLF: Գայլ
+  ZOGLIN: Զոգլին
+  ZOMBIE: Զոմբի
+  ZOMBIE_HORSE: Զոմբի ձի
+  ZOMBIE_VILLAGER: Զոմբի գյուղացի
+  ZOMBIFIED_PIGLIN: Զոմբիացված պիգլին

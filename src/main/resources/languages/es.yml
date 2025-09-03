@@ -33,6 +33,22 @@ spawner-item:
     - "&7Tipo de entidad: &a%type%"
 
 # =========================================
+# Configuración del holograma del Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Se puede romper con %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Configuración de Holograma de Mob
+# =========================================
+mob-remove-warning:
+  - "&cEste mob será eliminado"
+  - "&eDentro de %time% s si no abandona el área."
+  
+# =========================================
 # Mensajes del Plugin
 # =========================================
 messages:
@@ -55,4 +71,105 @@ messages:
   advanced-pickaxe-required: "&c¡Solo puedes romper spawners con el Pico Spawner especial!"
   empty-spawner-break-denied: "&c¡No puedes romper este spawner vacío!"
   spawner-given-sender: "&aSe le ha dado a %player% un spawner de %type%."
-  spawner-given-recipient: "&b¡Has recibido un spawner de %type%!"
+  spawner-given-recipient: "&b¡Has recibido a spawner de %type%!"
+  chunk-limit-exceeded: "&c¡No puedes colocar más spawners en este chunk!"
+  egg-chunk-limit-exceeded: "&c¡En este chunk solo puedes generar un máximo de %limit% mobs de tipo %type%!"
+  
+# =========================================
+# Tipos de Entidades
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Soporte para armadura
+  AXOLOTL: Ajolote
+  BAT: Murciélago
+  BEE: Abeja
+  BLAZE: Blaze
+  BOAT: Bote
+  BOGGED: Pantanoso
+  BREEZE: Brisa
+  CAMEL: Camello
+  CAT: Gato
+  CAVE_SPIDER: Araña de cueva
+  CHICKEN: Gallina
+  COD: Bacalao
+  COW: Vaca
+  CREEPER: Creeper
+  CREAKING: Chirriante
+  DOLPHIN: Delfín
+  DONKEY: Burro
+  DROWNED: Ahogado
+  ELDER_GUARDIAN: Guardián anciano
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dragón del End
+  EVOKER: Evocador
+  EXPERIENCE_BOTTLE: Botella de experiencia
+  EXPERIENCE_ORB: Orbe de experiencia
+  FOX: Zorro
+  FROG: Rana
+  GHAST: Ghast
+  GIANT: Gigante
+  GLOW_SQUID: Calamar brillante
+  GOAT: Cabra
+  GUARDIAN: Guardián
+  HOGLIN: Hoglin
+  HORSE: Caballo
+  HUSK: Husk
+  ILLUSIONER: Ilusionista
+  IRON_GOLEM: Golem de hierro
+  LLAMA: Llama
+  MAGMA_CUBE: Cubo de magma
+  MINECART: Vagoneta
+  MINECART_CHEST: Vagoneta con cofre
+  MINECART_COMMAND: Vagoneta con bloque de comandos
+  MINECART_FURNACE: Vagoneta con horno
+  MINECART_HOPPER: Vagoneta con tolva
+  MINECART_SPAWNER: Vagoneta con generador
+  MINECART_TNT: Vagoneta con TNT
+  MULE: Mula
+  MUSHROOM_COW: Vaca champiñón
+  OCELOT: Ocelote
+  PANDA: Panda
+  PARROT: Loro
+  PHANTOM: Fantasma
+  PIG: Cerdo
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin bruto
+  PILLAGER: Saqueador
+  POLAR_BEAR: Oso polar
+  PUFFERFISH: Pez globo
+  RABBIT: Conejo
+  RAVAGER: Devastador
+  SALMON: Salmón
+  SHEEP: Oveja
+  SHULKER: Shulker
+  SILVERFISH: Lepisma
+  SKELETON: Esqueleto
+  SKELETON_HORSE: Caballo esqueleto
+  SLIME: Slime
+  SNIFFER: Husmeador
+  SNOWMAN: Muñeco de nieve
+  SPIDER: Araña
+  SQUID: Calamar
+  STRAY: Stray
+  STRIDER: Strider
+  TADPOLE: Renacuajo
+  TRADER_LLAMA: Llama del comerciante
+  TROPICAL_FISH: Pez tropical
+  TURTLE: Tortuga
+  VEX: Vex
+  VILLAGER: Aldeano
+  VINDICATOR: Vindicador
+  WANDERING_TRADER: Comerciante ambulante
+  WARDEN: Guardián
+  WITCH: Bruja
+  WITHER: Wither
+  WITHER_SKELETON: Esqueleto wither
+  WOLF: Lobo
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombi
+  ZOMBIE_HORSE: Caballo zombi
+  ZOMBIE_VILLAGER: Aldeano zombi
+  ZOMBIFIED_PIGLIN: Piglin zombificado

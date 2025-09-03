@@ -1,58 +1,175 @@
 # ===============================
-# Spawner System Ελληνικά
+# Spawner System Gàidhlig
 # ===============================
 
-# Πρόθεμα για όλα τα μηνύματα του plugin
+# Riochdaichidh seo an toiseach air gach teachdaireachd a' bhogha
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# Ρυθμίσεις Τσεκούρι Spawner
+# Roghainnean Piocais Spawner
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&lSpawner Τσεκούρι"
+  name: "&b&lSpawner Piocais"
   lore:
-    - "&7Χρησιμοποιήστε αυτό το τσεκούρι για να σπάσετε το spawner."
+    - "&7Cleachd an piocais seo gus an spawner a bhriseadh."
     - "&e"
-    - "&aΥπόλοιπες χρήσεις: &c%uses%"
+    - "&aCleachdan air fhàgail: &c%uses%"
 
 # =========================================
-# Ετικέτες λειτουργίας (Προχωρημένο ή Κλασικό)
+# Tìdean Mòd (Adhartais no Clasagan)
 # =========================================
 mode-tags:
-  advanced: "Spawner Τσεκούρι"
-  classic: "Τσεκούρι Μεταξωτής Αφή"
+  advanced: "Spawner Piocais"
+  classic: "Piocais Touch Silk"
 
 # =========================================
-# Ρυθμίσεις Αντικειμένου Spawner
+# Roghainnean Eideamh Spawner
 # =========================================
 spawner-item:
   name: "&a%type% Spawner"
   lore:
-    - "&7Τοποθετήστε αυτό το spawner για να εμφανίσετε τέρατα."
-    - "&7Μπορεί να σπάσει μόνο με: &e%mode%"
-    - "&7Τύπος οντότητας: &a%type%"
+    - "&7Cuir an spawner seo gus na beathaichean a chur a' dol."
+    - "&7Chan fhaod e ach a bhriste le: &e%mode%"
+    - "&7Seòrsa an eintiteach: &a%type%" 
 
 # =========================================
-# Μηνύματα Plugin
+# Suidheachaidhean Hologram Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner " 
+  break_with: "&7Faodar a bhriseadh le %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Suidheachaidhean Hologram Mob
+# =========================================
+mob-remove-warning:
+  - "&cThèid am mob seo a thoirt air falbh"
+  - "&eAnn an %time% s mura fàg e an t-sòn."
+  
+# =========================================
+# Teachdaireachdan an Bhogha
 # =========================================
 messages:
-  no-permission: "&cΔεν έχετε άδεια να χρησιμοποιήσετε αυτή την εντολή."
-  reload-success: "&aΗ διαμόρφωση του Spawner συστήματος επαναφορτώθηκε επιτυχώς."
-  wrong-subcommand: "&aΧρήση: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aΧρήση: /spsystem pickaxegive <παίκτης> <1-100>"
-  command-disabled: "&cΗ εντολή 'pickaxegive' είναι διαθέσιμη μόνο σε 'προχωρημένη' λειτουργία."
-  player-not-found: "&cΟ παίκτης δεν βρέθηκε: %player%"
-  not-a-number: "&cΟ αριθμός χρήσεων πρέπει να είναι αριθμός."
-  max-uses-limit: "&cΤο μέγιστο πλήθος χρήσεων είναι 100."
-  pickaxe-given-sender: "&aΟ %player% έλαβε Spawner Τσεκούρι με %uses% χρήσεις."
-  pickaxe-given-recipient: "&bΈχετε λάβει ένα ειδικό τσεκούρι spawner!"
-  spawner-collected: "&aΤο spawner προστέθηκε επιτυχώς στο απόθεμά σας!"
-  pickaxe-broken: "&aΤο Spawner Τσεκούρι σας έσπασε!"
-  natural-spawner-break-denied: "&cΟι φυσικοί spawner είναι προστατευμένοι και δεν μπορούν να σπάσουν."
-  sp-pickaxe-only: "&cΑυτό το ειδικό τσεκούρι μπορεί να σπάσει μόνο spawner!"
-  inventory-full: "&aΤο απόθεμά σας είναι γεμάτο, το spawner έπεσε στο έδαφος!"
-  classic-silk-required: "&cΟι spawner μπορούν να σπάσουν μόνο με Τσεκούρι Μεταξωτής Αφή!"
-  advanced-pickaxe-required: "&cΟι spawner μπορούν να σπάσουν μόνο με ειδικό Spawner Τσεκούρι!"
-  empty-spawner-break-denied: "&cΔεν μπορείτε να σπάσετε έναν άδειο spawner!"
-  spawner-given-sender: "&aΟ %player% έλαβε %type% spawner."
-  spawner-given-recipient: "&bΈχετε λάβει %type% spawner!"
+  no-permission: "&cChan eil cead agad an t-slugad seo a chleachdadh."
+  reload-success: "&aChaidh an suidheachadh air an Spawner System ath-luchdadh le soirbheachas."
+  wrong-subcommand: "&aCleachd: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aCleachd: /spsystem pickaxegive <cluicheadair> <1-100>" 
+  command-disabled: "&cChan eil an t-slugad 'pickaxegive' ri fhaighinn ach anns a' mhòd 'adhartais'."
+  player-not-found: "&cCha deach an cluicheadair a lorg: %player%"
+  not-a-number: "&cFeumaidh àireamh nan cleachdan a bhith àireamh."
+  max-uses-limit: "&cTha na cleachdan mu dheireadh aig 100."
+  pickaxe-given-sender: "&aChaidh spawner piocais a thoirt dhan %player% le %uses% cleachdadh."
+  pickaxe-given-recipient: "&bChaidh spawner piocais sònraichte a thoirt dhut!"
+  spawner-collected: "&aChaidh an spawner a chur dhan stòr le soirbheachas!" 
+  pickaxe-broken: "&aBhris do Spawner Piocais!"
+  natural-spawner-break-denied: "&cTha na spawner nàdurrach mar dhìon agus cha ghabh iad a bhriste."
+  sp-pickaxe-only: "&cChan fhaod an piocais sònraichte seo ach spawner a bhriste!"
+  inventory-full: "&aTha do stòr làn, thuit an spawner air an talamh!"
+  classic-silk-required: "&cChan fhaod spawner ach a bhriste le Piocais Touch Silk!"
+  advanced-pickaxe-required: "&cChan fhaod spawner ach a bhriste le Spawner Piocais sònraichte!"
+  empty-spawner-break-denied: "&cChan fhaod thu spawner falamh a bhriste!"
+  spawner-given-sender: "&aChaidh %type% spawner a thoirt dhan %player%."
+  spawner-given-recipient: "&bFhuair thu %type% spawner!"
+  chunk-limit-exceeded: "&cChan urrainn dhut barrachd spawners a chur anns a' chunk seo!"
+  egg-chunk-limit-exceeded: "&cAnn an chunk seo, chan fhaod thu ach %limit% mob de sheòrsa %type% a chur a-mach!"
+  
+# =========================================
+# Seòrsaichean Eintiteach
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Seasair Armachd
+  AXOLOTL: Axolotl
+  BAT: Ialtag
+  BEE: Seillean
+  BLAZE: Lasair
+  BOAT: Bàta
+  BOGGED: Bogach
+  BREEZE: Sèid
+  CAMEL: Càmhal
+  CAT: Cat
+  CAVE_SPIDER: Damhan-allaidh Uamha
+  CHICKEN: Cearc
+  COD: Todhar
+  COW: Bò
+  CREEPER: Creeper
+  CREAKING: Crìon
+  DOLPHIN: Leumadair
+  DONKEY: Asal
+  DROWNED: Bàthte
+  ELDER_GUARDIAN: Freiceadanair Sean
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dràgon Ender
+  EVOKER: Eòlasach
+  EXPERIENCE_BOTTLE: Botal Eòlais
+  EXPERIENCE_ORB: Orb Eòlais
+  FOX: Sionnach
+  FROG: Losgann
+  GHAST: Ghast
+  GIANT: Famhair
+  GLOW_SQUID: Sgiodag Soilleir
+  GOAT: Gobhar
+  GUARDIAN: Freiceadanair
+  HOGLIN: Hoglin
+  HORSE: Each
+  HUSK: Cochall
+  ILLUSIONER: Foillseach
+  IRON_GOLEM: Golem Iarainn
+  LLAMA: Llama
+  MAGMA_CUBE: Ciùb Magma
+  MINECART: Cairt-mèinn
+  MINECART_CHEST: Cairt-mèinn le Ciste
+  MINECART_COMMAND: Cairt-mèinn le Bloc Àithne
+  MINECART_FURNACE: Cairt-mèinn le Fùirneis
+  MINECART_HOPPER: Cairt-mèinn le Drabhailt
+  MINECART_SPAWNER: Cairt-mèinn le Spawner
+  MINECART_TNT: Cairt-mèinn le TNT
+  MULE: Leth-asal
+  MUSHROOM_COW: Bò Balgan-buachair
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Pearraid
+  PHANTOM: Taibhse
+  PIG: Muc
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brùideil
+  PILLAGER: Creachadair
+  POLAR_BEAR: Mathan Bàn
+  PUFFERFISH: Iasg Sèide
+  RABBIT: Coineanach
+  RAVAGER: Sloightear
+  SALMON: Bradan
+  SHEEP: Caora
+  SHULKER: Shulker
+  SILVERFISH: Iasg Airgid
+  SKELETON: Cnàimhneach
+  SKELETON_HORSE: Each Cnàimhneach
+  SLIME: Slime
+  SNIFFER: Faireachdainn
+  SNOWMAN: Bodach-sneachda
+  SPIDER: Damhan-allaidh
+  SQUID: Sgiodag
+  STRAY: Fògarrach
+  STRIDER: Coisiche
+  TADPOLE: Toadpole
+  TRADER_LLAMA: Llama Malairt
+  TROPICAL_FISH: Iasg Tropaigeach
+  TURTLE: Turtar
+  VEX: Buaireadair
+  VILLAGER: Saoranach
+  VINDICATOR: Dìonadair
+  WANDERING_TRADER: Malairteach Siubhail
+  WARDEN: Maor
+  WITCH: Bana-bhuidseach
+  WITHER: Wither
+  WITHER_SKELETON: Cnàimhneach Wither
+  WOLF: Madadh-allaidh
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Each Zombie
+  ZOMBIE_VILLAGER: Saoranach Zombie
+  ZOMBIFIED_PIGLIN: Piglin Zombie

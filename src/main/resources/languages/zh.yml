@@ -6,12 +6,12 @@
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# 生成器镐设置
+# 刷怪笼镐设置
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&l生成器镐"
+  name: "&b&l刷怪笼镐"
   lore:
-    - "&7使用此镐来破坏生成器。"
+    - "&7使用此镐来破坏刷怪笼。"
     - "&e"
     - "&a剩余使用次数: &c%uses%"
 
@@ -19,19 +19,35 @@ spawner-pickaxe-item:
 # 模式标签（高级或经典）
 # =========================================
 mode-tags:
-  advanced: "生成器镐"
+  advanced: "刷怪笼镐"
   classic: "丝触镐"
 
 # =========================================
-# 生成器物品设置
+# 刷怪笼物品设置
 # =========================================
 spawner-item:
-  name: "&a%type% 生成器"
+  name: "&a%type% 刷怪笼"
   lore:
-    - "&7放置此生成器以生成怪物。"
+    - "&7放置此刷怪笼以生成怪物。"
     - "&7只能使用: &e%mode% 来破坏"
     - "&7怪物类型: &a%type%"
 
+# =========================================
+# 刷怪笼全息显示设置
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% 刷怪笼 "
+  break_with: "&7可用 %mode% 破坏 "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# 生物全息显示设置
+# =========================================
+mob-remove-warning:
+  - "&c此生物将被移除"
+  - "&e如果在 %time% 秒内不离开该区域。"
+  
 # =========================================
 # 插件消息
 # =========================================
@@ -44,15 +60,116 @@ messages:
   player-not-found: "&c找不到玩家: %player%"
   not-a-number: "&c使用次数必须为数字。"
   max-uses-limit: "&c最大使用次数为 100。"
-  pickaxe-given-sender: "&a已给予 %player% %uses% 次使用的生成器镐。"
-  pickaxe-given-recipient: "&b您已获得一把特殊生成器镐！"
-  spawner-collected: "&a生成器已成功添加到您的背包！"
-  pickaxe-broken: "&a生成器镐已损坏！"
-  natural-spawner-break-denied: "&c自然生成的生成器受到保护，无法破坏。"
-  sp-pickaxe-only: "&c此特殊镐只能用于破坏生成器！"
-  inventory-full: "&a背包已满，生成器掉落在地面！"
-  classic-silk-required: "&c生成器只能用丝触镐破坏！"
-  advanced-pickaxe-required: "&c生成器只能用特殊生成器镐破坏！"
-  empty-spawner-break-denied: "&c无法破坏空的生成器！"
-  spawner-given-sender: "&a已给予 %player% %type% 生成器。"
-  spawner-given-recipient: "&b您已获得 %type% 生成器！"
+  pickaxe-given-sender: "&a已给予 %player% %uses% 次使用的刷怪笼镐。"
+  pickaxe-given-recipient: "&b您已获得一把特殊刷怪笼镐！"
+  spawner-collected: "&a刷怪笼已成功添加到您的背包！"
+  pickaxe-broken: "&a刷怪笼镐已损坏！"
+  natural-spawner-break-denied: "&c自然生成的刷怪笼受到保护，无法破坏。"
+  sp-pickaxe-only: "&c此特殊镐只能用于破坏刷怪笼！"
+  inventory-full: "&a背包已满，刷怪笼掉落在地面！"
+  classic-silk-required: "&c刷怪笼只能用丝触镐破坏！"
+  advanced-pickaxe-required: "&c刷怪笼只能用特殊刷怪笼镐破坏！"
+  empty-spawner-break-denied: "&c无法破坏空的刷怪笼！"
+  spawner-given-sender: "&a已给予 %player% %type% 刷怪笼。"
+  spawner-given-recipient: "&b您已获得 %type% 刷怪笼！"
+  chunk-limit-exceeded: "&c你不能在这个区块放置更多刷怪箱了!"
+  egg-chunk-limit-exceeded: "&c在此区块中，你最多只能生成 %limit% 只 %type% 生物！"
+  
+# =========================================
+# 实体类型
+# =========================================
+entity-types:
+  ALLAY: 悦灵
+  ARMADILLO: 犰狳
+  ARMOR_STAND: 盔甲架
+  AXOLOTL: 美西螈
+  BAT: 蝙蝠
+  BEE: 蜜蜂
+  BLAZE: 烈焰人
+  BOAT: 船
+  BOGGED: 沼泽
+  BREEZE: 微风
+  CAMEL: 骆驼
+  CAT: 猫
+  CAVE_SPIDER: 洞穴蜘蛛
+  CHICKEN: 鸡
+  COD: 鳕鱼
+  COW: 牛
+  CREEPER: 苦力怕
+  CREAKING: 吱吱作响
+  DOLPHIN: 海豚
+  DONKEY: 驴
+  DROWNED: 溺尸
+  ELDER_GUARDIAN: 远古守卫者
+  ENDERMAN: 末影人
+  ENDERMITE: 末影螨
+  ENDER_DRAGON: 末影龙
+  EVOKER: 唤魔者
+  EXPERIENCE_BOTTLE: 经验瓶
+  EXPERIENCE_ORB: 经验球
+  FOX: 狐狸
+  FROG: 青蛙
+  GHAST: 恶魂
+  GIANT: 巨人
+  GLOW_SQUID: 发光鱿鱼
+  GOAT: 山羊
+  GUARDIAN: 守卫者
+  HOGLIN: 疣猪兽
+  HORSE: 马
+  HUSK: 尸壳
+  ILLUSIONER: 幻术师
+  IRON_GOLEM: 铁傀儡
+  LLAMA: 羊驼
+  MAGMA_CUBE: 岩浆怪
+  MINECART: 矿车
+  MINECART_CHEST: 运输矿车
+  MINECART_COMMAND: 命令方块矿车
+  MINECART_FURNACE: 动力矿车
+  MINECART_HOPPER: 漏斗矿车
+  MINECART_SPAWNER: 刷怪笼矿车
+  MINECART_TNT: TNT矿车
+  MULE: 骡
+  MUSHROOM_COW: 哞菇
+  OCELOT: 豹猫
+  PANDA: 熊猫
+  PARROT: 鹦鹉
+  PHANTOM: 幻翼
+  PIG: 猪
+  PIGLIN: 猪灵
+  PIGLIN_BRUTE: 猪灵蛮兵
+  PILLAGER: 掠夺者
+  POLAR_BEAR: 北极熊
+  PUFFERFISH: 河豚
+  RABBIT: 兔子
+  RAVAGER: 劫掠兽
+  SALMON: 鲑鱼
+  SHEEP: 绵羊
+  SHULKER: 潜影贝
+  SILVERFISH: 蠹虫
+  SKELETON: 骷髅
+  SKELETON_HORSE: 骷髅马
+  SLIME: 史莱姆
+  SNIFFER: 嗅探兽
+  SNOWMAN: 雪傀儡
+  SPIDER: 蜘蛛
+  SQUID: 鱿鱼
+  STRAY: 流浪者
+  STRIDER: 炽足兽
+  TADPOLE: 蝌蚪
+  TRADER_LLAMA: 行商羊驼
+  TROPICAL_FISH: 热带鱼
+  TURTLE: 海龟
+  VEX: 恼鬼
+  VILLAGER: 村民
+  VINDICATOR: 卫道士
+  WANDERING_TRADER: 流浪商人
+  WARDEN: 监守者
+  WITCH: 女巫
+  WITHER: 凋灵
+  WITHER_SKELETON: 凋灵骷髅
+  WOLF: 狼
+  ZOGLIN: 僵尸疣猪兽
+  ZOMBIE: 僵尸
+  ZOMBIE_HORSE: 僵尸马
+  ZOMBIE_VILLAGER: 僵尸村民
+  ZOMBIFIED_PIGLIN: 僵尸猪灵

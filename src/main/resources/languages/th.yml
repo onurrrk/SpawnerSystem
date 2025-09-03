@@ -1,0 +1,175 @@
+# ===============================
+# ไฟล์ภาษา系統สปอว์นเนอร์
+# ===============================
+
+# คำนำหน้าสำหรับข้อความปลั๊กอินทั้งหมด
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# การตั้งค่าสิ่งของอีเต้อสปอว์นเนอร์
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lอีเต้อสปอว์นเนอร์"
+  lore:
+    - "&7ใช้ที่ขุดนี้เพื่อทำลายสปอว์นเนอร์"
+    - "&e"
+    - "&aจำนวนที่ใช้เหลือ: &c%uses%"
+
+# =========================================
+# แท็กโหมด (ขั้นสูง หรือ คลาสสิก)
+# =========================================
+mode-tags:
+  advanced: "อีเต้อสปอว์นเนอร์"
+  classic: "อีเต้อที่มี Silk Touch"
+
+# =========================================
+# การตั้งค่าสิ่งของสปอว์นเนอร์
+# =========================================
+spawner-item:
+  name: "&aสปอว์นเนอร์ %type%"
+  lore:
+    - "&7วางสปอว์นเนอร์นี้เพื่อสปอว์น"
+    - "&7สามารถทำลายได้ด้วย: &e%mode%"
+    - "&7ประเภทเอ็นทิตี้: &a%type%"
+
+# =========================================
+# การตั้งค่าฮอโลแกรมสปอว์นเนอร์
+# =========================================
+spawnable-status:
+  mob_type: "&aสปอว์นเนอร์ %type% "
+  break_with: "&7สามารถทำลายได้ด้วย %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+  
+# =========================================
+# การตั้งค่าฮอโลแกรม Mob
+# =========================================
+mob-remove-warning:
+  - "&cMob นี้จะถูกลบออก"
+  - "&eภายใน %time% วินาที หากไม่ออกจากพื้นที่"
+
+# =========================================
+# ข้อความปลั๊กอิน
+# =========================================
+messages:
+  no-permission: "&cคุณไม่มีสิทธิ์ใช้คำสั่งนี้"
+  reload-success: "&aโหลดการตั้งค่าระบบสปอว์นเนอร์สำเร็จแล้ว"
+  wrong-subcommand: "&aการใช้งาน: /spsystem <reload|pickaxegive|givespawner>" 
+  wrong-pickaxe-usage: "&aการใช้งาน: /spsystem pickaxegive <ผู้เล่น> <1-100>"
+  command-disabled: "&cคำสั่ง 'pickaxegive' สามารถใช้ได้เฉพาะในโหมด 'ขั้นสูง'"
+  player-not-found: "&cไม่พบผู้เล่น: %player%" 
+  not-a-number: "&cจำนวนการใช้งานต้องเป็นตัวเลข"
+  max-uses-limit: "&cจำนวนการใช้งานสูงสุดที่อนุญาตคือ 100"
+  pickaxe-given-sender: "&aให้อีเต้อสปอว์นเนอร์ที่มี %uses% ครั้งแก่ %player%"
+  pickaxe-given-recipient: "&bคุณได้รับอีเต้อสปอว์นเนอร์พิเศษ!"
+  spawner-collected: "&aเพิ่มสปอว์นเนอร์ลงในคลังสิ่งของคุณสำเร็จแล้ว!"
+  pickaxe-broken: "&aอีเต้อสปอว์นเนอร์ของคุณเสียแล้ว!"
+  natural-spawner-break-denied: "&cสปอว์นเนอร์ธรรมชาติได้รับการป้องกันและไม่สามารถทำลายได้"
+  sp-pickaxe-only: "&cอีเต้อพิเศษนี้สามารถใช้เพื่อทำลายสปอว์นเนอร์ได้เท่านั้น!"
+  inventory-full: "&aคลังสิ่งของคุณเต็ม ดังนั้นสปอว์นเนอร์จึงถูกทิ้งลงบนพื้น!"
+  classic-silk-required: "&cคุณสามารถทำลายสปอว์นเนอร์ได้ด้วยอีเต้อที่มีเอนชานต์ Silk Touch เท่านั้น!"
+  advanced-pickaxe-required: "&cคุณสามารถทำลายสปอว์นเนอร์ได้ด้วยอีเต้อสปอว์นเนอร์พิเศษเท่านั้น!"
+  empty-spawner-break-denied: "&cคุณไม่สามารถทำลายสปอว์นเนอร์ว่างเปล่านี้ได้!"
+  spawner-given-sender: "&aให้สปอว์นเนอร์ %type% แก่ %player%"
+  spawner-given-recipient: "&bคุณได้รับสปอว์นเนอร์ %type%!"
+  chunk-limit-exceeded: "&cคุณไม่สามารถวางสปอว์นเนอร์ใน chunk นี้ได้อีก!"
+  egg-chunk-limit-exceeded: "&cใน chunk นี้ คุณสามารถสปอว์น mob ประเภท %type% ได้สูงสุด %limit% ตัว!"
+  
+# =========================================
+# ประเภทเอนทิตี
+# =========================================
+entity-types:
+  ALLAY: อัลเลย์
+  ARMADILLO: อาร์มาดิลโล
+  ARMOR_STAND: ฐานเกราะ
+  AXOLOTL: แอกโซลอทล์
+  BAT: ค้างคาว
+  BEE: ผึ้ง
+  BLAZE: เบลซ
+  BOAT: เรือ
+  BOGGED: บ็อกเก็ด
+  BREEZE: บรีซ
+  CAMEL: อูฐ
+  CAT: แมว
+  CAVE_SPIDER: แมงมุมถ้ำ
+  CHICKEN: ไก่
+  COD: ปลาค็อด
+  COW: วัว
+  CREEPER: ครีปเปอร์
+  CREAKING: ครีคกิ้ง
+  DOLPHIN: โลมา
+  DONKEY: ลา
+  DROWNED:  drowned
+  ELDER_GUARDIAN: เอลเดอร์ การ์เดียน
+  ENDERMAN: เอนเดอร์แมน
+  ENDERMITE: เอนเดอร์ไมต์
+  ENDER_DRAGON: เอนเดอร์ดราก้อน
+  EVOKER: เอโวคเกอร์
+  EXPERIENCE_BOTTLE: ขวดประสบการณ์
+  EXPERIENCE_ORB: ลูกบอลประสบการณ์
+  FOX: จิ้งจอก
+  FROG: กบ
+  GHAST: แกสต์
+  GIANT: ยักษ์
+  GLOW_SQUID: ปลาหมึกเรืองแสง
+  GOAT: แพะ
+  GUARDIAN: การ์เดียน
+  HOGLIN: ฮอกลิน
+  HORSE: ม้า
+  HUSK: ฮัสค์
+  ILLUSIONER: อิลลูชันเนอร์
+  IRON_GOLEM: เหล็กโกเลม
+  LLAMA: ลามะ
+  MAGMA_CUBE: ลาวาคิวบ์
+  MINECART: รถเหมือง
+  MINECART_CHEST: รถเหมืองพร้อมหีบ
+  MINECART_COMMAND: รถเหมืองพร้อมบล็อกคำสั่ง
+  MINECART_FURNACE: รถเหมืองพร้อมเตาเผา
+  MINECART_HOPPER: รถเหมืองพร้อมฮอปเปอร์
+  MINECART_SPAWNER: รถเหมืองพร้อมสปอว์เนอร์
+  MINECART_TNT: รถเหมืองพร้อมทีเอ็นที
+  MULE: ล่อ
+  MUSHROOM_COW: วัว蘑菇
+  OCELOT: โอเซลอต
+  PANDA: แพนด้า
+  PARROT: นกแก้ว
+  PHANTOM: แฟนท่อม
+  PIG: หมู
+  PIGLIN: พิกลิน
+  PIGLIN_BRUTE: พิกลินบรู๊ท
+  PILLAGER: นักปล้น
+  POLAR_BEAR: หมีขั้วโลก
+  PUFFERFISH: ปลาปักเป้า
+  RABBIT: กระต่าย
+  RAVAGER: เรเวเจอร์
+  SALMON: ปลาแซลมอน
+  SHEEP: แกะ
+  SHULKER: ชัลเกอร์
+  SILVERFISH:  silverfish
+  SKELETON: โครงกระดูก
+  SKELETON_HORSE: ม้ากระดูก
+  SLIME: สไลม์
+  SNIFFER: สนิฟเฟอร์
+  SNOWMAN:  snowman
+  SPIDER: แมงมุม
+  SQUID: ปลาหมึก
+  STRAY: สเตรย์
+  STRIDER: สไตรเดอร์
+  TADPOLE: ลูกอ๊อด
+  TRADER_LLAMA: ลามะ traders
+  TROPICAL_FISH: ปลาเขตร้อน
+  TURTLE: เต่า
+  VEX: เวกซ์
+  VILLAGER: 村民
+  VINDICATOR:  vindicator
+  WANDERING_TRADER: นักเดินทาง
+  WARDEN: warden
+  WITCH: แม่มด
+  WITHER:  wither
+  WITHER_SKELETON:  wither โครงกระดูก
+  WOLF: หมาป่า
+  ZOGLIN:  โซกลิน
+  ZOMBIE: ซอมบี้
+  ZOMBIE_HORSE: ม้าซอมบี้
+  ZOMBIE_VILLAGER: 村民ซอมบี้
+  ZOMBIFIED_PIGLIN: พิกลินซอมบี้

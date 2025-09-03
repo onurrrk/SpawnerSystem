@@ -33,6 +33,22 @@ spawner-item:
     - "&7Entity-typ: &a%type%"
 
 # =========================================
+# Spawner Hologram Inställningar
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Kan brytas med %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob Hologram Inställningar
+# =========================================
+mob-remove-warning:
+  - "&cDenna mob kommer att tas bort"
+  - "&eInom %time% s om den inte lämnar området."
+  
+# =========================================
 # Plugin-meddelanden
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cDu kan inte bryta en tom spawner!"
   spawner-given-sender: "&a%player% fick %type% spawner."
   spawner-given-recipient: "&bDu har fått %type% spawner!"
+  chunk-limit-exceeded: "&cDu kan inte placera fler spawners i denna chunk!"
+  egg-chunk-limit-exceeded: "&cI denna chunk kan du bara spawna %limit% mobbar av typen %type%!"
+  
+# =========================================
+# Entity-typer
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Bältdjur
+  ARMOR_STAND: Rustningsställ
+  AXOLOTL: Axolotl
+  BAT: Fladdermus
+  BEE: Bi
+  BLAZE: Blaze
+  BOAT: Båt
+  BOGGED: Träskig
+  BREEZE: Bris
+  CAMEL: Kamel
+  CAT: Katt
+  CAVE_SPIDER: Grottspindel
+  CHICKEN: Kyckling
+  COD: Torsk
+  COW: Ko
+  CREEPER: Creeper
+  CREAKING: Knarrig
+  DOLPHIN: Delfin
+  DONKEY: Åsna
+  DROWNED: Drunknad
+  ELDER_GUARDIAN: Äldre vaktare
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdrake
+  EVOKER: Framkallare
+  EXPERIENCE_BOTTLE: Erfarenhetsflaska
+  EXPERIENCE_ORB: Erfarenhetsklot
+  FOX: Räv
+  FROG: Groda
+  GHAST: Ghast
+  GIANT: Jätte
+  GLOW_SQUID: Glowbläckfisk
+  GOAT: Get
+  GUARDIAN: Vaktare
+  HOGLIN: Hoglin
+  HORSE: Häst
+  HUSK: Husk
+  ILLUSIONER: Illusionist
+  IRON_GOLEM: Järngolem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmakub
+  MINECART: Gruvvagn
+  MINECART_CHEST: Gruvvagn med kista
+  MINECART_COMMAND: Gruvvagn med kommandoblock
+  MINECART_FURNACE: Gruvvagn med ugn
+  MINECART_HOPPER: Gruvvagn med tratt
+  MINECART_SPAWNER: Gruvvagn med spawner
+  MINECART_TNT: Gruvvagn med TNT
+  MULE: Mula
+  MUSHROOM_COW: Svampko
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papegoja
+  PHANTOM: Fantom
+  PIG: Gris
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brute
+  PILLAGER: Plundrare
+  POLAR_BEAR: Isbjörn
+  PUFFERFISH: Blåsfisk
+  RABBIT: Kanin
+  RAVAGER: Förhärjare
+  SALMON: Lax
+  SHEEP: Får
+  SHULKER: Shulker
+  SILVERFISH: Silverfisk
+  SKELETON: Skelett
+  SKELETON_HORSE: Skelethäst
+  SLIME: Slime
+  SNIFFER: Sniffare
+  SNOWMAN: Snögubbe
+  SPIDER: Spindel
+  SQUID: Bläckfisk
+  STRAY: Stray
+  STRIDER: Strider
+  TADPOLE: Grodyngel
+  TRADER_LLAMA: Handlarlama
+  TROPICAL_FISH: Tropisk fisk
+  TURTLE: Sköldpadda
+  VEX: Vex
+  VILLAGER: Bybo
+  VINDICATOR: Försvarare
+  WANDERING_TRADER: Vandrande handlare
+  WARDEN: Vaktmästare
+  WITCH: Häxa
+  WITHER: Wither
+  WITHER_SKELETON: Witherskelett
+  WOLF: Varg
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombiehäst
+  ZOMBIE_VILLAGER: Zombiebybo
+  ZOMBIFIED_PIGLIN: Zombifierad Piglin

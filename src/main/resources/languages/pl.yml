@@ -1,0 +1,175 @@
+# ===============================
+# Plik Językowy Systemu Spawnerów
+# ===============================
+
+# Prefix dla wszystkich wiadomości pluginu
+prefix: "&8[&aSpawner&8] &r"
+
+# =========================================
+# Ustawienia Przedmiotu - Kilof Spawnerów
+# =========================================
+spawner-pickaxe-item:
+  name: "&b&lKilof Spawnerów"
+  lore:
+    - "&7Użyj tego kilofa do niszczenia spawnerów."
+    - "&e"
+    - "&aPozostało użyć: &c%uses%"
+
+# =========================================
+# Tagi Trybów (Zaawansowany lub Klasyczny)
+# =========================================
+mode-tags:
+  advanced: "Kilof Spawnerów"
+  classic: "Kilof z Jedwabnym Dotykiem"
+
+# =========================================
+# Ustawienia Przedmiotu - Spawner
+# =========================================
+spawner-item:
+  name: "&aSpawner %type%"
+  lore:
+    - "&7Postaw tego spawnera, aby przyzywać"
+    - "&7Można zniszczyć za pomocą: &e%mode%"
+    - "&7Typ istoty: &a%type%"
+
+# =========================================
+# Ustawienia Hologramu Spawnera
+# =========================================
+spawnable-status:
+  mob_type: "&aSpawner %type% "
+  break_with: "&7Można zniszczyć %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Ustawienia Hologramu Mobów
+# =========================================
+mob-remove-warning:
+  - "&cTen mob zostanie usunięty"
+  - "&eZa %time% s, jeśli nie opuści obszaru."
+  
+# =========================================
+# Wiadomości Pluginu
+# =========================================
+messages:
+  no-permission: "&cNie masz uprawnień do użycia tej komendy."
+  reload-success: "&aKonfiguracja systemu spawnerów została pomyślnie przeładowana."
+  wrong-subcommand: "&aUżycie: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&aUżycie: /spsystem pickaxegive <gracz> <1-100>"
+  command-disabled: "&cKomenda 'pickaxegive' jest dostępna tylko w trybie 'zaawansowanym'."
+  player-not-found: "&cNie znaleziono gracza: %player%"
+  not-a-number: "&cIlość użyć musi być liczbą."
+  max-uses-limit: "&cMaksymalny limit użyć to 100."
+  pickaxe-given-sender: "&aDanio Kilof Spawnerów z %uses% użyć graczowi %player%."
+  pickaxe-given-recipient: "&bOtrzymałeś specjalny kilof do spawnerów!"
+  spawner-collected: "&aSpawner pomyślnie dodany do ekwipunku!"
+  pickaxe-broken: "&aTwój kilof do spawnerów się zepsuł!"
+  natural-spawner-break-denied: "&cNaturalne spawnery są chronione i nie można ich zniszczyć."
+  sp-pickaxe-only: "&cTen specjalny kilof może być używany tylko do niszczenia spawnerów!"
+  inventory-full: "&aTwój ekwipunek był pełny, więc spawner został upuszczony na ziemię!"
+  classic-silk-required: "&cMożesz niszczyć spawnery tylko kilofem zaczarowanym Jedwabnym Dotykiem!"
+  advanced-pickaxe-required: "&cMożesz niszczyć spawnery tylko specjalnym Kilofem Spawnerów!"
+  empty-spawner-break-denied: "&cNie możesz zniszczyć tego pustego spawnera!"
+  spawner-given-sender: "&aDanio spawner %type% graczowi %player%."
+  spawner-given-recipient: "&bOtrzymałeś spawnera %type%!"
+  chunk-limit-exceeded: "&cNie możesz umieścić więcej spawnerów w tym chunk'u!"
+  egg-chunk-limit-exceeded: "&cW tym chunkujesz możesz spawnować tylko %limit% mobów typu %type%!"
+  
+# =========================================
+# Typy Istot
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Pancernik
+  ARMOR_STAND: Stojak na Zbroję
+  AXOLOTL: Aksolotl
+  BAT: Nietoperz
+  BEE: Pszczoła
+  BLAZE: Płomyk
+  BOAT: Łódka
+  BOGGED: Bagniak
+  BREEZE: Bryza
+  CAMEL: Wielbłąd
+  CAT: Kot
+  CAVE_SPIDER: Jaskiniowy Pająk
+  CHICKEN: Kura
+  COD: Dorsz
+  COW: Krowa
+  CREEPER: Creeper
+  CREAKING: Skrzypiący
+  DOLPHIN: Delfin
+  DONKEY: Osioł
+  DROWNED: Utonięty
+  ELDER_GUARDIAN: Starszy Strażnik
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Smok Kresu
+  EVOKER: Przywoływacz
+  EXPERIENCE_BOTTLE: Butelka doświadczenia
+  EXPERIENCE_ORB: Kula doświadczenia
+  FOX: Lis
+  FROG: Żaba
+  GHAST: Ghast
+  GIANT: Olbrzym
+  GLOW_SQUID: Świecąca Kałamarnica
+  GOAT: Koza
+  GUARDIAN: Strażnik
+  HOGLIN: Hoglin
+  HORSE: Koń
+  HUSK: Husk
+  ILLUSIONER: Iluzjonista
+  IRON_GOLEM: Żelazny Golem
+  LLAMA: Lama
+  MAGMA_CUBE: Kostka Magmy
+  MINECART: Wagonik
+  MINECART_CHEST: Wagonik ze Skrzynią
+  MINECART_COMMAND: Wagonik z Blokiem Poleceń
+  MINECART_FURNACE: Wagonik z Piecem
+  MINECART_HOPPER: Wagonik z Lejem
+  MINECART_SPAWNER: Wagonik ze Spawnerem
+  MINECART_TNT: Wagonik z TNT
+  MULE: Muł
+  MUSHROOM_COW: Krowa Grzybowa
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papuga
+  PHANTOM: Fantom
+  PIG: Świnia
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brutal
+  PILLAGER: Rozbójnik
+  POLAR_BEAR: Niedźwiedź Polarny
+  PUFFERFISH: Rozdymka
+  RABBIT: Królik
+  RAVAGER: Niszczyciel
+  SALMON: Łosoś
+  SHEEP: Owca
+  SHULKER: Shulker
+  SILVERFISH: Srebrnik
+  SKELETON: Szkielet
+  SKELETON_HORSE: Koń Szkielet
+  SLIME: Szlam
+  SNIFFER: Obwąchiwacz
+  SNOWMAN: Bałwan
+  SPIDER: Pająk
+  SQUID: Kałamarnica
+  STRAY: Tułacz
+  STRIDER: Magmowędrowiec
+  TADPOLE: Kijanka
+  TRADER_LLAMA: Lama Handlarza
+  TROPICAL_FISH: Ryba Tropikalna
+  TURTLE: Żółw
+  VEX: Vex
+  VILLAGER: Wieśniak
+  VINDICATOR: Mściciel
+  WANDERING_TRADER: Wędrowny Handlarz
+  WARDEN: Strażnik
+  WITCH: Wiedźma
+  WITHER: Wither
+  WITHER_SKELETON: Wither Szkielet
+  WOLF: Wilk
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Koń Zombie
+  ZOMBIE_VILLAGER: Wieśniak Zombie
+  ZOMBIFIED_PIGLIN: Zombifikowany Piglin

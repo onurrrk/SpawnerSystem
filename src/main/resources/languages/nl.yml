@@ -33,6 +33,22 @@ spawner-item:
     - "&7Entiteitstype: &a%type%"
 
 # =========================================
+# Spawner Hologram Instellingen
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Kan worden gebroken met %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Mob Hologram Instellingen
+# =========================================
+mob-remove-warning:
+  - "&cDeze mob wordt verwijderd"
+  - "&eBinnen %time% s als hij het gebied niet verlaat."
+  
+# =========================================
 # Plugin-berichten
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cJe kunt een lege spawner niet breken!"
   spawner-given-sender: "&a%player% heeft een %type% spawner gekregen."
   spawner-given-recipient: "&bJe hebt een %type% spawner ontvangen!"
+  chunk-limit-exceeded: "&cJe kunt niet meer spawners in deze chunk plaatsen!"
+  egg-chunk-limit-exceeded: "&cIn dit chunk kun je maximaal %limit% mobs van het type %type% spawnen!"
+  
+# =========================================
+# Entity Typen
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Gordeldier
+  ARMOR_STAND: Wapenrustingstandaard
+  AXOLOTL: Axolotl
+  BAT: Vleermuis
+  BEE: Bij
+  BLAZE: Blaze
+  BOAT: Boot
+  BOGGED: Moerasachtige
+  BREEZE: Bries
+  CAMEL: Kameel
+  CAT: Kat
+  CAVE_SPIDER: Grottenspin
+  CHICKEN: Kip
+  COD: Kabeljauw
+  COW: Koe
+  CREEPER: Creeper
+  CREAKING: Krakerig
+  DOLPHIN: Dolfijn
+  DONKEY: Ezel
+  DROWNED: Verdronkene
+  ELDER_GUARDIAN: Oude Bewaker
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdraak
+  EVOKER: Oproeper
+  EXPERIENCE_BOTTLE: Ervaringsfles
+  EXPERIENCE_ORB: Ervaringsbol
+  FOX: Vos
+  FROG: Kikker
+  GHAST: Ghast
+  GIANT: Reus
+  GLOW_SQUID: Glowinktvis
+  GOAT: Geit
+  GUARDIAN: Bewaker
+  HOGLIN: Hoglin
+  HORSE: Paard
+  HUSK: Husk
+  ILLUSIONER: Illusionist
+  IRON_GOLEM: IJzergolem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmakubus
+  MINECART: Mijnkar
+  MINECART_CHEST: Mijnkar met kist
+  MINECART_COMMAND: Mijnkar met opdrachtblok
+  MINECART_FURNACE: Mijnkar met oven
+  MINECART_HOPPER: Mijnkar met trechter
+  MINECART_SPAWNER: Mijnkar met spawner
+  MINECART_TNT: Mijnkar met TNT
+  MULE: Muildier
+  MUSHROOM_COW: Paddenstoelkoe
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Papegaai
+  PHANTOM: Fantoom
+  PIG: Varken
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Bruut
+  PILLAGER: Plunderaar
+  POLAR_BEAR: IJsbeer
+  PUFFERFISH: Kogelvis
+  RABBIT: Konijn
+  RAVAGER: Verwoester
+  SALMON: Zalm
+  SHEEP: Schaap
+  SHULKER: Shulker
+  SILVERFISH: Zilvervisje
+  SKELETON: Skelet
+  SKELETON_HORSE: Skeletpaard
+  SLIME: Slijm
+  SNIFFER: Snuffelaar
+  SNOWMAN: Sneeuwpop
+  SPIDER: Spin
+  SQUID: Inktvis
+  STRAY: Zwerver
+  STRIDER: Loper
+  TADPOLE: Kikkervisje
+  TRADER_LLAMA: Handelaarslama
+  TROPICAL_FISH: Tropische vis
+  TURTLE: Schildpad
+  VEX: Vex
+  VILLAGER: Dorpeling
+  VINDICATOR: Verdediger
+  WANDERING_TRADER: Rondreizende handelaar
+  WARDEN: Bewaker
+  WITCH: Heks
+  WITHER: Wither
+  WITHER_SKELETON: Witherskelet
+  WOLF: Wolf
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombiepaard
+  ZOMBIE_VILLAGER: Zombiedorpeling
+  ZOMBIFIED_PIGLIN: Gezombificeerde Piglin

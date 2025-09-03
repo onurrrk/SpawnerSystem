@@ -1,58 +1,175 @@
 # ===============================
-# Spawner System Кыргызча
+# Spawner 시스템 한국어
 # ===============================
 
-# Бардык плагин билдирүүлөрү үчүн префикс
+# 모든 플러그인 메시지의 접두사
 prefix: "&8[&aSpawner&8] &r"
 
 # =========================================
-# Spawner Тырмакчасы Орнотуулары
+# Spawner 곡괭이 설정
 # =========================================
 spawner-pickaxe-item:
-  name: "&b&lSpawner Тырмакча"
+  name: "&b&lSpawner 곡괭이"
   lore:
-    - "&7Бул тырмакчаны spawner сытуу үчүн колдон."
+    - "&7이 곡괭이를 사용하여 스포너를 부술 수 있습니다."
     - "&e"
-    - "&aКалган колдонуу: &c%uses%"
+    - "&a남은 사용 횟수: &c%uses%"
 
 # =========================================
-# Режим тэгдери (Өркүндөтүлгөн же Класстагы)
+# 모드 태그 (고급 또는 일반)
 # =========================================
 mode-tags:
-  advanced: "Spawner Тырмакча"
-  classic: "Silk Touch Тырмакча"
+  advanced: "Spawner 곡괭이"
+  classic: "실크터치 곡괭이"
 
 # =========================================
-# Spawner предметтери Орнотуулары
+# Spawner 아이템 설정
 # =========================================
 spawner-item:
-  name: "&a%type% Spawner"
+  name: "&a%type% 스포너"
   lore:
-    - "&7Бул spawnerди коюу менен мобдор чыгат."
-    - "&7Пайдалануу жолу: &e%mode%"
-    - "&7Сущность тиби: &a%type%"
+    - "&7이 스포너를 설치하여 몬스터를 소환하세요."
+    - "&7다음으로만 부술 수 있음: &e%mode%"
+    - "&7소환 몬스터 종류: &a%type%"
 
 # =========================================
-# Плагин билдирүүлөрү
+# 스포너 홀로그램 설정
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% 스포너 "
+  break_with: "&7%mode%으로 부술 수 있음 "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# 몹 홀로그램 설정
+# =========================================
+mob-remove-warning:
+  - "&c이 몹은 제거됩니다"
+  - "&e해당 지역을 떠나지 않으면 %time%초 내로."
+  
+# =========================================
+# 플러그인 메시지
 # =========================================
 messages:
-  no-permission: "&cБул буйрукту колдонууга уруксат жок."
-  reload-success: "&aSpawner системасы ийгиликтүү жаңыртылды."
-  wrong-subcommand: "&aКолдонуу: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aКолдонуу: /spsystem pickaxegive < оюнчу> <1-100>"
-  command-disabled: "&c'pickaxegive' буйругу болгону 'өркүндөтүлгөн' режимде иштейт."
-  player-not-found: "&cОюнчу табылган жок: %player%"
-  not-a-number: "&cКолдонуу саны сан болушу керек."
-  max-uses-limit: "&cКолдонуу саны максималдуу 100."
-  pickaxe-given-sender: "&a%player% Spawner Тырмакчаны %uses% колдонуу менен алды."
-  pickaxe-given-recipient: "&bСиз атайын spawner тырмакчасын алдыңыз!"
-  spawner-collected: "&aSpawner ийгиликтүү инвентарыңызга кошулду!"
-  pickaxe-broken: "&aСиздин Spawner Тырмакчаңыз сынды!"
-  natural-spawner-break-denied: "&cТабигый spawnerлер корголгон жана сынык кыла албайсыз."
-  sp-pickaxe-only: "&cБул атайын тырмакча болгону spawnerди сыноо үчүн!"
-  inventory-full: "&aИнвентарыңыз толгон, spawner жерге түштү!"
-  classic-silk-required: "&cSpawnerди Silk Touch Тырмакча менен гана сыноо болот!"
-  advanced-pickaxe-required: "&cSpawnerди атайын Spawner Тырмакча менен гана сыноо болот!"
-  empty-spawner-break-denied: "&cБош spawnerди сыноо мүмкүн эмес!"
-  spawner-given-sender: "&a%player% %type% spawner алды."
-  spawner-given-recipient: "&bСиз %type% spawner алдыңыз!"
+  no-permission: "&c이 명령어를 사용할 권한이 없습니다."
+  reload-success: "&aSpawner 시스템 설정이 성공적으로 다시 불러와졌습니다."
+  wrong-subcommand: "&a사용법: /spsystem <reload|pickaxegive|givespawner>"
+  wrong-pickaxe-usage: "&a사용법: /spsystem pickaxegive <플레이어> <1-100>"
+  command-disabled: "&c'pickaxegive' 명령은 '고급' 모드에서만 사용할 수 있습니다."
+  player-not-found: "&c플레이어를 찾을 수 없습니다: %player%"
+  not-a-number: "&c사용 횟수는 숫자여야 합니다."
+  max-uses-limit: "&c최대 사용 횟수는 100회입니다."
+  pickaxe-given-sender: "&a%player%님이 %uses%회 사용 가능한 Spawner 곡괭이를 받았습니다."
+  pickaxe-given-recipient: "&b특별한 Spawner 곡괭이를 받았습니다!"
+  spawner-collected: "&a스포너가 인벤토리에 성공적으로 추가되었습니다!"
+  pickaxe-broken: "&aSpawner 곡괭이가 깨졌습니다!"
+  natural-spawner-break-denied: "&c자연 생성된 스포너는 보호되어 부술 수 없습니다."
+  sp-pickaxe-only: "&c이 특수 곡괭이는 오직 스포너만 부술 수 있습니다!"
+  inventory-full: "&a인벤토리가 가득 찼습니다. 스포너가 땅에 떨어졌습니다!"
+  classic-silk-required: "&c스포너는 실크터치 곡괭이로만 부술 수 있습니다!"
+  advanced-pickaxe-required: "&c스포너는 특수 Spawner 곡괭이로만 부술 수 있습니다!"
+  empty-spawner-break-denied: "&c빈 스포너는 부술 수 없습니다!"
+  spawner-given-sender: "&a%player%님이 %type% 스포너를 받았습니다."
+  spawner-given-recipient: "&b%type% 스포너를 받았습니다!"
+  chunk-limit-exceeded: "&c이 청크에는 더 많은 스포너를 설치할 수 없습니다!"
+  egg-chunk-limit-exceeded: "&c이 청크에서는 %type% 유형의 몹을 최대 %limit%마리만 스폰할 수 있습니다!"
+  
+# =========================================
+# 엔티티 종류
+# =========================================
+entity-types:
+  ALLAY: 알레이
+  ARMADILLO: 아르마딜로
+  ARMOR_STAND: 갑옷 거치대
+  AXOLOTL: 아홀로틀
+  BAT: 박쥐
+  BEE: 벌
+  BLAZE: 블레이즈
+  BOAT: 보트
+  BOGGED: 보그드
+  BREEZE: 브리즈
+  CAMEL: 낙타
+  CAT: 고양이
+  CAVE_SPIDER: 동굴 거미
+  CHICKEN: 닭
+  COD: 대구
+  COW: 소
+  CREEPER: 크리퍼
+  CREAKING: 삐걱이
+  DOLPHIN: 돌고래
+  DONKEY: 당나귀
+  DROWNED: 드라운드
+  ELDER_GUARDIAN: 엘더 가디언
+  ENDERMAN: 엔더맨
+  ENDERMITE: 엔더마이트
+  ENDER_DRAGON: 엔더 드래곤
+  EVOKER: 어보커
+  EXPERIENCE_BOTTLE: 경험치 병
+  EXPERIENCE_ORB: 경험치 구슬
+  FOX: 여우
+  FROG: 개구리
+  GHAST: 가스트
+  GIANT: 자이언트
+  GLOW_SQUID: 발광 오징어
+  GOAT: 염소
+  GUARDIAN: 가디언
+  HOGLIN: 호글린
+  HORSE: 말
+  HUSK: 허스크
+  ILLUSIONER: 일루저너
+  IRON_GOLEM: 철 골렘
+  LLAMA: 라마
+  MAGMA_CUBE: 마그마 큐브
+  MINECART: 광산 수레
+  MINECART_CHEST: 상자 광산 수레
+  MINECART_COMMAND: 명령 블록 광산 수레
+  MINECART_FURNACE: 화로 광산 수레
+  MINECART_HOPPER: 깔때기 광산 수레
+  MINECART_SPAWNER: 생성기 광산 수레
+  MINECART_TNT: TNT 광산 수레
+  MULE: 노새
+  MUSHROOM_COW: 무시룸 소
+  OCELOT: 오셀롯
+  PANDA: 팬더
+  PARROT: 앵무새
+  PHANTOM: 팬텀
+  PIG: 돼지
+  PIGLIN: 피글린
+  PIGLIN_BRUTE: 피글린 브루트
+  PILLAGER: 약탈자
+  POLAR_BEAR: 북극곰
+  PUFFERFISH: 복어
+  RABBIT: 토끼
+  RAVAGER: 레이저
+  SALMON: 연어
+  SHEEP: 양
+  SHULKER: 셜커
+  SILVERFISH: 실버피시
+  SKELETON: 스켈레톤
+  SKELETON_HORSE: 스켈레톤 말
+  SLIME: 슬라임
+  SNIFFER: 스니퍼
+  SNOWMAN: 눈골렘
+  SPIDER: 거미
+  SQUID: 오징어
+  STRAY: 스트레이
+  STRIDER: 스트라이더
+  TADPOLE: 올챙이
+  TRADER_LLAMA: 상인 라마
+  TROPICAL_FISH: 열대어
+  TURTLE: 거북이
+  VEX: 벡스
+  VILLAGER: 주민
+  VINDICATOR: 빈디케이터
+  WANDERING_TRADER: 떠돌이 상인
+  WARDEN: 워든
+  WITCH: 마녀
+  WITHER: 위더
+  WITHER_SKELETON: 위더 스켈레톤
+  WOLF: 늑대
+  ZOGLIN: 조글린
+  ZOMBIE: 좀비
+  ZOMBIE_HORSE: 좀비 말
+  ZOMBIE_VILLAGER: 좀비 주민
+  ZOMBIFIED_PIGLIN: 좀비화된 피글린

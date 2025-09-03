@@ -11,7 +11,7 @@ prefix: "&8[&aSpawner&8] &r"
 spawner-pickaxe-item:
   name: "&b&lPiccone Spawner"
   lore:
-    - "&7Usa questo piccone per rompere lo spawner."
+    - "&7Usa questo piccone pour rompere lo spawner."
     - "&e"
     - "&aUsi rimanenti: &c%uses%"
 
@@ -33,6 +33,22 @@ spawner-item:
     - "&7Tipo entità: &a%type%"
 
 # =========================================
+# Impostazioni ologramma dello Spawner
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Spawner "
+  break_with: "&7Può essere distrutto con %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Impostazioni Ologramma Mob
+# =========================================
+mob-remove-warning:
+  - "&cQuesto mob verrà rimosso"
+  - "&eEntro %time% s se non lascia l'area."
+  
+# =========================================
 # Messaggi Plugin
 # =========================================
 messages:
@@ -43,7 +59,7 @@ messages:
   command-disabled: "&cIl comando 'pickaxegive' è disponibile solo in modalità 'avanzata'."
   player-not-found: "&cGiocatore non trovato: %player%"
   not-a-number: "&cIl numero di usi deve essere un numero."
-  max-uses-limit: "&cIl numero massimo di usi è 100."
+  max-uses-limit: "&cIl numero massimo de usi è 100."
   pickaxe-given-sender: "&a%player% ha ricevuto un Piccone Spawner con %uses% usi."
   pickaxe-given-recipient: "&bHai ricevuto un Piccone Spawner speciale!"
   spawner-collected: "&aSpawner aggiunto con successo al tuo inventario!"
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cNon puoi rompere uno spawner vuoto!"
   spawner-given-sender: "&a%player% ha ricevuto uno spawner %type%."
   spawner-given-recipient: "&bHai ricevuto uno spawner %type%!"
+  chunk-limit-exceeded: "&cNon puoi piazzare altri spawners in questo chunk!"
+  egg-chunk-limit-exceeded: "&cIn questo chunk puoi spawnare solo %limit% mob di tipo %type%!"
+  
+# =========================================
+# Tipi di Entità
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Supporto per armatura
+  AXOLOTL: Axolotl
+  BAT: Pipistrello
+  BEE: Ape
+  BLAZE: Blaze
+  BOAT: Barca
+  BOGGED: Paludoso
+  BREEZE: Brezza
+  CAMEL: Cammello
+  CAT: Gatto
+  CAVE_SPIDER: Ragno delle caverne
+  CHICKEN: Gallina
+  COD: Merluzzo
+  COW: Mucca
+  CREEPER: Creeper
+  CREAKING: Scricchiolante
+  DOLPHIN: Delfino
+  DONKEY: Asino
+  DROWNED: Annegato
+  ELDER_GUARDIAN: Guardiano Anziano
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Drago dell'End
+  EVOKER: Evocatore
+  EXPERIENCE_BOTTLE: Bottiglia dell'esperienza
+  EXPERIENCE_ORB: Sfera dell'esperienza
+  FOX: Volpe
+  FROG: Rana
+  GHAST: Ghast
+  GIANT: Gigante
+  GLOW_SQUID: Calamaro luminoso
+  GOAT: Capra
+  GUARDIAN: Guardiano
+  HOGLIN: Hoglin
+  HORSE: Cavallo
+  HUSK: Husk
+  ILLUSIONER: Illusionista
+  IRON_GOLEM: Golem di ferro
+  LLAMA: Lama
+  MAGMA_CUBE: Cubo di magma
+  MINECART: Carrello da miniera
+  MINECART_CHEST: Carrello con baule
+  MINECART_COMMAND: Carrello con blocco comando
+  MINECART_FURNACE: Carrello con fornace
+  MINECART_HOPPER: Carrello con tramoggia
+  MINECART_SPAWNER: Carrello con generatore
+  MINECART_TNT: Carrello con TNT
+  MULE: Mulo
+  MUSHROOM_COW: Mucca fungo
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARROT: Pappagallo
+  PHANTOM: Fantasma
+  PIG: Maiale
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin bruto
+  PILLAGER: Saccheggiatore
+  POLAR_BEAR: Orso polare
+  PUFFERFISH: Pesce palla
+  RABBIT: Coniglio
+  RAVAGER: Devastatore
+  SALMON: Salmone
+  SHEEP: Pecora
+  SHULKER: Shulker
+  SILVERFISH: Pesciolino d'argento
+  SKELETON: Scheletro
+  SKELETON_HORSE: Cavallo scheletro
+  SLIME: Slime
+  SNIFFER: Annusatore
+  SNOWMAN: Pupazzo di neve
+  SPIDER: Ragno
+  SQUID: Calamaro
+  STRAY: Stray
+  STRIDER: Strider
+  TADPOLE: Girino
+  TRADER_LLAMA: Lama del commerciante
+  TROPICAL_FISH: Pesce tropicale
+  TURTLE: Tartaruga
+  VEX: Vex
+  VILLAGER: Abitante del villaggio
+  VINDICATOR: Vendicatore
+  WANDERING_TRADER: Commerciante ambulante
+  WARDEN: Guardiano
+  WITCH: Strega
+  WITHER: Wither
+  WITHER_SKELETON: Scheletro wither
+  WOLF: Lupo
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Cavallo zombie
+  ZOMBIE_VILLAGER: Abitante zombie
+  ZOMBIFIED_PIGLIN: Piglin zombificato

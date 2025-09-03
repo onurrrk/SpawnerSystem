@@ -33,6 +33,22 @@ spawner-item:
     - "&7Тип существа: &a%type%"
 
 # =========================================
+# Настройки голограммы спаунера
+# =========================================
+spawnable-status:
+  mob_type: "&a%type% Спавнер "
+  break_with: "&7Можно сломать с помощью %mode% "
+  can_spawn: "&a(✓)"
+  cannot_spawn: "&c(!)"
+
+# =========================================
+# Настройки голограммы моба
+# =========================================
+mob-remove-warning:
+  - "&cЭтот моб будет удален"
+  - "&eВ течение %time% с, если не покинет зону."
+  
+# =========================================
 # Сообщения плагина
 # =========================================
 messages:
@@ -56,3 +72,104 @@ messages:
   empty-spawner-break-denied: "&cПустые спавнеры нельзя ломать!"
   spawner-given-sender: "&aИгроку %player% выдан %type% спавнер."
   spawner-given-recipient: "&bВы получили %type% спавнер!"
+  chunk-limit-exceeded: "&cВы не можете разместить больше спавнеров в этом чанке!"
+  egg-chunk-limit-exceeded: "&cВ этом чанке можно заспавнить только %limit% мобов типа %type%!"
+  
+# =========================================
+# Типы Существ
+# =========================================
+entity-types:
+  ALLAY: Аллей
+  ARMADILLO: Броненосец
+  ARMOR_STAND: Стойка для брони
+  AXOLOTL: Аксолотль
+  BAT: Летучая мышь
+  BEE: Пчела
+  BLAZE: Ифрит
+  BOAT: Лодка
+  BOGGED: Болотный
+  BREEZE: Бриз
+  CAMEL: Верблюд
+  CAT: Кошка
+  CAVE_SPIDER: Пещерный паук
+  CHICKEN: Курица
+  COD: Треска
+  COW: Корова
+  CREEPER: Крипер
+  CREAKING: Скрипун
+  DOLPHIN: Дельфин
+  DONKEY: Осёл
+  DROWNED: Утопленник
+  ELDER_GUARDIAN: Древний страж
+  ENDERMAN: Эндермен
+  ENDERMITE: Эндермит
+  ENDER_DRAGON: Эндердракон
+  EVOKER: Заклинатель
+  EXPERIENCE_BOTTLE: Бутылочка опыта
+  EXPERIENCE_ORB: Сфера опыта
+  FOX: Лиса
+  FROG: Лягушка
+  GHAST: Гаст
+  GIANT: Гигант
+  GLOW_SQUID: Светящийся спрут
+  GOAT: Коза
+  GUARDIAN: Страж
+  HOGLIN: Хоглин
+  HORSE: Лошадь
+  HUSK: Кадавр
+  ILLUSIONER: Иллюзионист
+  IRON_GOLEM: Железный голем
+  LLAMA: Лама
+  MAGMA_CUBE: Магмовый куб
+  MINECART: Вагонетка
+  MINECART_CHEST: Вагонетка с сундуком
+  MINECART_COMMAND: Вагонетка с командным блоком
+  MINECART_FURNACE: Вагонетка с печью
+  MINECART_HOPPER: Вагонетка с воронкой
+  MINECART_SPAWNER: Вагонетка с спавнером
+  MINECART_TNT: Вагонетка с TNT
+  MULE: Мул
+  MUSHROOM_COW: Грибная корова
+  OCELOT: Оцелот
+  PANDA: Панда
+  PARROT: Попугай
+  PHANTOM: Фантом
+  PIG: Свинья
+  PIGLIN: Пиглин
+  PIGLIN_BRUTE: Пиглин-brute
+  PILLAGER: Разбойник
+  POLAR_BEAR: Белый медведь
+  PUFFERFISH: Иглобрюх
+  RABBIT: Кролик
+  RAVAGER: Разрушитель
+  SALMON: Лосось
+  SHEEP: Овца
+  SHULKER: Шалкер
+  SILVERFISH: Чешуйница
+  SKELETON: Скелет
+  SKELETON_HORSE: Скелет-лошадь
+  SLIME: Слизень
+  SNIFFER: Сниффер
+  SNOWMAN: Снежный голем
+  SPIDER: Паук
+  SQUID: Кальмар
+  STRAY: Бродяга
+  STRIDER: Странник
+  TADPOLE: Головастик
+  TRADER_LLAMA: Лама торговца
+  TROPICAL_FISH: Тропическая рыба
+  TURTLE: Черепаха
+  VEX: Векс
+  VILLAGER: Житель
+  VINDICATOR: Поборник
+  WANDERING_TRADER: Странствующий торговец
+  WARDEN: Хранитель
+  WITCH: Ведьма
+  WITHER: Визер
+  WITHER_SKELETON: Визер-скелет
+  WOLF: Волк
+  ZOGLIN: Зоглин
+  ZOMBIE: Зомби
+  ZOMBIE_HORSE: Зомби-лошадь
+  ZOMBIE_VILLAGER: Зомби-житель
+  ZOMBIFIED_PIGLIN: Зомбифицированный пиглин
