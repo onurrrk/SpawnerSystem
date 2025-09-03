@@ -2,7 +2,7 @@
 #            Spawner System Settings
 # -------------------------------------------------
 # Plugin language configuration
-# Supported: "en","tr","de","es","ru","zh","ja","az","fr","ar","nl","id","hy","it","gd","sv","ky","ko","hu","cs","el"
+# Supported: "en","tr","de","es","ru","zh","ja","az","fr","ar","nl","id","hy","it","gd","sv","ky","ko","hu","cs","el","pt","ro","pl","uk","vi","th","fa"
 language: en
 
 # Choose the plugin operation mode:
