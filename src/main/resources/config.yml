@@ -13,12 +13,69 @@ language: en
 # system: "advanced"
 #   - Spawners can be broken only with the special "Spawner Pickaxe" obtained via /spsystem pickaxegive.
 #   - Natural spawners can be broken if natural-spawner-break is true.
-
 system: "advanced"
 
+# Allow natural (generated) spawners to be broken if true
 natural-spawner-break: true
-
+# Enable or disable the hologram above spawners
+# Install PlaceholderAPI on the server for it to work
+hologram-enabled: true
+# Determines the maximum distance (in blocks) at which players can see the holograms.
+# Adjust this value according to your server's performance.
+# Default: 8.0
+hologram-distance: 8.0
+# Enable or disable logging of spawner place and break actions
 logs-enabled: true
-
 # Empty Spawner Breaking system
 allow-empty-spawner-break: true 
+
+Spawners:
+  DEFAULT:
+    # Detection range around the spawner for active players (the spawner will activate if a player is within this range)
+    range: 16                    
+    # Spawn cycle in ticks (20 ticks = 1 second)
+    delay: 500                   
+    # Number of mobs spawned per cycle
+    amount: 3                    
+    # Limit for this mob type in the entire chunk; the spawner will stop if this limit is reached.
+    max-mobs-per-chunk: 4
+    # Horizontal (X/Z) spawning radius
+    spawn-horizontal-radius: 3   
+
+# =========================================
+# Chunk Limit Settings
+# =========================================
+
+# System for managing animals that exceed the mob limit in a chunk.
+chunk-mob-culling:
+  # Set to true to enable this feature.
+  enabled: true
+  # The time given for the mob to leave the chunk (in seconds).
+  warning-duration-seconds: 20
+  # How often the server will check mob density in chunks (in ticks, 20 ticks = 1 second).
+  check-interval-ticks: 100
+  # The culling system will only apply to these mob types.
+  # Add or remove any mob type from this list. Use uppercase names from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+  valid-mobs:
+    - "COW"
+    - "SHEEP"
+    - "PIG"
+    - "CHICKEN"
+    - "RABBIT"
+    - "VILLAGER"
+
+chunk-limits:
+  # Is the chunk spawner limit enabled?
+  enabled: true
+  # Maximum number of spawners allowed per chunk
+  spawner-limit: 5
+
+# =========================================
+# Passive (Brainless) Mob Settings
+# =========================================
+
+# This setting makes mobs from spawners completely passive
+# - AI is disabled, they will not attack or move
+# - No equipment on spawn
+# - NPC interactions remain functional (they behave like villagers)
+nerf-spawner-mobs: false
