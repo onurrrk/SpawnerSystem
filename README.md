@@ -3,10 +3,10 @@
 An advanced **multi-mode spawner breaking and placing system** for Minecraft servers.  
 Includes detailed logging, customizable settings, and an advanced pickaxe system.
 
-## 🌐 Multi-Language Support (v1.6^)
-Spawner System now supports **21 different languages** to make it easier for servers around the world to use and configure:  
+## 🌐 Multi-Language Support
+Spawner System now supports **28 different languages** to make it easier for servers around the world to use and configure:  
 
-🇺🇸 **English (en)** | 🇹🇷 **Turkish (tr)** | 🇩🇪 **German (de)** | 🇪🇸 **Spanish (es)** | 🇷🇺 **Russian (ru)** | 🇨🇳 **Chinese (zh)** | 🇯🇵 **Japanese (ja)** | 🇦🇿 **Azerbaijani (az)** | 🇫🇷 **French (fr)** | 🇸🇦 **Arabic (ar)** | 🇳🇱 **Dutch (nl)** | 🇮🇩 **Indonesian (id)** | 🇦🇲 **Armenian (hy)** | 🇮🇹 **Italian (it)** | 🇨🇿 **Czech (cs)** | 🇬🇷 **Greek (el)** | 🏴󠁧󠁢󠁳󠁣󠁴󠁿 **Scottish Gaelic (gd)** | 🇭🇺 **Hungarian (hu)** | 🇰🇬 **Kyrgyz (ky)** | 🇰🇷 **Korean (ko)** | 🇸🇪 **Swedish (sv)**  
+**🇺🇸 English (en) | 🇹🇷 Turkish (tr) | 🇩🇪 German (de) | 🇪🇸 Spanish (es) | 🇷🇺 Russian (ru) | 🇨🇳 Chinese (zh) | 🇯🇵 Japanese (ja) | 🇦🇿 Azerbaijani (az) | 🇫🇷 French (fr) | 🇸🇦 Arabic (ar) | 🇳🇱 Dutch (nl) | 🇮🇩 Indonesian (id) | 🇦🇲 Armenian (hy) | 🇮🇹 Italian (it) | 🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Gaelic (gd) | 🇸🇪 Swedish (sv) | 🇰🇬 Kyrgyz (ky) | 🇰🇷 Korean (ko) | 🇭🇺 Hungarian (hu) | 🇨🇿 Czech (cs) | 🇬🇷 Greek (el) | 🇮🇷 Persian (fa) | 🇵🇱 Polish (pl) | 🇷🇴 Romanian (ro) | 🇻🇳 Vietnamese (vi) | 🇵🇹 Portuguese (pt) | 🇹🇭 Thai (th) | 🇺🇦 Ukrainian (uk)**  
 
 The language can be easily selected from the **config file**, and all translation files are located in: **/plugins/SpawnerSystem/languages**
 
@@ -44,6 +44,16 @@ The language can be easily selected from the **config file**, and all translatio
   - **Natural spawner breaking** can be toggled on or off.  
   - **Empty spawner breaking system** can be enabled or disabled, and the dropped spawner type is determined by the config.  
   - All messages are fetched from the config for easy translation or text change.
+
+- **Hologram Mode**  
+  - Can be enabled or disabled via the config (**ProtocolLib** required).  
+  - Displays visual indicators above each spawner and shows its active status.  
+
+- **Chunk-Based Limits**  
+  - Fully configurable via the config file.  
+  - Controls the maximum number of spawners and mobs per chunk.  
+  - Customizable mob settings; any mobs exceeding the defined limits will be automatically removed.
+
 
 ## ⚡ Commands
 
