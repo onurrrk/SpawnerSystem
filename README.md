@@ -29,8 +29,7 @@ The language can be easily selected from the **config file**, and all translatio
   - Spawner name and lore are fetched from the config, and all messages are read from the config.  
   - Players are notified when they receive a spawner, and if their inventory is full, the spawner is dropped on the ground.
 
-![Classic mode](https://cdn.modrinth.com/data/cached_images/cef657b0c807bd23c0ffe3eadb8cb572264d991d_0.webp)
-![Advanced mode](https://cdn.modrinth.com/data/cached_images/ef14ae1a24e0559bc686519dfb16a16023a12e0b_0.webp)
+![Advanced mode](https://cdn.modrinth.com/data/cached_images/22fb3dc0b5e6f0a8615adc47346a7e89f42dde8b_0.webp)
 
 - **JSON Logging System**  
   - Can be enabled or disabled via config.  
@@ -49,11 +48,14 @@ The language can be easily selected from the **config file**, and all translatio
   - Can be enabled or disabled via the config (**ProtocolLib** required).  
   - Displays visual indicators above each spawner and shows its active status.  
 
+![spholo](https://cdn.modrinth.com/data/cached_images/bfb4c2ebf5e5bfb93bff77bc7e80fa2fc6d6c2e4.png)
+
 - **Chunk-Based Limits**  
   - Fully configurable via the config file.  
   - Controls the maximum number of spawners and mobs per chunk.  
   - Customizable mob settings; any mobs exceeding the defined limits will be automatically removed.
 
+![mobholo](https://cdn.modrinth.com/data/cached_images/3a9353b4d846447403c175b293eb36b79de2f13a.png)
 
 ## ⚡ Commands
 
