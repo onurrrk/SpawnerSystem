@@ -16,6 +16,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -353,7 +354,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         }
     }
     
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onSpawnerBreak(BlockBreakEvent event) {
         Block block = event.getBlock();
         if (block.getType() != Material.SPAWNER) {
@@ -363,6 +364,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
             }
             return;
         }
+
         if (!(block.getState() instanceof CreatureSpawner spawnerState)) return;
         
         Player player = event.getPlayer();
@@ -814,4 +816,4 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
             }
         }
     }
-                                 }
+}
