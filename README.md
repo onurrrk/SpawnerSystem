@@ -72,7 +72,7 @@ The language can be easily selected from the **config file**, and all translatio
 | ✅ Paper     | Fully Supported |
 | ✅ Purpur    | Fully Supported |
 | ✅ Spigot    | Fully Supported |
-| ✅ Folia     | Fully Supported |
+| ⚠️ Folia     | Partial Supported |
 | ⚠️ Bukkit    | Partial Support |
 
 [![Discord](https://cdn.modrinth.com/data/cached_images/4de86371cc7bcf3818924b198f31baacc304700f.png)
