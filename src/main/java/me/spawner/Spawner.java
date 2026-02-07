@@ -85,16 +85,11 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         loadLanguage();
         loadConfigValues();
 
-        boolean needsProtocolLib = hologramsEnabledByConfig || cullingEnabled;
-        if (needsProtocolLib) {
-            if (Bukkit.getPluginManager().getPlugin("ProtocolLib") != null) {
-                canUseHolograms = true;
-                getLogger().info("ProtocolLib found. Hologram features have been successfully enabled!");
-            } else {
-                canUseHolograms = false;
-                getLogger().warning("ProtocolLib plugin not found! Hologram features have been disabled.");
-                getLogger().warning("To use holograms, please install ProtocolLib on your server.");
-            }
+        if (hologramsEnabledByConfig) {
+            canUseHolograms = true;
+            getLogger().info("Hologram features enabled (Using Bukkit TextDisplay API).");
+        } else {
+            canUseHolograms = false;
         }
 
         this.jsonLogger = new JsonLogger(this);
@@ -141,15 +136,12 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         loadLanguage();
         loadConfigValues();
 
-        boolean needsProtocolLib = hologramsEnabledByConfig || cullingEnabled;
-        if (needsProtocolLib) {
-            if (Bukkit.getPluginManager().getPlugin("ProtocolLib") != null) {
-                canUseHolograms = true;
-            } else {
-                canUseHolograms = false;
-                getLogger().warning("ProtocolLib not found on reload! Disabling hologram feature.");
-            }
+        if (hologramsEnabledByConfig) {
+            canUseHolograms = true;
+        } else {
+            canUseHolograms = false;
         }
+
         loadAllSpawnersInLoadedChunks();
         if (cullingEnabled) {
             startMobCullingTask();
@@ -404,10 +396,11 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
                 player.sendMessage(getMessage("advanced-pickaxe-required"));
             }
         } else if ("classic".equals(systemMode)) {
-            if (itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) {
-                canBreak = true;
+            if (itemInHand.containsEnchantment(Enchantment.DIG_SPEED) || itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) { 
+                 canBreak = true;
             } else {
-                player.sendMessage(getMessage("classic-silk-required"));
+                 if(itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) canBreak = true;
+                 else player.sendMessage(getMessage("classic-silk-required"));
             }
         }
         
