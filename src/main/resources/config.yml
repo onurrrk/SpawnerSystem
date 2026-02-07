@@ -18,7 +18,6 @@ system: "advanced"
 # Allow natural (generated) spawners to be broken if true
 natural-spawner-break: true
 # Enable or disable the hologram above spawners
-# Install PlaceholderAPI on the server for it to work
 hologram-enabled: true
 # Determines the maximum distance (in blocks) at which players can see the holograms.
 # Adjust this value according to your server's performance.
