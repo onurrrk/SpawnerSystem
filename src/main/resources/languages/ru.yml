@@ -55,11 +55,11 @@ messages:
   no-permission: "&cУ вас нет прав для этой команды."
   reload-success: "&aКонфигурация Spawner системы успешно перезагружена."
   wrong-subcommand: "&aИспользование: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aИспользование: /spsystem pickaxegive <игрок> <1-100>"
+  wrong-pickaxe-usage: "&aИспользование: /spsystem pickaxegive <игрок> <1-1000>"
   command-disabled: "&cКоманда 'pickaxegive' доступна только в 'advanced' режиме."
   player-not-found: "&cИгрок не найден: %player%"
   not-a-number: "&cКоличество использований должно быть числом."
-  max-uses-limit: "&cМаксимальное количество использований 100."
+  max-uses-limit: "&cМаксимальное количество использований 1000."
   pickaxe-given-sender: "&aИгроку %player% выдана кирка спавнера с %uses% использованиями."
   pickaxe-given-recipient: "&bВы получили особую кирку спавнера!"
   spawner-collected: "&aСпавнер успешно добавлен в инвентарь!"
@@ -126,7 +126,7 @@ entity-types:
   MINECART_COMMAND: Вагонетка с командным блоком
   MINECART_FURNACE: Вагонетка с печью
   MINECART_HOPPER: Вагонетка с воронкой
-  MINECART_SPAWNER: Вагонетка с спавнером
+  MINECART_SPAWNER: Вагонетка со спавнером
   MINECART_TNT: Вагонетка с TNT
   MULE: Мул
   MUSHROOM_COW: Грибная корова

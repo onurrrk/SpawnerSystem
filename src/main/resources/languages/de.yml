@@ -20,7 +20,7 @@ spawner-pickaxe-item:
 # =========================================
 mode-tags:
   advanced: "Spawner Spitzhacke"
-  classic: "Seidenberührung Spitzhacke"
+  classic: "Behutsamkeit Spitzhacke"
 
 # =========================================
 # Spawner-Gegenstand Einstellungen
@@ -55,11 +55,11 @@ messages:
   no-permission: "&cDu hast keine Berechtigung, diesen Befehl auszuführen."
   reload-success: "&aSpawner-System Konfiguration erfolgreich neu geladen."
   wrong-subcommand: "&aVerwendung: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aVerwendung: /spsystem pickaxegive <Spieler> <1-100>"
+  wrong-pickaxe-usage: "&aVerwendung: /spsystem pickaxegive <Spieler> <1-1000>"
   command-disabled: "&cDer Befehl 'pickaxegive' ist nur im 'erweiterten' Modus verfügbar."
   player-not-found: "&cSpieler nicht gefunden: %player%"
   not-a-number: "&cDie Anzahl muss eine Zahl sein."
-  max-uses-limit: "&cMaximale Anzahl an Nutzungen ist 100."
+  max-uses-limit: "&cMaximale Anzahl an Nutzungen ist 1000."
   pickaxe-given-sender: "&a%player% wurde eine Spawner Spitzhacke mit %uses% Nutzungen gegeben."
   pickaxe-given-recipient: "&bDu hast eine spezielle Spawner-Spitzhacke erhalten!"
   spawner-collected: "&aSpawner erfolgreich in dein Inventar hinzugefügt!"
@@ -96,7 +96,7 @@ entity-types:
   COD: Kabeljau
   COW: Kuh
   CREEPER: Creeper
-  CREAKING: Knarrend
+  CREAKING: Knarz
   DOLPHIN: Delphin
   DONKEY: Esel
   DROWNED: Ertrunkener

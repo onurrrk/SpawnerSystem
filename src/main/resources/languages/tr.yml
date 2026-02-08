@@ -55,11 +55,11 @@ messages:
   no-permission: "&cBu komutu kullanmak için iznin yok."
   reload-success: "&aSpawner sistemi yapılandırması başarıyla yenilendi."
   wrong-subcommand: "&aKullanım: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aKullanım: /spsystem pickaxegive <oyuncu> <1-100>"
+  wrong-pickaxe-usage: "&aKullanım: /spsystem pickaxegive <oyuncu> <1-1000>"
   command-disabled: "&c'pickaxegive' komutu yalnızca 'gelişmiş' modda kullanılabilir."
   player-not-found: "&cOyuncu bulunamadı: %player%"
   not-a-number: "&cKullanım sayısı bir sayı olmalıdır."
-  max-uses-limit: "&cMaksimum kullanım sayısı 100'dür."
+  max-uses-limit: "&cMaksimum kullanım sayısı 1000'dir."
   pickaxe-given-sender: "&a%player% oyuncusuna %uses% kullanımlık Spawner Kazması verildi."
   pickaxe-given-recipient: "&bÖzel bir spawner kazması aldınız!"
   spawner-collected: "&aSpawner envanterine başarıyla eklendi!"
@@ -84,7 +84,7 @@ entity-types:
   BEE: Arı
   BLAZE: Blaze
   BOAT: Tekne
-  BOGGED: Bogged
+  BOGGED: Bataklık İskeleti
   BREEZE: Breeze
   CAMEL: Deve
   CAT: Kedi
@@ -93,7 +93,7 @@ entity-types:
   COD: Morina Balığı
   COW: İnek
   CREEPER: Creeper
-  CREAKING: Creaking
+  CREAKING: Gıcırdayan
   DOLPHIN: Yunus
   DONKEY: Eşek
   DROWNED: Boğulmuş
@@ -123,7 +123,7 @@ entity-types:
   MINECART_COMMAND: Komut Bloklu Vagon
   MINECART_FURNACE: Fırınlı Vagon
   MINECART_HOPPER: Hunili Vagon
-  MINECART_SPAWNER: Üretici Vagon
+  MINECART_SPAWNER: Spawnerlı Vagon
   MINECART_TNT: TNT'li Vagon
   MULE: Katır
   MUSHROOM_COW: Mantar İneği
@@ -160,7 +160,7 @@ entity-types:
   VILLAGER: Köylü
   VINDICATOR: İnfazcı
   WANDERING_TRADER: Gezen Tüccar
-  WARDEN: Gardiyan Warden
+  WARDEN: Warden
   WITCH: Cadı
   WITHER: Wither
   WITHER_SKELETON: Wither İskeleti

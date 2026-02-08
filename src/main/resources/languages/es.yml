@@ -55,11 +55,11 @@ messages:
   no-permission: "&cNo tienes permiso para usar este comando."
   reload-success: "&aLa configuración del sistema Spawner se ha recargado correctamente."
   wrong-subcommand: "&aUso: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aUso: /spsystem pickaxegive <jugador> <1-100>"
+  wrong-pickaxe-usage: "&aUso: /spsystem pickaxegive <jugador> <1-1000>"
   command-disabled: "&cEl comando 'pickaxegive' solo está disponible en modo 'avanzado'."
   player-not-found: "&cJugador no encontrado: %player%"
   not-a-number: "&cLa cantidad de uso debe ser un número."
-  max-uses-limit: "&cEl número máximo de usos permitido es 100."
+  max-uses-limit: "&cEl número máximo de usos permitido es 1000."
   pickaxe-given-sender: "&aSe le ha dado a %player% un pico Spawner con %uses% usos."
   pickaxe-given-recipient: "&b¡Has recibido un pico spawner especial!"
   spawner-collected: "&aSpawner agregado a tu inventario con éxito."
@@ -96,7 +96,7 @@ entity-types:
   COD: Bacalao
   COW: Vaca
   CREEPER: Creeper
-  CREAKING: Chirriante
+  CREAKING: Crepitante
   DOLPHIN: Delfín
   DONKEY: Burro
   DROWNED: Ahogado

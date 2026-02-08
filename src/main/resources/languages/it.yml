@@ -11,7 +11,7 @@ prefix: "&8[&aSpawner&8] &r"
 spawner-pickaxe-item:
   name: "&b&lPiccone Spawner"
   lore:
-    - "&7Usa questo piccone pour rompere lo spawner."
+    - "&7Usa questo piccone per rompere lo spawner."
     - "&e"
     - "&aUsi rimanenti: &c%uses%"
 
@@ -55,11 +55,11 @@ messages:
   no-permission: "&cNon hai il permesso di usare questo comando."
   reload-success: "&aConfigurazione del sistema Spawner ricaricata con successo."
   wrong-subcommand: "&aUso: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aUso: /spsystem pickaxegive <giocatore> <1-100>"
+  wrong-pickaxe-usage: "&aUso: /spsystem pickaxegive <giocatore> <1-1000>"
   command-disabled: "&cIl comando 'pickaxegive' è disponibile solo in modalità 'avanzata'."
   player-not-found: "&cGiocatore non trovato: %player%"
   not-a-number: "&cIl numero di usi deve essere un numero."
-  max-uses-limit: "&cIl numero massimo de usi è 100."
+  max-uses-limit: "&cIl numero massimo de usi è 1000."
   pickaxe-given-sender: "&a%player% ha ricevuto un Piccone Spawner con %uses% usi."
   pickaxe-given-recipient: "&bHai ricevuto un Piccone Spawner speciale!"
   spawner-collected: "&aSpawner aggiunto con successo al tuo inventario!"

@@ -55,11 +55,11 @@ messages:
   no-permission: "&cУ вас немає дозволу на використання цієї команди."
   reload-success: "&aКонфігурацію системи споунерів успішно перезавантажено."
   wrong-subcommand: "&aВикористання: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aВикористання: /spsystem pickaxegive <гравець> <1-100>"
+  wrong-pickaxe-usage: "&aВикористання: /spsystem pickaxegive <гравець> <1-1000>"
   command-disabled: "&cКоманда 'pickaxegive' доступна лише в 'розширеному' режимі."
   player-not-found: "&cГравця не знайдено: %player%"
   not-a-number: "&cКількість використань має бути числом."
-  max-uses-limit: "&cМаксимально дозволена кількість використань - 100."
+  max-uses-limit: "&cМаксимально дозволена кількість використань - 1000."
   pickaxe-given-sender: "&aВидано Кайло Споунерів з %uses% використань гравцю %player%."
   pickaxe-given-recipient: "&bВи отримали спеціальне кайло для споунерів!"
   spawner-collected: "&aСпоунер успішно додано до вашого інвентаря!"
@@ -126,7 +126,7 @@ entity-types:
   MINECART_COMMAND: Вагонетка з командним блоком
   MINECART_FURNACE: Вагонетка з піччю
   MINECART_HOPPER: Вагонетка з лійкою
-  MINECART_SPAWNER: Вагонетка з споунером
+  MINECART_SPAWNER: Вагонетка зi споунером
   MINECART_TNT: Вагонетка з TNT
   MULE: Мул
   MUSHROOM_COW: Грибна корова

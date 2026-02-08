@@ -29,7 +29,7 @@ spawner-item:
   name: "&a%type% Spawner"
   lore:
     - "&7Bu spawner-i yerləşdirərək canavar çıxara bilərsiniz."
-    - "&7Sadəcə ilə qırıla bilər: &e%mode%"
+    - "&7Yalnız bununla qırıla bilər: &e%mode%"
     - "&7Canavar növü: &a%type%"
 
 # =========================================
@@ -55,11 +55,11 @@ messages:
   no-permission: "&cBu əmri icra etmək üçün icazəniz yoxdur."
   reload-success: "&aSpawner sistemi uğurla yenidən yükləndi."
   wrong-subcommand: "&aİstifadə: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aİstifadə: /spsystem pickaxegive <oyuncu> <1-100>"
+  wrong-pickaxe-usage: "&aİstifadə: /spsystem pickaxegive <oyuncu> <1-1000>"
   command-disabled: "&c'pickaxegive' əmri yalnız 'advanced' rejimdə istifadə edilə bilər."
   player-not-found: "&cOyunçu tapılmadı: %player%"
   not-a-number: "&cİstifadə sayı rəqəm olmalıdır."
-  max-uses-limit: "&cMaksimum istifadə sayı 100-dür."
+  max-uses-limit: "&cMaksimum istifadə sayı 1000-dir."
   pickaxe-given-sender: "&a%player% oyunçusuna %uses% istifadəlik Spawner Kazması verildi."
   pickaxe-given-recipient: "&bXüsusi bir spawner kazması aldınız!"
   spawner-collected: "&aSpawner uğurla inventarınıza əlavə edildi!"
@@ -81,13 +81,13 @@ messages:
 entity-types:
   ALLAY: Allay
   ARMADILLO: Armadillo
-  ARMOR_STAND: Zireh Dəsti
+  ARMOR_STAND: Zireh Asılqanı
   AXOLOTL: Aksolotl
   BAT: Yarasa
   BEE: Arı
   BLAZE: Blaze
   BOAT: Qayıq
-  BOGGED: Bataqlıq
+  BOGGED: Bataqlıq İskeleti
   BREEZE: Briz
   CAMEL: Dəvə
   CAT: Pişik
@@ -123,8 +123,8 @@ entity-types:
   MAGMA_CUBE: Maqma Kubu
   MINECART: Vagon
   MINECART_CHEST: Sandıqlı Vagon
-  MINECART_COMMAND: Əmər Bloklu Vagon
-  MINECART_FURNACE: Sobalu Vagon
+  MINECART_COMMAND: Əmr Bloklu Vagon
+  MINECART_FURNACE: Sobalı Vagon
   MINECART_HOPPER: Haznəli Vagon
   MINECART_SPAWNER: Spawnerli Vagon
   MINECART_TNT: TNT-li Vagon

@@ -55,11 +55,11 @@ messages:
   no-permission: "&cԴուք չունեք հարկավոր իրավունքը այս հրամանն օգտագործելու համար:"
   reload-success: "&aSpawner համակարգի կարգավորումները հաջողությամբ վերաբեռնվեցին:"
   wrong-subcommand: "&aՕգտագործում՝ /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aՕգտագործում՝ /spsystem pickaxegive <խաղացող> <1-100>"
+  wrong-pickaxe-usage: "&aՕգտագործում՝ /spsystem pickaxegive <խաղացող> <1-1000>"
   command-disabled: "&c'pickaxegive' հրամանը հասանելի է միայն 'ընդլայնված' ռեժիմում:"
   player-not-found: "&cԽաղացողը գտնված չէ՝ %player%"
   not-a-number: "&cՕգտագործումների քանակը պետք է լինի թիվ:"
-  max-uses-limit: "&cԱռավելագույն օգտագործումների քանակը 100-ն է:"
+  max-uses-limit: "&cԱռավելագույն օգտագործումների քանակը 1000-ն է:"
   pickaxe-given-sender: "&a%player%-ը ստացավ Spawner Բալթի՝ %uses% օգտագործումներով:"
   pickaxe-given-recipient: "&bԴուք ստացաք հատուկ Spawner Բալթի:"
   spawner-collected: "&aSpawner-ը հաջողությամբ ավելացվեց ձեր պարկում:"
@@ -83,7 +83,7 @@ entity-types:
   ARMADILLO: Արմադիլո
   ARMOR_STAND: Զրահի կանգուն
   AXOLOTL: Աքսոլոտլ
-  BAT: Մ蝙蝠
+  BAT: Չղջիկ
   BEE: Մեղու
   BLAZE: Բլեյզ
   BOAT: Նավակ

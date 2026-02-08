@@ -55,11 +55,11 @@ messages:
   no-permission: "&cشما مجوز استفاده از این دستور را ندارید."
   reload-success: "&aپیکربندی سیستم اسپانر با موفقیت بارگذاری مجدد شد."
   wrong-subcommand: "&aکاربرد: /spsystem <reload|pickaxegive|givespawner>"
-  wrong-pickaxe-usage: "&aکاربرد: /spsystem pickaxegive <بازیکن> <1-100>"
+  wrong-pickaxe-usage: "&aکاربرد: /spsystem pickaxegive <بازیکن> <1-1000>"
   command-disabled: "&cدستور 'pickaxegive' فقط در حالت 'پیشرفته' در دسترس است."
   player-not-found: "&cبازیکن پیدا نشد: %player%"
   not-a-number: "&cمقدار استفاده باید یک عدد باشد."
-  max-uses-limit: "&cحداکثر استفاده مجاز 100 است."
+  max-uses-limit: "&cحداکثر استفاده مجاز 1000 است."
   pickaxe-given-sender: "&aکلنگ اسپانر با %uses% استفاده به %player% داده شد."
   pickaxe-given-recipient: "&bشما یک کلنگ اسپانر ویژه دریافت کردید!"
   spawner-collected: "&aاسپانر با موفقیت به موجودی شما اضافه شد!"
@@ -117,7 +117,7 @@ entity-types:
   HOGLIN: هاگلین
   HORSE: اسب
   HUSK: پوسته
-  ILLUSIONER: иллюзионист
+  ILLUSIONER: خیال‌پرداز
   IRON_GOLEM: گولم آهنی
   LLAMA: لاما
   MAGMA_CUBE: مکعب ماگما
