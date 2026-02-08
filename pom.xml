@@ -6,7 +6,7 @@
 
     <groupId>me.spawner</groupId>
     <artifactId>SpawnerSystem</artifactId>
-    <version>1.7.1</version>
+    <version>1.7.2</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -88,4 +88,5 @@
         </plugins>
     </build>
 </project>
+
 
