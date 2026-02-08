@@ -45,7 +45,7 @@ The language can be easily selected from the **config file**, and all translatio
   - All messages are fetched from the config for easy translation or text change.
 
 - **Hologram Mode**  
-  - Can be enabled or disabled via the config (**ProtocolLib** required).  
+  - Can be enabled or disabled via the config (**ProtocolLib** required **V1.7.2˅**).  
   - Displays visual indicators above each spawner and shows its active status.  
 
 ![spholo](https://cdn.modrinth.com/data/cached_images/bfb4c2ebf5e5bfb93bff77bc7e80fa2fc6d6c2e4.png)
