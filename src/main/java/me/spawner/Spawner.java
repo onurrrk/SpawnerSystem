@@ -243,8 +243,14 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
     }
     
     private void applySettingsToSpawner(CreatureSpawner spawner) {
-        spawner.setMinSpawnDelay(delay);
-        spawner.setMaxSpawnDelay(delay);
+        if (delay > spawner.getMaxSpawnDelay()) {
+            spawner.setMaxSpawnDelay(delay);
+            spawner.setMinSpawnDelay(delay);
+        } else {
+            spawner.setMinSpawnDelay(delay);
+            spawner.setMaxSpawnDelay(delay);
+        }
+
         spawner.setSpawnCount(amount);
         spawner.setMaxNearbyEntities(999);
         spawner.setRequiredPlayerRange(range);
@@ -396,11 +402,10 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
                 player.sendMessage(getMessage("advanced-pickaxe-required"));
             }
         } else if ("classic".equals(systemMode)) {
-            if (itemInHand.containsEnchantment(Enchantment.DIG_SPEED) || itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) { 
-                 canBreak = true;
+            if (itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) {
+                canBreak = true;
             } else {
-                 if(itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) canBreak = true;
-                 else player.sendMessage(getMessage("classic-silk-required"));
+                player.sendMessage(getMessage("classic-silk-required"));
             }
         }
         
@@ -538,7 +543,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
                     sender.sendMessage(getMessage("not-a-number"));
                     return true;
                 }
-                if (uses <= 0 || uses > 100) {
+                if (uses <= 0 || uses > 1000) {
                     sender.sendMessage(getMessage("max-uses-limit"));
                     return true;
                 }
@@ -565,15 +570,30 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
                     sender.sendMessage(ChatColor.RED + "Invalid mob type: " + args[2]);
                     return true;
                 }
+
+                int amount = 1; 
+                if (args.length >= 4) {
+                    try {
+                        amount = Integer.parseInt(args[3]);
+                        if (amount < 1) amount = 1;
+                    } catch (NumberFormatException e) {
+                        sender.sendMessage(getMessage("not-a-number"));
+                        return true;
+                    }
+                }
                 
                 String translatedTypeName = getTranslatedEntityName(type);
-                targetSpawner.getInventory().addItem(createSpawnerItem(type));
+                
+                ItemStack spawnerItem = createSpawnerItem(type);
+                spawnerItem.setAmount(amount);
+                
+                targetSpawner.getInventory().addItem(spawnerItem);
                 
                 sender.sendMessage(getMessage("spawner-given-sender")
                         .replace("%player%", targetSpawner.getName())
-                        .replace("%type%", translatedTypeName));
+                        .replace("%type%", translatedTypeName) + " x" + amount);
                 targetSpawner.sendMessage(getMessage("spawner-given-recipient")
-                        .replace("%type%", translatedTypeName));
+                        .replace("%type%", translatedTypeName) + " x" + amount);
                 return true;
             default:
                 sender.sendMessage(getMessage("wrong-subcommand"));
@@ -591,9 +611,12 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         } else if (args.length == 2 && (args[0].equalsIgnoreCase("pickaxegive") || args[0].equalsIgnoreCase("givespawner"))) {
             StringUtil.copyPartialMatches(args[1], Bukkit.getOnlinePlayers().stream().map(Player::getName).collect(Collectors.toList()), completions);
         } else if (args.length == 3 && args[0].equalsIgnoreCase("pickaxegive")) {
-            StringUtil.copyPartialMatches(args[2], IntStream.rangeClosed(1, 100).mapToObj(String::valueOf).collect(Collectors.toList()), completions);
+            StringUtil.copyPartialMatches(args[2], IntStream.rangeClosed(1, 1000).mapToObj(String::valueOf).collect(Collectors.toList()), completions);
         } else if (args.length == 3 && args[0].equalsIgnoreCase("givespawner")) {
             StringUtil.copyPartialMatches(args[2], Arrays.stream(EntityType.values()).filter(EntityType::isAlive).map(Enum::name).collect(Collectors.toList()), completions);
+        } else if (args.length == 4 && args[0].equalsIgnoreCase("givespawner")) {
+            completions.add("1");
+            completions.add("64");
         }
         return completions;
     }
