@@ -1,0 +1,45 @@
+webhook:
+  enabled: false
+  url: "WEBHOOK_URL"
+  avatar-api: "https://mc-heads.net/avatar/%player%/128"
+  webhook-name: "SpawnerSystem"
+
+events:
+  place:
+    enabled: true
+    color: 5763719
+    title: "🟢 Spawner Placed"
+    description: >
+     📊 **Player Info**
+             🎮 **Player:** %player%
+             📡 **Ping:** %ping%
+             🎮 **Platform:** %client%
+     📦 **Spawner Type**
+             🎗️ %type%
+     📍 **Location**
+             🚩 X: %x%, Y: %y%, Z: %z%
+             🌍 %world%
+     🖥️ **Server Info**
+             ⚙️ **TPS:** %tps%
+    fields: []
+
+  break:
+    enabled: true
+    color: 15548997
+    title: "🔴 Spawner Broken"
+    description: >
+     📊 **Player Info**
+             🎮 **Player:** %player%
+             📡 **Ping:** %ping%
+             🎮 **Platform:** %client%
+     📦 **Spawner Type**
+             🎗️ %type%
+     📍 **Location**
+             🚩 X: %x%, Y: %y%, Z: %z%
+             🌍 %world%
+     ⛏️ **Tool Used**
+             🏷️ **Name:** %item_name%
+             📦 **Type:** %item%
+     🖥️ **Server Info**
+             ⚙️ **TPS:** %tps%
+    fields: []

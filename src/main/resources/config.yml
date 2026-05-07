@@ -1,6 +1,12 @@
 # -------------------------------------------------
 #            Spawner System Settings
 # -------------------------------------------------
+
+# Do not change
+config-version: 1
+language-version: 1
+discord-version: 1
+
 # Plugin language configuration
 # Supported: "en","tr","de","es","ru","zh","ja","az","fr","ar","nl","id","hy","it","gd","sv","ky","ko","hu","cs","el","pt","ro","pl","uk","vi","th","fa"
 language: en
@@ -23,6 +29,10 @@ hologram-enabled: true
 # Adjust this value according to your server's performance.
 # Default: 8.0
 hologram-distance: 8.0
+# Should holograms be visible through walls?
+# true:  Visible through walls (X-Ray), but entities take visual priority.
+# false: Hidden if blocked by a solid block.
+SeeThrough: true
 # Enable or disable logging of spawner place and break actions
 logs-enabled: true
 # Empty Spawner Breaking system
@@ -78,3 +88,12 @@ chunk-limits:
 # - No equipment on spawn
 # - NPC interactions remain functional (they behave like villagers)
 nerf-spawner-mobs: false
+
+# -------------------------------------------------------------------------
+# SPAWNER MENU SETTINGS (Shift + Right Click)
+# -------------------------------------------------------------------------
+# Determines whether the Shift+Right Click menu is enabled.
+#
+# Required Permission: spawner.menu
+# (Players without permission can view the menu but cannot change settings)
+spawner-menu: true
