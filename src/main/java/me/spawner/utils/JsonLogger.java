@@ -25,36 +25,41 @@ public class JsonLogger {
     private final Gson gson;
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private final SimpleDateFormat fileDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private final File logsFolder;
+    private final boolean logsEnabled;
 
     private static final String RED = "\u001B[31m";
     private static final String RESET = "\u001B[0m";
-
-    private final File logsFolder;
-    private final boolean logsEnabled;
 
     public JsonLogger(Spawner plugin) {
         this.plugin = plugin;
         this.gson = new GsonBuilder().setPrettyPrinting().create();
         this.logsFolder = new File(plugin.getDataFolder(), "logs");
 
-       
         plugin.getConfig().addDefault("logs-enabled", true);
         plugin.getConfig().options().copyDefaults(true);
         plugin.saveConfig();
+        
         this.logsEnabled = plugin.getConfig().getBoolean("logs-enabled");
 
         if (!logsFolder.exists()) {
-            if (!logsFolder.mkdirs()) {
-                plugin.getLogger().severe(RED + "Logs folder could not be created! Please restart the server and try again. If the issue persists, contact the developer." + RESET);
+            boolean created = logsFolder.mkdirs();
+            if (!created) {
+                plugin.getLogger().severe(RED + "Logs folder could not be created! Check permissions." + RESET);
             }
         }
     }
 
     public synchronized void log(Player player, Block block, String action) {
-        if (!logsEnabled) return; 
+        if (!logsEnabled) {
+            return;
+        }
 
-        if (!(block.getState() instanceof CreatureSpawner spawnerState)) return;
+        if (!(block.getState() instanceof CreatureSpawner)) {
+            return;
+        }
 
+        CreatureSpawner spawnerState = (CreatureSpawner) block.getState();
         EntityType type = spawnerState.getSpawnedType();
         String spawnerType = (type != null) ? type.name() : "UNKNOWN";
 
@@ -63,9 +68,48 @@ public class JsonLogger {
         int y = block.getY();
         int z = block.getZ();
 
+        String platform = getClientType(player);
+
         List<LogEntry> logs = readLogsForToday();
-        logs.add(new LogEntry(player.getName(), dateFormat.format(new Date()), action, spawnerType, world, x, y, z));
+        
+        LogEntry entry = new LogEntry(
+                player.getName(),
+                dateFormat.format(new Date()),
+                platform,
+                action,
+                spawnerType,
+                world,
+                x,
+                y,
+                z
+        );
+        
+        logs.add(entry);
         writeLogsForToday(logs);
+    }
+
+    private String getClientType(Player player) {
+        try {
+            Class<?> floodgateApi = Class.forName("org.geysermc.floodgate.api.FloodgateApi");
+            Object apiInstance = floodgateApi.getMethod("getInstance").invoke(null);
+            boolean isBedrock = (boolean) floodgateApi.getMethod("isFloodgatePlayer", java.util.UUID.class).invoke(apiInstance, player.getUniqueId());
+            if (isBedrock) {
+                return "Bedrock";
+            }
+        } catch (Exception e) {
+        }
+
+        try {
+            Class<?> geyserApi = Class.forName("org.geysermc.geyser.api.GeyserApi");
+            Object apiInstance = geyserApi.getMethod("api").invoke(null);
+            boolean isBedrock = (boolean) geyserApi.getMethod("isBedrockPlayer", java.util.UUID.class).invoke(apiInstance, player.getUniqueId());
+            if (isBedrock) {
+                return "Bedrock";
+            }
+        } catch (Exception e) {
+        }
+
+        return "Java";
     }
 
     private File getTodayLogFile() {
@@ -75,14 +119,22 @@ public class JsonLogger {
 
     private List<LogEntry> readLogsForToday() {
         File logFile = getTodayLogFile();
-        if (!logFile.exists()) return new ArrayList<>();
+        
+        if (!logFile.exists()) {
+            return new ArrayList<>();
+        }
 
         try (FileReader reader = new FileReader(logFile)) {
             Type listType = new TypeToken<ArrayList<LogEntry>>() {}.getType();
             List<LogEntry> logs = gson.fromJson(reader, listType);
-            return (logs != null) ? logs : new ArrayList<>();
+            
+            if (logs != null) {
+                return logs;
+            } else {
+                return new ArrayList<>();
+            }
         } catch (IOException e) {
-            plugin.getLogger().severe(RED + "Could not read today's log file! Please restart the server and try again. If the issue persists, contact the developer." + RESET);
+            plugin.getLogger().severe(RED + "Could not read today's log file!" + RESET);
             e.printStackTrace();
             return new ArrayList<>();
         }
@@ -90,10 +142,11 @@ public class JsonLogger {
 
     private void writeLogsForToday(List<LogEntry> logs) {
         File logFile = getTodayLogFile();
+        
         try (FileWriter writer = new FileWriter(logFile)) {
             gson.toJson(logs, writer);
         } catch (IOException e) {
-            plugin.getLogger().severe(RED + "Could not write to today's log file! Please restart the server and try again. If the issue persists, contact the developer." + RESET);
+            plugin.getLogger().severe(RED + "Could not write to today's log file!" + RESET);
             e.printStackTrace();
         }
     }
@@ -101,14 +154,18 @@ public class JsonLogger {
     private static class LogEntry {
         String player;
         String date;
+        String platform;
         String action;
         String spawnerType;
         String world;
-        int x, y, z;
+        int x;
+        int y;
+        int z;
 
-        public LogEntry(String player, String date, String action, String spawnerType, String world, int x, int y, int z) {
+        public LogEntry(String player, String date, String platform, String action, String spawnerType, String world, int x, int y, int z) {
             this.player = player;
             this.date = date;
+            this.platform = platform;
             this.action = action;
             this.spawnerType = spawnerType;
             this.world = world;
