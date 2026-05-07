@@ -36,10 +36,13 @@ spawner-item:
 # Spawner hologram beállítások
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Törhető %mode% használatával "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Törhető %mode% használatával"
+  - "&7Guggolj és jobb klikk a menü megnyitásához"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Mob Hologram Beállítások
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cEz a mob eltávolításra kerül"
   - "&e%time% másodpercen belül, ha nem hagyja el a területet."
+  
+# =========================================
+# Menü Beállítások (GUI)
+# =========================================
+menu:
+  title: "&8Spawner Vezérlőpult"
+  status:
+    active: "&aAktív ✔"
+    inactive: "&cInaktív ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAuto Gyilkos"
+      lore:
+        - "&7Automatikusan megöli a spawnerből jövő lényeket."
+        - "&7Állapot: %status%"
+        - ""
+        - "&fBal klikk: &eMód váltás"
+      lore-no-perm:
+        - "&7Automatikusan megöli a spawnerből jövő lényeket."
+        - "&7Állapot: %status%"
+        - ""
+        - "&c&lNEM HASZNÁLHATOD EZT A FUNKCIÓT"
+
+    xp-vacuum:
+      name: "&a&lXP Gyűjtő"
+      lore:
+        - "&7Tárolja a megölt lényekből kieső XP-ket."
+        - ""
+        - "&7Állapot: %status%"
+        - "&7Összegyűjtött: &e%xp% XP"
+        - ""
+        - "&fBal klikk: &eMód váltás"
+        - "&fjobb klikk: &bXP felvétele"
+      lore-no-perm:
+        - "&7Tárolja a megölt lényekből kieső XP-ket."
+        - ""
+        - "&7Állapot: %status%"
+        - "&7Összegyűjtött: &e%xp% XP"
+        - ""
+        - "&c&lNEM HASZNÁLHATOD EZT A FUNKCIÓT"
+
+  messages:
+    no-permission: "&cNincs jogosultságod ennek a funkciónak a megváltoztatásához!"
+    xp-empty: "&cAz XP tartály üres!"
+    xp-collected: "&aÖsszegyűjtve: &a%xp% XP!"
+    req-auto-slayer: "&cElőször be kell kapcsolnod az auto gyilkost!"
+    feature-no-perm: "&cNincs jogosultságod ennek a funkciónak a megváltoztatásához!"
+    perms-changed: "&cA spawner funkciók letiltásra kerültek a jogosultságaid megváltozása miatt."
   
 # =========================================
 # Plugin üzenetek

@@ -36,10 +36,13 @@ spawner-item:
 # Nastavení hologramu spawneru
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Lze zničit pomocí %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Lze zničit pomocí %mode%"
+  - "&7Přikrč se a klikni pravým tlačítkem pro otevření menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Nastavení Hologramu Moba
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cTento mob bude odstraněn"
   - "&eDo %time% s, pokud neopustí oblast."
+  
+# =========================================
+# Nastavení Menu (GUI)
+# =========================================
+menu:
+  title: "&8Ovládací panel Spawneru"
+  status:
+    active: "&aAktivní ✔"
+    inactive: "&cNeaktivní ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAutomatické zabíjení"
+      lore:
+        - "&7Automaticky zabíjí tvory ze spawneru."
+        - "&7Stav: %status%"
+        - ""
+        - "&fLevý klik: &eZměnit režim"
+      lore-no-perm:
+        - "&7Automaticky zabíjí tvory ze spawneru."
+        - "&7Stav: %status%"
+        - ""
+        - "&c&lTUTO FUNKCI NEMŮŽETE POUŽÍT"
+
+    xp-vacuum:
+      name: "&a&lSběr XP"
+      lore:
+        - "&7Ukládá XP z zabitých tvorů."
+        - ""
+        - "&7Stav: %status%"
+        - "&7Nasbíráno: &e%xp% XP"
+        - ""
+        - "&fLevý klik: &eZměnit režim"
+        - "&fPravý klik: &bVybrat XP"
+      lore-no-perm:
+        - "&7Ukládá XP z zabitých tvorů."
+        - ""
+        - "&7Stav: %status%"
+        - "&7Nasbíráno: &e%xp% XP"
+        - ""
+        - "&c&lTUTO FUNKCI NEMŮŽETE POUŽÍT"
+
+  messages:
+    no-permission: "&cNemáte oprávnění změnit tuto funkci!"
+    xp-empty: "&cZásobník XP je prázdný!"
+    xp-collected: "&aSebráno: &a%xp% XP!"
+    req-auto-slayer: "&cNejprve zapněte automatické zabíjení!"
+    feature-no-perm: "&cNemáte oprávnění změnit tuto funkci!"
+    perms-changed: "&cFunkce spawneru byly zakázány kvůli změně vašich oprávnění."
   
 # =========================================
 # Zprávy pluginu

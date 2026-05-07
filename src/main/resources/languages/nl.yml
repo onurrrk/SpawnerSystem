@@ -36,10 +36,13 @@ spawner-item:
 # Spawner Hologram Instellingen
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Kan worden gebroken met %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Kan worden gebroken met %mode%"
+  - "&7Bukken en rechtsklik om het menu te openen"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Mob Hologram Instellingen
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cDeze mob wordt verwijderd"
   - "&eBinnen %time% s als hij het gebied niet verlaat."
+  
+# =========================================
+# Menu-instellingen (GUI)
+# =========================================
+menu:
+  title: "&8Spawner-bedieningspaneel"
+  status:
+    active: "&aActief ✔"
+    inactive: "&cInactief ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAutomatische Moordenaar"
+      lore:
+        - "&7Doodt automatisch wezens uit de spawner."
+        - "&7Status: %status%"
+        - ""
+        - "&fLinkerklik: &eModus wijzigen"
+      lore-no-perm:
+        - "&7Doodt automatisch wezens uit de spawner."
+        - "&7Status: %status%"
+        - ""
+        - "&c&lJE KUNT DEZE FUNCTIE NIET GEBRUIKEN"
+
+    xp-vacuum:
+      name: "&a&lXP-verzamelaar"
+      lore:
+        - "&7Slaat XP op van gedode wezens."
+        - ""
+        - "&7Status: %status%"
+        - "&7Verzameld: &e%xp% XP"
+        - ""
+        - "&fLinkerklik: &eModus wijzigen"
+        - "&fRechterklik: &bXP opnemen"
+      lore-no-perm:
+        - "&7Slaat XP op van gedode wezens."
+        - ""
+        - "&7Status: %status%"
+        - "&7Verzameld: &e%xp% XP"
+        - ""
+        - "&c&lJE KUNT DEZE FUNCTIE NIET GEBRUIKEN"
+
+  messages:
+    no-permission: "&cJe hebt geen toestemming om deze functie te wijzigen!"
+    xp-empty: "&cXP-tank is leeg!"
+    xp-collected: "&aVerzameld: &a%xp% XP!"
+    req-auto-slayer: "&cJe moet eerst automatische moordenaar inschakelen!"
+    feature-no-perm: "&cJe hebt geen toestemming om deze functie te wijzigen!"
+    perms-changed: "&cSpawner-functies zijn uitgeschakeld vanwege wijzigingen in je machtigingen."
   
 # =========================================
 # Plugin-berichten

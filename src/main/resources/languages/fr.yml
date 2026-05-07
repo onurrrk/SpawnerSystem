@@ -36,10 +36,13 @@ spawner-item:
 # Paramètres de l'hologramme du Spawner
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Peut être cassé avec %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Peut être cassé avec %mode%"
+  - "&7Accroupissez-vous et faites un clic droit pour ouvrir le menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Paramètres d'Hologramme de Mob
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cCe mob sera supprimé"
   - "&eDans %time% s s'il ne quitte pas la zone."
+  
+# =========================================
+# Paramètres du Menu (GUI)
+# =========================================
+menu:
+  title: "&8Panneau de contrôle du Spawner"
+  status:
+    active: "&aActif ✔"
+    inactive: "&cInactif ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lTueur Automatique"
+      lore:
+        - "&7Tue automatiquement les créatures du spawner."
+        - "&7Statut: %status%"
+        - ""
+        - "&fClic gauche: &eChanger de mode"
+      lore-no-perm:
+        - "&7Tue automatiquement les créatures du spawner."
+        - "&7Statut: %status%"
+        - ""
+        - "&c&lVOUS NE POUVEZ PAS UTILISER CETTE FONCTIONNALITÉ"
+
+    xp-vacuum:
+      name: "&a&lCollecteur d'XP"
+      lore:
+        - "&7Stocke l'XP des créatures tuées."
+        - ""
+        - "&7Statut: %status%"
+        - "&7Collecté: &e%xp% XP"
+        - ""
+        - "&fClic gauche: &eChanger de mode"
+        - "&fClic droit: &bRetirer l'XP"
+      lore-no-perm:
+        - "&7Stocke l'XP des créatures tuées."
+        - ""
+        - "&7Statut: %status%"
+        - "&7Collecté: &e%xp% XP"
+        - ""
+        - "&c&lVOUS NE POUVEZ PAS UTILISER CETTE FONCTIONNALITÉ"
+
+  messages:
+    no-permission: "&cVous n'avez pas la permission de modifier cette fonctionnalité!"
+    xp-empty: "&cLe réservoir d'XP est vide!"
+    xp-collected: "&aCollecté: &a%xp% XP!"
+    req-auto-slayer: "&cVous devez d'abord activer le tueur automatique!"
+    feature-no-perm: "&cVous n'avez pas la permission de modifier cette fonctionnalité!"
+    perms-changed: "&cLes fonctionnalités du spawner ont été désactivées en raison de changements de permissions."
   
 # =========================================
 # Messages du plugin

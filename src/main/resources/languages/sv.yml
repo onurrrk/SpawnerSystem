@@ -36,10 +36,13 @@ spawner-item:
 # Spawner Hologram Inställningar
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Kan brytas med %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Kan brytas med %mode%"
+  - "&7Huk dig och högerklicka för att öppna menyn"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Mob Hologram Inställningar
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cDenna mob kommer att tas bort"
   - "&eInom %time% s om den inte lämnar området."
+  
+# =========================================
+# Menyinställningar (GUI)
+# =========================================
+menu:
+  title: "&8Spawner-kontrollpanel"
+  status:
+    active: "&aAktiv ✔"
+    inactive: "&cInaktiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAuto Slayer"
+      lore:
+        - "&7Dödar automatiskt varelser från spawnern."
+        - "&7Status: %status%"
+        - ""
+        - "&fVänsterklick: &eVäxla läge"
+      lore-no-perm:
+        - "&7Dödar automatiskt varelser från spawnern."
+        - "&7Status: %status%"
+        - ""
+        - "&c&lDU KAN INTE ANVÄNDA DENNA FUNKTION"
+
+    xp-vacuum:
+      name: "&a&lXP-samlare"
+      lore:
+        - "&7Lagrar XP från dödade varelser."
+        - ""
+        - "&7Status: %status%"
+        - "&7Insamlat: &e%xp% XP"
+        - ""
+        - "&fVänsterklick: &eVäxla läge"
+        - "&fHögerklick: &bTa ut XP"
+      lore-no-perm:
+        - "&7Lagrar XP från dödade varelser."
+        - ""
+        - "&7Status: %status%"
+        - "&7Insamlat: &e%xp% XP"
+        - ""
+        - "&c&lDU KAN INTE ANVÄNDA DENNA FUNKTION"
+
+  messages:
+    no-permission: "&cDu har inte behörighet att ändra denna funktion!"
+    xp-empty: "&cXP-tanken är tom!"
+    xp-collected: "&aSamlade in: &a%xp% XP!"
+    req-auto-slayer: "&cDu måste först aktivera auto slayer!"
+    feature-no-perm: "&cDu har inte behörighet att ändra denna funktion!"
+    perms-changed: "&cSpawner-funktioner har inaktiverats på grund av ändrade behörigheter."
   
 # =========================================
 # Plugin-meddelanden

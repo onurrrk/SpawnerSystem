@@ -36,10 +36,13 @@ spawner-item:
 # Pengaturan Hologram Spawner
 # =========================================
 spawnable-status:
-  mob_type: "&aSpawner %type% "
-  break_with: "&7Dapat dihancurkan dengan %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&aSpawner %type%"
+  - "&7Dapat dihancurkan dengan %mode%"
+  - "&7Berjongkok dan klik kanan untuk membuka menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Pengaturan Hologram Mob
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cMob ini akan dihapus"
   - "&eDalam %time% d jika tidak meninggalkan area."
+  
+# =========================================
+# Pengaturan Menu (GUI)
+# =========================================
+menu:
+  title: "&8Panel Kontrol Spawner"
+  status:
+    active: "&aAktif ✔"
+    inactive: "&cTidak Aktif ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lPembunuh Otomatis"
+      lore:
+        - "&7Membunuh monster dari spawner secara otomatis."
+        - "&7Status: %status%"
+        - ""
+        - "&fKlik Kiri: &eUbah Mode"
+      lore-no-perm:
+        - "&7Membunuh monster dari spawner secara otomatis."
+        - "&7Status: %status%"
+        - ""
+        - "&c&lKAMU TIDAK BISA MENGGUNAKAN FITUR INI"
+
+    xp-vacuum:
+      name: "&a&lPengumpul XP"
+      lore:
+        - "&7Menyimpan XP yang jatuh dari monster yang dibunuh."
+        - ""
+        - "&7Status: %status%"
+        - "&7Terkumpul: &e%xp% XP"
+        - ""
+        - "&fKlik Kiri: &eUbah Mode"
+        - "&fKlik Kanan: &bAmbil XP"
+      lore-no-perm:
+        - "&7Menyimpan XP yang jatuh dari monster yang dibunuh."
+        - ""
+        - "&7Status: %status%"
+        - "&7Terkumpul: &e%xp% XP"
+        - ""
+        - "&c&lKAMU TIDAK BISA MENGGUNAKAN FITUR INI"
+
+  messages:
+    no-permission: "&cKamu tidak punya izin untuk mengubah fitur ini!"
+    xp-empty: "&cTangki XP kosong!"
+    xp-collected: "&aTerkumpul: &a%xp% XP!"
+    req-auto-slayer: "&cKamu harus mengaktifkan pembunuh otomatis terlebih dahulu!"
+    feature-no-perm: "&cKamu tidak punya izin untuk mengubah fitur ini!"
+    perms-changed: "&cFitur spawner telah dinonaktifkan karena perubahan izinmu."
   
 # =========================================
 # Pesan Plugin

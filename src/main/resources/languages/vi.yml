@@ -36,10 +36,13 @@ spawner-item:
 # Cài Đặt Hologram Spawner
 # =========================================
 spawnable-status:
-  mob_type: "&aSpawner %type% "
-  break_with: "&7Có thể phá bằng %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&aSpawner %type%"
+  - "&7Có thể phá bằng %mode%"
+  - "&7Cúi xuống và nhấp chuột phải để mở menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Cài Đặt Hologram Mob
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cMob này sẽ bị xóa"
   - "&eTrong vòng %time% giây nếu không rời khỏi khu vực."
+  
+# =========================================
+# Cài đặt Menu (GUI)
+# =========================================
+menu:
+  title: "&8Bảng Điều Khiển Spawner"
+  status:
+    active: "&aHoạt động ✔"
+    inactive: "&cKhông hoạt động ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lTự Động Tiêu Diệt"
+      lore:
+        - "&7Tự động giết quái vật từ spawner."
+        - "&7Trạng thái: %status%"
+        - ""
+        - "&fClick Chuột Trái: &eChuyển Chế Độ"
+      lore-no-perm:
+        - "&7Tự động giết quái vật từ spawner."
+        - "&7Trạng thái: %status%"
+        - ""
+        - "&c&lBẠN KHÔNG THỂ DÙNG TÍNH NĂNG NÀY"
+
+    xp-vacuum:
+      name: "&a&lThu Gom XP"
+      lore:
+        - "&7Lưu trữ XP rơi ra từ quái vật bị giết."
+        - ""
+        - "&7Trạng thái: %status%"
+        - "&7Đã thu gom: &e%xp% XP"
+        - ""
+        - "&fClick Chuột Trái: &eChuyển Chế Độ"
+        - "&fClick Chuột Phải: &bRút XP"
+      lore-no-perm:
+        - "&7Lưu trữ XP rơi ra từ quái vật bị giết."
+        - ""
+        - "&7Trạng thái: %status%"
+        - "&7Đã thu gom: &e%xp% XP"
+        - ""
+        - "&c&lBẠN KHÔNG THỂ DÙNG TÍNH NĂNG NÀY"
+
+  messages:
+    no-permission: "&cBạn không có quyền thay đổi tính năng này!"
+    xp-empty: "&cBình chứa XP trống rỗng!"
+    xp-collected: "&aĐã thu gom: &a%xp% XP!"
+    req-auto-slayer: "&cBạn phải bật Tự Động Tiêu Diệt trước!"
+    feature-no-perm: "&cBạn không có quyền thay đổi tính năng này!"
+    perms-changed: "&cCác tính năng spawner đã bị vô hiệu do thay đổi quyền hạn của bạn."
   
 # =========================================
 # Thông Báo Plugin

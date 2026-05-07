@@ -36,10 +36,13 @@ spawner-item:
 # Spawner Hologram Settings
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Can be broken with %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Can be broken with %mode%"
+  - "&7Sneak and right-click to open the menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Mob Hologram Settings
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cThis mob will be removed"
   - "&eWithin %time%s if it doesn't leave the area."
+
+# =========================================
+# Menu Settings (GUI)
+# =========================================
+menu:
+  title: "&8Spawner Control Panel"
+  status:
+    active: "&aActive ✔"
+    inactive: "&cInactive ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAuto Slayer"
+      lore:
+        - "&7Automatically kills mobs from the spawner."
+        - "&7Status: %status%"
+        - ""
+        - "&fLeft-Click: &eToggle Mode"
+      lore-no-perm:
+        - "&7Automatically kills mobs from the spawner."
+        - "&7Status: %status%"
+        - ""
+        - "&c&lYOU CANNOT USE THIS FEATURE"
+
+    xp-vacuum:
+      name: "&a&lXP Vacuum"
+      lore:
+        - "&7Stores XP dropped from killed mobs."
+        - ""
+        - "&7Status: %status%"
+        - "&7Collected: &e%xp% XP"
+        - ""
+        - "&fLeft-Click: &eToggle Mode"
+        - "&fRight-Click: &bWithdraw XP"
+      lore-no-perm:
+        - "&7Stores XP dropped from killed mobs."
+        - ""
+        - "&7Status: %status%"
+        - "&7Collected: &e%xp% XP"
+        - ""
+        - "&c&lYOU CANNOT USE THIS FEATURE"
+
+  messages:
+    no-permission: "&cYou don't have permission to change this feature!"
+    xp-empty: "&cXP tank is empty!"
+    xp-collected: "&aCollected: &a%xp% XP!"
+    req-auto-slayer: "&cYou must enable auto slayer first!"
+    feature-no-perm: "&cYou don't have permission to change this feature!"
+    perms-changed: "&cSpawner features have been disabled due to permission changes."
 
 # =========================================
 # Plugin Messages

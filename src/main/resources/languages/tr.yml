@@ -36,10 +36,13 @@ spawner-item:
 # Spawner Hologram Ayarları
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7%mode% ile kırılabilir "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7%mode% ile kırılabilir"
+  - "&7Menüyü açmak için eğilip sağ tıklayın"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
   
 # =========================================
 # Yaratık Hologram Ayarları
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cBu yaratık bölgeden ayrılmazsa"
   - "&e%time%s içinde silinecek."
+
+# =========================================
+# Menü Ayarları (GUI)
+# =========================================
+menu:
+  title: "&8Spawner Kontrol Paneli"
+  status:
+    active: "&aAktif ✔"
+    inactive: "&cPasif ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lOtomatik Öldürme"
+      lore:
+        - "&7Spawner'dan çıkan yaratıkları otomatik öldürür."
+        - "&7Durum: %status%"
+        - ""
+        - "&fSol-Tık: &eModu Değiştir"
+      lore-no-perm:
+        - "&7Spawner'dan çıkan yaratıkları otomatik öldürür."
+        - "&7Durum: %status%"
+        - ""
+        - "&c&lBU ÖZELLİĞİ KULLANAMAZSIN"
+
+    xp-vacuum:
+      name: "&a&lXP Toplama"
+      lore:
+        - "&7Öldürülen yaratıklardan düşen XP'leri depolar."
+        - ""
+        - "&7Durum: %status%"
+        - "&7Biriken: &e%xp% XP"
+        - ""
+        - "&fSol-Tık: &eModu Değiştir"
+        - "&fSağ-Tık: &bXP'yi Çek"
+      lore-no-perm:
+        - "&7Öldürülen yaratıklardan düşen XP'leri depolar."
+        - ""
+        - "&7Durum: %status%"
+        - "&7Biriken: &e%xp% XP"
+        - ""
+        - "&c&lBU ÖZELLİĞİ KULLANAMAZSIN"
+
+  messages:
+    no-permission: "&cBu özelliği değiştirme yetkiniz yok!"
+    xp-empty: "&cXP haznesi boş!"
+    xp-collected: "&aToplandı: &a%xp% XP!"
+    req-auto-slayer: "&cÖnce otomatik öldürmeyi açmalısınız!"
+    feature-no-perm: "&cBu özelliği değiştirme yetkiniz yok!"
+    perms-changed: "&cYetkileriniz değiştiği için spawner özellikleri devre dışı bırakıldı."
 
 # =========================================
 # Eklenti Mesajları
@@ -159,7 +211,7 @@ entity-types:
   VEX: Vex
   VILLAGER: Köylü
   VINDICATOR: İnfazcı
-  WANDERING_TRADER: Gezen Tüccar
+  WANDERING_TRADER: Tüccar
   WARDEN: Warden
   WITCH: Cadı
   WITHER: Wither

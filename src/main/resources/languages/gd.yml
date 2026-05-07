@@ -36,10 +36,13 @@ spawner-item:
 # Suidheachaidhean Hologram Spawner
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner " 
-  break_with: "&7Faodar a bhriseadh le %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner" 
+  - "&7Faodar a bhriseadh le %mode%"
+  - "&7Lùb is cliog deas gus am menu fhosgladh"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Suidheachaidhean Hologram Mob
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cThèid am mob seo a thoirt air falbh"
   - "&eAnn an %time% s mura fàg e an t-sòn."
+  
+# =========================================
+# Roghainnean Clàr (GUI)
+# =========================================
+menu:
+  title: "&8Pannal Smachd Spawner"
+  status:
+    active: "&aGnìomhach ✔"
+    inactive: "&cNeo-ghnìomhach ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lMarbhadh Fèin-ghluasadach"
+      lore:
+        - "&7Marbs gu fèin-ghluasadach creutairean bhon spawner."
+        - "&7Inbhe: %status%"
+        - ""
+        - "&fCliog clì: &eAtharraich Modh"
+      lore-no-perm:
+        - "&7Marbs gu fèin-ghluasadach creutairean bhon spawner."
+        - "&7Inbhe: %status%"
+        - ""
+        - "&c&lCHA NUR URNUIMH A' CHLEACHDADH SEO A CHLEACHDADH"
+
+    xp-vacuum:
+      name: "&a&lCruinniche XP"
+      lore:
+        - "&7Stòraichean XP a thuit bho chreutairean marbhte."
+        - ""
+        - "&7Inbhe: %status%"
+        - "&7Cruinnichte: &e%xp% XP"
+        - ""
+        - "&fCliog clì: &eAtharraich Modh"
+        - "&fCliog deas: &bTarruing XP"
+      lore-no-perm:
+        - "&7Stòraichean XP a thuit bho chreutairean marbhte."
+        - ""
+        - "&7Inbhe: %status%"
+        - "&7Cruinnichte: &e%xp% XP"
+        - ""
+        - "&c&lCHA NUR URNUIMH A' CHLEACHDADH SEO A CHLEACHDADH"
+
+  messages:
+    no-permission: "&cChan eil cead agad an fheart seo atharrachadh!"
+    xp-empty: "&cTha tanca XP falamh!"
+    xp-collected: "&aChruinnichear: &a%xp% XP!"
+    req-auto-slayer: "&cFeumaidh tu marbhadh fèin-ghluasadach a chur an gnìomh an-toiseach!"
+    feature-no-perm: "&cChan eil cead agad an fheart seo atharrachadh!"
+    perms-changed: "&cChaidh feartan spawner a chur à gnìomh air sgàth atharrachaidhean cead."
   
 # =========================================
 # Teachdaireachdan an Bhogha

@@ -36,10 +36,13 @@ spawner-item:
 # Ustawienia Hologramu Spawnera
 # =========================================
 spawnable-status:
-  mob_type: "&aSpawner %type% "
-  break_with: "&7Można zniszczyć %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&aSpawner %type%"
+  - "&7Można zniszczyć %mode%"
+  - "&7Kucnij i kliknij prawym przyciskiem, aby otworzyć menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Ustawienia Hologramu Mobów
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cTen mob zostanie usunięty"
   - "&eZa %time% s, jeśli nie opuści obszaru."
+  
+# =========================================
+# Ustawienia Menu (GUI)
+# =========================================
+menu:
+  title: "&8Panel Sterowania Spawnera"
+  status:
+    active: "&aAktywny ✔"
+    inactive: "&cNieaktywny ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAuto Zabójca"
+      lore:
+        - "&7Automatycznie zabija stworzenia ze spawnera."
+        - "&7Status: %status%"
+        - ""
+        - "&fLewy klik: &eZmień tryb"
+      lore-no-perm:
+        - "&7Automatycznie zabija stworzenia ze spawnera."
+        - "&7Status: %status%"
+        - ""
+        - "&c&lNIE MOŻESZ UŻYWAĆ TEJ FUNKCJI"
+
+    xp-vacuum:
+      name: "&a&lZbieracz XP"
+      lore:
+        - "&7Przechowuje XP z zabitych stworzeń."
+        - ""
+        - "&7Status: %status%"
+        - "&7Zebrane: &e%xp% XP"
+        - ""
+        - "&fLewy klik: &eZmień tryb"
+        - "&fPrawy klik: &bWypłać XP"
+      lore-no-perm:
+        - "&7Przechowuje XP z zabitych stworzeń."
+        - ""
+        - "&7Status: %status%"
+        - "&7Zebrane: &e%xp% XP"
+        - ""
+        - "&c&lNIE MOŻESZ UŻYWAĆ TEJ FUNKCJI"
+
+  messages:
+    no-permission: "&cNie masz uprawnień do zmiany tej funkcji!"
+    xp-empty: "&cZbiornik XP jest pusty!"
+    xp-collected: "&aZebrano: &a%xp% XP!"
+    req-auto-slayer: "&cNajpierw musisz włączyć auto zabójcę!"
+    feature-no-perm: "&cNie masz uprawnień do zmiany tej funkcji!"
+    perms-changed: "&cFunkcje spawnera zostały wyłączone z powodu zmiany twoich uprawnień."
   
 # =========================================
 # Wiadomości Pluginu

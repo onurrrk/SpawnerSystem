@@ -36,10 +36,13 @@ spawner-item:
 # Impostazioni ologramma dello Spawner
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Può essere distrutto con %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Può essere distrutto con %mode%"
+  - "&7Accovacciati e fai clic destro per aprire il menu"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Impostazioni Ologramma Mob
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cQuesto mob verrà rimosso"
   - "&eEntro %time% s se non lascia l'area."
+ 
+# =========================================
+# Impostazioni Menu (GUI)
+# =========================================
+menu:
+  title: "&8Pannello di Controllo Spawner"
+  status:
+    active: "&aAttivo ✔"
+    inactive: "&cInattivo ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lUccisione Automatica"
+      lore:
+        - "&7Uccide automaticamente le creature dallo spawner."
+        - "&7Stato: %status%"
+        - ""
+        - "&fClick Sinistro: &eCambia Modalità"
+      lore-no-perm:
+        - "&7Uccide automaticamente le creature dallo spawner."
+        - "&7Stato: %status%"
+        - ""
+        - "&c&lNON PUOI USARE QUESTA FUNZIONALITÀ"
+
+    xp-vacuum:
+      name: "&a&lRaccoglitore XP"
+      lore:
+        - "&7Accumula XP caduto dalle creature uccise."
+        - ""
+        - "&7Stato: %status%"
+        - "&7Raccolto: &e%xp% XP"
+        - ""
+        - "&fClick Sinistro: &eCambia Modalità"
+        - "&fClick Destro: &bPreleva XP"
+      lore-no-perm:
+        - "&7Accumula XP caduto dalle creature uccise."
+        - ""
+        - "&7Stato: %status%"
+        - "&7Raccolto: &e%xp% XP"
+        - ""
+        - "&c&lNON PUOI USARE QUESTA FUNZIONALITÀ"
+
+  messages:
+    no-permission: "&cNon hai il permesso per cambiare questa funzionalità!"
+    xp-empty: "&cIl serbatoio XP è vuoto!"
+    xp-collected: "&aRaccolto: &a%xp% XP!"
+    req-auto-slayer: "&cDevi prima attivare l'uccisione automatica!"
+    feature-no-perm: "&cNon hai il permesso per cambiare questa funzionalità!"
+    perms-changed: "&cLe funzionalità dello spawner sono state disabilitate a causa di cambiamenti nei tuoi permessi."
   
 # =========================================
 # Messaggi Plugin

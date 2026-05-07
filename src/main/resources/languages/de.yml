@@ -36,10 +36,13 @@ spawner-item:
 # Spawner-Hologramm-Einstellungen
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7Kann mit %mode% abgebaut werden "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7Kann mit %mode% abgebaut werden"
+  - "&7Schleichen und rechtsklicken, um das Menü zu öffnen"
+  - "%status%"
+  
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Mob-Hologramm-Einstellungen
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cDieser Mob wird entfernt"
   - "&eInnerhalb von %time% s, wenn er das Gebiet nicht verlässt."
+  
+# =========================================
+# Menü-Einstellungen (GUI)
+# =========================================
+menu:
+  title: "&8Spawner-Kontrollzentrum"
+  status:
+    active: "&aAktiv ✔"
+    inactive: "&cInaktiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAutomatisches Töten"
+      lore:
+        - "&7Tötet automatisch Kreaturen aus dem Spawner."
+        - "&7Status: %status%"
+        - ""
+        - "&fLinksklick: &eModus wechseln"
+      lore-no-perm:
+        - "&7Tötet automatisch Kreaturen aus dem Spawner."
+        - "&7Status: %status%"
+        - ""
+        - "&c&lDU KANNST DIESE FUNKTION NICHT NUTZEN"
+
+    xp-vacuum:
+      name: "&a&lXP-Sammlung"
+      lore:
+        - "&7Speichert XP von getöteten Kreaturen."
+        - ""
+        - "&7Status: %status%"
+        - "&7Gesammelt: &e%xp% XP"
+        - ""
+        - "&fLinksklick: &eModus wechseln"
+        - "&fRechtsklick: &bXP abholen"
+      lore-no-perm:
+        - "&7Speichert XP von getöteten Kreaturen."
+        - ""
+        - "&7Status: %status%"
+        - "&7Gesammelt: &e%xp% XP"
+        - ""
+        - "&c&lDU KANNST DIESE FUNKTION NICHT NUTZEN"
+
+  messages:
+    no-permission: "&cDu hast keine Berechtigung, diese Funktion zu ändern!"
+    xp-empty: "&cXP-Behälter ist leer!"
+    xp-collected: "&aGesammelt: &a%xp% XP!"
+    req-auto-slayer: "&cAktiviere zuerst das automatische Töten!"
+    feature-no-perm: "&cDu hast keine Berechtigung, diese Funktion zu ändern!"
+    perms-changed: "&cSpawner-Funktionen wurden aufgrund geänderter Berechtigungen deaktiviert."
   
 # =========================================
 # Plugin-Nachrichten

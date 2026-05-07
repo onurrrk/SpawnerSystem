@@ -36,10 +36,13 @@ spawner-item:
 # Setările Hologramelor pentru Spawnere
 # =========================================
 spawnable-status:
-  mob_type: "&aSpawner %type% "
-  break_with: "&7Poate fi spart cu %mode% "
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&aSpawner %type%"
+  - "&7Poate fi spart cu %mode%"
+  - "&7Aplecați-vă și faceți clic dreapta pentru a deschide meniul"
+  - "%status%"
+
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Setări Hologram pentru Mob
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cAcest mob va fi eliminat"
   - "&eÎn %time% s dacă nu părăsește zona."
+  
+# =========================================
+# Setări Meniu (GUI)
+# =========================================
+menu:
+  title: "&8Panou de Control Spawner"
+  status:
+    active: "&aActiv ✔"
+    inactive: "&cInactiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lUcigaș Automat"
+      lore:
+        - "&7Omoară automat creaturile din spawner."
+        - "&7Stare: %status%"
+        - ""
+        - "&fClic stânga: &eSchimbă modul"
+      lore-no-perm:
+        - "&7Omoară automat creaturile din spawner."
+        - "&7Stare: %status%"
+        - ""
+        - "&c&lNU POȚI FOLOSI ACEASTĂ CARACTERISTICĂ"
+
+    xp-vacuum:
+      name: "&a&lColector XP"
+      lore:
+        - "&7Stochează XP-ul căzut de la creaturile ucise."
+        - ""
+        - "&7Stare: %status%"
+        - "&7Colectat: &e%xp% XP"
+        - ""
+        - "&fClic stânga: &eSchimbă modul"
+        - "&fClic dreapta: &bRetrage XP"
+      lore-no-perm:
+        - "&7Stochează XP-ul căzut de la creaturile ucise."
+        - ""
+        - "&7Stare: %status%"
+        - "&7Colectat: &e%xp% XP"
+        - ""
+        - "&c&lNU POȚI FOLOSI ACEASTĂ CARACTERISTICĂ"
+
+  messages:
+    no-permission: "&cNu ai permisiunea să schimbi această caracteristică!"
+    xp-empty: "&cRezervorul de XP este gol!"
+    xp-collected: "&aColectat: &a%xp% XP!"
+    req-auto-slayer: "&cTrebuie mai întâi să activezi ucigașul automat!"
+    feature-no-perm: "&cNu ai permisiunea să schimbi această caracteristică!"
+    perms-changed: "&cCaracteristicile spawnerului au fost dezactivate din cauza modificărilor permisiunilor tale."
   
 # =========================================
 # Mesaje ale Pluginului

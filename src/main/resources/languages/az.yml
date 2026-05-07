@@ -36,10 +36,13 @@ spawner-item:
 # Spawner Hologram Ayarları
 # =========================================
 spawnable-status:
-  mob_type: "&a%type% Spawner "
-  break_with: "&7%mode% ilə qırmaq olar"
-  can_spawn: "&a(✓)"
-  cannot_spawn: "&c(!)"
+  - "&a%type% Spawner"
+  - "&7%mode% ilə qırmaq olar"
+  - "&7Menyunu açmaq üçün çömbəlüb sağ klikləyin"
+  - "%status%"
+  
+can_spawn: "&a(✓)"
+cannot_spawn: "&c(!)"
 
 # =========================================
 # Mob Hologram Ayarları
@@ -47,6 +50,55 @@ spawnable-status:
 mob-remove-warning:
   - "&cBu mob silinəcək"
   - "&eƏgər ərazini tərk etməsə, %time% saniyə ərzində."
+  
+# =========================================
+# Menü Ayarları (GUI)
+# =========================================
+menu:
+  title: "&8Spawner İdarə Paneli"
+  status:
+    active: "&aAktiv ✔"
+    inactive: "&cPassiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&6&lAvtomatik Öldürmə"
+      lore:
+        - "&7Spawnerdan çıxan məxluqları avtomatik öldürür."
+        - "&7Vəziyyət: %status%"
+        - ""
+        - "&fSol-Tık: &eRejimi Dəyiş"
+      lore-no-perm:
+        - "&7Spawnerdan çıxan məxluqları avtomatik öldürür."
+        - "&7Vəziyyət: %status%"
+        - ""
+        - "&c&lBU XÜSUSİYYƏTİ İSTİFADƏ EDƏ BİLMƏZSİNİZ"
+
+    xp-vacuum:
+      name: "&a&lXP Toplama"
+      lore:
+        - "&7Öldürülən məxluqlardan düşən XP-ləri saxlayır."
+        - ""
+        - "&7Vəziyyət: %status%"
+        - "&7Toplanan: &e%xp% XP"
+        - ""
+        - "&fSol-Tık: &eRejimi Dəyiş"
+        - "&fSağ-Tık: &bXP-ni Çək"
+      lore-no-perm:
+        - "&7Öldürülən məxluqlardan düşən XP-ləri saxlayır."
+        - ""
+        - "&7Vəziyyət: %status%"
+        - "&7Toplanan: &e%xp% XP"
+        - ""
+        - "&c&lBU XÜSUSİYYƏTİ İSTİFADƏ EDƏ BİLMƏZSİNİZ"
+
+  messages:
+    no-permission: "&cBu xüsusiyyəti dəyişməyə icazəniz yoxdur!"
+    xp-empty: "&cXP anbarı boşdur!"
+    xp-collected: "&aToplandı: &a%xp% XP!"
+    req-auto-slayer: "&cƏvvəlcə avtomatik öldürməni aktivləşdirin!"
+    feature-no-perm: "&cBu xüsusiyyəti dəyişməyə icazəniz yoxdur!"
+    perms-changed: "&cİcazələriniz dəyişdiyi üçün spawner xüsusiyyətləri söndürüldü."
   
 # =========================================
 # Plugin mesajları
