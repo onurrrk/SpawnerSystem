@@ -55,6 +55,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
     private final NamespacedKey USES_KEY = new NamespacedKey(this, "uses_left");
     private final NamespacedKey PLAYER_PLACED_KEY = new NamespacedKey(this, "player_placed_spawner");
     private final NamespacedKey SPAWNER_TYPE_KEY = new NamespacedKey(this, "spawner_type");
+    private final NamespacedKey NERFED_MOB_KEY = new NamespacedKey(this, "nerfed_mob");
 
     private final Map<Location, Hologram> holograms = new ConcurrentHashMap<>();
     private final Map<UUID, MobCullingInfo> warnedMobs = new ConcurrentHashMap<>();
@@ -512,18 +513,74 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
             event.setCancelled(true);
             return;
         }
+
         if (nerfMobs && event.getEntity() instanceof LivingEntity) {
-            LivingEntity livingEntity = (LivingEntity) event.getEntity();
-            if (livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED) != null) {
-                livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.0);
-            }
-            if (livingEntity.getEquipment() != null) {
-                livingEntity.getEquipment().clear();
+    LivingEntity livingEntity = (LivingEntity) event.getEntity();
+    livingEntity.getPersistentDataContainer().set(NERFED_MOB_KEY, PersistentDataType.BOOLEAN, true);
+    
+    if (type == EntityType.VILLAGER || type == EntityType.ZOMBIE_VILLAGER) {
+        if (livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED) != null) {
+            livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.0);
+        }
+        if (type == EntityType.ZOMBIE_VILLAGER && livingEntity.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE) != null) {
+            livingEntity.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(0.0);
+        }
+        livingEntity.setCanPickupItems(false);
+    } else {
+        livingEntity.setCanPickupItems(false);
+        if (livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED) != null) {
+            livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.0);
+        }
+        if (livingEntity.getAttribute(Attribute.GENERIC_FOLLOW_RANGE) != null) {
+            livingEntity.getAttribute(Attribute.GENERIC_FOLLOW_RANGE).setBaseValue(0.0);
+        }
+    }
+  }
+    }
+    
+    @EventHandler
+    public void onEntityTransform(org.bukkit.event.entity.EntityTransformEvent event) {
+        if (!nerfMobs) return;
+        if (event.getEntity().getPersistentDataContainer().has(NERFED_MOB_KEY, PersistentDataType.BOOLEAN)) {
+            org.bukkit.entity.Entity transformed = event.getTransformedEntity();
+            transformed.getPersistentDataContainer().set(NERFED_MOB_KEY, PersistentDataType.BOOLEAN, true);
+            
+            if (transformed instanceof LivingEntity) {
+                LivingEntity livingEntity = (LivingEntity) transformed;
+                EntityType t = livingEntity.getType();
+                
+                if (t == EntityType.VILLAGER || t == EntityType.ZOMBIE_VILLAGER) {
+                    if (livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED) != null) {
+                        livingEntity.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.0);
+                    }
+                    if (t == EntityType.ZOMBIE_VILLAGER && livingEntity.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE) != null) {
+                        livingEntity.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(0.0);
+                    }
+                    livingEntity.setCanPickupItems(false);
+                }
             }
         }
     }
+    
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    public void onNerfedMobTarget(org.bukkit.event.entity.EntityTargetEvent event) {
+        if (!nerfMobs) return;
+        if (!(event.getEntity() instanceof LivingEntity mob)) return;
+        if (mob.getPersistentDataContainer().has(NERFED_MOB_KEY, PersistentDataType.BOOLEAN)) {
+      event.setCancelled(true);
+    }
+  }
 
-@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+    public void onNerfedMobDamage(org.bukkit.event.entity.EntityDamageByEntityEvent event) {
+        if (!nerfMobs) return;
+        if (!(event.getDamager() instanceof LivingEntity mob)) return;
+        if (mob.getPersistentDataContainer().has(NERFED_MOB_KEY, PersistentDataType.BOOLEAN)) {
+      event.setCancelled(true);
+    }
+  }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onPlayerUseSpawnEggOnBlock(PlayerInteractEvent event) {
         if (event.getAction() != org.bukkit.event.block.Action.RIGHT_CLICK_BLOCK) return;
         if (event.getHand() != EquipmentSlot.HAND || event.getItem() == null || event.getClickedBlock() == null) return;
@@ -596,6 +653,31 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
     public void onEntityExplode(EntityExplodeEvent event) {
         event.blockList().removeIf(block -> block.getType() == Material.SPAWNER);
     }
+
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+    public void onEntityBreed(org.bukkit.event.entity.EntityBreedEvent event) {
+    Entity child = event.getEntity();
+    EntityType type = child.getType();
+    Chunk chunk = child.getChunk();
+
+    int currentCount = 0;
+    for (Entity entity : chunk.getEntities()) {
+        if (entity.getType() == type && !entity.getUniqueId().equals(child.getUniqueId())) {
+            currentCount++;
+        }
+    }
+
+    if (currentCount >= maxMobsPerChunk) {
+        event.setCancelled(true);
+        event.setExperience(0);
+
+        if (event.getBreeder() instanceof Player p) {
+            p.sendMessage(getMessage("egg-chunk-limit-exceeded")
+                    .replace("%type%", getTranslatedEntityName(type))
+                    .replace("%limit%", String.valueOf(maxMobsPerChunk)));
+        }
+    }
+}
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
