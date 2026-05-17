@@ -85,7 +85,6 @@ chunk-limits:
 
 # This setting makes mobs from spawners completely passive
 # - AI is disabled, they will not attack or move
-# - No equipment on spawn
 # - NPC interactions remain functional (they behave like villagers)
 nerf-spawner-mobs: false
 
