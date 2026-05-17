@@ -51,8 +51,10 @@ The language can be easily selected from the **config file**, and all translatio
 
 - **Chunk-Based Limits**  
   - Fully configurable via the config file.  
-  - Controls the maximum number of spawners and mobs per chunk.  
+  - Controls the maximum number of spawners and mobs per chunk.
   - Customizable mob settings; any mobs exceeding the defined limits will be automatically removed.
+- **Nerf Spawner Mobs**
+  - When nerf-spawner-mobs: true, mobs spawned from spawners cannot move, target, deal damage, pick up items, and Creepers cannot explode.
 
 ![mobholo](https://cdn.modrinth.com/data/cached_images/ed1fa22c5caaa6e4e15abacb8547fd3ea5280081.jpeg)
 
