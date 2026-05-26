@@ -90,5 +90,11 @@ The language can be easily selected from the **config file**, and all translatio
 | ⚠️ Spigot    | Partial Support |
 | ⚠️ Bukkit    | Partial Support |
 
+## Statistics
+
+[![bStats](https://bstats.org/signatures/bukkit/spawnersystem.svg)](https://bstats.org/plugin/bukkit/spawnersystem)
+
+## Discord
+
 [![Discord](https://cdn.modrinth.com/data/cached_images/4de86371cc7bcf3818924b198f31baacc304700f.png)
 ](https://discord.gg/H7RMcAMFeZ)
