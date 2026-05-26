@@ -59,7 +59,7 @@ The language can be easily selected from the **config file**, and all translatio
 ![mobholo](https://cdn.modrinth.com/data/cached_images/ed1fa22c5caaa6e4e15abacb8547fd3ea5280081.jpeg)
 
 - **Spawner Menu System**
-  - The spawner menu system can be enabled or disabled via the config file. (Enabled by default)
+  - The spawner menu system can be enabled or disabled via the config file. **(Enabled by default)**
   - Opens the advanced GUI by **Shift + Right-Clicking** on any spawner, allowing you to manage all settings from a single, intuitive interface.
   - **Auto-Kill:** Automatically eliminates mobs spawned by the spawner.
   - **XP Collection:** Automatically collects and stores experience points dropped by mobs within the spawner.
