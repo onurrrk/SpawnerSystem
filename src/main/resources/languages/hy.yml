@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aՁեր Spawner Բալթին կոտրվեց:"
   natural-spawner-break-denied: "&cԲնական spawner-ները պաշտպանված են և չեն կարող կոտրվել:"
   sp-pickaxe-only: "&cԱյս հատուկ բալթին կարող է կոտրել միայն spawner-ներ:"
-  inventory-full: "&aՁեր պարկը լի է՝ spawner-ը գետնին ընկավ:"
+  inventory-full: "&aԻրը գցվել է գետնին, քանի որ քո ինվենտարը լիքն է:"
   classic-silk-required: "&cSpawner-ները կարող են կոտրվել միայն Մետաքսե Բալթիով:"
   advanced-pickaxe-required: "&cSpawner-ները կարող են կոտրվել միայն հատուկ Spawner Բալթիով:"
   empty-spawner-break-denied: "&cԴուք չեք կարող կոտրել դատարկ spawner:"

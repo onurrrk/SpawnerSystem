@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&a刷怪笼镐已损坏！"
   natural-spawner-break-denied: "&c自然生成的刷怪笼受到保护，无法破坏。"
   sp-pickaxe-only: "&c此特殊镐只能用于破坏刷怪笼！"
-  inventory-full: "&a背包已满，刷怪笼掉落在地面！"
+  inventory-full: "&a由于你的背包已满，物品被丢弃在地上！"
   classic-silk-required: "&c刷怪笼只能用丝触镐破坏！"
   advanced-pickaxe-required: "&c刷怪笼只能用特殊刷怪笼镐破坏！"
   empty-spawner-break-denied: "&c无法破坏空的刷怪笼！"

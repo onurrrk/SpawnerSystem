@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aلقد انكسر فأس السبونر الخاص بك!"
   natural-spawner-break-denied: "&cالسبونرات الطبيعية محمية ولا يمكن كسرها."
   sp-pickaxe-only: "&cهذا الفأس الخاص يمكنه كسر السبونر فقط!"
-  inventory-full: "&aمخزونك ممتلئ، تم إسقاط السبونر على الأرض!"
+  inventory-full: "&aتم إسقاط العنصر على الأرض لأن مخزونك ممتلئ!"
   classic-silk-required: "&cيمكن كسر السبونر فقط بفأس لمسة حرير!"
   advanced-pickaxe-required: "&cيمكن كسر السبونر فقط بفأس سبونر خاص!"
   empty-spawner-break-denied: "&cلا يمكنك كسر سبونر فارغ!"

@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aA Spawner Csákány eltört!"
   natural-spawner-break-denied: "&cA természetes spawner védett és nem törhető."
   sp-pickaxe-only: "&cEz a speciális csákány csak spawnerhez használható!"
-  inventory-full: "&aA készleted tele van, a spawner leesett!"
+  inventory-full: "&aA tárgy a földre került, mert a csomagod megtelt!"
   classic-silk-required: "&cA spawner csak Selyem Tapintás Csákánnyal törhető!"
   advanced-pickaxe-required: "&cA spawner csak speciális Spawner Csákánnyal törhető!"
   empty-spawner-break-denied: "&cÜres spawner nem törhető!"

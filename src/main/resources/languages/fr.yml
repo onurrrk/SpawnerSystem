@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aVotre pioche de Spawner est cassée !"
   natural-spawner-break-denied: "&cLes spawners naturels sont protégés et ne peuvent pas être cassés."
   sp-pickaxe-only: "&cCette pioche spéciale peut seulement casser des spawners !"
-  inventory-full: "&aVotre inventaire est plein, le spawner est tombé au sol !"
+  inventory-full: "&aL'objet a été jeté au sol car votre inventaire est plein !"
   classic-silk-required: "&cLes spawners peuvent seulement être cassés avec une pioche Silk Touch !"
   advanced-pickaxe-required: "&cLes spawners peuvent seulement être cassés avec une pioche de Spawner spéciale !"
   empty-spawner-break-denied: "&cVous ne pouvez pas casser un spawner vide !"

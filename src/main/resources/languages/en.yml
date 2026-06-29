@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aYour spawner pickaxe broke!"
   natural-spawner-break-denied: "&cNatural spawners are protected and cannot be broken."
   sp-pickaxe-only: "&cThis special pickaxe can only be used to break spawners!"
-  inventory-full: "&aYour inventory was full, so the spawner was dropped on the ground!"
+  inventory-full: "&aItem dropped on the ground because your inventory is full!"
   classic-silk-required: "&cYou can only break spawners with a Silk Touch enchanted pickaxe!"
   advanced-pickaxe-required: "&cYou can only break spawners with the special Spawner Pickaxe!"
   empty-spawner-break-denied: "&cYou cannot break this empty spawner!"

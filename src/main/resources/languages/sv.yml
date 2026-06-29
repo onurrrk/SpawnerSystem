@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aDin Spawner Hacka gick sönder!"
   natural-spawner-break-denied: "&cNaturliga spawners är skyddade och kan inte brytas."
   sp-pickaxe-only: "&cDenna speciella hacka kan endast bryta spawner!"
-  inventory-full: "&aDitt inventory är fullt, spawner släpptes!"
+  inventory-full: "&aFöremålet tappades på marken eftersom ditt inventarium är fullt!"
   classic-silk-required: "&cSpawner kan endast brytas med Silk Touch Hacka!"
   advanced-pickaxe-required: "&cSpawner kan endast brytas med special Spawner Hacka!"
   empty-spawner-break-denied: "&cDu kan inte bryta en tom spawner!"

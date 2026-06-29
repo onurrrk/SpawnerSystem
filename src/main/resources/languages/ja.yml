@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aスポナーピッケルが壊れました！"
   natural-spawner-break-denied: "&c自然生成されたスポナーは保護されており、破壊できません。"
   sp-pickaxe-only: "&cこの特別なピッケルはスポナー専用です！"
-  inventory-full: "&aインベントリがいっぱいのため、スポナーが地面に落ちました！"
+  inventory-full: "&aインベントリが満杯のため、アイテムが地面に落とされました！"
   classic-silk-required: "&cスポナーはシルクタッチのピッケルでのみ破壊可能です！"
   advanced-pickaxe-required: "&cスポナーは特別なスポナーピッケルでのみ破壊可能です！"
   empty-spawner-break-denied: "&c空のスポナーは破壊できません！"

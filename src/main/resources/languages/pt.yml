@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aA tua picareta de spawner partiu-se!"
   natural-spawner-break-denied: "&cSpawners naturais estão protegidos e não podem ser partidos."
   sp-pickaxe-only: "&cEsta picareta especial só pode ser usada para partir spawners!"
-  inventory-full: "&aO teu inventário estava cheio, então o spawner foi largado no chão!"
+  inventory-full: "&aO item foi jogado no chão porque seu inventário está cheio!"
   classic-silk-required: "&cSó podes partir spawners com uma picareta encantada com Toque de Seda!"
   advanced-pickaxe-required: "&cSó podes partir spawners com a Picareta de Spawner especial!"
   empty-spawner-break-denied: "&cNão podes partir este spawner vazio!"

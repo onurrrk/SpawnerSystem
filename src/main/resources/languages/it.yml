@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aIl tuo Piccone Spawner si è rotto!"
   natural-spawner-break-denied: "&cGli spawner naturali sono protetti e non possono essere rotti."
   sp-pickaxe-only: "&cQuesto piccone speciale può rompere solo gli spawner!"
-  inventory-full: "&aIl tuo inventario è pieno, lo spawner è caduto a terra!"
+  inventory-full: "&aL'oggetto è stato gettato a terra perché il tuo inventario è pieno!"
   classic-silk-required: "&cGli spawner possono essere rotti solo con un Piccone Tocco di Seta!"
   advanced-pickaxe-required: "&cGli spawner possono essere rotti solo con un Piccone Spawner speciale!"
   empty-spawner-break-denied: "&cNon puoi rompere uno spawner vuoto!"

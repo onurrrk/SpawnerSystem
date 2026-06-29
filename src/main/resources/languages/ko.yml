@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aSpawner 곡괭이가 깨졌습니다!"
   natural-spawner-break-denied: "&c자연 생성된 스포너는 보호되어 부술 수 없습니다."
   sp-pickaxe-only: "&c이 특수 곡괭이는 오직 스포너만 부술 수 있습니다!"
-  inventory-full: "&a인벤토리가 가득 찼습니다. 스포너가 땅에 떨어졌습니다!"
+  inventory-full: "&a인벤토리가 가득 차서 아이템이 땅에 떨어졌습니다!"
   classic-silk-required: "&c스포너는 실크터치 곡괭이로만 부술 수 있습니다!"
   advanced-pickaxe-required: "&c스포너는 특수 Spawner 곡괭이로만 부술 수 있습니다!"
   empty-spawner-break-denied: "&c빈 스포너는 부술 수 없습니다!"

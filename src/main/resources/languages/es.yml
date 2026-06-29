@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&a¡Tu pico spawner se rompió!"
   natural-spawner-break-denied: "&cLos spawners naturales están protegidos y no se pueden romper."
   sp-pickaxe-only: "&c¡Este pico especial solo puede usarse para romper spawners!"
-  inventory-full: "&aTu inventario estaba lleno, así que el spawner se dejó caer en el suelo."
+  inventory-full: "&a¡El objeto se ha soltado al suelo porque tu inventario está lleno!"
   classic-silk-required: "&c¡Solo puedes romper spawners con un pico encantado con Toque de Seda!"
   advanced-pickaxe-required: "&c¡Solo puedes romper spawners con el Pico Spawner especial!"
   empty-spawner-break-denied: "&c¡No puedes romper este spawner vacío!"

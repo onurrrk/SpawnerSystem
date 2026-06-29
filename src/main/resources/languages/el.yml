@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aΤο Spawner Τσεκούρι σας έσπασε!"
   natural-spawner-break-denied: "&cΟι φυσικοί spawner είναι προστατευμένοι και δεν μπορούν να σπάσουν."
   sp-pickaxe-only: "&cΑυτό το ειδικό τσεκούρι μπορεί να σπάσει μόνο spawner!"
-  inventory-full: "&aΤο απόθεμά σας είναι γεμάτο, το spawner έπεσε στο έδαφος!"
+  inventory-full: "&aΤο αντικείμενο έπεσε στο έδαφος επειδή το inventory σου είναι γεμάτο!"
   classic-silk-required: "&cΟι spawner μπορούν να σπάσουν μόνο με Τσεκούρι Μεταξωτής Αφή!"
   advanced-pickaxe-required: "&cΟι spawner μπορούν να σπάσουν μόνο με ειδικό Spawner Τσεκούρι!"
   empty-spawner-break-denied: "&cΔεν μπορείτε να σπάσετε έναν άδειο spawner!"

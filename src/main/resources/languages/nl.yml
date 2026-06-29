@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aJe spawner-pikhouweel is gebroken!"
   natural-spawner-break-denied: "&cNatuurlijke spawners zijn beschermd en kunnen niet worden gebroken."
   sp-pickaxe-only: "&cDeze speciale pikhouweel kan alleen spawners breken!"
-  inventory-full: "&aJe inventaris is vol, de spawner is op de grond gevallen!"
+  inventory-full: "&aHet item is op de grond gevallen omdat je inventaris vol is!"
   classic-silk-required: "&cSpawners kunnen alleen worden gebroken met een Zijde-aanraking pikhouweel!"
   advanced-pickaxe-required: "&cSpawners kunnen alleen worden gebroken met een speciale Spawner-pikhouweel!"
   empty-spawner-break-denied: "&cJe kunt een lege spawner niet breken!"

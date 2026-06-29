@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aKapak Spawner Anda patah!"
   natural-spawner-break-denied: "&cSpawner alami dilindungi dan tidak dapat dihancurkan."
   sp-pickaxe-only: "&cKapak khusus ini hanya bisa memecah spawner!"
-  inventory-full: "&aInventaris Anda penuh, spawner jatuh ke tanah!"
+  inventory-full: "&aItem dijatuhkan ke tanah karena inventarismu penuh!"
   classic-silk-required: "&cSpawner hanya bisa dihancurkan dengan Kapak Sentuhan Sutra!"
   advanced-pickaxe-required: "&cSpawner hanya bisa dihancurkan dengan Kapak Spawner khusus!"
   empty-spawner-break-denied: "&cAnda tidak bisa memecah spawner kosong!"

@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aCúp phá spawner của bạn đã hỏng!"
   natural-spawner-break-denied: "&cSpawner tự nhiên được bảo vệ và không thể phá."
   sp-pickaxe-only: "&cCúp đặc biệt này chỉ có thể được dùng để phá spawner!"
-  inventory-full: "&aKho đồ của bạn đã đầy, spawner đã được thả xuống đất!"
+  inventory-full: "&aVật phẩm đã bị rơi xuống đất vì túi đồ của bạn đầy!"
   classic-silk-required: "&cBạn chỉ có thể phá spawner bằng một cây cúp được phù phép Silk Touch!"
   advanced-pickaxe-required: "&cBạn chỉ có thể phá spawner bằng Cúp Phá Spawner đặc biệt!"
   empty-spawner-break-denied: "&cBạn không thể phá spawner trống này!"

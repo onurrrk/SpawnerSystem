@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aSpawner kazmanız qırıldı!"
   natural-spawner-break-denied: "&cTəbii spawner-lar qorunur və qırıla bilməz."
   sp-pickaxe-only: "&cBu xüsusi kazma yalnız spawner qırmaq üçün istifadə edilə bilər!"
-  inventory-full: "&aİnventar doludur, spawner yerə düşdü!"
+  inventory-full: "&aƏşya inventarın dolu olduğu üçün yerə atıldı!"
   classic-silk-required: "&cSpawner-ları yalnız İpək Toxunuşlu kazma ilə qıra bilərsiniz!"
   advanced-pickaxe-required: "&cSpawner-ları yalnız xüsusi Spawner Kazması ilə qıra bilərsiniz!"
   empty-spawner-break-denied: "&cBoş spawner-ları qıra bilməzsiniz!"

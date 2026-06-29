@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aTwój kilof do spawnerów się zepsuł!"
   natural-spawner-break-denied: "&cNaturalne spawnery są chronione i nie można ich zniszczyć."
   sp-pickaxe-only: "&cTen specjalny kilof może być używany tylko do niszczenia spawnerów!"
-  inventory-full: "&aTwój ekwipunek był pełny, więc spawner został upuszczony na ziemię!"
+  inventory-full: "&aPrzedmiot został upuszczony na ziemię, ponieważ twój ekwipunek jest pełny!"
   classic-silk-required: "&cMożesz niszczyć spawnery tylko kilofem zaczarowanym Jedwabnym Dotykiem!"
   advanced-pickaxe-required: "&cMożesz niszczyć spawnery tylko specjalnym Kilofem Spawnerów!"
   empty-spawner-break-denied: "&cNie możesz zniszczyć tego pustego spawnera!"

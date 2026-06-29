@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aSpawner kazmanız kırıldı!"
   natural-spawner-break-denied: "&cDoğal spawnerlar korumalıdır ve kırılamaz."
   sp-pickaxe-only: "&cBu özel kazma sadece spawner kırmak için kullanılabilir!"
-  inventory-full: "&aEnvanterin doluydu, spawner yere bırakıldı!"
+  inventory-full: "&aEnvanterin dolu olduğu için eşya yere bırakıldı!"
   classic-silk-required: "&cSpawnerları sadece İpeksi Dokunuş büyülü bir kazma ile kırabilirsin!"
   advanced-pickaxe-required: "&cSpawnerları sadece özel Spawner Kazması ile kırabilirsin!"
   empty-spawner-break-denied: "&cBoş spawnerları kıramazsın!"
@@ -149,7 +149,7 @@ entity-types:
   DOLPHIN: Yunus
   DONKEY: Eşek
   DROWNED: Boğulmuş
-  ELDER_GUARDIAN: Kadim Gardiyan
+  ELDER_GUARDIAN: Yaşlı Gardiyan
   ENDERMAN: Enderman
   ENDERMITE: Endermite
   ENDER_DRAGON: Ender Ejderhası
@@ -165,8 +165,8 @@ entity-types:
   GUARDIAN: Gardiyan
   HOGLIN: Hoglin
   HORSE: At
-  HUSK: Kurutulmuş Zombi
-  ILLUSIONER: Büyücü Illusioner
+  HUSK: Kavrulmuş Zombi
+  ILLUSIONER: Hokkabaz
   IRON_GOLEM: Demir Golem
   LLAMA: Lama
   MAGMA_CUBE: Magma Küpü
@@ -182,10 +182,10 @@ entity-types:
   OCELOT: Ocelot
   PANDA: Panda
   PARROT: Papağan
-  PHANTOM: Hayalet
+  PHANTOM: Fantom
   PIG: Domuz
   PIGLIN: Piglin
-  PIGLIN_BRUTE: Piglin Zorbası
+  PIGLIN_BRUTE: Acımasız Piglin
   PILLAGER: Yağmacı
   POLAR_BEAR: Kutup Ayısı
   PUFFERFISH: Kirpi Balığı
@@ -202,8 +202,8 @@ entity-types:
   SNOWMAN: Kardan Adam
   SPIDER: Örümcek
   SQUID: Mürekkep Balığı
-  STRAY: Dolaşan İskelet
-  STRIDER: Lav Yürüyücüsü
+  STRAY: Buzul İskelet
+  STRIDER: Lavgezer
   TADPOLE: Kurbağa Larvası
   TRADER_LLAMA: Tüccar Laması
   TROPICAL_FISH: Tropikal Balık
@@ -211,7 +211,7 @@ entity-types:
   VEX: Vex
   VILLAGER: Köylü
   VINDICATOR: İnfazcı
-  WANDERING_TRADER: Tüccar
+  WANDERING_TRADER: Gezgin Tüccar
   WARDEN: Warden
   WITCH: Cadı
   WITHER: Wither
@@ -221,4 +221,4 @@ entity-types:
   ZOMBIE: Zombi
   ZOMBIE_HORSE: Zombi At
   ZOMBIE_VILLAGER: Zombi Köylü
-  ZOMBIFIED_PIGLIN: Zombileşmiş Piglin
+  ZOMBIFIED_PIGLIN: Zombi Piglin

@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aVáš Spawner Krumpáč se zlomil!"
   natural-spawner-break-denied: "&cPřírodní spawnery jsou chráněné a nelze je rozbít."
   sp-pickaxe-only: "&cTento speciální krumpáč může rozbíjet pouze spawner!"
-  inventory-full: "&aInventář je plný, spawner byl upuštěn!"
+  inventory-full: "&aPředmět byl shozen na zem, protože tvůj inventář je plný!"
   classic-silk-required: "&cSpawner lze rozbít pouze hedvábným krumpáčem!"
   advanced-pickaxe-required: "&cSpawner lze rozbít pouze speciálním Spawner Krumpáčem!"
   empty-spawner-break-denied: "&cNelze rozbít prázdný spawner!"

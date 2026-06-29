@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aTârnacopul tău de spawnere s-a rupt!"
   natural-spawner-break-denied: "&cSpawnerele naturale sunt protejate și nu pot fi sparte."
   sp-pickaxe-only: "&cAcest târnacop special poate fi folosit doar pentru a sparge spawnere!"
-  inventory-full: "&aInventarul tău era plin, așa că spawnerul a fost aruncat pe jos!"
+  inventory-full: "&aObiectul a fost aruncat pe pământ deoarece inventarul tău este plin!"
   classic-silk-required: "&cPoți sparge spawnerele doar cu un târnacop fermecat cu Atingeri de Mătase!"
   advanced-pickaxe-required: "&cPoți sparge spawnerele doar cu Târnacopul special de Spawnere!"
   empty-spawner-break-denied: "&cNu poți sparge acest spawner gol!"

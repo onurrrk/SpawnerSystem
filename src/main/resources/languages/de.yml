@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aDeine Spawner-Spitzhacke ist zerbrochen!"
   natural-spawner-break-denied: "&cNatürliche Spawner sind geschützt und können nicht abgebaut werden."
   sp-pickaxe-only: "&cDiese spezielle Spitzhacke kann nur zum Abbauen von Spawnern verwendet werden!"
-  inventory-full: "&aDein Inventar war voll, daher wurde der Spawner auf den Boden gelegt!"
+  inventory-full: "&aDer Gegenstand wurde auf den Boden geworfen, weil dein Inventar voll ist!"
   classic-silk-required: "&cSpawner können nur mit einer Seidenberührung-Spitzhacke abgebaut werden!"
   advanced-pickaxe-required: "&cSpawner können nur mit der speziellen Spawner Spitzhacke abgebaut werden!"
   empty-spawner-break-denied: "&cDu kannst diesen leeren Spawner nicht abbauen!"

@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aBhris do Spawner Piocais!"
   natural-spawner-break-denied: "&cTha na spawner nàdurrach mar dhìon agus cha ghabh iad a bhriste."
   sp-pickaxe-only: "&cChan fhaod an piocais sònraichte seo ach spawner a bhriste!"
-  inventory-full: "&aTha do stòr làn, thuit an spawner air an talamh!"
+  inventory-full: "&aThuit an nì air an làr oir tha do chlàr làn."
   classic-silk-required: "&cChan fhaod spawner ach a bhriste le Piocais Touch Silk!"
   advanced-pickaxe-required: "&cChan fhaod spawner ach a bhriste le Spawner Piocais sònraichte!"
   empty-spawner-break-denied: "&cChan fhaod thu spawner falamh a bhriste!"

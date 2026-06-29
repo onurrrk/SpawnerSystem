@@ -118,7 +118,7 @@ messages:
   pickaxe-broken: "&aСиздин Spawner Киркаңыз сынды!"
   natural-spawner-break-denied: "&cТабигый spawnerлер коргоого алынган жана бузулбайт."
   sp-pickaxe-only: "&cБул өзгөчө кирка тектеш spawnerлерди гана бузууга мүмкүндүк берет!"
-  inventory-full: "&aИнвентарыңыз толуп калды, spawner жерге түштү!"
+  inventory-full: "&aБуюм жерге түшүрүлдү, анткени инвентарың толуп калган!"
   classic-silk-required: "&cSpawnerлерди тек гана Silk Touch Киркасы менен бузууга болот!"
   advanced-pickaxe-required: "&cSpawnerлерди тек гана өзгөчө Spawner Киркасы менен бузууга болот!"
   empty-spawner-break-denied: "&cБош spawnerди бузууга болбойт!"
