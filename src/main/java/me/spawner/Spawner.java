@@ -362,7 +362,7 @@ public final class Spawner extends JavaPlugin implements CommandExecutor, TabCom
         }
     }
 
-    @EventHandler
+@EventHandler
 public void onSpawnerPlace(BlockPlaceEvent event) {
     if (event.getBlockPlaced().getType() != Material.SPAWNER) return;
 
@@ -403,12 +403,20 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
 
         applySettingsToSpawner(spawnerState);
         createHologramForSpawner(spawnerState);
-
-        jsonLogger.log(event.getPlayer(), event.getBlockPlaced(), "PLACED");
-
-        String typeName = spawnerState.getSpawnedType() != null ? spawnerState.getSpawnedType().name() : "UNKNOWN";
-        webhookManager.sendPlaceWebhook(event.getPlayer(), event.getBlock().getLocation(), typeName);
     }
+}
+
+@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+public void onSpawnerPlaceLog(BlockPlaceEvent event) {
+    if (event.getBlockPlaced().getType() != Material.SPAWNER) return;
+    if (!(event.getBlockPlaced().getState() instanceof CreatureSpawner spawnerState)) return;
+
+    jsonLogger.log(event.getPlayer(), event.getBlockPlaced(), "PLACED");
+
+    String typeName = spawnerState.getSpawnedType() != null 
+        ? spawnerState.getSpawnedType().name() 
+        : "UNKNOWN";
+    webhookManager.sendPlaceWebhook(event.getPlayer(), event.getBlock().getLocation(), typeName);
 }
 
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
@@ -480,13 +488,28 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
         event.setExpToDrop(0);
 
         ItemStack spawnerItem = (brokenType != null) ? createSpawnerItem(brokenType) : createEmptySpawner();
-        Map<Integer, ItemStack> leftovers = player.getInventory().addItem(spawnerItem);
-        if (!leftovers.isEmpty()) {
-            leftovers.values().forEach(item -> player.getWorld().dropItemNaturally(player.getLocation(), item));
-            player.sendMessage(getMessage("inventory-full"));
-        } else {
-            player.sendMessage(getMessage("spawner-collected"));
-        }
+   Map<Integer, ItemStack> leftovers = player.getInventory().addItem(spawnerItem);
+   if (leftovers.isEmpty()) {
+    player.sendMessage(getMessage("spawner-collected"));
+   } else {
+    Runnable drop = () -> {
+        leftovers.values().forEach(leftover -> {
+            org.bukkit.entity.Item dropped = player.getWorld()
+                .dropItem(player.getEyeLocation(), leftover);
+            dropped.setVelocity(
+                player.getLocation().getDirection().multiply(0.3)
+            );
+            dropped.setPickupDelay(40);
+            dropped.setThrower(player.getUniqueId());
+        });
+        player.sendMessage(getMessage("inventory-full"));
+    };
+    if (isFolia) {
+        player.getScheduler().run(this, t -> drop.run(), null);
+    } else {
+        Bukkit.getScheduler().runTask(this, drop);
+    }
+}
         
         String typeName = brokenType != null ? brokenType.name() : "UNKNOWN";
         webhookManager.sendBreakWebhook(player, block.getLocation(), typeName, itemInHand);
@@ -720,7 +743,7 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
                     sender.sendMessage(getMessage("max-uses-limit"));
                     return true;
                 }
-                target.getInventory().addItem(createSpawnerPickaxe(uses));
+                giveOrDrop(target, createSpawnerPickaxe(uses));
                 sender.sendMessage(getMessage("pickaxe-given-sender")
                         .replace("%player%", target.getName())
                         .replace("%uses%", String.valueOf(uses)));
@@ -760,7 +783,7 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
                 ItemStack spawnerItem = createSpawnerItem(type);
                 spawnerItem.setAmount(amount);
 
-                targetSpawner.getInventory().addItem(spawnerItem);
+                giveOrDrop(targetSpawner, spawnerItem);
 
                 sender.sendMessage(getMessage("spawner-given-sender")
                         .replace("%player%", targetSpawner.getName())
@@ -773,6 +796,30 @@ public void onSpawnerPlace(BlockPlaceEvent event) {
                 return true;
         }
     }
+    
+    private void giveOrDrop(Player player, ItemStack item) {
+    Map<Integer, ItemStack> leftovers = player.getInventory().addItem(item);
+    if (!leftovers.isEmpty()) {
+        Runnable drop = () -> {
+            leftovers.values().forEach(leftover -> {
+                org.bukkit.entity.Item dropped = player.getWorld()
+                    .dropItem(player.getEyeLocation(), leftover);
+                dropped.setVelocity(
+                    player.getLocation().getDirection().multiply(0.3)
+                );
+                dropped.setPickupDelay(40);
+                dropped.setThrower(player.getUniqueId());
+            });
+            player.sendMessage(getMessage("inventory-full"));
+        };
+
+        if (isFolia) {
+            player.getScheduler().run(this, t -> drop.run(), null);
+        } else {
+            Bukkit.getScheduler().runTask(this, drop);
+        }
+    }
+}
 
     @Override
     public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
