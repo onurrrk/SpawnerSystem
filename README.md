@@ -98,4 +98,4 @@ The language can be easily selected from the **config file**, and all translatio
 ## Discord
 
 [![Discord](https://cdn.modrinth.com/data/cached_images/4de86371cc7bcf3818924b198f31baacc304700f.png)
-](https://discord.gg/H7RMcAMFeZ)
+](https://discord.gg/kj5grZuxyQ)
