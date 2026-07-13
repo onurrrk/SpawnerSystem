@@ -448,10 +448,11 @@ public void onSpawnerPlaceLog(BlockPlaceEvent event) {
             return;
         }
 
-        boolean canBreak = false;
+        boolean hasSpecialPickaxe = isSpawnerPickaxe(itemInHand);
+        boolean canBreakWithDrop = false;
         if ("advanced".equals(systemMode)) {
-            if (isSpawnerPickaxe(itemInHand)) {
-                canBreak = true;
+            if (hasSpecialPickaxe) {
+                canBreakWithDrop = true;
                 ItemMeta meta = itemInHand.getItemMeta();
                 int usesLeft = meta.getPersistentDataContainer().getOrDefault(USES_KEY, PersistentDataType.INTEGER, 1) - 1;
                 if (usesLeft > 0) {
@@ -470,22 +471,23 @@ public void onSpawnerPlaceLog(BlockPlaceEvent event) {
             }
         } else if ("classic".equals(systemMode)) {
             if (itemInHand.containsEnchantment(Enchantment.SILK_TOUCH)) {
-                canBreak = true;
+                canBreakWithDrop = true;
             } else {
                 player.sendMessage(getMessage("classic-silk-required"));
             }
         }
 
-        if (!canBreak) {
-            event.setCancelled(true);
+        removeHologramForSpawner(block.getLocation());
+        jsonLogger.log(player, block, "BROKE");
+        event.setExpToDrop(0);
+
+        if (!canBreakWithDrop) {
+            event.setDropItems(false);
+            webhookManager.sendBreakWebhook(player, block.getLocation(), brokenType != null ? brokenType.name() : "UNKNOWN", itemInHand);
             return;
         }
 
-        removeHologramForSpawner(block.getLocation());
-
-        jsonLogger.log(player, block, "BROKE");
         event.setDropItems(false);
-        event.setExpToDrop(0);
 
         ItemStack spawnerItem = (brokenType != null) ? createSpawnerItem(brokenType) : createEmptySpawner();
    Map<Integer, ItemStack> leftovers = player.getInventory().addItem(spawnerItem);
