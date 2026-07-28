@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 public class ConfigUpdater {
 
@@ -20,21 +21,21 @@ public class ConfigUpdater {
         if (!configFile.exists()) return;
 
         YamlConfiguration extConfig = YamlConfiguration.loadConfiguration(configFile);
-        
-        int intConfigVer = 1, intLangVer = 1, intDiscordVer = 1;
+
+        int intConfigVer = 1, intLangVer = 1, intDiscordVer = 1, intLootVer = 1;
         InputStream defConfigStream = plugin.getResource("config.yml");
         if (defConfigStream != null) {
             YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(new InputStreamReader(defConfigStream, StandardCharsets.UTF_8));
             intConfigVer = defConfig.getInt("config-version", 1);
             intLangVer = defConfig.getInt("language-version", 1);
             intDiscordVer = defConfig.getInt("discord-version", 1);
+            intLootVer = defConfig.getInt("loot-version", 1);
         }
 
         int extConfigVer = extConfig.getInt("config-version", -1);
         int extLangVer = extConfig.getInt("language-version", -1);
         int extDiscordVer = extConfig.getInt("discord-version", -1);
-
-        boolean configNeedsSave = false;
+        int extLootVer = extConfig.getInt("loot-version", -1);
 
         if (extLangVer != intLangVer) {
             File langFolder = new File(dataFolder, "languages");
@@ -45,8 +46,7 @@ public class ConfigUpdater {
                     Files.move(langFolder.toPath(), legacyLangFolder.toPath(), StandardCopyOption.REPLACE_EXISTING);
                 } catch (Exception ignored) {}
             }
-            extConfig.set("language-version", intLangVer);
-            configNeedsSave = true;
+            writeVersionLine(configFile, "config-version", "language-version", intLangVer);
         }
 
         if (extDiscordVer != intDiscordVer) {
@@ -60,8 +60,21 @@ public class ConfigUpdater {
             try {
                 plugin.saveResource("discord.yml", false);
             } catch (Exception ignored) {}
-            extConfig.set("discord-version", intDiscordVer);
-            configNeedsSave = true;
+            writeVersionLine(configFile, "language-version", "discord-version", intDiscordVer);
+        }
+
+        if (extLootVer != intLootVer) {
+            File lootFile = new File(dataFolder, "loot.yml");
+            if (lootFile.exists()) {
+                File legacyLoot = new File(dataFolder, "Legacyloot.yml");
+                try {
+                    Files.move(lootFile.toPath(), legacyLoot.toPath(), StandardCopyOption.REPLACE_EXISTING);
+                } catch (Exception ignored) {}
+            }
+            try {
+                plugin.saveResource("loot.yml", false);
+            } catch (Exception ignored) {}
+            writeVersionLine(configFile, "discord-version", "loot-version", intLootVer);
         }
 
         if (extConfigVer != intConfigVer) {
@@ -72,13 +85,41 @@ public class ConfigUpdater {
             try {
                 plugin.saveResource("config.yml", false);
             } catch (Exception ignored) {}
-            configNeedsSave = false;
         }
+    }
 
-        if (configNeedsSave) {
-            try {
-                extConfig.save(configFile);
-            } catch (Exception ignored) {}
+    private static void writeVersionLine(File configFile, String afterKey, String key, int value) {
+        try {
+            List<String> lines = Files.readAllLines(configFile.toPath(), StandardCharsets.UTF_8);
+            String newLine = key + ": " + value;
+
+            int existingIndex = -1;
+            for (int i = 0; i < lines.size(); i++) {
+                if (lines.get(i).trim().startsWith(key + ":")) {
+                    existingIndex = i;
+                    break;
+                }
+            }
+
+            if (existingIndex != -1) {
+                lines.set(existingIndex, newLine);
+            } else {
+                int afterIndex = -1;
+                for (int i = 0; i < lines.size(); i++) {
+                    if (lines.get(i).trim().startsWith(afterKey + ":")) {
+                        afterIndex = i;
+                        break;
+                    }
+                }
+                if (afterIndex != -1) {
+                    lines.add(afterIndex + 1, newLine);
+                } else {
+                    lines.add(newLine);
+                }
+            }
+
+            Files.write(configFile.toPath(), lines, StandardCharsets.UTF_8);
+        } catch (Exception ignored) {
         }
     }
 
