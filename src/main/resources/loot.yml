@@ -1,0 +1,746 @@
+# ====================================================================================================
+# The custom drops and settings specified below will only function when the spawner's 
+# Auto Slayer feature is enabled.
+# ====================================================================================================
+
+# ====================================================================================================
+# [!] IMPORTANT INFORMATION AND GUIDE
+# 
+# 1. Source of Values:
+#    The experience points and item drop (loot) rates in this file are based on official Minecraft
+#    values. You can access the original details and drop rates for each mob at the 
+#    Minecraft Wiki (https://minecraft.wiki/w/MOB_NAME#Drops).
+# 
+# 2. Economy and Game Balance Warning:
+#    All settings here are configured according to the original balance of the game.
+#    You are free to customize these values; however, excessively increasing the rates or amounts
+#    can disrupt your server's economic balance and negatively affect the overall server state.
+# ====================================================================================================
+
+ALLAY:
+  experience: 0
+
+ARMADILLO:
+  experience: 3
+
+AXOLOTL:
+  experience: 1
+
+BAT:
+  experience: 0
+
+BEE:
+  experience: 3
+
+BLAZE:
+  experience: 10
+  loot:
+    BLAZE_ROD:
+      amount: 0-1
+      chance: 50.0
+
+BOGGED:
+  experience: 5
+  loot:
+    BONE:
+      amount: 0-2
+      chance: 66.67
+    ARROW:
+      amount: 0-2
+      chance: 66.67
+    BOW:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-384
+    TIPPED_ARROW:
+      amount: 0-1
+      chance: 50.0
+      potion_type: POISON
+
+BREEZE:
+  experience: 10
+  loot:
+    BREEZE_ROD:
+      amount: 1-2
+      chance: 100.0
+
+CAMEL:
+  experience: 3
+
+CAMEL_HUSK:
+  experience: 3
+  loot:
+    ROTTEN_FLESH:
+      amount: 2-3
+      chance: 100.0
+
+CAT:
+  experience: 1
+  loot:
+    STRING:
+      amount: 0-2
+      chance: 66.67
+
+CAVE_SPIDER:
+  experience: 5
+  loot:
+    SPIDER_EYE:
+      amount: 0-1
+      chance: 33.33
+    STRING:
+      amount: 0-2
+      chance: 66.67
+
+CHICKEN:
+  experience: 3
+  loot:
+    FEATHER:
+      amount: 0-2
+      chance: 66.67
+    CHICKEN:
+      amount: 1-1
+      chance: 100.0
+
+COD:
+  experience: 1
+  loot:
+    COD:
+      amount: 1-1
+      chance: 100.0
+    BONE_MEAL:
+      amount: 0-1
+      chance: 5.0
+
+COPPER_GOLEM:
+  experience: 0
+  loot:
+    COPPER_INGOT:
+      amount: 1-3
+      chance: 100.0
+
+COW:
+  experience: 3
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+    BEEF:
+      amount: 1-3
+      chance: 100.0
+
+CREAKING:
+  experience: 0
+
+CREEPER:
+  experience: 5
+  loot:
+    GUNPOWDER:
+      amount: 0-2
+      chance: 66.67
+
+DOLPHIN:
+  experience: 1
+  loot:
+    COD:
+      amount: 0-1
+      chance: 50.0
+
+DONKEY:
+  experience: 1
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+
+DROWNED:
+  experience: 5
+  loot:
+    ROTTEN_FLESH:
+      amount: 0-2
+      chance: 66.67
+    COPPER_INGOT:
+      amount: 0-1
+      chance: 11.0
+    TRIDENT:
+      amount: 1-1
+      chance: 0.53
+      durability: 1-250
+
+ELDER_GUARDIAN:
+  experience: 10
+  loot:
+    PRISMARINE_SHARD:
+      amount: 0-2
+      chance: 66.67
+    PRISMARINE_CRYSTALS:
+      amount: 0-1
+      chance: 33.33
+    WET_SPONGE:
+      amount: 1-1
+      chance: 100.0
+    TIDE_ARMOR_TRIM_SMITHING_TEMPLATE:
+      amount: 0-1
+      chance: 20.0
+    COD:
+      amount: 0-1
+      chance: 50.0
+
+ENDERMAN:
+  experience: 5
+  loot:
+    ENDER_PEARL:
+      amount: 0-1
+      chance: 50.0
+
+ENDERMITE:
+  experience: 3
+
+EVOKER:
+  experience: 10
+  loot:
+    EMERALD:
+      amount: 0-1
+      chance: 50.0
+    TOTEM_OF_UNDYING:
+      amount: 1-1
+      chance: 100.0
+
+FOX:
+  experience: 1
+  loot:
+    EMERALD:
+      amount: 1-1
+      chance: 1.0
+    RABBIT_FOOT:
+      amount: 1-1
+      chance: 2.0
+    RABBIT_HIDE:
+      amount: 1-1
+      chance: 2.0
+    EGG:
+      amount: 1-1
+      chance: 3.0
+    WHEAT:
+      amount: 1-1
+      chance: 4.0
+    LEATHER:
+      amount: 1-1
+      chance: 4.0
+    FEATHER:
+      amount: 1-1
+      chance: 4.0
+
+FROG:
+  experience: 1
+
+GHAST:
+  experience: 5
+  loot:
+    GHAST_TEAR:
+      amount: 0-1
+      chance: 50.0
+    GUNPOWDER:
+      amount: 0-2
+      chance: 66.67
+
+GLOW_SQUID:
+  experience: 1
+  loot:
+    GLOW_INK_SAC:
+      amount: 1-3
+      chance: 100.0
+
+GOAT:
+  experience: 1
+
+GUARDIAN:
+  experience: 10
+  loot:
+    PRISMARINE_SHARD:
+      amount: 0-2
+      chance: 66.67
+    PRISMARINE_CRYSTALS:
+      amount: 0-1
+      chance: 40.0
+    COD:
+      amount: 0-1
+      chance: 40.0
+
+HAPPY_GHAST:
+  experience: 3
+
+HOGLIN:
+  experience: 5
+  loot:
+    LEATHER:
+      amount: 0-1
+      chance: 50.0
+    PORKCHOP:
+      amount: 2-4
+      chance: 100.0
+
+HORSE:
+  experience: 3
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+
+HUSK:
+  experience: 5
+  loot:
+    ROTTEN_FLESH:
+      amount: 0-2
+      chance: 66.67
+    IRON_INGOT:
+      amount: 0-1
+      chance: 0.83
+    CARROT:
+      amount: 0-1
+      chance: 0.83
+    POTATO:
+      amount: 0-1
+      chance: 0.83
+
+IRON_GOLEM:
+  experience: 0
+  loot:
+    IRON_INGOT:
+      amount: 3-5
+      chance: 100.0
+    POPPY:
+      amount: 0-2
+      chance: 66.67
+
+LLAMA:
+  experience: 1
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+
+NAUTILUS:
+  experience: 3
+  loot:
+    NAUTILUS_SHELL:
+      amount: 0-1
+      chance: 5.0
+
+MAGMA_CUBE:
+  experience: 4
+  loot:
+    MAGMA_CREAM:
+      amount: 2-6
+      chance: 25.0
+
+MOOSHROOM:
+  experience: 1
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+    BEEF:
+      amount: 1-3
+      chance: 100.0
+
+MULE:
+  experience: 1
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+
+OCELOT:
+  experience: 1
+
+PANDA:
+  experience: 1
+  loot:
+    BAMBOO:
+      amount: 1-1
+      chance: 100.0
+
+PARCHED:
+  experience: 5
+  loot:
+    BONE:
+      amount: 0-2
+      chance: 66.67
+    ARROW:
+      amount: 0-2
+      chance: 66.67
+    TIPPED_ARROW:
+      amount: 0-1
+      chance: 50.0
+      potion_type: WEAKNESS
+
+PARROT:
+  experience: 1
+  loot:
+    FEATHER:
+      amount: 1-2
+      chance: 100.0
+
+PHANTOM:
+  experience: 5
+  loot:
+    PHANTOM_MEMBRANE:
+      amount: 0-1
+      chance: 50.0
+
+PIG:
+  experience: 1
+  loot:
+    PORKCHOP:
+      amount: 1-3
+      chance: 100.0
+
+PIGLIN:
+  experience: 5
+  loot:
+    CROSSBOW:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-326
+    GOLDEN_SWORD:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-32
+
+PIGLIN_BRUTE:
+  experience: 20
+  loot:
+    GOLDEN_AXE:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-32
+
+PILLAGER:
+  experience: 5
+  loot:
+    CROSSBOW:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-326
+    ARROW:
+      amount: 0-2
+      chance: 100.0
+
+POLAR_BEAR:
+  experience: 1
+  loot:
+    COD:
+      amount: 0-2
+      chance: 50.0
+    SALMON:
+      amount: 0-2
+      chance: 16.67
+
+PUFFERFISH:
+  experience: 3
+  loot:
+    PUFFERFISH:
+      amount: 1-1
+      chance: 100.0
+    BONE_MEAL:
+      amount: 0-1
+      chance: 5.0
+
+RABBIT:
+  experience: 3
+  loot:
+    RABBIT_HIDE:
+      amount: 0-1
+      chance: 50.0
+    RABBIT:
+      amount: 1-1
+      chance: 100.0
+    RABBIT_FOOT:
+      amount: 0-1
+      chance: 10.0
+
+RAVAGER:
+  experience: 20
+  loot:
+    SADDLE:
+      amount: 1-1
+      chance: 100.0
+
+SALMON:
+  experience: 1
+  loot:
+    SALMON:
+      amount: 1-1
+      chance: 100.0
+    BONE_MEAL:
+      amount: 0-1
+      chance: 5.0
+
+SHEEP:
+  experience: 1
+  loot:
+    WHITE_WOOL:
+      amount: 1-1
+      chance: 100.0
+    MUTTON:
+      amount: 1-2
+      chance: 100.0
+
+SHULKER:
+  experience: 5
+  loot:
+    SHULKER_SHELL:
+      amount: 0-1
+      chance: 50.0
+
+SILVERFISH:
+  experience: 5
+
+SKELETON:
+  experience: 5
+  loot:
+    BONE:
+      amount: 0-2
+      chance: 66.67
+    ARROW:
+      amount: 0-2
+      chance: 66.67
+    BOW:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-384
+
+SKELETON_HORSE:
+  experience: 3
+  loot:
+    BONE:
+      amount: 0-2
+      chance: 66.67
+
+SLIME:
+  experience: 4
+  loot:
+    SLIME_BALL:
+      amount: 1-6
+      chance: 100.0
+
+SNIFFER:
+  experience: 5
+
+SNOW_GOLEM:
+  experience: 0
+  loot:
+    SNOWBALL:
+      amount: 0-15
+      chance: 93.75
+
+SPIDER:
+  experience: 5
+  loot:
+    STRING:
+      amount: 0-2
+      chance: 66.67
+    SPIDER_EYE:
+      amount: 0-1
+      chance: 33.33
+
+SQUID:
+  experience: 3
+  loot:
+    INK_SAC:
+      amount: 1-3
+      chance: 100.0
+
+STRAY:
+  experience: 5
+  loot:
+    BONE:
+      amount: 0-2
+      chance: 66.67
+    ARROW:
+      amount: 0-2
+      chance: 66.67
+    BOW:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-384
+    TIPPED_ARROW:
+      amount: 0-2
+      chance: 50.0
+      potion_type: SLOWNESS
+
+STRIDER:
+  experience: 3
+  loot:
+    STRING:
+      amount: 2-5
+      chance: 100.0
+
+TADPOLE:
+  experience: 0
+
+TRADER_LLAMA:
+  experience: 1
+  loot:
+    LEATHER:
+      amount: 0-2
+      chance: 66.67
+
+TROPICAL_FISH:
+  experience: 1
+  loot:
+    TROPICAL_FISH:
+      amount: 1-1
+      chance: 100.0
+    BONE_MEAL:
+      amount: 0-1
+      chance: 5.0
+
+TURTLE:
+  experience: 1
+  loot:
+    SEAGRASS:
+      amount: 0-2
+      chance: 66.67
+
+VEX:
+  experience: 3
+
+VILLAGER:
+  experience: 0
+
+VINDICATOR:
+  experience: 5
+  loot:
+    EMERALD:
+      amount: 0-1
+      chance: 50.0
+    IRON_AXE:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-250
+
+WANDERING_TRADER:
+  experience: 0
+
+WARDEN:
+  experience: 5
+  loot:
+    SCULK_CATALYST:
+      amount: 1-1
+      chance: 100.0
+
+WITCH:
+  experience: 5
+  loot:
+    REDSTONE:
+      amount: 4-8
+      chance: 100.0
+    GLOWSTONE_DUST:
+      amount: 0-6
+      chance: 17.87
+    SUGAR:
+      amount: 0-6
+      chance: 17.87
+    SPIDER_EYE:
+      amount: 0-6
+      chance: 17.87
+    GLASS_BOTTLE:
+      amount: 0-6
+      chance: 17.87
+    GUNPOWDER:
+      amount: 0-6
+      chance: 17.87
+    STICK:
+      amount: 0-6
+      chance: 33.49
+
+WITHER_SKELETON:
+  experience: 5
+  loot:
+    COAL:
+      amount: 0-1
+      chance: 33.33
+    BONE:
+      amount: 0-2
+      chance: 66.67
+    WITHER_SKELETON_SKULL:
+      amount: 0-1
+      chance: 2.5
+    STONE_SWORD:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-131
+
+WOLF:
+  experience: 3
+
+ZOGLIN:
+  experience: 5
+  loot:
+    ROTTEN_FLESH:
+      amount: 1-3
+      chance: 100.0
+
+ZOMBIE:
+  experience: 5
+  loot:
+    ROTTEN_FLESH:
+      amount: 0-2
+      chance: 66.67
+    IRON_INGOT:
+      amount: 0-1
+      chance: 0.83
+    CARROT:
+      amount: 0-1
+      chance: 0.83
+    POTATO:
+      amount: 0-1
+      chance: 0.83
+
+ZOMBIE_HORSE:
+  experience: 3
+  loot:
+    ROTTEN_FLESH:
+      amount: 0-2
+      chance: 66.67
+
+ZOMBIE_NAUTILUS:
+  experience: 3
+  loot:
+    ROTTEN_FLESH:
+      amount: 0-3
+      chance: 75.0
+
+ZOMBIE_VILLAGER:
+  experience: 5
+  loot:
+    ROTTEN_FLESH:
+      amount: 0-2
+      chance: 66.67
+    IRON_INGOT:
+      amount: 0-1
+      chance: 0.83
+    CARROT:
+      amount: 0-1
+      chance: 0.83
+    POTATO:
+      amount: 0-1
+      chance: 0.83
+
+ZOMBIFIED_PIGLIN:
+  experience: 5
+  loot:
+    GOLD_NUGGET:
+      amount: 0-1
+      chance: 50.0
+    ROTTEN_FLESH:
+      amount: 0-1
+      chance: 50.0
+    GOLD_INGOT:
+      amount: 0-1
+      chance: 2.5
+    GOLDEN_SWORD:
+      amount: 1-1
+      chance: 8.5
+      durability: 1-32
