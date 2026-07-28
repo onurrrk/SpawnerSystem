@@ -1,5 +1,6 @@
 package me.spawner;
 
+import me.spawner.utils.LootConfig;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.event.EventBus;
@@ -8,21 +9,22 @@ import net.luckperms.api.event.user.UserDataRecalculateEvent;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.query.QueryOptions;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.Sound;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.CreatureSpawner;
-import org.bukkit.entity.*;
+import org.bukkit.entity.EntityType;
+import org.bukkit.entity.ExperienceOrb;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.entity.SpawnerSpawnEvent;
@@ -40,6 +42,7 @@ import java.util.stream.Collectors;
 public class SpawnerMenu implements Listener {
 
     private final Spawner plugin;
+    private final LootConfig lootConfig;
     private final NamespacedKey AUTO_KILL_KEY;
     private final NamespacedKey XP_COLLECT_KEY;
     private final NamespacedKey STORED_XP_KEY;
@@ -48,13 +51,14 @@ public class SpawnerMenu implements Listener {
     private final Random random = new Random();
     private final Map<UUID, Boolean> luckPermsCache = new ConcurrentHashMap<>();
 
-    private Method paperXpMethod = null;
-    private Method teleportAsyncMethod = null;
-    private boolean checkedForPaper = false;
+    private Method paperGiveExpMendingMethod = null;
+    private Method regionSchedulerRunMethod = null;
+    private Object regionScheduler = null;
     private boolean hasLuckPerms = false;
 
     public SpawnerMenu(Spawner plugin) {
         this.plugin = plugin;
+        this.lootConfig = new LootConfig(plugin);
         this.AUTO_KILL_KEY = new NamespacedKey(plugin, "auto_kill");
         this.XP_COLLECT_KEY = new NamespacedKey(plugin, "xp_collect");
         this.STORED_XP_KEY = new NamespacedKey(plugin, "stored_xp");
@@ -62,8 +66,20 @@ public class SpawnerMenu implements Listener {
         this.OWNER_KEY = new NamespacedKey(plugin, "spawner_owner");
 
         try {
-            teleportAsyncMethod = Entity.class.getMethod("teleportAsync", Location.class);
+            paperGiveExpMendingMethod = Player.class.getMethod("giveExp", int.class, boolean.class);
         } catch (NoSuchMethodException ignored) {
+        }
+
+        try {
+            Method getRegionScheduler = Bukkit.class.getMethod("getRegionScheduler");
+            regionScheduler = getRegionScheduler.invoke(null);
+            for (Method m : regionScheduler.getClass().getMethods()) {
+                if (m.getName().equals("run") && m.getParameterCount() == 3) {
+                    regionSchedulerRunMethod = m;
+                    break;
+                }
+            }
+        } catch (Exception ignored) {
         }
 
         if (Bukkit.getPluginManager().getPlugin("LuckPerms") != null) {
@@ -92,6 +108,28 @@ public class SpawnerMenu implements Listener {
             UUID targetUUID = event.getUser().getUniqueId();
             luckPermsCache.remove(targetUUID);
         });
+    }
+
+    private void giveExpToPlayer(Player player, int amount) {
+        if (paperGiveExpMendingMethod != null) {
+            try {
+                paperGiveExpMendingMethod.invoke(player, amount, true);
+                return;
+            } catch (Exception ignored) {
+            }
+        }
+        player.giveExp(amount);
+    }
+
+    private void runOnRegion(Location location, Runnable task) {
+        if (regionSchedulerRunMethod != null && regionScheduler != null) {
+            try {
+                regionSchedulerRunMethod.invoke(regionScheduler, plugin, location, (java.util.function.Consumer<Object>) scheduledTask -> task.run());
+                return;
+            } catch (Exception ignored) {
+            }
+        }
+        task.run();
     }
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
@@ -134,7 +172,7 @@ public class SpawnerMenu implements Listener {
 
     private void updateMenuIcons(Inventory inv, Block block, Player player) {
         if (!(block.getState() instanceof CreatureSpawner spawner)) return;
-        
+
         boolean viewerHasPerm = player.isOp() || player.hasPermission("spawner.menu") || player.hasPermission("spawner.admin");
         boolean autoKill = spawner.getPersistentDataContainer().getOrDefault(AUTO_KILL_KEY, PersistentDataType.BOOLEAN, false);
         boolean xpCollect = spawner.getPersistentDataContainer().getOrDefault(XP_COLLECT_KEY, PersistentDataType.BOOLEAN, false);
@@ -148,10 +186,10 @@ public class SpawnerMenu implements Listener {
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
         if (meta == null) return item;
-        
+
         meta.setAttributeModifiers(com.google.common.collect.ArrayListMultimap.create());
         for (org.bukkit.inventory.ItemFlag flag : org.bukkit.inventory.ItemFlag.values()) {
-        meta.addItemFlags(flag);
+            meta.addItemFlags(flag);
         }
 
         String name = getGuiText("menu.items." + configKey + ".name");
@@ -188,9 +226,14 @@ public class SpawnerMenu implements Listener {
         event.setCancelled(true);
         Player player = (Player) event.getWhoClicked();
         if (!player.hasMetadata("opened_spawner_loc")) return;
-        
+
         Location loc = (Location) player.getMetadata("opened_spawner_loc").get(0).value();
         if (loc == null) return;
+
+        runOnRegion(loc, () -> handleMenuClick(event, loc, player));
+    }
+
+    private void handleMenuClick(InventoryClickEvent event, Location loc, Player player) {
         Block block = loc.getBlock();
         if (block.getType() != Material.SPAWNER) return;
         CreatureSpawner spawner = (CreatureSpawner) block.getState();
@@ -216,13 +259,13 @@ public class SpawnerMenu implements Listener {
                 player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_NO, 1f, 1f);
                 updateMenuIcons(event.getInventory(), block, player);
             }
-        } 
+        }
         else if (event.getRawSlot() == 14) {
             int storedXp = spawner.getPersistentDataContainer().getOrDefault(STORED_XP_KEY, PersistentDataType.INTEGER, 0);
 
             if (event.isRightClick()) {
                 if (storedXp > 0) {
-                    player.giveExp(storedXp);
+                    giveExpToPlayer(player, storedXp);
                     spawner.getPersistentDataContainer().set(STORED_XP_KEY, PersistentDataType.INTEGER, 0);
                     player.sendMessage(getMessage("menu.messages.xp-collected").replace("%xp%", String.valueOf(storedXp)));
                     player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1f, 1.5f);
@@ -230,7 +273,7 @@ public class SpawnerMenu implements Listener {
                 } else {
                     player.sendMessage(getMessage("menu.messages.xp-empty"));
                 }
-            } 
+            }
             else if (event.isLeftClick()) {
                 if (viewerHasPerm) {
                     if (autoKill) {
@@ -259,52 +302,70 @@ public class SpawnerMenu implements Listener {
         }
     }
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onSpawnerSpawn(SpawnerSpawnEvent event) {
         CreatureSpawner spawner = event.getSpawner();
+        if (spawner == null) return;
+
         boolean autoKill = spawner.getPersistentDataContainer().getOrDefault(AUTO_KILL_KEY, PersistentDataType.BOOLEAN, false);
-        
         if (!autoKill) return;
 
         String managerUUIDString = spawner.getPersistentDataContainer().getOrDefault(MANAGER_KEY, PersistentDataType.STRING, null);
-        
+
         if (managerUUIDString != null) {
             try {
                 UUID managerUUID = UUID.fromString(managerUUIDString);
-                
+
                 if (!checkPermission(managerUUID, "spawner.menu")) {
                     spawner.getPersistentDataContainer().set(AUTO_KILL_KEY, PersistentDataType.BOOLEAN, false);
                     spawner.getPersistentDataContainer().set(XP_COLLECT_KEY, PersistentDataType.BOOLEAN, false);
                     spawner.update();
-                    
+
                     Player p = Bukkit.getPlayer(managerUUID);
                     if (p != null) {
                         p.sendMessage(getMessage("menu.messages.perms-changed"));
                     }
+                    event.setCancelled(true);
                     return;
                 }
             } catch (Exception e) {
                 spawner.getPersistentDataContainer().set(AUTO_KILL_KEY, PersistentDataType.BOOLEAN, false);
                 spawner.update();
+                event.setCancelled(true);
                 return;
             }
         }
 
-        if (event.getEntity() instanceof LivingEntity entity) {
-            Location dropLoc = spawner.getLocation().clone().add((random.nextDouble() * 2 - 1) * 1.3, 0.2, (random.nextDouble() * 2 - 1) * 1.3);
-            
-            if (teleportAsyncMethod != null) {
-                try {
-                    teleportAsyncMethod.invoke(entity, dropLoc);
-                } catch (Exception ignored) {
-                    entity.teleport(dropLoc);
-                }
+        event.setCancelled(true);
+
+        EntityType entityType = spawner.getSpawnedType();
+        if (entityType == null || !lootConfig.hasConfig(entityType)) {
+            return;
+        }
+
+        World world = spawner.getWorld();
+        Location dropLoc = spawner.getLocation().clone().add(
+                0.5 + (random.nextDouble() * 2 - 1) * 1.3,
+                0.2,
+                0.5 + (random.nextDouble() * 2 - 1) * 1.3
+        );
+
+        List<ItemStack> drops = lootConfig.rollDrops(entityType);
+        for (ItemStack drop : drops) {
+            world.dropItemNaturally(dropLoc, drop);
+        }
+
+        int exp = lootConfig.getExperience(entityType);
+        if (exp > 0) {
+            boolean xpCollect = spawner.getPersistentDataContainer().getOrDefault(XP_COLLECT_KEY, PersistentDataType.BOOLEAN, false);
+            if (xpCollect) {
+                int currentStored = spawner.getPersistentDataContainer().getOrDefault(STORED_XP_KEY, PersistentDataType.INTEGER, 0);
+                spawner.getPersistentDataContainer().set(STORED_XP_KEY, PersistentDataType.INTEGER, currentStored + exp);
+                spawner.update();
             } else {
-                entity.teleport(dropLoc);
+                final int finalExp = exp;
+                world.spawn(dropLoc, ExperienceOrb.class, orb -> orb.setExperience(finalExp));
             }
-            
-            entity.setMetadata("spawner_mob", new FixedMetadataValue(plugin, spawner.getLocation()));
-            entity.setHealth(0); 
         }
     }
 
@@ -316,7 +377,7 @@ public class SpawnerMenu implements Listener {
 
         OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(uuid);
         if (offlinePlayer.isOp()) {
-            return true; 
+            return true;
         }
 
         if (luckPermsCache.containsKey(uuid)) {
@@ -327,7 +388,7 @@ public class SpawnerMenu implements Listener {
             try {
                 LuckPerms api = LuckPermsProvider.get();
                 User user = api.getUserManager().getUser(uuid);
-                
+
                 if (user != null) {
                     boolean hasPerm = user.getCachedData().getPermissionData(QueryOptions.nonContextual()).checkPermission(permission).asBoolean() ||
                                       user.getCachedData().getPermissionData(QueryOptions.nonContextual()).checkPermission("spawner.admin").asBoolean();
@@ -349,52 +410,5 @@ public class SpawnerMenu implements Listener {
         }
 
         return false;
-    }
-
-    @EventHandler
-    public void onEntityDeath(EntityDeathEvent event) {
-        LivingEntity entity = event.getEntity();
-        if (!entity.hasMetadata("spawner_mob")) return;
-        Location spawnerLoc = (Location) entity.getMetadata("spawner_mob").get(0).value();
-        if (spawnerLoc == null) return;
-        Block block = spawnerLoc.getBlock();
-        if (block.getType() != Material.SPAWNER) return;
-        CreatureSpawner spawner = (CreatureSpawner) block.getState();
-
-        int finalXp = event.getDroppedExp();
-        if (finalXp == 0) finalXp = calculateRealXp(entity);
-
-        boolean xpStoreMode = spawner.getPersistentDataContainer().getOrDefault(XP_COLLECT_KEY, PersistentDataType.BOOLEAN, false);
-        if (xpStoreMode) {
-            int currentStored = spawner.getPersistentDataContainer().getOrDefault(STORED_XP_KEY, PersistentDataType.INTEGER, 0);
-            spawner.getPersistentDataContainer().set(STORED_XP_KEY, PersistentDataType.INTEGER, currentStored + finalXp);
-            spawner.update();
-            event.setDroppedExp(0);
-        } else {
-            event.setDroppedExp(finalXp);
-        }
-    }
-
-    private int calculateRealXp(LivingEntity entity) {
-        if (!checkedForPaper) {
-            try { 
-                paperXpMethod = LivingEntity.class.getMethod("getDroppedExperience"); 
-                checkedForPaper = true; 
-            } catch (NoSuchMethodException ignored) { 
-                checkedForPaper = true; 
-            }
-        }
-        if (paperXpMethod != null) {
-            try { return (int) paperXpMethod.invoke(entity); } catch (Exception ignored) {}
-        }
-        if (entity instanceof Ageable && !((Ageable) entity).isAdult()) return 0;
-        EntityType type = entity.getType();
-        if (type == EntityType.BLAZE || type == EntityType.GUARDIAN) return 10;
-        if (type == EntityType.WITHER) return 50;
-        if (type == EntityType.ENDER_DRAGON) return 12000;
-        if (entity instanceof Monster) return 5;
-        if (entity instanceof Animals) return random.nextInt(3) + 1;
-        if (entity instanceof Slime) return ((Slime) entity).getSize(); 
-        return 0;
     }
 }
