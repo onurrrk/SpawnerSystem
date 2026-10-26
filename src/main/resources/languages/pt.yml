@@ -1,0 +1,351 @@
+# ===============================
+# Ficheiro de Idioma do Sistema de Spawners
+# ===============================
+
+# Prefixo para todas as mensagens do plugin
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Configurações do Item Picareta de Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lPicareta de Spawner"
+  lore:
+    - "&#9CA3AFUsa esta picareta para partir spawners."
+    - "&#FFE066"
+    - "&#4ADE80Usos restantes: &#F87171%uses%"
+
+# =========================================
+# Tags de Modo (Avançado ou Clássico)
+# =========================================
+mode-tags:
+  advanced: "Picareta de Spawner"
+  classic: "Picareta com Toque de Seda"
+
+# =========================================
+# Configurações do Item Spawner
+# =========================================
+spawner-item:
+  name: "&#4ADE80Spawner de %type%"
+  lore:
+    - "&#9CA3AFColoca este spawner para gerar monstros."
+    - "&#9CA3AFPode ser partido com: &#FFE066%mode%"
+    - "&#9CA3AFTipo de entidade: &#4ADE80%type%"
+
+# =========================================
+# Configurações do Holograma do Spawner
+# =========================================
+spawnable-status:
+  - "&#4ADE80Spawner de %type%"
+  - "&#9CA3AFPode ser partido com %mode%"
+  - "&#9CA3AFAgache-se e clique com o botão direito para abrir o menu"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Configurações de Holograma de Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Este mob será removido"
+  - "&#FFE066Dentro de %time% s se não sair da área."
+  
+# =========================================
+# Configurações do Menu (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Painel de Controle do Spawner"
+  status:
+    active: "&#4ADE80Ativo ✔"
+    inactive: "&#F87171Inativo ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lMatador Automático"
+      lore:
+        - "&#9CA3AFMata automaticamente as criaturas do spawner."
+        - "&#9CA3AFTambém ativa o Armazém e o Aspirador de XP."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F9FAFBClique Esquerdo: &#FFE066Alterar Modo"
+      lore-auto:
+        - "&#9CA3AFMata automaticamente as criaturas do spawner."
+        - "&#9CA3AFO Armazém e o Aspirador de XP estão sempre ativados."
+        - "&#9CA3AFStatus: %status%"
+      lore-no-perm:
+        - "&#9CA3AFMata automaticamente as criaturas do spawner."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F87171&lVOCÊ NÃO PODE USAR ESTA FUNCIONALIDADE"
+
+    storage:
+      name: "&#38BDF8&lArmazém"
+      lore:
+        - "&#9CA3AFOs itens coletados pelo Auto Slayer ficam guardados aqui."
+        - "&#9CA3AFEspaços usados: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBClique: &#FFE066Abrir armazém"
+
+    xp-vacuum:
+      name: "&#4ADE80&lColetor de XP"
+      click: "&#F9FAFBClique: &#38BDF8Retirar XP"
+      lore:
+        - "&#9CA3AFArmazena XP das criaturas mortas."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFColetado: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBClique Esquerdo: &#FFE066Alterar Modo"
+        - "&#F9FAFBClique Direito: &#38BDF8Retirar XP"
+      lore-no-perm:
+        - "&#9CA3AFArmazena XP das criaturas mortas."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFColetado: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lVOCÊ NÃO PODE USAR ESTA FUNCIONALIDADE"
+
+  messages:
+    no-permission: "&#F87171Você não tem permissão para alterar esta funcionalidade!"
+    xp-empty: "&#F87171O tanque de XP está vazio!"
+    xp-collected: "&#4ADE80Coletado: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Você deve ativar o matador automático primeiro!"
+    feature-no-perm: "&#F87171Você não tem permissão para alterar esta funcionalidade!"
+    perms-changed: "&#F87171As funcionalidades do spawner foram desativadas devido a mudanças nas suas permissões."
+    storage-inventory-full: "&#F87171O seu inventário está cheio!"
+    storage-taken: "&#4ADE80Retirou %amount% item(ns) do armazém."
+    in-use: "&#F87171Outra pessoa está a usar o menu deste spawner neste momento."
+  storage:
+    title: "&#6B7280Armazém do spawner"
+    previous:
+      name: "&#F9FAFB&lPágina anterior"
+      lore:
+        - "&#9CA3AFIr para a página &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lPróxima página"
+      lore:
+        - "&#9CA3AFIr para a página &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lPegar página"
+      lore:
+        - "&#9CA3AFPega todos os itens desta página."
+        - "&#9CA3AFOs itens não podem ser devolvidos."
+    back:
+      name: "&#F87171&lVoltar"
+      lore:
+        - "&#9CA3AFVoltar ao menu do spawner."
+    info:
+      name: "&#38BDF8&lInfo do armazém"
+      lore:
+        - "&#9CA3AFPágina: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFEspaços usados: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFClique num item para o pegar."
+  
+# =========================================
+# Configurações do potenciador de spawner
+# =========================================
+# Variáveis: %range% %delay% %xp% %duration% (%index% no título de informações)
+booster:
+  item:
+    name: "&#F59E0B&lPotenciador de Spawner"
+    lore:
+      - "&#9CA3AFClique com o botão direito em um spawner com este ticket para potencializá-lo."
+      - "&#FFE066Alcance: &#F9FAFB+%range% blocos"
+      - "&#FFE066Tempo de geração: &#F9FAFB-%delay% segundos"
+      - "&#FFE066XP dos mobs: &#F9FAFB+%xp%%"
+      - "&#FFE066Duração: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Escolher spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBClique: &#FFE066Aplicar booster"
+  time:
+    unlimited: "Ilimitado"
+    hour: "h"
+    minute: "min"
+    second: "s"
+  info:
+    name: "&#F59E0B&lPotenciadores ativos"
+    empty: "&#9CA3AFNenhum potenciador ativo."
+    entry-title: "&#FFE066&lPotenciador nº%index%"
+
+# =========================================
+# Mensagens do Plugin
+# =========================================
+messages:
+  no-permission: "&#F87171Não tens permissão para usar este comando."
+  reload-success: "&#4ADE80Configuração do sistema de spawner recarregada com sucesso."
+  wrong-subcommand: "&#FFE066Uso: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Uso: /spsystem pickaxegive <jogador> <1-1000>"
+  usage-givespawner: "&#FFE066Uso: /spsystem givespawner <jogador> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Uso: /spsystem givebooster <jogador> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: blocos extras somados ao alcance de ativação do spawner"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: segundos removidos do atraso de spawn (0 = nenhum)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: porcentagem extra de XP do spawner (0 = nenhuma)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: duração do boost em minutos, ou unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: quantos tickets dar (opcional)"
+    - "&#FFE066Exemplo: &#F9FAFB/spsystem givebooster jogador 10 5 50 30 &#9CA3AF(+10 blocos, -5 s de atraso, +50% de XP, 30 minutos)"
+  invalid-mob-type: "&#F87171Tipo de mob inválido: %type%"
+  invalid-item-spawner: "&#F87171Spawner de item inválido: %type%"
+  booster-no-effect: "&#F87171Pelo menos um entre range, delay-seconds e xp-percent deve ser maior que 0."
+  booster-disabled: "&#F87171O sistema de boosters de spawner está desativado. Defina 'spawner-booster.enabled: true' no config.yml e execute /spsystem reload."
+  command-disabled: "&#F87171O comando 'pickaxegive' está disponível apenas no modo 'avançado'."
+  player-not-found: "&#F87171Jogador não encontrado: %player%"
+  not-a-number: "&#F87171A quantidade de usos deve ser um número."
+  max-uses-limit: "&#F87171O limite máximo de usos é 1000."
+  pickaxe-given-sender: "&#4ADE80Deste a Picareta de Spawner com %uses% usos a %player%."
+  pickaxe-given-recipient: "&#38BDF8Recebeste uma picareta especial de spawner!"
+  spawner-collected: "&#4ADE80Spawner adicionado ao teu inventário com sucesso!"
+  spawner-break-lost: "&#F87171O spawner desapareceu ao ser quebrado! (Chance de recuperação: %chance%%)"
+  spawner-break-no-chance: "&#F87171O spawner desapareceu! Você não tem chance de recuperar spawners."
+  booster-given-sender: "&#4ADE80Você deu x%amount% ticket(s) de potenciador de spawner para %player%."
+  booster-given-recipient: "&#4ADE80Você recebeu x%amount% ticket(s) de potenciador de spawner!"
+  booster-applied: "&#4ADE80Spawner potencializado! Alcance +%range%, tempo de geração -%delay% s, XP +%xp%%, duração: %duration%."
+  booster-already-active: "&#F87171Este spawner já tem um potenciador ativo (restam %duration%)."
+  booster-stack-limit: "&#F87171Este spawner já tem o número máximo de potenciadores (%max%)."
+  booster-delay-too-high: "&#F87171O atraso de spawn só pode ser reduzido em no máximo %max% segundos (atraso mínimo: %min%s)."
+  booster-delay-not-reducible: "&#F87171O atraso de spawn não pode ser reduzido porque já está no mínimo (%min%s)."
+  booster-delay-maxed: "&#FFE066O atraso de spawn já está no nível mais baixo, por isso a parte do atraso não foi aplicada. Os outros efeitos foram aplicados."
+  booster-delay-partial: "&#FFE066O atraso de spawn chegou ao nível mais baixo, por isso só foi aplicado -%delay%s. Os outros efeitos foram aplicados."
+  booster-delay-maxed-no-effect: "&#F87171O atraso de spawn deste spawner já está no nível mais baixo. O bilhete não foi usado."
+  stack-merged: "&#4ADE80%amount% spawner(s) combinado(s). Pilha: %stack%/%max%."
+  stack-full: "&#F87171Esta pilha de spawners está cheia! (máx. %max%)"
+  stack-type-mismatch: "&#F87171Só podes combinar spawners do mesmo tipo!"
+  stack-collected: "&#4ADE80Recolheste %amount% spawner(s). Restam %left% na pilha."
+  pickaxe-broken: "&#4ADE80A tua picareta de spawner partiu-se!"
+  natural-spawner-break-denied: "&#F87171Spawners naturais estão protegidos e não podem ser partidos."
+  natural-spawner-no-permission: "&#F87171Você não tem permissão para quebrar spawners naturais."
+  sp-pickaxe-only: "&#F87171Esta picareta especial só pode ser usada para partir spawners!"
+  inventory-full: "&#4ADE80O item foi jogado no chão porque seu inventário está cheio!"
+  classic-silk-required: "&#F87171Só podes partir spawners com uma picareta encantada com Toque de Seda!"
+  advanced-pickaxe-required: "&#F87171Só podes partir spawners com a Picareta de Spawner especial!"
+  empty-spawner-break-denied: "&#F87171Não podes partir este spawner vazio!"
+  spawner-given-sender: "&#4ADE80Deste um spawner de %type% a %player%."
+  spawner-given-recipient: "&#38BDF8Recebeste um spawner de %type%!"
+  chunk-limit-exceeded: "&#F87171Não podes colocar mais spawners neste chunk!"
+  egg-chunk-limit-exceeded: "&#F87171Neste chunk, você só pode spawnar %limit% mobs do tipo %type%!"
+  stack-egg-denied: "&#F87171Você não pode mudar o tipo de um spawner empilhado com um ovo de geração!"
+  stack-natural-denied: "&#F87171Spawners naturais não podem ser combinados. Quebre e coloque novamente para usá-lo."
+  booster-slot-invalid: "&#F87171Esse spawner não está mais na pilha. O ticket foi devolvido."
+  reload-failed: "&#F87171Falha ao recarregar. Veja o console para detalhes."
+  
+# =========================================
+# Tipos de Entidades
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Tatu
+  ARMOR_STAND: Suporte de Armadura
+  AXOLOTL: Axolote
+  BAT: Morcego
+  BEE: Abelha
+  BLAZE: Blaze
+  BOAT: Barco
+  BOGGED: Alagado
+  BREEZE: Brisa
+  CAMEL: Camelo
+  CAMEL_HUSK: Camelo Husk
+  CAT: Gato
+  CAVE_SPIDER: Aranha da Caverna
+  CHICKEN: Galinha
+  COD: Bacalhau
+  COPPER_GOLEM: Golem de Cobre
+  COW: Vaca
+  CREEPER: Creeper
+  CREAKING: Rangente
+  DOLPHIN: Golfinho
+  DONKEY: Burro
+  DROWNED: Afogado
+  ELDER_GUARDIAN: Guardião Ancião
+  EMPTY: Vazio
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dragão do End
+  EVOKER: Evocador
+  EXPERIENCE_BOTTLE: Frasco de Experiência
+  EXPERIENCE_ORB: Orbe de Experiência
+  FOX: Raposa
+  FROG: Sapo
+  GHAST: Ghast
+  GIANT: Gigante
+  GLOW_SQUID: Lula Brilhante
+  GOAT: Cabra
+  GUARDIAN: Guardião
+  HAPPY_GHAST: Ghast Feliz
+  HOGLIN: Hoglin
+  HORSE: Cavalo
+  HUSK: Husk
+  ILLUSIONER: Ilusionista
+  IRON_GOLEM: Golem de Ferro
+  LLAMA: Lhama
+  MAGMA_CUBE: Cubo de Magma
+  MINECART: Carrinho de Minas
+  MINECART_CHEST: Carrinho com Baú
+  MINECART_COMMAND: Carrinho com Bloco de Comando
+  MINECART_FURNACE: Carrinho com Fornalha
+  MINECART_HOPPER: Carrinho com Funil
+  MINECART_SPAWNER: Carrinho com Gerador
+  MINECART_TNT: Carrinho com TNT
+  MOOSHROOM: Vaca Cogumelo
+  MULE: Mula
+  MUSHROOM_COW: Vaca Cogumelo
+  NAUTILUS: Náutilo
+  OCELOT: Jaguatirica
+  PANDA: Panda
+  PARCHED: Ressecado
+  PARROT: Papagaio
+  PHANTOM: Fantasma
+  PIG: Porco
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Bruto
+  PILLAGER: Saqueador
+  POLAR_BEAR: Urso Polar
+  PUFFERFISH: Baiacu
+  RABBIT: Coelho
+  RAVAGER: Devastador
+  SALMON: Salmão
+  SHEEP: Ovelha
+  SHULKER: Shulker
+  SILVERFISH: Traça
+  SKELETON: Esqueleto
+  SKELETON_HORSE: Cavalo Esqueleto
+  SLIME: Slime
+  SNIFFER: Farejador
+  SNOWMAN: Boneco de Neve
+  SNOW_GOLEM: Boneco de Neve
+  SPIDER: Aranha
+  SQUID: Lula
+  STRAY: Stray
+  STRIDER: Strider
+  SULFUR_CUBE: Cubo de Enxofre
+  TADPOLE: Girino
+  TRADER_LLAMA: Lhama do Comerciante
+  TROPICAL_FISH: Peixe Tropical
+  TURTLE: Tartaruga
+  VEX: Vex
+  VILLAGER: Aldeão
+  VINDICATOR: Vingador
+  WANDERING_TRADER: Comerciante Ambulante
+  WARDEN: Guardião
+  WITCH: Bruxa
+  WITHER: Wither
+  WITHER_SKELETON: Esqueleto Wither
+  WOLF: Lobo
+  ZOGLIN: Zoglin
+  ZOMBIE: Zumbi
+  ZOMBIE_HORSE: Cavalo Zumbi
+  ZOMBIE_NAUTILUS: Náutilo Zumbi
+  ZOMBIE_VILLAGER: Aldeão Zumbi
+  ZOMBIFIED_PIGLIN: Piglin Zombificado
+
+# Nomes dos spawners de itens (veja spawner_items.yml). Adicione uma linha para cada item que adicionar lá: MATERIAL: Nome exibido
+item-types:
+  NETHERITE_INGOT: Barra de netherita
+  DIAMOND: Diamante
+  COAL: Carvão
+  AMETHYST_SHARD: Fragmento de ametista
+  EMERALD: Esmeralda
+  NETHER_STAR: Estrela do Nether
+  TOTEM_OF_UNDYING: Totem da imortalidade

@@ -1,0 +1,351 @@
+# ===============================
+# ไฟล์ภาษา系統สปอว์นเนอร์
+# ===============================
+
+# คำนำหน้าสำหรับข้อความปลั๊กอินทั้งหมด
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# การตั้งค่าสิ่งของอีเต้อสปอว์นเนอร์
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lอีเต้อสปอว์นเนอร์"
+  lore:
+    - "&#9CA3AFใช้ที่ขุดนี้เพื่อทำลายสปอว์นเนอร์"
+    - "&#FFE066"
+    - "&#4ADE80จำนวนที่ใช้เหลือ: &#F87171%uses%"
+
+# =========================================
+# แท็กโหมด (ขั้นสูง หรือ คลาสสิก)
+# =========================================
+mode-tags:
+  advanced: "อีเต้อสปอว์นเนอร์"
+  classic: "อีเต้อที่มี Silk Touch"
+
+# =========================================
+# การตั้งค่าสิ่งของสปอว์นเนอร์
+# =========================================
+spawner-item:
+  name: "&#4ADE80สปอว์นเนอร์ %type%"
+  lore:
+    - "&#9CA3AFวางสปอว์นเนอร์นี้เพื่อสปอว์น"
+    - "&#9CA3AFสามารถทำลายได้ด้วย: &#FFE066%mode%"
+    - "&#9CA3AFประเภทเอ็นทิตี้: &#4ADE80%type%"
+
+# =========================================
+# การตั้งค่าฮอโลแกรมสปอว์นเนอร์
+# =========================================
+spawnable-status:
+  - "&#4ADE80สปอว์นเนอร์ %type%"
+  - "&#9CA3AFสามารถทำลายได้ด้วย %mode%"
+  - "&#9CA3AFย่อตัวแล้วคลิกขวาเพื่อเปิดเมนู"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+  
+# =========================================
+# การตั้งค่าฮอโลแกรม Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Mob นี้จะถูกลบออก"
+  - "&#FFE066ภายใน %time% วินาที หากไม่ออกจากพื้นที่"
+
+# =========================================
+# การตั้งค่าเมนู (GUI)
+# =========================================
+menu:
+  title: "&#6B7280แผงควบคุม Spawner"
+  status:
+    active: "&#4ADE80เปิดใช้งาน ✔"
+    inactive: "&#F87171ปิดใช้งาน ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lการฆ่าอัตโนมัติ"
+      lore:
+        - "&#9CA3AFฆ่าสัตว์ประหลาดจากสปอนเนอร์โดยอัตโนมัติ"
+        - "&#9CA3AFเปิดคลังเก็บของและตัวดูด XP อัตโนมัติด้วย"
+        - "&#9CA3AFสถานะ: %status%"
+        - ""
+        - "&#F9FAFBคลิกซ้าย: &#FFE066เปลี่ยนโหมด"
+      lore-auto:
+        - "&#9CA3AFฆ่าสัตว์ประหลาดจากสปอนเนอร์โดยอัตโนมัติ"
+        - "&#9CA3AFคลังเก็บของและตัวดูด XP เปิดอยู่เสมอ"
+        - "&#9CA3AFสถานะ: %status%"
+      lore-no-perm:
+        - "&#9CA3AFฆ่าสัตว์ประหลาดจากสปอนเนอร์โดยอัตโนมัติ"
+        - "&#9CA3AFสถานะ: %status%"
+        - ""
+        - "&#F87171&lคุณไม่สามารถใช้ฟีเจอร์นี้ได้"
+
+    storage:
+      name: "&#38BDF8&lคลังเก็บของ"
+      lore:
+        - "&#9CA3AFไอเทมที่ Auto Slayer เก็บได้จะถูกเก็บไว้ที่นี่"
+        - "&#9CA3AFช่องที่ใช้: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBคลิก: &#FFE066เปิดคลังเก็บของ"
+
+    xp-vacuum:
+      name: "&#4ADE80&lตัวดูดซับ XP"
+      click: "&#F9FAFBคลิก: &#38BDF8ถอน XP"
+      lore:
+        - "&#9CA3AFเก็บ XP ที่ดรอปจากสัตว์ประหลาดที่ถูกฆ่า"
+        - ""
+        - "&#9CA3AFสถานะ: %status%"
+        - "&#9CA3AFที่เก็บแล้ว: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBคลิกซ้าย: &#FFE066เปลี่ยนโหมด"
+        - "&#F9FAFBคลิกขวา: &#38BDF8รับ XP"
+      lore-no-perm:
+        - "&#9CA3AFเก็บ XP ที่ดรอปจากสัตว์ประหลาดที่ถูกฆ่า"
+        - ""
+        - "&#9CA3AFสถานะ: %status%"
+        - "&#9CA3AFที่เก็บแล้ว: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lคุณไม่สามารถใช้ฟีเจอร์นี้ได้"
+
+  messages:
+    no-permission: "&#F87171คุณไม่มีสิทธิ์เปลี่ยนฟีเจอร์นี้!"
+    xp-empty: "&#F87171ถัง XP ว่างเปล่า!"
+    xp-collected: "&#4ADE80เก็บแล้ว: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171คุณต้องเปิดการฆ่าอัตโนมัติก่อน!"
+    feature-no-perm: "&#F87171คุณไม่มีสิทธิ์เปลี่ยนฟีเจอร์นี้!"
+    perms-changed: "&#F87171ฟีเจอร์สปอนเนอร์ถูกปิดใช้งานเนื่องจากการเปลี่ยนแปลงสิทธิ์ของคุณ"
+    storage-inventory-full: "&#F87171ช่องเก็บของของคุณเต็มแล้ว!"
+    storage-taken: "&#4ADE80นำไอเทมออกจากคลัง %amount% ชิ้น"
+    in-use: "&#F87171ตอนนี้มีคนอื่นกำลังใช้เมนูของสปอว์นเนอร์นี้อยู่"
+  storage:
+    title: "&#6B7280คลังเก็บของสปอว์นเนอร์"
+    previous:
+      name: "&#F9FAFB&lหน้าก่อนหน้า"
+      lore:
+        - "&#9CA3AFไปที่หน้า &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lหน้าถัดไป"
+      lore:
+        - "&#9CA3AFไปที่หน้า &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lเอาทั้งหน้า"
+      lore:
+        - "&#9CA3AFนำไอเทมทั้งหมดในหน้านี้ออก"
+        - "&#9CA3AFไม่สามารถวางไอเทมกลับได้"
+    back:
+      name: "&#F87171&lกลับ"
+      lore:
+        - "&#9CA3AFกลับไปที่เมนูสปอว์นเนอร์"
+    info:
+      name: "&#38BDF8&lข้อมูลคลังเก็บของ"
+      lore:
+        - "&#9CA3AFหน้า: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFช่องที่ใช้: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFคลิกที่ไอเทมเพื่อนำออก"
+
+# =========================================
+# การตั้งค่าบูสเตอร์สปอว์นเนอร์
+# =========================================
+# ตัวแปร: %range% %delay% %xp% %duration% (%index% ในชื่อข้อมูล)
+booster:
+  item:
+    name: "&#F59E0B&lบูสเตอร์สปอว์นเนอร์"
+    lore:
+      - "&#9CA3AFคลิกขวาที่สปอว์นเนอร์ด้วยตั๋วนี้เพื่อเพิ่มพลัง"
+      - "&#FFE066ระยะทำงาน: &#F9FAFB+%range% บล็อก"
+      - "&#FFE066เวลาเกิด: &#F9FAFB-%delay% วินาที"
+      - "&#FFE066XP มอนสเตอร์: &#F9FAFB+%xp%%"
+      - "&#FFE066ระยะเวลา: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280เลือกสปอว์นเนอร์"
+    entry: "&#FFE066&lสปอว์นเนอร์ #%index%"
+    click: "&#F9FAFBคลิก: &#FFE066ใช้บูสเตอร์"
+  time:
+    unlimited: "ไม่จำกัด"
+    hour: "ชม."
+    minute: "นาที"
+    second: "วินาที"
+  info:
+    name: "&#F59E0B&lบูสเตอร์ที่ใช้งานอยู่"
+    empty: "&#9CA3AFไม่มีบูสเตอร์ที่ใช้งานอยู่"
+    entry-title: "&#FFE066&lบูสเตอร์ #%index%"
+
+# =========================================
+# ข้อความปลั๊กอิน
+# =========================================
+messages:
+  no-permission: "&#F87171คุณไม่มีสิทธิ์ใช้คำสั่งนี้"
+  reload-success: "&#4ADE80โหลดการตั้งค่าระบบสปอว์นเนอร์สำเร็จแล้ว"
+  wrong-subcommand: "&#FFE066การใช้งาน: /spsystem <reload|pickaxegive|givespawner|givebooster>" 
+  wrong-pickaxe-usage: "&#FFE066การใช้งาน: /spsystem pickaxegive <ผู้เล่น> <1-1000>"
+  usage-givespawner: "&#FFE066การใช้งาน: /spsystem givespawner <ผู้เล่น> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066การใช้งาน: /spsystem givebooster <ผู้เล่น> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: บล็อกที่เพิ่มให้ระยะทำงานของสปอว์นเนอร์"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: วินาทีที่ลดจากเวลาหน่วงการเกิด (0 = ไม่มี)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: เปอร์เซ็นต์ XP ที่เพิ่มจากสปอว์นเนอร์ (0 = ไม่มี)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: ระยะเวลาบูสต์เป็นนาที หรือ unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: จำนวนตั๋วที่จะให้ (ไม่บังคับ)"
+    - "&#FFE066ตัวอย่าง: &#F9FAFB/spsystem givebooster ผู้เล่น 10 5 50 30 &#9CA3AF(+10 บล็อก, -5 วินาที, +50% XP, 30 นาที)"
+  invalid-mob-type: "&#F87171ประเภทม็อบไม่ถูกต้อง: %type%"
+  invalid-item-spawner: "&#F87171สปอว์นเนอร์ไอเทมไม่ถูกต้อง: %type%"
+  booster-no-effect: "&#F87171ค่า range, delay-seconds หรือ xp-percent อย่างน้อยหนึ่งค่าต้องมากกว่า 0"
+  booster-disabled: "&#F87171ระบบบูสเตอร์สปอว์นเนอร์ถูกปิดอยู่ ตั้งค่า 'spawner-booster.enabled: true' ใน config.yml แล้วใช้ /spsystem reload"
+  command-disabled: "&#F87171คำสั่ง 'pickaxegive' สามารถใช้ได้เฉพาะในโหมด 'ขั้นสูง'"
+  player-not-found: "&#F87171ไม่พบผู้เล่น: %player%" 
+  not-a-number: "&#F87171จำนวนการใช้งานต้องเป็นตัวเลข"
+  max-uses-limit: "&#F87171จำนวนการใช้งานสูงสุดที่อนุญาตคือ 1000"
+  pickaxe-given-sender: "&#4ADE80ให้อีเต้อสปอว์นเนอร์ที่มี %uses% ครั้งแก่ %player%"
+  pickaxe-given-recipient: "&#38BDF8คุณได้รับอีเต้อสปอว์นเนอร์พิเศษ!"
+  spawner-collected: "&#4ADE80เพิ่มสปอว์นเนอร์ลงในคลังสิ่งของคุณสำเร็จแล้ว!"
+  spawner-break-lost: "&#F87171สปอว์นเนอร์หายไปตอนทำลาย! (โอกาสเก็บคืน: %chance%%)"
+  spawner-break-no-chance: "&#F87171สปอว์นเนอร์หายไป! คุณไม่มีโอกาสเก็บสปอว์นเนอร์คืน"
+  booster-given-sender: "&#4ADE80คุณมอบตั๋วเพิ่มพลังสปอว์นเนอร์ x%amount% ใบให้ %player%"
+  booster-given-recipient: "&#4ADE80คุณได้รับตั๋วเพิ่มพลังสปอว์นเนอร์ x%amount% ใบ!"
+  booster-applied: "&#4ADE80เพิ่มพลังสปอว์นเนอร์แล้ว! ระยะ +%range% เวลาเกิด -%delay% วินาที XP +%xp%% ระยะเวลา: %duration%"
+  booster-already-active: "&#F87171สปอว์นเนอร์นี้มีบูสเตอร์ที่ใช้งานอยู่แล้ว (เหลือ %duration%)"
+  booster-stack-limit: "&#F87171สปอว์นเนอร์นี้มีบูสเตอร์ครบจำนวนสูงสุดแล้ว (%max%)"
+  booster-delay-too-high: "&#F87171ลดเวลาเกิดได้สูงสุด %max% วินาที (เวลาเกิดขั้นต่ำ: %min% วิ)"
+  booster-delay-not-reducible: "&#F87171ไม่สามารถลดเวลาเกิดได้ เพราะอยู่ที่ขั้นต่ำแล้ว (%min% วิ)"
+  booster-delay-maxed: "&#FFE066เวลาเกิดอยู่ในระดับต่ำสุดแล้ว จึงไม่ได้ใช้ส่วนของเวลา แต่ใช้เอฟเฟกต์อื่นแล้ว"
+  booster-delay-partial: "&#FFE066เวลาเกิดถึงระดับต่ำสุดแล้ว จึงใช้เพียง -%delay% วิ และใช้เอฟเฟกต์อื่นแล้ว"
+  booster-delay-maxed-no-effect: "&#F87171เวลาเกิดของสปอว์นเนอร์นี้อยู่ในระดับต่ำสุดแล้ว ตั๋วไม่ถูกใช้"
+  stack-merged: "&#4ADE80รวมสปอว์นเนอร์ %amount% ตัวแล้ว สแต็ก: %stack%/%max%"
+  stack-full: "&#F87171สแต็กสปอว์นเนอร์นี้เต็มแล้ว! (สูงสุด %max%)"
+  stack-type-mismatch: "&#F87171รวมได้เฉพาะสปอว์นเนอร์ชนิดเดียวกันเท่านั้น!"
+  stack-collected: "&#4ADE80เก็บสปอว์นเนอร์ %amount% ตัวแล้ว เหลือในสแต็ก %left% ตัว"
+  pickaxe-broken: "&#4ADE80อีเต้อสปอว์นเนอร์ของคุณเสียแล้ว!"
+  natural-spawner-break-denied: "&#F87171สปอว์นเนอร์ธรรมชาติได้รับการป้องกันและไม่สามารถทำลายได้"
+  natural-spawner-no-permission: "&#F87171คุณไม่มีสิทธิ์ทำลายสปอว์นเนอร์ธรรมชาติ"
+  sp-pickaxe-only: "&#F87171อีเต้อพิเศษนี้สามารถใช้เพื่อทำลายสปอว์นเนอร์ได้เท่านั้น!"
+  inventory-full: "&#4ADE80ไอเท็มถูกทิ้งลงพื้นเพราะช่องว่างในกระเป๋าเต็มแล้ว!"
+  classic-silk-required: "&#F87171คุณสามารถทำลายสปอว์นเนอร์ได้ด้วยอีเต้อที่มีเอนชานต์ Silk Touch เท่านั้น!"
+  advanced-pickaxe-required: "&#F87171คุณสามารถทำลายสปอว์นเนอร์ได้ด้วยอีเต้อสปอว์นเนอร์พิเศษเท่านั้น!"
+  empty-spawner-break-denied: "&#F87171คุณไม่สามารถทำลายสปอว์นเนอร์ว่างเปล่านี้ได้!"
+  spawner-given-sender: "&#4ADE80ให้สปอว์นเนอร์ %type% แก่ %player%"
+  spawner-given-recipient: "&#38BDF8คุณได้รับสปอว์นเนอร์ %type%!"
+  chunk-limit-exceeded: "&#F87171คุณไม่สามารถวางสปอว์นเนอร์ใน chunk นี้ได้อีก!"
+  egg-chunk-limit-exceeded: "&#F87171ใน chunk นี้ คุณสามารถสปอว์น mob ประเภท %type% ได้สูงสุด %limit% ตัว!"
+  stack-egg-denied: "&#F87171ไม่สามารถเปลี่ยนชนิดของสปอว์นเนอร์ที่ซ้อนกันด้วยไข่เกิดได้!"
+  stack-natural-denied: "&#F87171สปอว์นเนอร์ตามธรรมชาติไม่สามารถรวมได้ ให้ทุบแล้ววางใหม่"
+  booster-slot-invalid: "&#F87171สปอว์นเนอร์นั้นไม่อยู่ในกองแล้ว คืนตั๋วให้แล้ว"
+  reload-failed: "&#F87171รีโหลดล้มเหลว ดูรายละเอียดในคอนโซล"
+  
+# =========================================
+# ประเภทเอนทิตี
+# =========================================
+entity-types:
+  ALLAY: อัลเลย์
+  ARMADILLO: อาร์มาดิลโล
+  ARMOR_STAND: ฐานเกราะ
+  AXOLOTL: แอกโซลอทล์
+  BAT: ค้างคาว
+  BEE: ผึ้ง
+  BLAZE: เบลซ
+  BOAT: เรือ
+  BOGGED: บ็อกเก็ด
+  BREEZE: บรีซ
+  CAMEL: อูฐ
+  CAMEL_HUSK: อูฐฮัสค์
+  CAT: แมว
+  CAVE_SPIDER: แมงมุมถ้ำ
+  CHICKEN: ไก่
+  COD: ปลาค็อด
+  COPPER_GOLEM: โกเลมทองแดง
+  COW: วัว
+  CREEPER: ครีปเปอร์
+  CREAKING: ครีคกิ้ง
+  DOLPHIN: โลมา
+  DONKEY: ลา
+  DROWNED: คนจมน้ำ
+  ELDER_GUARDIAN: เอลเดอร์ การ์เดียน
+  EMPTY: ว่างเปล่า
+  ENDERMAN: เอนเดอร์แมน
+  ENDERMITE: เอนเดอร์ไมต์
+  ENDER_DRAGON: เอนเดอร์ดราก้อน
+  EVOKER: เอโวคเกอร์
+  EXPERIENCE_BOTTLE: ขวดประสบการณ์
+  EXPERIENCE_ORB: ลูกบอลประสบการณ์
+  FOX: จิ้งจอก
+  FROG: กบ
+  GHAST: แกสต์
+  GIANT: ยักษ์
+  GLOW_SQUID: ปลาหมึกเรืองแสง
+  GOAT: แพะ
+  GUARDIAN: การ์เดียน
+  HAPPY_GHAST: แกสต์ผู้ร่าเริง
+  HOGLIN: ฮอกลิน
+  HORSE: ม้า
+  HUSK: ฮัสค์
+  ILLUSIONER: อิลลูชันเนอร์
+  IRON_GOLEM: เหล็กโกเลม
+  LLAMA: ลามะ
+  MAGMA_CUBE: ลาวาคิวบ์
+  MINECART: รถเหมือง
+  MINECART_CHEST: รถเหมืองพร้อมหีบ
+  MINECART_COMMAND: รถเหมืองพร้อมบล็อกคำสั่ง
+  MINECART_FURNACE: รถเหมืองพร้อมเตาเผา
+  MINECART_HOPPER: รถเหมืองพร้อมฮอปเปอร์
+  MINECART_SPAWNER: รถเหมืองพร้อมสปอว์เนอร์
+  MINECART_TNT: รถเหมืองพร้อมทีเอ็นที
+  MOOSHROOM: วัว蘑菇
+  MULE: ล่อ
+  MUSHROOM_COW: วัว蘑菇
+  NAUTILUS: หอยงวงช้าง
+  OCELOT: โอเซลอต
+  PANDA: แพนด้า
+  PARCHED: ผู้แห้งแล้ง
+  PARROT: นกแก้ว
+  PHANTOM: แฟนท่อม
+  PIG: หมู
+  PIGLIN: พิกลิน
+  PIGLIN_BRUTE: พิกลินบรู๊ท
+  PILLAGER: นักปล้น
+  POLAR_BEAR: หมีขั้วโลก
+  PUFFERFISH: ปลาปักเป้า
+  RABBIT: กระต่าย
+  RAVAGER: เรเวเจอร์
+  SALMON: ปลาแซลมอน
+  SHEEP: แกะ
+  SHULKER: ชัลเกอร์
+  SILVERFISH:  ตัวสามง่าม
+  SKELETON: โครงกระดูก
+  SKELETON_HORSE: ม้ากระดูก
+  SLIME: สไลม์
+  SNIFFER: สนิฟเฟอร์
+  SNOWMAN: มนุษย์หิมะ
+  SNOW_GOLEM: มนุษย์หิมะ
+  SPIDER: แมงมุม
+  SQUID: ปลาหมึก
+  STRAY: สเตรย์
+  STRIDER: สไตรเดอร์
+  SULFUR_CUBE: คิวบ์กำมะถัน
+  TADPOLE: ลูกอ๊อด
+  TRADER_LLAMA: ลามะพ่อค้า
+  TROPICAL_FISH: ปลาเขตร้อน
+  TURTLE: เต่า
+  VEX: เวกซ์
+  VILLAGER: ชาวบ้าน
+  VINDICATOR:  ผู้แก้แค้น
+  WANDERING_TRADER: นักเดินทาง
+  WARDEN: วอร์เดน
+  WITCH: แม่มด
+  WITHER: วิทเธอร์
+  WITHER_SKELETON: โครงกระดูกวิทเธอร์
+  WOLF: หมาป่า
+  ZOGLIN:  โซกลิน
+  ZOMBIE: ซอมบี้
+  ZOMBIE_HORSE: ม้าซอมบี้
+  ZOMBIE_NAUTILUS: หอยงวงช้างซอมบี้
+  ZOMBIE_VILLAGER: ชาวบ้านซอมบี้
+  ZOMBIFIED_PIGLIN: พิกลินซอมบี้
+
+# ชื่อสปอว์นเนอร์ไอเทม (ดู spawner_items.yml) เพิ่มหนึ่งบรรทัดสำหรับทุกไอเทมที่คุณเพิ่มที่นั่น: MATERIAL: ชื่อที่แสดง
+item-types:
+  NETHERITE_INGOT: แท่งเนเธอไรต์
+  DIAMOND: เพชร
+  COAL: ถ่านหิน
+  AMETHYST_SHARD: เศษอเมทิสต์
+  EMERALD: มรกต
+  NETHER_STAR: ดาวเนเธอร์
+  TOTEM_OF_UNDYING: โทเท็มอมตะ

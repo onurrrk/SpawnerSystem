@@ -1,0 +1,351 @@
+# ===============================
+# Spawner Системасы Кыргызча
+# ===============================
+
+# Плагиндин баардык билдирүүлөрү үчүн префикс
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner Киркасы Иштетүү
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Киркасы"
+  lore:
+    - "&#9CA3AFSpawnerди бузуу үчүн бул кирканы колдонуңуз."
+    - "&#FFE066"
+    - "&#4ADE80Калган колдонулуш: &#F87171%uses%"
+
+# =========================================
+# Режим тегдери (Advanced же Classic)
+# =========================================
+mode-tags:
+  advanced: "Spawner Киркасы"
+  classic: "Silk Touch Киркасы"
+
+# =========================================
+# Spawner Объектинин Иштетүүлөрү
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFМонструларды чыгаруу үчүн бул спавнерди коюңуз."
+    - "&#9CA3AFТек гана мындан менен бузулушу мүмкүн: &#FFE066%mode%"
+    - "&#9CA3AFОбъект түрү: &#4ADE80%type%"
+
+# =========================================
+# Spawner Голограммасынын Иштетүүлөрү
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AF%mode% менен бузууга болот"
+  - "&#9CA3AFМенюну ачуу үчүн эңкейип, оң баскычты басыңыз"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+ 
+# =========================================
+# Mob Голограммасынын Иштетүүлөрү
+# =========================================
+mob-remove-warning:
+  - "&#F87171Бул mob өчүрүлөт"
+  - "&#FFE066Аймакты таштабаса, %time% секунд ичинде."
+  
+# =========================================
+# Меню Жөндөөлөрү (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Спаунер Башкаруу Панели"
+  status:
+    active: "&#4ADE80Активдүү ✔"
+    inactive: "&#F87171Активдүү эмес ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lАвтоматтык Өлтүрүү"
+      lore:
+        - "&#9CA3AFСпаунердан чыккан жандыктарды автоматтык түрдө өлтүрөт."
+        - "&#9CA3AFСактагычты жана XP жыйноону да автоматтык түрдө күйгүзөт."
+        - "&#9CA3AFСтатус: %status%"
+        - ""
+        - "&#F9FAFBСол чыкылдатуу: &#FFE066Режимди өзгөртүү"
+      lore-auto:
+        - "&#9CA3AFСпаунердан чыккан жандыктарды автоматтык түрдө өлтүрөт."
+        - "&#9CA3AFСактагыч жана XP жыйноо дайыма күйүк."
+        - "&#9CA3AFСтатус: %status%"
+      lore-no-perm:
+        - "&#9CA3AFСпаунердан чыккан жандыктарды автоматтык түрдө өлтүрөт."
+        - "&#9CA3AFСтатус: %status%"
+        - ""
+        - "&#F87171&lСИЗ БУЛ ӨЗГӨЧӨЛҮКТҮ КОЛДОНО АЛБАЙСЫЗ"
+
+    storage:
+      name: "&#38BDF8&lСактагыч"
+      lore:
+        - "&#9CA3AFАвто өлтүргүч чогулткан буюмдар ушул жерде сакталат."
+        - "&#9CA3AFЭэленген уячалар: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBЧыкылдатуу: &#FFE066Сактагычты ачуу"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP Жыйноо"
+      click: "&#F9FAFBЧыкылдатуу: &#38BDF8XP алуу"
+      lore:
+        - "&#9CA3AFӨлтүрүлгөн жандыктардан түшкөн XP-лерди сактайт."
+        - ""
+        - "&#9CA3AFСтатус: %status%"
+        - "&#9CA3AFЖыйналган: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBСол чыкылдатуу: &#FFE066Режимди өзгөртүү"
+        - "&#F9FAFBОң чыкылдатуу: &#38BDF8XP алуу"
+      lore-no-perm:
+        - "&#9CA3AFӨлтүрүлгөн жандыктардан түшкөн XP-лерди сактайт."
+        - ""
+        - "&#9CA3AFСтатус: %status%"
+        - "&#9CA3AFЖыйналган: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lСИЗ БУЛ ӨЗГӨЧӨЛҮКТҮ КОЛДОНО АЛБАЙСЫЗ"
+
+  messages:
+    no-permission: "&#F87171Бул өзгөчөлүктү өзгөртүүгө уруксатыңыз жок!"
+    xp-empty: "&#F87171XP багы бош!"
+    xp-collected: "&#4ADE80Жыйналды: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Алгач автоматтык өлтүрүүнү күйгүзүңүз!"
+    feature-no-perm: "&#F87171Бул өзгөчөлүктү өзгөртүүгө уруксатыңыз жок!"
+    perms-changed: "&#F87171Уруксаттарыңыз өзгөргөндүктөн, спаунер өзгөчөлүктөрү өчүрүлдү."
+    storage-inventory-full: "&#F87171Инвентарыңыз толуп калды!"
+    storage-taken: "&#4ADE80Сактагычтан %amount% буюм алынды."
+    in-use: "&#F87171Бул спавнердин менюсун азыр башка бирөө колдонуп жатат."
+  storage:
+    title: "&#6B7280Спавнер сактагычы"
+    previous:
+      name: "&#F9FAFB&lМурунку барак"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF-бетке өтүү"
+    next:
+      name: "&#F9FAFB&lКийинки барак"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF-бетке өтүү"
+    take-page:
+      name: "&#4ADE80&lБаракты алуу"
+      lore:
+        - "&#9CA3AFБул беттеги бардык буюмдарды алат."
+        - "&#9CA3AFБуюмдарды кайра коюуга болбойт."
+    back:
+      name: "&#F87171&lАртка"
+      lore:
+        - "&#9CA3AFСпавнер менюсуна кайтуу."
+    info:
+      name: "&#38BDF8&lСактагыч маалыматы"
+      lore:
+        - "&#9CA3AFБарак: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFЭэленген уячалар: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFАлуу үчүн буюмду чыкылдатыңыз."
+  
+# =========================================
+# Спавнерди күчөтүү жөндөөлөрү
+# =========================================
+# Орун толтургучтар: %range% %delay% %xp% %duration% (маалымат аталышында %index%)
+booster:
+  item:
+    name: "&#F59E0B&lСпавнерди күчөтүү"
+    lore:
+      - "&#9CA3AFКүчөтүү үчүн бул билет менен спавнерди оң баскыч менен басыңыз."
+      - "&#FFE066Ишчи аралык: &#F9FAFB+%range% блок"
+      - "&#FFE066Пайда болуу убактысы: &#F9FAFB-%delay% секунд"
+      - "&#FFE066Моб тажрыйбасы: &#F9FAFB+%xp%%"
+      - "&#FFE066Узактык: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Спавнер тандоо"
+    entry: "&#FFE066&lСпавнер #%index%"
+    click: "&#F9FAFBЧыкылдатуу: &#FFE066Бустерди колдонуу"
+  time:
+    unlimited: "Чексиз"
+    hour: "саат"
+    minute: "мүн"
+    second: "сек"
+  info:
+    name: "&#F59E0B&lАктивдүү күчөтүүлөр"
+    empty: "&#9CA3AFАктивдүү күчөтүү жок."
+    entry-title: "&#FFE066&lКүчөтүү #%index%"
+
+# =========================================
+# Плагиндин билдирүүлөрү
+# =========================================
+messages:
+  no-permission: "&#F87171Бул команда колдонууга уруксатыңыз жок."
+  reload-success: "&#4ADE80Spawner системасынын конфигурациясы ийгиликтүү кайрадан жүктөлдү."
+  wrong-subcommand: "&#FFE066Колдонуу: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Колдонуу: /spsystem pickaxegive <ойунчу> <1-1000>"
+  usage-givespawner: "&#FFE066Колдонуу: /spsystem givespawner <ойунчу> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Колдонуу: /spsystem givebooster <ойунчу> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: спавнердин активдешүү аралыгына кошула турган блоктор"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: спавн кечигүүсүнөн алынуучу секунда (0 = жок)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: спавнерден кошумча XP пайызы (0 = жок)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: бустун узактыгы мүнөт менен же unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: канча билет берүү керек (милдеттүү эмес)"
+    - "&#FFE066Мисал: &#F9FAFB/spsystem givebooster ойунчу 10 5 50 30 &#9CA3AF(+10 блок, -5 сек кечигүү, +50% XP, 30 мүнөт)"
+  invalid-mob-type: "&#F87171Мобдун туура эмес түрү: %type%"
+  invalid-item-spawner: "&#F87171Буюм спавнери туура эмес: %type%"
+  booster-no-effect: "&#F87171range, delay-seconds же xp-percent маанилеринин ичинен жок дегенде бири 0дөн чоң болушу керек."
+  booster-disabled: "&#F87171Спавнер буст системасы өчүк. config.yml ичинде 'spawner-booster.enabled: true' коюп, /spsystem reload аткарыңыз."
+  command-disabled: "&#F87171'pickaxegive' командасы 'advanced' (жетилтирилген) режимде гана жеткиликтүү."
+  player-not-found: "&#F87171Оюнчу табылган жок: %player%"
+  not-a-number: "&#F87171Колдонулуштардын саны сан болушу керек."
+  max-uses-limit: "&#F87171Колдонулуштардын максималдуу саны 1000."
+  pickaxe-given-sender: "&#4ADE80%player% %uses% колдонулушу бар Spawner Киркасы алды."
+  pickaxe-given-recipient: "&#38BDF8Сиз өзгөчө Spawner Киркасы алдыңыз!"
+  spawner-collected: "&#4ADE80Spawner ийгиликтүү инвентарыңызга кошулду!"
+  spawner-break-lost: "&#F87171Спавнер талкаланганда жок болду! (Кайтарып алуу мүмкүнчүлүгү: %chance%%)"
+  spawner-break-no-chance: "&#F87171Спавнер жок болду! Спавнерлерди кайтарып алуу мүмкүнчүлүгүңүз жок."
+  booster-given-sender: "&#4ADE80%player% оюнчусуна x%amount% спавнерди күчөтүү билети берилди."
+  booster-given-recipient: "&#4ADE80Сиз x%amount% спавнерди күчөтүү билетин алдыңыз!"
+  booster-applied: "&#4ADE80Спавнер күчөтүлдү! Аралык +%range%, пайда болуу убактысы -%delay% сек, тажрыйба +%xp%%, узактык: %duration%."
+  booster-already-active: "&#F87171Бул спавнерде активдүү күчөтүү бар (%duration% калды)."
+  booster-stack-limit: "&#F87171Бул спавнерде күчөтүүлөрдүн максималдуу саны бар (%max%)."
+  booster-delay-too-high: "&#F87171Спавн кечигүүсүн эң көп %max% секундага кыскартууга болот (минималдуу кечигүү: %min% сек)."
+  booster-delay-not-reducible: "&#F87171Спавн кечигүүсүн кыскартууга болбойт, ал мурунтан эле минималдуу (%min% сек)."
+  booster-delay-maxed: "&#FFE066Спавн кечигүүсү мурунтан эле эң төмөнкү деңгээлде, ошондуктан кечигүү бөлүгү колдонулган жок. Башка эффекттер колдонулду."
+  booster-delay-partial: "&#FFE066Спавн кечигүүсү эң төмөнкү деңгээлге жетти, ошондуктан -%delay% сек гана колдонулду. Башка эффекттер колдонулду."
+  booster-delay-maxed-no-effect: "&#F87171Бул спавнердин спавн кечигүүсү мурунтан эле эң төмөнкү деңгээлде. Билет колдонулган жок."
+  stack-merged: "&#4ADE80%amount% спавнер бириктирилди. Топтом: %stack%/%max%."
+  stack-full: "&#F87171Бул спавнер топтому толуп калды! (эң көп %max%)"
+  stack-type-mismatch: "&#F87171Бир түрдөгү спавнерлерди гана бириктирүүгө болот!"
+  stack-collected: "&#4ADE80%amount% спавнер алынды. Топтомдо %left% калды."
+  pickaxe-broken: "&#4ADE80Сиздин Spawner Киркаңыз сынды!"
+  natural-spawner-break-denied: "&#F87171Табигый spawnerлер коргоого алынган жана бузулбайт."
+  natural-spawner-no-permission: "&#F87171Табигый спавнерлерди талкалоого уруксатыңыз жок."
+  sp-pickaxe-only: "&#F87171Бул өзгөчө кирка тектеш spawnerлерди гана бузууга мүмкүндүк берет!"
+  inventory-full: "&#4ADE80Буюм жерге түшүрүлдү, анткени инвентарың толуп калган!"
+  classic-silk-required: "&#F87171Spawnerлерди тек гана Silk Touch Киркасы менен бузууга болот!"
+  advanced-pickaxe-required: "&#F87171Spawnerлерди тек гана өзгөчө Spawner Киркасы менен бузууга болот!"
+  empty-spawner-break-denied: "&#F87171Бош spawnerди бузууга болбойт!"
+  spawner-given-sender: "&#4ADE80%player% %type% spawner алды."
+  spawner-given-recipient: "&#38BDF8Сиз %type% spawner алдыңыз!"
+  chunk-limit-exceeded: "&#F87171Бул чанкка дагы спавнерлерди коюуга болбойт!"
+  egg-chunk-limit-exceeded: "&#F87171Бул chunkта сиз %type% түрүнөн эң көп дегенде %limit% mob спавндей аласыз!"
+  stack-egg-denied: "&#F87171Топтолгон спавнердин түрүн спавн жумуртка менен өзгөртүүгө болбойт!"
+  stack-natural-denied: "&#F87171Табигый спавнерлерди бириктирүүгө болбойт. Сындырып кайра коюңуз."
+  booster-slot-invalid: "&#F87171Ал спавнер мындан ары топтомдо жок. Билет кайтарылды."
+  reload-failed: "&#F87171Кайра жүктөө ишке ашкан жок. Чоо-жайын консолдон караңыз."
+  
+# =========================================
+# Entity түрлөрү
+# =========================================
+entity-types:
+  ALLAY: Алай
+  ARMADILLO: Армадилло
+  ARMOR_STAND: Курал-жарак таягы
+  AXOLOTL: Аксолотль
+  BAT: Жарганат
+  BEE: Аары
+  BLAZE: Блейз
+  BOAT: Кайык
+  BOGGED: Батпактуу
+  BREEZE: Желчик
+  CAMEL: Төө
+  CAMEL_HUSK: Төө Хаск
+  CAT: Мышык
+  CAVE_SPIDER: Үңкүр жөргөмүш
+  CHICKEN: Тоок
+  COD: Треска
+  COPPER_GOLEM: Жез голем
+  COW: Уй
+  CREEPER: Крипер
+  CREAKING: Кырылдоочу
+  DOLPHIN: Дельфин
+  DONKEY: Эшек
+  DROWNED: Чөгүп калган
+  ELDER_GUARDIAN: Улуу коргоочу
+  EMPTY: Бош
+  ENDERMAN: Эндерман
+  ENDERMITE: Эндермит
+  ENDER_DRAGON: Эндер ажыдаары
+  EVOKER: Чакыруучу
+  EXPERIENCE_BOTTLE: Тажрыйба шишеси
+  EXPERIENCE_ORB: Тажрыйба шары
+  FOX: Түлкү
+  FROG: Бака
+  GHAST: Гаст
+  GIANT: Дөө
+  GLOW_SQUID: Жаркырак кальмар
+  GOAT: Эчки
+  GUARDIAN: Коргоочу
+  HAPPY_GHAST: Бактылуу гаст
+  HOGLIN: Хоглин
+  HORSE: Ат
+  HUSK: Кургак
+  ILLUSIONER: Иллюзионист
+  IRON_GOLEM: Темир голем
+  LLAMA: Лама
+  MAGMA_CUBE: Магма кубу
+  MINECART: Шахта арбасы
+  MINECART_CHEST: Сандыктуу шахта арбасы
+  MINECART_COMMAND: Буйрук блогу менен шахта арбасы
+  MINECART_FURNACE: Меш менен шахта арбасы
+  MINECART_HOPPER: Жылгыч менен шахта арбасы
+  MINECART_SPAWNER: Спаунер менен шахта арбасы
+  MINECART_TNT: ТНТ менен шахта арбасы
+  MOOSHROOM: Козу карын уй
+  MULE: Качыр
+  MUSHROOM_COW: Козу карын уй
+  NAUTILUS: Наутилус
+  OCELOT: Оцелот
+  PANDA: Панда
+  PARCHED: Кургап калган
+  PARROT: Тоту
+  PHANTOM: Фантом
+  PIG: Чочко
+  PIGLIN: Пиглин
+  PIGLIN_BRUTE: Пиглин бруту
+  PILLAGER: Талаңчы
+  POLAR_BEAR: Ак аюу
+  PUFFERFISH: Шишимик балык
+  RABBIT: Коён
+  RAVAGER: Жапайы
+  SALMON: Семга
+  SHEEP: Кой
+  SHULKER: Шалкер
+  SILVERFISH: Күмүш балык
+  SKELETON: Скелет
+  SKELETON_HORSE: Скелет ат
+  SLIME: Слайм
+  SNIFFER: Жыттоочу
+  SNOWMAN: Кар киши
+  SNOW_GOLEM: Кар киши
+  SPIDER: Жөргөмүш
+  SQUID: Кальмар
+  STRAY: Адашкан
+  STRIDER: Страйдер
+  SULFUR_CUBE: Күкүрт куб
+  TADPOLE: Бакача
+  TRADER_LLAMA: Соодагер ламасы
+  TROPICAL_FISH: Тропикалык балык
+  TURTLE: Таш бака
+  VEX: Векс
+  VILLAGER: Айыл өлкөсү
+  VINDICATOR: Кек алуучу
+  WANDERING_TRADER: Кезген соодагер
+  WARDEN: Каракчы
+  WITCH: Мазакчы
+  WITHER: Витер
+  WITHER_SKELETON: Витер скелети
+  WOLF: Карышкыр
+  ZOGLIN: Зоглин
+  ZOMBIE: Зомби
+  ZOMBIE_HORSE: Зомби ат
+  ZOMBIE_NAUTILUS: Зомби наутилус
+  ZOMBIE_VILLAGER: Зомби айыл өлкөсү
+  ZOMBIFIED_PIGLIN: Зомбиленген пиглин
+
+# Буюм спавнерлеринин аттары (spawner_items.yml карагыла). Ал жакка кошкон ар бир буюм үчүн бир сап кош: MATERIAL: Көрсөтүлүүчү ат
+item-types:
+  NETHERITE_INGOT: Незерит куймасы
+  DIAMOND: Алмаз
+  COAL: Көмүр
+  AMETHYST_SHARD: Аметист сыныгы
+  EMERALD: Изумруд
+  NETHER_STAR: Незер жылдызы
+  TOTEM_OF_UNDYING: Өлбөстүк тотеми

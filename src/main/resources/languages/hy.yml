@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Հայերեն (Armenian)
+# ===============================
+
+# Պլագինի բոլոր հաղորդագրությունների նախածանց
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner Բալթու կարգավորումներ
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Բալթի"
+  lore:
+    - "&#9CA3AFՕգտագործեք այս բալթին spawner-ը կոտրելու համար:"
+    - "&#FFE066"
+    - "&#4ADE80Մնացած օգտագործումներ՝ &#F87171%uses%"
+
+# =========================================
+# Ռեժիմի պիտակներ (Ավանդական կամ Ընդլայնված)
+# =========================================
+mode-tags:
+  advanced: "Spawner Բալթի"
+  classic: "Մետաքսե Բալթի"
+
+# =========================================
+# Spawner Առարկայի կարգավորումներ
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFՏեղադրեք այս spawner-ը՝ հրեշներ ստեղծելու համար:"
+    - "&#9CA3AFԿոտրվում է միայն այսով՝ &#FFE066%mode%"
+    - "&#9CA3AFԳոյացող հրեշ՝ &#4ADE80%type%"
+
+# =========================================
+# Spawner հոլոգրամի կարգավորումներ
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFԿարող է կոտրվել՝ %mode%"
+  - "&#9CA3AFՄենյուն բացելու համար կծկվեք և աջ սեղմեք"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob հոլոգրամի կարգավորումներ
+# =========================================
+mob-remove-warning:
+  - "&#F87171Այս mob-ը կհեռացվի"
+  - "&#FFE066%time% վայրկյանում, եթե չլքի տարածքը"
+  
+# =========================================
+# Մենյուի Կարգավորումներ (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner Կառավարման Վահանակ"
+  status:
+    active: "&#4ADE80Ակտիվ ✔"
+    inactive: "&#F87171Անակտիվ ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lԱվտոմատ Սպանություն"
+      lore:
+        - "&#9CA3AFԱվտոմատ սպանում է spawner-ից դուրս եկած արարածներին:"
+        - "&#9CA3AFՆաև միացնում է Պահեստը և XP հավաքիչը։"
+        - "&#9CA3AFԿարգավիճակ: %status%"
+        - ""
+        - "&#F9FAFBՁախ սեղմում: &#FFE066Փոխել ռեժիմը"
+      lore-auto:
+        - "&#9CA3AFԱվտոմատ սպանում է spawner-ից դուրս եկած արարածներին:"
+        - "&#9CA3AFՊահեստը և XP հավաքիչը միշտ միացված են։"
+        - "&#9CA3AFԿարգավիճակ: %status%"
+      lore-no-perm:
+        - "&#9CA3AFԱվտոմատ սպանում է spawner-ից դուրս եկած արարածներին:"
+        - "&#9CA3AFԿարգավիճակ: %status%"
+        - ""
+        - "&#F87171&lԴՈՒ ՉԵՍ ԿԱՐՈՂ ՕԳՏԱԳՈՐԾԵԼ ԱՅՍ ՀԱՏԿՈՒԹՅՈՒՆԸ"
+
+    storage:
+      name: "&#38BDF8&lՊահեստ"
+      lore:
+        - "&#9CA3AFԱվտոմատ սպանողի հավաքած իրերը պահվում են այստեղ։"
+        - "&#9CA3AFԶբաղված բնիկներ՝ &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBՍեղմում՝ &#FFE066Բացել պահեստը"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP Հավաքիչ"
+      click: "&#F9FAFBՍեղմում՝ &#38BDF8Հանել XP"
+      lore:
+        - "&#9CA3AFՊահում է սպանված արարածներից ընկած XP-ն:"
+        - ""
+        - "&#9CA3AFԿարգավիճակ: %status%"
+        - "&#9CA3AFՀավաքված: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBՁախ սեղմում: &#FFE066Փոխել ռեժիմը"
+        - "&#F9FAFBԱջ սեղմում: &#38BDF8XP-ն հանել"
+      lore-no-perm:
+        - "&#9CA3AFՊահում է սպանված արարածներից ընկած XP-ն:"
+        - ""
+        - "&#9CA3AFԿարգավիճակ: %status%"
+        - "&#9CA3AFՀավաքված: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lԴՈՒ ՉԵՍ ԿԱՐՈՂ ՕԳՏԱԳՈՐԾԵԼ ԱՅՍ ՀԱՏԿՈՒԹՅՈՒՆԸ"
+
+  messages:
+    no-permission: "&#F87171Դու իրավասություն չունես փոխելու այս հատկությունը!"
+    xp-empty: "&#F87171XP բաքը դատարկ է!"
+    xp-collected: "&#4ADE80Հավաքվեց: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Նախ պետք է միացնես ավտոմատ սպանությունը!"
+    feature-no-perm: "&#F87171Դու իրավասություն չունես փոխելու այս հատկությունը!"
+    perms-changed: "&#F87171Spawner-ի հատկություններն անջատվել են քո իրավասությունների փոփոխության պատճառով:"
+    storage-inventory-full: "&#F87171Քո գույքագրումը լիքն է։"
+    storage-taken: "&#4ADE80Պահեստից վերցվեց %amount% իր։"
+    in-use: "&#F87171Այս սպաուների ընտրացանկը հիմա օգտագործում է մեկ ուրիշը։"
+  storage:
+    title: "&#6B7280Սպաուների պահեստ"
+    previous:
+      name: "&#F9FAFB&lՆախորդ էջ"
+      lore:
+        - "&#9CA3AFԱնցնել &#FFE066%page%&#9CA3AF էջ"
+    next:
+      name: "&#F9FAFB&lՀաջորդ էջ"
+      lore:
+        - "&#9CA3AFԱնցնել &#FFE066%page%&#9CA3AF էջ"
+    take-page:
+      name: "&#4ADE80&lՎերցնել էջը"
+      lore:
+        - "&#9CA3AFՎերցնում է այս էջի բոլոր իրերը։"
+        - "&#9CA3AFԻրերը հնարավոր չէ հետ դնել։"
+    back:
+      name: "&#F87171&lՀետ"
+      lore:
+        - "&#9CA3AFՎերադառնալ սպաուների ընտրացանկ։"
+    info:
+      name: "&#38BDF8&lՊահեստի տվյալներ"
+      lore:
+        - "&#9CA3AFԷջ՝ &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFԶբաղված բնիկներ՝ &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFՍեղմիր իրի վրա՝ այն վերցնելու համար։"
+  
+# =========================================
+# Սպաուների ուժեղացման կարգավորումներ
+# =========================================
+# Տեղապահներ՝ %range% %delay% %xp% %duration% (%index% տեղեկատվության վերնագրում)
+booster:
+  item:
+    name: "&#F59E0B&lՍպաուների ուժեղացում"
+    lore:
+      - "&#9CA3AFՈւժեղացնելու համար այս տոմսով աջ սեղմեք սպաուների վրա։"
+      - "&#FFE066Աշխատանքի հեռավորություն՝ &#F9FAFB+%range% բլոկ"
+      - "&#FFE066Ծնման ժամանակ՝ &#F9FAFB-%delay% վայրկյան"
+      - "&#FFE066Մոբերի XP՝ &#F9FAFB+%xp%%"
+      - "&#FFE066Տևողություն՝ &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Ընտրել սպաուներ"
+    entry: "&#FFE066&lՍպաուներ #%index%"
+    click: "&#F9FAFBՍեղմում՝ &#FFE066Կիրառել ուժեղացուցիչ"
+  time:
+    unlimited: "Անսահմանափակ"
+    hour: "ժ"
+    minute: "ր"
+    second: "վ"
+  info:
+    name: "&#F59E0B&lԱկտիվ ուժեղացումներ"
+    empty: "&#9CA3AFԱկտիվ ուժեղացում չկա։"
+    entry-title: "&#FFE066&lՈւժեղացում #%index%"
+
+# =========================================
+# Պլագինի հաղորդագրություններ
+# =========================================
+messages:
+  no-permission: "&#F87171Դուք չունեք հարկավոր իրավունքը այս հրամանն օգտագործելու համար:"
+  reload-success: "&#4ADE80Spawner համակարգի կարգավորումները հաջողությամբ վերաբեռնվեցին:"
+  wrong-subcommand: "&#FFE066Օգտագործում՝ /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Օգտագործում՝ /spsystem pickaxegive <խաղացող> <1-1000>"
+  usage-givespawner: "&#FFE066Օգտագործում՝ /spsystem givespawner <խաղացող> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Օգտագործում՝ /spsystem givebooster <խաղացող> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: սպաուների ակտիվացման շառավղին ավելացվող բլոկներ"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: սպաունի ուշացումից հանվող վայրկյաններ (0 = ոչինչ)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: սպաուներից լրացուցիչ XP-ի տոկոս (0 = ոչինչ)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: բուստի տևողությունը րոպեներով կամ unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: քանի տոմս տալ (ըստ ցանկության)"
+    - "&#FFE066Օրինակ: &#F9FAFB/spsystem givebooster խաղացող 10 5 50 30 &#9CA3AF(+10 բլոկ, -5 վրկ ուշացում, +50% XP, 30 րոպե)"
+  invalid-mob-type: "&#F87171Մոբի սխալ տեսակ՝ %type%"
+  invalid-item-spawner: "&#F87171Իրի սպաուների սխալ տեսակ՝ %type%"
+  booster-no-effect: "&#F87171range, delay-seconds կամ xp-percent արժեքներից առնվազն մեկը պետք է մեծ լինի 0-ից:"
+  booster-disabled: "&#F87171Սպաուների բուստերի համակարգը անջատված է: Սահմանեք 'spawner-booster.enabled: true' config.yml-ում և կատարեք /spsystem reload:"
+  command-disabled: "&#F87171'pickaxegive' հրամանը հասանելի է միայն 'ընդլայնված' ռեժիմում:"
+  player-not-found: "&#F87171Խաղացողը գտնված չէ՝ %player%"
+  not-a-number: "&#F87171Օգտագործումների քանակը պետք է լինի թիվ:"
+  max-uses-limit: "&#F87171Առավելագույն օգտագործումների քանակը 1000-ն է:"
+  pickaxe-given-sender: "&#4ADE80%player%-ը ստացավ Spawner Բալթի՝ %uses% օգտագործումներով:"
+  pickaxe-given-recipient: "&#38BDF8Դուք ստացաք հատուկ Spawner Բալթի:"
+  spawner-collected: "&#4ADE80Spawner-ը հաջողությամբ ավելացվեց ձեր պարկում:"
+  spawner-break-lost: "&#F87171Սպաուները կոտրելիս անհետացավ։ (Վերականգնման հնարավորություն՝ %chance%%)"
+  spawner-break-no-chance: "&#F87171Սպաուները անհետացավ։ Դուք սպաուներ վերականգնելու հնարավորություն չունեք։"
+  booster-given-sender: "&#4ADE80%player%-ին տրվեց x%amount% սպաուների ուժեղացման տոմս։"
+  booster-given-recipient: "&#4ADE80Դուք ստացաք x%amount% սպաուների ուժեղացման տոմս։"
+  booster-applied: "&#4ADE80Սպաուները ուժեղացվեց։ Հեռավորություն +%range%, ծնման ժամանակ -%delay% վրկ, XP +%xp%%, տևողություն՝ %duration%։"
+  booster-already-active: "&#F87171Այս սպաուները արդեն ունի ակտիվ ուժեղացում (մնացել է %duration%)։"
+  booster-stack-limit: "&#F87171Այս սպաուները արդեն ունի ուժեղացումների առավելագույն քանակը (%max%)։"
+  booster-delay-too-high: "&#F87171Ծնման ուշացումը կարելի է նվազեցնել առավելագույնը %max% վայրկյանով (նվազագույն ուշացում՝ %min% վրկ)։"
+  booster-delay-not-reducible: "&#F87171Ծնման ուշացումը հնարավոր չէ նվազեցնել, քանի որ այն արդեն նվազագույնն է (%min% վրկ)։"
+  booster-delay-maxed: "&#FFE066Ծնման ուշացումն արդեն ամենացածր մակարդակում է, ուստի ուշացման մասը չկիրառվեց։ Մյուս էֆեկտները կիրառվեցին։"
+  booster-delay-partial: "&#FFE066Ծնման ուշացումը հասավ ամենացածր մակարդակին, ուստի կիրառվեց միայն -%delay% վրկ։ Մյուս էֆեկտները կիրառվեցին։"
+  booster-delay-maxed-no-effect: "&#F87171Այս սպաուների ծնման ուշացումն արդեն ամենացածր մակարդակում է։ Տոմսը չօգտագործվեց։"
+  stack-merged: "&#4ADE80Միավորվեց %amount% սպաուներ։ Կույտ՝ %stack%/%max%։"
+  stack-full: "&#F87171Սպաուների այս կույտը լիքն է։ (առավելագույնը %max%)"
+  stack-type-mismatch: "&#F87171Կարելի է միավորել միայն նույն տեսակի սպաուներ։"
+  stack-collected: "&#4ADE80Վերցվեց %amount% սպաուներ։ Կույտում մնաց %left%։"
+  pickaxe-broken: "&#4ADE80Ձեր Spawner Բալթին կոտրվեց:"
+  natural-spawner-break-denied: "&#F87171Բնական spawner-ները պաշտպանված են և չեն կարող կոտրվել:"
+  natural-spawner-no-permission: "&#F87171Դուք իրավունք չունեք կոտրելու բնական սպաուներները։"
+  sp-pickaxe-only: "&#F87171Այս հատուկ բալթին կարող է կոտրել միայն spawner-ներ:"
+  inventory-full: "&#4ADE80Իրը գցվել է գետնին, քանի որ քո ինվենտարը լիքն է:"
+  classic-silk-required: "&#F87171Spawner-ները կարող են կոտրվել միայն Մետաքսե Բալթիով:"
+  advanced-pickaxe-required: "&#F87171Spawner-ները կարող են կոտրվել միայն հատուկ Spawner Բալթիով:"
+  empty-spawner-break-denied: "&#F87171Դուք չեք կարող կոտրել դատարկ spawner:"
+  spawner-given-sender: "&#4ADE80%player%-ը ստացավ %type% spawner:"
+  spawner-given-recipient: "&#38BDF8Դուք ստացաք %type% spawner:"
+  chunk-limit-exceeded: "&#F87171Դուք չեք կարող ավելի շատ սպավներ տեղադրել այս չանկում!"
+  egg-chunk-limit-exceeded: "&#F87171Այս չանկում դուք կարող եք սպավնել առավելագույնը %limit% %type% տիպի մոբեր!"
+  stack-egg-denied: "&#F87171Դուք չեք կարող փոխել դարսված սպաուների տեսակը սպաուն ձվով։"
+  stack-natural-denied: "&#F87171Բնական սպաուներները չեն կարող միավորվել։ Կոտրեք և նորից դրեք։"
+  booster-slot-invalid: "&#F87171Այդ սպաուներն այլևս դարսի մեջ չէ։ Տոմսը վերադարձվեց։"
+  reload-failed: "&#F87171Վերաբեռնումը ձախողվեց։ Մանրամասների համար տեսեք վահանակը։"
+  
+# =========================================
+# Կենտությունների Տեսակներ
+# =========================================
+entity-types:
+  ALLAY: Ալլեյ
+  ARMADILLO: Արմադիլո
+  ARMOR_STAND: Զրահի կանգուն
+  AXOLOTL: Աքսոլոտլ
+  BAT: Չղջիկ
+  BEE: Մեղու
+  BLAZE: Բլեյզ
+  BOAT: Նավակ
+  BOGGED: Ճահճային
+  BREEZE: Մեղմ քամի
+  CAMEL: Միրդ
+  CAMEL_HUSK: Ուղտ Հասկ
+  CAT: Կատու
+  CAVE_SPIDER: Քարանձավի սարդ
+  CHICKEN: Հավ
+  COD: Ծածան
+  COPPER_GOLEM: Պղնձե գոլեմ
+  COW: Կով
+  CREAKING: Ճռռացող
+  CREEPER: Կրիփեր
+  DOLPHIN: Դելֆին
+  DONKEY: Էշ
+  DROWNED: Խորտակված
+  ELDER_GUARDIAN: Ավագ պահապան
+  EMPTY: Դատարկ
+  ENDERMAN: Էնդերմեն
+  ENDERMITE: Էնդերմայթ
+  ENDER_DRAGON: Էնդեր վիշապ
+  EVOKER: Կանչող
+  EXPERIENCE_BOTTLE: Փորձի շիշ
+  EXPERIENCE_ORB: Փորձի գունդ
+  FOX: Աղվես
+  FROG: Գորտ
+  GHAST: Գաստ
+  GIANT: Հսկա
+  GLOW_SQUID: Պայծառ կաղամար
+  GOAT: Այծ
+  GUARDIAN: Պահապան
+  HAPPY_GHAST: Երջանիկ Գաստ
+  HOGLIN: Հոգլին
+  HORSE: Ձի
+  HUSK: Չորացած
+  ILLUSIONER: Իլյուզիոնիստ
+  IRON_GOLEM: Երկաթե գոլեմ
+  LLAMA: Լամա
+  MAGMA_CUBE: Մագմայի խորանարդ
+  MINECART: Հանքաքարի սայլ
+  MINECART_CHEST: Սայլ պահարանով
+  MINECART_COMMAND: Սայլ հրամանի բլոկով
+  MINECART_FURNACE: Սայլ վառարանով
+  MINECART_HOPPER: Սայլ ձագարով
+  MINECART_SPAWNER: Սայլ սպավներով
+  MINECART_TNT: Սայլ TNT-ով
+  MOOSHROOM: Սնկային կով
+  MULE: Ջորի
+  MUSHROOM_COW: Սնկային կով
+  NAUTILUS: Նաուտիլուս
+  OCELOT: Օցելոտ
+  PANDA: Պանդա
+  PARCHED: Չորացած
+  PARROT: Թութակ
+  PHANTOM: Ֆանտոմ
+  PIG: Խոզ
+  PIGLIN: Պիգլին
+  PIGLIN_BRUTE: Պիգլին բրուտ
+  PILLAGER: Կողոպտիչ
+  POLAR_BEAR: Սպիտակ արջ
+  PUFFERFISH: Փքացող ձուկ
+  RABBIT: Ճագար
+  RAVAGER: Ավերիչ
+  SALMON: Սաղմոն
+  SHEEP: Գառ
+  SHULKER: Շալկեր
+  SILVERFISH: Արծաթե ձուկ
+  SKELETON: Կմախք
+  SKELETON_HORSE: Կմախք ձի
+  SLIME: Սլայմ
+  SNIFFER: Հոտառություն
+  SNOWMAN: Ձնեմարդ
+  SNOW_GOLEM: Ձնեմարդ
+  SPIDER: Սարդ
+  SQUID: Կաղամար
+  STRAY: Թափառական
+  STRIDER: Ստրայդեր
+  SULFUR_CUBE: Ծծմբի խորանարդ
+  TADPOLE: Ճպուռ
+  TRADER_LLAMA: Առևտրականի լամա
+  TROPICAL_FISH: Արեւադարձային ձուկ
+  TURTLE: Կրիա
+  VEX: Վեքս
+  VILLAGER: Գյուղացի
+  VINDICATOR: Պաշտպան
+  WANDERING_TRADER: Թափառող առևտրական
+  WARDEN: Խնամակալ
+  WITCH: Վհուկ
+  WITHER: Վիդեր
+  WITHER_SKELETON: Վիդեր կմախք
+  WOLF: Գայլ
+  ZOGLIN: Զոգլին
+  ZOMBIE: Զոմբի
+  ZOMBIE_HORSE: Զոմբի ձի
+  ZOMBIE_NAUTILUS: Զոմբի նաուտիլուս
+  ZOMBIE_VILLAGER: Զոմբի գյուղացի
+  ZOMBIFIED_PIGLIN: Զոմբիացված պիգլին
+
+# Իրերի սպաուների անունները (տես spawner_items.yml)։ Ավելացրեք մեկ տող ամեն իրի համար, որ ավելացնում եք այնտեղ՝ MATERIAL: Ցուցադրվող անուն
+item-types:
+  NETHERITE_INGOT: Նեթերիտե ձուլակտոր
+  DIAMOND: Ադամանդ
+  COAL: Ածուխ
+  AMETHYST_SHARD: Ամեթիստի բեկոր
+  EMERALD: Զմրուխտ
+  NETHER_STAR: Նեթերի աստղ
+  TOTEM_OF_UNDYING: Անմահության տոտեմ

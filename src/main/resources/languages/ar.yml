@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System العربية (Arabic)
+# ===============================
+
+# بادئة لجميع رسائل الإضافة
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# إعدادات فأس السبونر
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lفأس السبونر"
+  lore:
+    - "&#9CA3AFاستخدم هذا الفأس لكسر السبونر."
+    - "&#FFE066"
+    - "&#4ADE80الاستخدامات المتبقية: &#F87171%uses%"
+
+# =========================================
+# علامات الوضع (متقدم أو كلاسيكي)
+# =========================================
+mode-tags:
+  advanced: "فأس السبونر"
+  classic: "فأس لمسة حرير"
+
+# =========================================
+# إعدادات عنصر السبونر
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% سبونر"
+  lore:
+    - "&#9CA3AFضع هذا السبونر لتوليد الوحوش."
+    - "&#9CA3AFيمكن كسره فقط بـ: &#FFE066%mode%"
+    - "&#9CA3AFنوع الكائن: &#4ADE80%type%"
+
+# =========================================
+# إعدادات الهولوجرام للسباونر
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% سبونر"
+  - "&#9CA3AFيمكن كسره باستخدام %mode%"
+  - "&#9CA3AFالقرفصاء وانقر بزر الماوس الأيمن لفتح القائمة"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# إعدادات الهولوجرام للكائنات
+# =========================================
+mob-remove-warning:
+  - "&#F87171سيتم إزالة هذا الكائن"
+  - "&#FFE066خلال %time% ثانية إذا لم يغادر المنطقة."
+  
+# =========================================
+# إعدادات القائمة (واجهة رسومية)
+# =========================================
+menu:
+  title: "&#6B7280لوحة تحكم سباونر"
+  status:
+    active: "&#4ADE80نشط ✔"
+    inactive: "&#F87171غير نشط ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lقتل تلقائي"
+      lore:
+        - "&#9CA3AFيقتل تلقائيًا المخلوقات التي تخرج من السباونر."
+        - "&#9CA3AFيقوم أيضاً بتفعيل المخزن وجامع الخبرة."
+        - "&#9CA3AFالحالة: %status%"
+        - ""
+        - "&#F9FAFBنقر يسار: &#FFE066تبديل الوضع"
+      lore-auto:
+        - "&#9CA3AFيقتل تلقائيًا المخلوقات التي تخرج من السباونر."
+        - "&#9CA3AFيكون المخزن وجامع الخبرة مفعّلين دائماً."
+        - "&#9CA3AFالحالة: %status%"
+      lore-no-perm:
+        - "&#9CA3AFيقتل تلقائيًا المخلوقات التي تخرج من السباونر."
+        - "&#9CA3AFالحالة: %status%"
+        - ""
+        - "&#F87171&lلا يمكنك استخدام هذه الميزة"
+
+    storage:
+      name: "&#38BDF8&lالمخزن"
+      lore:
+        - "&#9CA3AFالعناصر التي يجمعها القاتل التلقائي تُحفظ هنا."
+        - "&#9CA3AFالخانات المستخدمة: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBنقرة: &#FFE066فتح المخزن"
+
+    xp-vacuum:
+      name: "&#4ADE80&lجمع نقاط الخبرة"
+      click: "&#F9FAFBنقرة: &#38BDF8سحب الخبرة"
+      lore:
+        - "&#9CA3AFيخزن نقاط الخبرة الساقطة من المخلوقات المقتولة."
+        - ""
+        - "&#9CA3AFالحالة: %status%"
+        - "&#9CA3AFالمخزن: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBنقر يسار: &#FFE066تبديل الوضع"
+        - "&#F9FAFBنقر يمين: &#38BDF8سحب نقاط الخبرة"
+      lore-no-perm:
+        - "&#9CA3AFيخزن نقاط الخبرة الساقطة من المخلوقات المقتولة."
+        - ""
+        - "&#9CA3AFالحالة: %status%"
+        - "&#9CA3AFالمخزن: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lلا يمكنك استخدام هذه الميزة"
+
+  messages:
+    no-permission: "&#F87171ليس لديك صلاحية تغيير هذه الميزة!"
+    xp-empty: "&#F87171خزان نقاط الخبرة فارغ!"
+    xp-collected: "&#4ADE80تم جمع: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171يجب تشغيل القتل التلقائي أولاً!"
+    feature-no-perm: "&#F87171ليس لديك صلاحية تغيير هذه الميزة!"
+    perms-changed: "&#F87171تم تعطيل ميزات السباونر بسبب تغير صلاحياتك."
+    storage-inventory-full: "&#F87171حقيبتك ممتلئة!"
+    storage-taken: "&#4ADE80تم أخذ %amount% عنصر من المخزن."
+    in-use: "&#F87171شخص آخر يستخدم قائمة هذا المولّد حالياً."
+  storage:
+    title: "&#6B7280مخزن المولّد"
+    previous:
+      name: "&#F9FAFB&lالصفحة السابقة"
+      lore:
+        - "&#9CA3AFانتقل إلى الصفحة &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lالصفحة التالية"
+      lore:
+        - "&#9CA3AFانتقل إلى الصفحة &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lأخذ الصفحة"
+      lore:
+        - "&#9CA3AFيأخذ جميع العناصر في هذه الصفحة."
+        - "&#9CA3AFلا يمكن إرجاع العناصر."
+    back:
+      name: "&#F87171&lرجوع"
+      lore:
+        - "&#9CA3AFالعودة إلى قائمة المولّد."
+    info:
+      name: "&#38BDF8&lمعلومات المخزن"
+      lore:
+        - "&#9CA3AFالصفحة: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFالخانات المستخدمة: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFانقر على عنصر لأخذه."
+  
+# =========================================
+# إعدادات تعزيز السبونر
+# =========================================
+# المتغيرات: %range% %delay% %xp% %duration% (%index% في عنوان المعلومات)
+booster:
+  item:
+    name: "&#F59E0B&lتعزيز السبونر"
+    lore:
+      - "&#9CA3AFانقر بالزر الأيمن على سبونر بهذه التذكرة لتعزيزه."
+      - "&#FFE066مدى العمل: &#F9FAFB+%range% كتل"
+      - "&#FFE066وقت الظهور: &#F9FAFB-%delay% ثانية"
+      - "&#FFE066خبرة الوحوش: &#F9FAFB+%xp%%"
+      - "&#FFE066المدة: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280اختر المولّد"
+    entry: "&#FFE066&lالمولّد #%index%"
+    click: "&#F9FAFBنقرة: &#FFE066تطبيق المعزّز"
+  time:
+    unlimited: "غير محدودة"
+    hour: "س"
+    minute: "د"
+    second: "ث"
+  info:
+    name: "&#F59E0B&lالتعزيزات النشطة"
+    empty: "&#9CA3AFلا يوجد تعزيز نشط."
+    entry-title: "&#FFE066&lالتعزيز #%index%"
+
+# =========================================
+# رسائل الإضافة
+# =========================================
+messages:
+  no-permission: "&#F87171ليس لديك الإذن لاستخدام هذا الأمر."
+  reload-success: "&#4ADE80تم إعادة تحميل إعدادات نظام السبونر بنجاح."
+  wrong-subcommand: "&#FFE066الاستخدام: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066الاستخدام: /spsystem pickaxegive <اللاعب> <1-1000>"
+  usage-givespawner: "&#FFE066الاستخدام: /spsystem givespawner <اللاعب> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066الاستخدام: /spsystem givebooster <اللاعب> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: كتل إضافية تُضاف إلى نطاق تفعيل السبونر"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: ثوانٍ تُخصم من تأخير التوليد (0 = لا شيء)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: نسبة مئوية إضافية من خبرة السبونر (0 = لا شيء)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: مدة التعزيز بالدقائق، أو unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: عدد التذاكر المراد إعطاؤها (اختياري)"
+    - "&#FFE066مثال: &#F9FAFB/spsystem givebooster اللاعب 10 5 50 30 &#9CA3AF(+10 كتل، -5 ثوانٍ تأخير، +50% خبرة، 30 دقيقة)"
+  invalid-mob-type: "&#F87171نوع مخلوق غير صالح: %type%"
+  invalid-item-spawner: "&#F87171سبونر عناصر غير صالح: %type%"
+  booster-no-effect: "&#F87171يجب أن تكون إحدى القيم range أو delay-seconds أو xp-percent أكبر من 0."
+  booster-disabled: "&#F87171نظام معززات السبونر معطّل. اضبط 'spawner-booster.enabled: true' في config.yml ثم نفّذ /spsystem reload."
+  command-disabled: "&#F87171أمر 'pickaxegive' متاح فقط في وضع 'متقدم'."
+  player-not-found: "&#F87171اللاعب غير موجود: %player%"
+  not-a-number: "&#F87171عدد الاستخدامات يجب أن يكون رقماً."
+  max-uses-limit: "&#F87171الحد الأقصى للاستخدام هو 1000."
+  pickaxe-given-sender: "&#4ADE80تم إعطاء %player% فأس سبونر مع %uses% استخدام."
+  pickaxe-given-recipient: "&#38BDF8لقد استلمت فأس سبونر خاص!"
+  spawner-collected: "&#4ADE80تم إضافة السبونر إلى مخزونك بنجاح!"
+  spawner-break-lost: "&#F87171اختفى السبونر أثناء كسره! (فرصة الاسترداد: %chance%%)"
+  spawner-break-no-chance: "&#F87171اختفى السبونر! ليس لديك أي فرصة لاسترداد السبونرات."
+  booster-given-sender: "&#4ADE80أعطيت %player% عدد x%amount% من تذاكر تعزيز السبونر."
+  booster-given-recipient: "&#4ADE80تلقيت عدد x%amount% من تذاكر تعزيز السبونر!"
+  booster-applied: "&#4ADE80تم تعزيز السبونر! المدى +%range%، وقت الظهور -%delay% ث، الخبرة +%xp%%، المدة: %duration%."
+  booster-already-active: "&#F87171هذا السبونر لديه تعزيز نشط بالفعل (متبقي %duration%)."
+  booster-stack-limit: "&#F87171هذا السبونر لديه بالفعل الحد الأقصى من التعزيزات (%max%)."
+  booster-delay-too-high: "&#F87171يمكن تقليل مدة التوليد بحد أقصى %max% ثانية (الحد الأدنى لمدة التوليد: %min% ث)."
+  booster-delay-not-reducible: "&#F87171لا يمكن تقليل مدة التوليد لأنها في الحد الأدنى بالفعل (%min% ث)."
+  booster-delay-maxed: "&#FFE066مدة التوليد في أدنى مستوى بالفعل، لذلك لم يتم تطبيق جزء المدة. تم تطبيق التأثيرات الأخرى."
+  booster-delay-partial: "&#FFE066وصلت مدة التوليد إلى أدنى مستوى، لذلك تم تطبيق -%delay% ث فقط. تم تطبيق التأثيرات الأخرى."
+  booster-delay-maxed-no-effect: "&#F87171مدة التوليد لهذا المولّد في أدنى مستوى بالفعل. لم يتم استخدام التذكرة."
+  stack-merged: "&#4ADE80تم دمج %amount% مولّد. المجموعة: %stack%/%max%."
+  stack-full: "&#F87171مجموعة المولّدات هذه ممتلئة! (الحد الأقصى %max%)"
+  stack-type-mismatch: "&#F87171يمكنك دمج المولّدات من نفس النوع فقط!"
+  stack-collected: "&#4ADE80تم استلام %amount% مولّد. تبقّى %left% في المجموعة."
+  pickaxe-broken: "&#4ADE80لقد انكسر فأس السبونر الخاص بك!"
+  natural-spawner-break-denied: "&#F87171السبونرات الطبيعية محمية ولا يمكن كسرها."
+  natural-spawner-no-permission: "&#F87171ليس لديك صلاحية لكسر السبونرات الطبيعية."
+  sp-pickaxe-only: "&#F87171هذا الفأس الخاص يمكنه كسر السبونر فقط!"
+  inventory-full: "&#4ADE80تم إسقاط العنصر على الأرض لأن مخزونك ممتلئ!"
+  classic-silk-required: "&#F87171يمكن كسر السبونر فقط بفأس لمسة حرير!"
+  advanced-pickaxe-required: "&#F87171يمكن كسر السبونر فقط بفأس سبونر خاص!"
+  empty-spawner-break-denied: "&#F87171لا يمكنك كسر سبونر فارغ!"
+  spawner-given-sender: "&#4ADE80تم إعطاء %player% سبونر %type%."
+  spawner-given-recipient: "&#38BDF8لقد استلمت سبونر %type%!"
+  chunk-limit-exceeded: "&#F87171لا يمكنك وضع المزيد من السباونر في هذه القطعة!"
+  egg-chunk-limit-exceeded: "&#F87171في هذه القطعة، يمكنك فقط إنشاء %limit% من الكائنات من نوع %type%!"
+  stack-egg-denied: "&#F87171لا يمكنك تغيير نوع المولّد المكدّس باستخدام بيضة التفريخ!"
+  stack-natural-denied: "&#F87171لا يمكن دمج المولّدات الطبيعية. اكسره وضعه من جديد لاستخدامه."
+  booster-slot-invalid: "&#F87171هذا المولّد لم يعد ضمن المكدّس. تمت إعادة التذكرة."
+  reload-failed: "&#F87171فشلت إعادة التحميل. راجع وحدة التحكم للتفاصيل."
+  
+# =========================================
+# أنواع الكيانات
+# =========================================
+entity-types:
+  ALLAY: أللي
+  ARMADILLO: أرماديلو
+  ARMOR_STAND: حامل الدروع
+  AXOLOTL: أكسولوتل
+  BAT: خفاش
+  BEE: نحلة
+  BLAZE: بليز
+  BOAT: قارب
+  BOGGED: المستنقعي
+  BREEZE: نسيم
+  CAMEL: جمل
+  CAMEL_HUSK: جمل هاسك
+  CAT: قط
+  CAVE_SPIDER: عنكبوت الكهوف
+  CHICKEN: دجاجة
+  COD: سمك القد
+  COPPER_GOLEM: غولم النحاس
+  COW: بقرة
+  CREEPER: كريبر
+  CREAKING: صار
+  DOLPHIN: دلفين
+  DONKEY: حمار
+  DROWNED: غارق
+  ELDER_GUARDIAN: الحارس الكبير
+  EMPTY: فارغ
+  ENDERMAN: إندرمان
+  ENDERMITE: إندرميت
+  ENDER_DRAGON: تنين الإندر
+  EVOKER: المستحضر
+  EXPERIENCE_BOTTLE: زجاجة الخبرة
+  EXPERIENCE_ORB: كرة الخبرة
+  FOX: ثعلب
+  FROG: ضفدع
+  GHAST: غاست
+  GIANT: عملاق
+  GLOW_SQUID: حبار متوهج
+  GOAT: ماعز
+  GUARDIAN: حارس
+  HAPPY_GHAST: غاست سعيد
+  HOGLIN: هوغلين
+  HORSE: حصان
+  HUSK: هاسك
+  ILLUSIONER: الوهمي
+  IRON_GOLEM: جولم حديدي
+  LLAMA: لاما
+  MAGMA_CUBE: مكعب ماجما
+  MINECART: عربة منجم
+  MINECART_CHEST: عربة منجم بصندوق
+  MINECART_COMMAND: عربة منجم بكتلة أوامر
+  MINECART_FURNACE: عربة منجم بفرن
+  MINECART_HOPPER: عربة منجم بقمع
+  MINECART_SPAWNER: عربة منجم بمُنتِج
+  MINECART_TNT: عربة منجم بمادة تي إن تي
+  MOOSHROOM: بقرة فطرية
+  MULE: بغل
+  MUSHROOM_COW: بقرة فطرية
+  NAUTILUS: نوتيلوس
+  OCELOT: أوصلوت
+  PANDA: باندا
+  PARCHED: جاف
+  PARROT: ببغاء
+  PHANTOM: فانتوم
+  PIG: خنزير
+  PIGLIN: بيغلين
+  PIGLIN_BRUTE: بيغلين وحشي
+  PILLAGER: نهّاب
+  POLAR_BEAR: دب قطبي
+  PUFFERFISH: سمكة منتفخة
+  RABBIT: أرنب
+  RAVAGER: مدمر
+  SALMON: سلمون
+  SHEEP: خروف
+  SHULKER: شولكر
+  SILVERFISH: سمكة فضية
+  SKELETON: هيكل عظمي
+  SKELETON_HORSE: حصان هيكل عظمي
+  SLIME: سلايم
+  SNIFFER: المستنشق
+  SNOWMAN: رجل ثلج
+  SNOW_GOLEM: رجل ثلج
+  SPIDER: عنكبوت
+  SQUID: حبار
+  STRAY: تائه
+  STRIDER: سترايدر
+  SULFUR_CUBE: مكعب الكبريت
+  TADPOLE: شرغوف
+  TRADER_LLAMA: لاما تاجر
+  TROPICAL_FISH: سمكة استوائية
+  TURTLE: سلحفاة
+  VEX: فيكس
+  VILLAGER: قروي
+  VINDICATOR: منتقم
+  WANDERING_TRADER: تاجر متجول
+  WARDEN: الحارس
+  WITCH: ساحرة
+  WITHER: ويذر
+  WITHER_SKELETON: هيكل ويذر العظمي
+  WOLF: ذئب
+  ZOGLIN: زوغلين
+  ZOMBIE: زومبي
+  ZOMBIE_HORSE: حصان زومبي
+  ZOMBIE_NAUTILUS: نوتيلوس زومبي
+  ZOMBIE_VILLAGER: قروي زومبي
+  ZOMBIFIED_PIGLIN: بيغلين زومبي
+
+# أسماء سبونرات العناصر (راجع spawner_items.yml). أضف سطرًا لكل عنصر تضيفه هناك: MATERIAL: الاسم المعروض
+item-types:
+  NETHERITE_INGOT: سبيكة نذرايت
+  DIAMOND: ألماس
+  COAL: فحم
+  AMETHYST_SHARD: شظية الجمشت
+  EMERALD: زمرد
+  NETHER_STAR: نجمة النذر
+  TOTEM_OF_UNDYING: طوطم الخلود

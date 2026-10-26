@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Nederlands (Dutch)
+# ===============================
+
+# Prefix voor alle plugin-berichten
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner-pickaxe instellingen
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner-pikhouweel"
+  lore:
+    - "&#9CA3AFGebruik deze pikhouweel om de spawner te breken."
+    - "&#FFE066"
+    - "&#4ADE80Resterende gebruik: &#F87171%uses%"
+
+# =========================================
+# Mod-tags (Geavanceerd of Klassiek)
+# =========================================
+mode-tags:
+  advanced: "Spawner-pikhouweel"
+  classic: "Zijde-aanraking pikhouweel"
+
+# =========================================
+# Spawner-item instellingen
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFPlaats deze spawner om monsters te spawnen."
+    - "&#9CA3AFKan alleen gebroken worden met: &#FFE066%mode%"
+    - "&#9CA3AFEntiteitstype: &#4ADE80%type%"
+
+# =========================================
+# Spawner Hologram Instellingen
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFKan worden gebroken met %mode%"
+  - "&#9CA3AFBukken en rechtsklik om het menu te openen"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob Hologram Instellingen
+# =========================================
+mob-remove-warning:
+  - "&#F87171Deze mob wordt verwijderd"
+  - "&#FFE066Binnen %time% s als hij het gebied niet verlaat."
+  
+# =========================================
+# Menu-instellingen (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner-bedieningspaneel"
+  status:
+    active: "&#4ADE80Actief ✔"
+    inactive: "&#F87171Inactief ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAutomatische Moordenaar"
+      lore:
+        - "&#9CA3AFDoodt automatisch wezens uit de spawner."
+        - "&#9CA3AFSchakelt ook de Opslag en de XP-zuiger in."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F9FAFBLinkerklik: &#FFE066Modus wijzigen"
+      lore-auto:
+        - "&#9CA3AFDoodt automatisch wezens uit de spawner."
+        - "&#9CA3AFDe Opslag en de XP-zuiger staan altijd aan."
+        - "&#9CA3AFStatus: %status%"
+      lore-no-perm:
+        - "&#9CA3AFDoodt automatisch wezens uit de spawner."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F87171&lJE KUNT DEZE FUNCTIE NIET GEBRUIKEN"
+
+    storage:
+      name: "&#38BDF8&lOpslag"
+      lore:
+        - "&#9CA3AFItems die de Auto Slayer verzamelt, worden hier bewaard."
+        - "&#9CA3AFGebruikte slots: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKlik: &#FFE066Opslag openen"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP-verzamelaar"
+      click: "&#F9FAFBKlik: &#38BDF8XP opnemen"
+      lore:
+        - "&#9CA3AFSlaat XP op van gedode wezens."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFVerzameld: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBLinkerklik: &#FFE066Modus wijzigen"
+        - "&#F9FAFBRechterklik: &#38BDF8XP opnemen"
+      lore-no-perm:
+        - "&#9CA3AFSlaat XP op van gedode wezens."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFVerzameld: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lJE KUNT DEZE FUNCTIE NIET GEBRUIKEN"
+
+  messages:
+    no-permission: "&#F87171Je hebt geen toestemming om deze functie te wijzigen!"
+    xp-empty: "&#F87171XP-tank is leeg!"
+    xp-collected: "&#4ADE80Verzameld: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Je moet eerst automatische moordenaar inschakelen!"
+    feature-no-perm: "&#F87171Je hebt geen toestemming om deze functie te wijzigen!"
+    perms-changed: "&#F87171Spawner-functies zijn uitgeschakeld vanwege wijzigingen in je machtigingen."
+    storage-inventory-full: "&#F87171Je inventaris is vol!"
+    storage-taken: "&#4ADE80%amount% item(s) uit de opslag gehaald."
+    in-use: "&#F87171Iemand anders gebruikt op dit moment het menu van deze spawner."
+  storage:
+    title: "&#6B7280Spawner-opslag"
+    previous:
+      name: "&#F9FAFB&lVorige pagina"
+      lore:
+        - "&#9CA3AFGa naar pagina &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lVolgende pagina"
+      lore:
+        - "&#9CA3AFGa naar pagina &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lPagina nemen"
+      lore:
+        - "&#9CA3AFNeemt alle items op deze pagina."
+        - "&#9CA3AFItems kunnen niet worden teruggelegd."
+    back:
+      name: "&#F87171&lTerug"
+      lore:
+        - "&#9CA3AFTerug naar het spawnermenu."
+    info:
+      name: "&#38BDF8&lOpslaginfo"
+      lore:
+        - "&#9CA3AFPagina: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFGebruikte slots: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFKlik op een item om het te nemen."
+  
+# =========================================
+# Spawner-booster instellingen
+# =========================================
+# Plaatshouders: %range% %delay% %xp% %duration% (%index% in de infotitel)
+booster:
+  item:
+    name: "&#F59E0B&lSpawner Booster"
+    lore:
+      - "&#9CA3AFKlik met rechts op een spawner met dit ticket om hem te boosten."
+      - "&#FFE066Bereik: &#F9FAFB+%range% blokken"
+      - "&#FFE066Spawntijd: &#F9FAFB-%delay% seconden"
+      - "&#FFE066Mob-XP: &#F9FAFB+%xp%%"
+      - "&#FFE066Duur: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Kies spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKlik: &#FFE066Booster toepassen"
+  time:
+    unlimited: "Onbeperkt"
+    hour: "u"
+    minute: "min"
+    second: "s"
+  info:
+    name: "&#F59E0B&lActieve boosters"
+    empty: "&#9CA3AFGeen actieve booster."
+    entry-title: "&#FFE066&lBooster #%index%"
+
+# =========================================
+# Plugin-berichten
+# =========================================
+messages:
+  no-permission: "&#F87171Je hebt geen toestemming om dit commando te gebruiken."
+  reload-success: "&#4ADE80Spawner-systeemconfiguratie succesvol herladen."
+  wrong-subcommand: "&#FFE066Gebruik: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Gebruik: /spsystem pickaxegive <speler> <1-1000>"
+  usage-givespawner: "&#FFE066Gebruik: /spsystem givespawner <speler> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Gebruik: /spsystem givebooster <speler> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: extra blokken bovenop het activeringsbereik van de spawner"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: seconden die van de spawnvertraging afgaan (0 = geen)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: extra procent XP van de spawner (0 = geen)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: duur van de boost in minuten, of unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: aantal tickets om te geven (optioneel)"
+    - "&#FFE066Voorbeeld: &#F9FAFB/spsystem givebooster speler 10 5 50 30 &#9CA3AF(+10 blokken, -5 s vertraging, +50% XP, 30 minuten)"
+  invalid-mob-type: "&#F87171Ongeldig mobtype: %type%"
+  invalid-item-spawner: "&#F87171Ongeldige item-spawner: %type%"
+  booster-no-effect: "&#F87171Minstens één van range, delay-seconds of xp-percent moet groter zijn dan 0."
+  booster-disabled: "&#F87171Het spawner-boostersysteem staat uit. Zet 'spawner-booster.enabled: true' in config.yml en voer /spsystem reload uit."
+  command-disabled: "&#F87171De 'pickaxegive'-opdracht is alleen beschikbaar in de 'geavanceerde' modus."
+  player-not-found: "&#F87171Speler niet gevonden: %player%"
+  not-a-number: "&#F87171Aantal gebruiken moet een nummer zijn."
+  max-uses-limit: "&#F87171Maximaal aantal gebruiken is 1000."
+  pickaxe-given-sender: "&#4ADE80%player% heeft een spawner-pikhouweel met %uses% gebruik gekregen."
+  pickaxe-given-recipient: "&#38BDF8Je hebt een speciale spawner-pikhouweel ontvangen!"
+  spawner-collected: "&#4ADE80Spawner succesvol aan je inventaris toegevoegd!"
+  spawner-break-lost: "&#F87171De spawner verdween tijdens het breken! (Kans op behoud: %chance%%)"
+  spawner-break-no-chance: "&#F87171De spawner is verdwenen! Je hebt geen kans om spawners te behouden."
+  booster-given-sender: "&#4ADE80Je hebt %player% x%amount% spawner-boosterticket(s) gegeven."
+  booster-given-recipient: "&#4ADE80Je hebt x%amount% spawner-boosterticket(s) gekregen!"
+  booster-applied: "&#4ADE80Spawner geboost! Bereik +%range%, spawntijd -%delay% s, XP +%xp%%, duur: %duration%."
+  booster-already-active: "&#F87171Deze spawner heeft al een actieve booster (nog %duration%)."
+  booster-stack-limit: "&#F87171Deze spawner heeft al het maximale aantal boosters (%max%)."
+  booster-delay-too-high: "&#F87171De spawnvertraging kan met maximaal %max% seconden worden verlaagd (minimale spawnvertraging: %min%s)."
+  booster-delay-not-reducible: "&#F87171De spawnvertraging kan niet worden verlaagd omdat deze al op het minimum staat (%min%s)."
+  booster-delay-maxed: "&#FFE066De spawnvertraging staat al op het laagste niveau, dus het vertragingsdeel is niet toegepast. De andere effecten zijn toegepast."
+  booster-delay-partial: "&#FFE066De spawnvertraging heeft het laagste niveau bereikt, dus alleen -%delay%s is toegepast. De andere effecten zijn toegepast."
+  booster-delay-maxed-no-effect: "&#F87171De spawnvertraging van deze spawner staat al op het laagste niveau. Het ticket is niet gebruikt."
+  stack-merged: "&#4ADE80%amount% spawner(s) samengevoegd. Stapel: %stack%/%max%."
+  stack-full: "&#F87171Deze spawnerstapel is vol! (max. %max%)"
+  stack-type-mismatch: "&#F87171Je kunt alleen spawners van hetzelfde type samenvoegen!"
+  stack-collected: "&#4ADE80%amount% spawner(s) opgehaald. %left% over in de stapel."
+  pickaxe-broken: "&#4ADE80Je spawner-pikhouweel is gebroken!"
+  natural-spawner-break-denied: "&#F87171Natuurlijke spawners zijn beschermd en kunnen niet worden gebroken."
+  natural-spawner-no-permission: "&#F87171Je hebt geen toestemming om natuurlijke spawners te breken."
+  sp-pickaxe-only: "&#F87171Deze speciale pikhouweel kan alleen spawners breken!"
+  inventory-full: "&#4ADE80Het item is op de grond gevallen omdat je inventaris vol is!"
+  classic-silk-required: "&#F87171Spawners kunnen alleen worden gebroken met een Zijde-aanraking pikhouweel!"
+  advanced-pickaxe-required: "&#F87171Spawners kunnen alleen worden gebroken met een speciale Spawner-pikhouweel!"
+  empty-spawner-break-denied: "&#F87171Je kunt een lege spawner niet breken!"
+  spawner-given-sender: "&#4ADE80%player% heeft een %type% spawner gekregen."
+  spawner-given-recipient: "&#38BDF8Je hebt een %type% spawner ontvangen!"
+  chunk-limit-exceeded: "&#F87171Je kunt niet meer spawners in deze chunk plaatsen!"
+  egg-chunk-limit-exceeded: "&#F87171In dit chunk kun je maximaal %limit% mobs van het type %type% spawnen!"
+  stack-egg-denied: "&#F87171Je kunt het type van een gestapelde spawner niet met een spawn-ei veranderen!"
+  stack-natural-denied: "&#F87171Natuurlijke spawners kunnen niet worden samengevoegd. Breek hem en plaats hem opnieuw."
+  booster-slot-invalid: "&#F87171Die spawner zit niet meer in de stapel. Het ticket is teruggegeven."
+  reload-failed: "&#F87171Herladen mislukt. Bekijk de console voor details."
+  
+# =========================================
+# Entity Typen
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Gordeldier
+  ARMOR_STAND: Wapenrustingstandaard
+  AXOLOTL: Axolotl
+  BAT: Vleermuis
+  BEE: Bij
+  BLAZE: Blaze
+  BOAT: Boot
+  BOGGED: Moerasachtige
+  BREEZE: Bries
+  CAMEL: Kameel
+  CAMEL_HUSK: Kamelenhusk
+  CAT: Kat
+  CAVE_SPIDER: Grottenspin
+  CHICKEN: Kip
+  COD: Kabeljauw
+  COPPER_GOLEM: Koperen golem
+  COW: Koe
+  CREEPER: Creeper
+  CREAKING: Krakerig
+  DOLPHIN: Dolfijn
+  DONKEY: Ezel
+  DROWNED: Verdronkene
+  ELDER_GUARDIAN: Oude Bewaker
+  EMPTY: Leeg
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdraak
+  EVOKER: Oproeper
+  EXPERIENCE_BOTTLE: Ervaringsfles
+  EXPERIENCE_ORB: Ervaringsbol
+  FOX: Vos
+  FROG: Kikker
+  GHAST: Ghast
+  GIANT: Reus
+  GLOW_SQUID: Glowinktvis
+  GOAT: Geit
+  GUARDIAN: Bewaker
+  HAPPY_GHAST: Blije ghast
+  HOGLIN: Hoglin
+  HORSE: Paard
+  HUSK: Husk
+  ILLUSIONER: Illusionist
+  IRON_GOLEM: IJzergolem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmakubus
+  MINECART: Mijnkar
+  MINECART_CHEST: Mijnkar met kist
+  MINECART_COMMAND: Mijnkar met opdrachtblok
+  MINECART_FURNACE: Mijnkar met oven
+  MINECART_HOPPER: Mijnkar met trechter
+  MINECART_SPAWNER: Mijnkar met spawner
+  MINECART_TNT: Mijnkar met TNT
+  MOOSHROOM: Paddenstoelkoe
+  MULE: Muildier
+  MUSHROOM_COW: Paddenstoelkoe
+  NAUTILUS: Nautilus
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Uitgedroogde
+  PARROT: Papegaai
+  PHANTOM: Fantoom
+  PIG: Varken
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Bruut
+  PILLAGER: Plunderaar
+  POLAR_BEAR: IJsbeer
+  PUFFERFISH: Kogelvis
+  RABBIT: Konijn
+  RAVAGER: Verwoester
+  SALMON: Zalm
+  SHEEP: Schaap
+  SHULKER: Shulker
+  SILVERFISH: Zilvervisje
+  SKELETON: Skelet
+  SKELETON_HORSE: Skeletpaard
+  SLIME: Slijm
+  SNIFFER: Snuffelaar
+  SNOWMAN: Sneeuwpop
+  SNOW_GOLEM: Sneeuwpop
+  SPIDER: Spin
+  SQUID: Inktvis
+  STRAY: Zwerver
+  STRIDER: Loper
+  SULFUR_CUBE: Zwavelkubus
+  TADPOLE: Kikkervisje
+  TRADER_LLAMA: Handelaarslama
+  TROPICAL_FISH: Tropische vis
+  TURTLE: Schildpad
+  VEX: Vex
+  VILLAGER: Dorpeling
+  VINDICATOR: Verdediger
+  WANDERING_TRADER: Rondreizende handelaar
+  WARDEN: Bewaker
+  WITCH: Heks
+  WITHER: Wither
+  WITHER_SKELETON: Witherskelet
+  WOLF: Wolf
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombiepaard
+  ZOMBIE_NAUTILUS: Zombienautilus
+  ZOMBIE_VILLAGER: Zombiedorpeling
+  ZOMBIFIED_PIGLIN: Gezombificeerde Piglin
+
+# Namen van item-spawners (zie spawner_items.yml). Voeg een regel toe voor elk item dat je daar toevoegt: MATERIAL: Weergavenaam
+item-types:
+  NETHERITE_INGOT: Netherietstaaf
+  DIAMOND: Diamant
+  COAL: Steenkool
+  AMETHYST_SHARD: Amethistscherf
+  EMERALD: Smaragd
+  NETHER_STAR: Netherster
+  TOTEM_OF_UNDYING: Totem van onsterfelijkheid

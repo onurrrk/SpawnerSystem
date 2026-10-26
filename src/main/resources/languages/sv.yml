@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Svenska
+# ===============================
+
+# Prefix för alla pluginmeddelanden
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Inställningar för Spawner-pickaxe
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Hacka"
+  lore:
+    - "&#9CA3AFAnvänd denna hacka för att bryta spawner."
+    - "&#FFE066"
+    - "&#4ADE80Kvarvarande användningar: &#F87171%uses%"
+
+# =========================================
+# Modtaggar (Avancerad eller Klassisk)
+# =========================================
+mode-tags:
+  advanced: "Spawner Hacka"
+  classic: "Silkes Touch Hacka"
+
+# =========================================
+# Inställningar för Spawner-objekt
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFPlacera denna spawner för att spawn mobs."
+    - "&#9CA3AFKan endast brytas med: &#FFE066%mode%"
+    - "&#9CA3AFEntity-typ: &#4ADE80%type%"
+
+# =========================================
+# Spawner Hologram Inställningar
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFKan brytas med %mode%"
+  - "&#9CA3AFHuk dig och högerklicka för att öppna menyn"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob Hologram Inställningar
+# =========================================
+mob-remove-warning:
+  - "&#F87171Denna mob kommer att tas bort"
+  - "&#FFE066Inom %time% s om den inte lämnar området."
+  
+# =========================================
+# Menyinställningar (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner-kontrollpanel"
+  status:
+    active: "&#4ADE80Aktiv ✔"
+    inactive: "&#F87171Inaktiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAuto Slayer"
+      lore:
+        - "&#9CA3AFDödar automatiskt varelser från spawnern."
+        - "&#9CA3AFSlår även på Lagret och XP-sugaren."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F9FAFBVänsterklick: &#FFE066Växla läge"
+      lore-auto:
+        - "&#9CA3AFDödar automatiskt varelser från spawnern."
+        - "&#9CA3AFLagret och XP-sugaren är alltid påslagna."
+        - "&#9CA3AFStatus: %status%"
+      lore-no-perm:
+        - "&#9CA3AFDödar automatiskt varelser från spawnern."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F87171&lDU KAN INTE ANVÄNDA DENNA FUNKTION"
+
+    storage:
+      name: "&#38BDF8&lLager"
+      lore:
+        - "&#9CA3AFFöremål som Auto Slayer samlar in förvaras här."
+        - "&#9CA3AFAnvända platser: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKlick: &#FFE066Öppna lager"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP-samlare"
+      click: "&#F9FAFBKlick: &#38BDF8Ta ut XP"
+      lore:
+        - "&#9CA3AFLagrar XP från dödade varelser."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFInsamlat: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBVänsterklick: &#FFE066Växla läge"
+        - "&#F9FAFBHögerklick: &#38BDF8Ta ut XP"
+      lore-no-perm:
+        - "&#9CA3AFLagrar XP från dödade varelser."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFInsamlat: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lDU KAN INTE ANVÄNDA DENNA FUNKTION"
+
+  messages:
+    no-permission: "&#F87171Du har inte behörighet att ändra denna funktion!"
+    xp-empty: "&#F87171XP-tanken är tom!"
+    xp-collected: "&#4ADE80Samlade in: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Du måste först aktivera auto slayer!"
+    feature-no-perm: "&#F87171Du har inte behörighet att ändra denna funktion!"
+    perms-changed: "&#F87171Spawner-funktioner har inaktiverats på grund av ändrade behörigheter."
+    storage-inventory-full: "&#F87171Ditt förråd är fullt!"
+    storage-taken: "&#4ADE80Tog %amount% föremål från lagret."
+    in-use: "&#F87171Någon annan använder den här spawnerns meny just nu."
+  storage:
+    title: "&#6B7280Spawnerlager"
+    previous:
+      name: "&#F9FAFB&lFöregående sida"
+      lore:
+        - "&#9CA3AFGå till sida &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lNästa sida"
+      lore:
+        - "&#9CA3AFGå till sida &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lTa sidan"
+      lore:
+        - "&#9CA3AFTar alla föremål på den här sidan."
+        - "&#9CA3AFFöremål kan inte läggas tillbaka."
+    back:
+      name: "&#F87171&lTillbaka"
+      lore:
+        - "&#9CA3AFGå tillbaka till spawnermenyn."
+    info:
+      name: "&#38BDF8&lLagerinfo"
+      lore:
+        - "&#9CA3AFSida: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFAnvända platser: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFKlicka på ett föremål för att ta det."
+  
+# =========================================
+# Inställningar för spawner-booster
+# =========================================
+# Platshållare: %range% %delay% %xp% %duration% (%index% i infotiteln)
+booster:
+  item:
+    name: "&#F59E0B&lSpawner Booster"
+    lore:
+      - "&#9CA3AFHögerklicka på en spawner med detta biljett för att boosta den."
+      - "&#FFE066Räckvidd: &#F9FAFB+%range% block"
+      - "&#FFE066Spawntid: &#F9FAFB-%delay% sekunder"
+      - "&#FFE066Mob-XP: &#F9FAFB+%xp%%"
+      - "&#FFE066Varaktighet: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Välj spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKlick: &#FFE066Använd booster"
+  time:
+    unlimited: "Obegränsad"
+    hour: "h"
+    minute: "min"
+    second: "s"
+  info:
+    name: "&#F59E0B&lAktiva boosters"
+    empty: "&#9CA3AFIngen aktiv booster."
+    entry-title: "&#FFE066&lBooster #%index%"
+
+# =========================================
+# Plugin-meddelanden
+# =========================================
+messages:
+  no-permission: "&#F87171Du har inte behörighet att använda detta kommando."
+  reload-success: "&#4ADE80Spawner-systemets konfiguration laddades om framgångsrikt."
+  wrong-subcommand: "&#FFE066Användning: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Användning: /spsystem pickaxegive <spelare> <1-1000>"
+  usage-givespawner: "&#FFE066Användning: /spsystem givespawner <spelare> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Användning: /spsystem givebooster <spelare> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: extra block som läggs till spawnerns aktiveringsräckvidd"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: sekunder som dras av från spawnfördröjningen (0 = inga)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: extra procent XP från spawnern (0 = inga)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: hur länge boosten varar i minuter, eller unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: hur många biljetter som ska ges (valfritt)"
+    - "&#FFE066Exempel: &#F9FAFB/spsystem givebooster spelare 10 5 50 30 &#9CA3AF(+10 block, -5 s fördröjning, +50 % XP, 30 minuter)"
+  invalid-mob-type: "&#F87171Ogiltig mobtyp: %type%"
+  invalid-item-spawner: "&#F87171Ogiltig föremålsspawner: %type%"
+  booster-no-effect: "&#F87171Minst ett av range, delay-seconds eller xp-percent måste vara större än 0."
+  booster-disabled: "&#F87171Spawner-boostersystemet är inaktiverat. Sätt 'spawner-booster.enabled: true' i config.yml och kör /spsystem reload."
+  command-disabled: "&#F87171'pickaxegive' kommandot är endast tillgängligt i 'avancerad' läge."
+  player-not-found: "&#F87171Spelaren hittades inte: %player%"
+  not-a-number: "&#F87171Antalet användningar måste vara ett nummer."
+  max-uses-limit: "&#F87171Maximalt antal användningar är 1000."
+  pickaxe-given-sender: "&#4ADE80%player% fick Spawner Hacka med %uses% användningar."
+  pickaxe-given-recipient: "&#38BDF8Du har fått en speciell spawner hacka!"
+  spawner-collected: "&#4ADE80Spawner lades till i ditt inventory!"
+  spawner-break-lost: "&#F87171Spawnern försvann när du förstörde den! (Chans att få tillbaka: %chance%%)"
+  spawner-break-no-chance: "&#F87171Spawnern försvann! Du har ingen chans att få tillbaka spawners."
+  booster-given-sender: "&#4ADE80Du gav %player% x%amount% spawner-boosterbiljett."
+  booster-given-recipient: "&#4ADE80Du fick x%amount% spawner-boosterbiljett!"
+  booster-applied: "&#4ADE80Spawnern är boostad! Räckvidd +%range%, spawntid -%delay% s, XP +%xp%%, varaktighet: %duration%."
+  booster-already-active: "&#F87171Den här spawnern har redan en aktiv booster (%duration% kvar)."
+  booster-stack-limit: "&#F87171Den här spawnern har redan max antal boosters (%max%)."
+  booster-delay-too-high: "&#F87171Spawnfördröjningen kan sänkas med högst %max% sekunder (minsta spawnfördröjning: %min%s)."
+  booster-delay-not-reducible: "&#F87171Spawnfördröjningen kan inte sänkas eftersom den redan är på minimum (%min%s)."
+  booster-delay-maxed: "&#FFE066Spawnfördröjningen är redan på den lägsta nivån, så fördröjningsdelen tillämpades inte. De andra effekterna tillämpades."
+  booster-delay-partial: "&#FFE066Spawnfördröjningen nådde den lägsta nivån, så bara -%delay%s tillämpades. De andra effekterna tillämpades."
+  booster-delay-maxed-no-effect: "&#F87171Den här spawnerns spawnfördröjning är redan på den lägsta nivån. Biljetten användes inte."
+  stack-merged: "&#4ADE80%amount% spawner sammanfogade. Stapel: %stack%/%max%."
+  stack-full: "&#F87171Den här spawnerstapeln är full! (max %max%)"
+  stack-type-mismatch: "&#F87171Du kan bara slå ihop spawners av samma typ!"
+  stack-collected: "&#4ADE80Tog %amount% spawner. %left% kvar i stapeln."
+  pickaxe-broken: "&#4ADE80Din Spawner Hacka gick sönder!"
+  natural-spawner-break-denied: "&#F87171Naturliga spawners är skyddade och kan inte brytas."
+  natural-spawner-no-permission: "&#F87171Du har inte behörighet att förstöra naturliga spawners."
+  sp-pickaxe-only: "&#F87171Denna speciella hacka kan endast bryta spawner!"
+  inventory-full: "&#4ADE80Föremålet tappades på marken eftersom ditt inventarium är fullt!"
+  classic-silk-required: "&#F87171Spawner kan endast brytas med Silk Touch Hacka!"
+  advanced-pickaxe-required: "&#F87171Spawner kan endast brytas med special Spawner Hacka!"
+  empty-spawner-break-denied: "&#F87171Du kan inte bryta en tom spawner!"
+  spawner-given-sender: "&#4ADE80%player% fick %type% spawner."
+  spawner-given-recipient: "&#38BDF8Du har fått %type% spawner!"
+  chunk-limit-exceeded: "&#F87171Du kan inte placera fler spawners i denna chunk!"
+  egg-chunk-limit-exceeded: "&#F87171I denna chunk kan du bara spawna %limit% mobbar av typen %type%!"
+  stack-egg-denied: "&#F87171Du kan inte ändra typen på en staplad spawner med ett spawn-ägg!"
+  stack-natural-denied: "&#F87171Naturliga spawners kan inte slås ihop. Bryt den och placera den igen."
+  booster-slot-invalid: "&#F87171Den spawnern finns inte längre i stapeln. Biljetten returnerades."
+  reload-failed: "&#F87171Omladdningen misslyckades. Kontrollera konsolen för detaljer."
+  
+# =========================================
+# Entity-typer
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Bältdjur
+  ARMOR_STAND: Rustningsställ
+  AXOLOTL: Axolotl
+  BAT: Fladdermus
+  BEE: Bi
+  BLAZE: Blaze
+  BOAT: Båt
+  BOGGED: Träskig
+  BREEZE: Bris
+  CAMEL: Kamel
+  CAMEL_HUSK: Kamelhusk
+  CAT: Katt
+  CAVE_SPIDER: Grottspindel
+  CHICKEN: Kyckling
+  COD: Torsk
+  COPPER_GOLEM: Koppargolem
+  COW: Ko
+  CREEPER: Creeper
+  CREAKING: Knarrig
+  DOLPHIN: Delfin
+  DONKEY: Åsna
+  DROWNED: Drunknad
+  ELDER_GUARDIAN: Äldre vaktare
+  EMPTY: Tom
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdrake
+  EVOKER: Framkallare
+  EXPERIENCE_BOTTLE: Erfarenhetsflaska
+  EXPERIENCE_ORB: Erfarenhetsklot
+  FOX: Räv
+  FROG: Groda
+  GHAST: Ghast
+  GIANT: Jätte
+  GLOW_SQUID: Glowbläckfisk
+  GOAT: Get
+  GUARDIAN: Vaktare
+  HAPPY_GHAST: Glad ghast
+  HOGLIN: Hoglin
+  HORSE: Häst
+  HUSK: Husk
+  ILLUSIONER: Illusionist
+  IRON_GOLEM: Järngolem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmakub
+  MINECART: Gruvvagn
+  MINECART_CHEST: Gruvvagn med kista
+  MINECART_COMMAND: Gruvvagn med kommandoblock
+  MINECART_FURNACE: Gruvvagn med ugn
+  MINECART_HOPPER: Gruvvagn med tratt
+  MINECART_SPAWNER: Gruvvagn med spawner
+  MINECART_TNT: Gruvvagn med TNT
+  MOOSHROOM: Svampko
+  MULE: Mula
+  MUSHROOM_COW: Svampko
+  NAUTILUS: Nautilus
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Uttorkad
+  PARROT: Papegoja
+  PHANTOM: Fantom
+  PIG: Gris
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brute
+  PILLAGER: Plundrare
+  POLAR_BEAR: Isbjörn
+  PUFFERFISH: Blåsfisk
+  RABBIT: Kanin
+  RAVAGER: Förhärjare
+  SALMON: Lax
+  SHEEP: Får
+  SHULKER: Shulker
+  SILVERFISH: Silverfisk
+  SKELETON: Skelett
+  SKELETON_HORSE: Skelethäst
+  SLIME: Slime
+  SNIFFER: Sniffare
+  SNOWMAN: Snögubbe
+  SNOW_GOLEM: Snögubbe
+  SPIDER: Spindel
+  SQUID: Bläckfisk
+  STRAY: Stray
+  STRIDER: Strider
+  SULFUR_CUBE: Svavelkub
+  TADPOLE: Grodyngel
+  TRADER_LLAMA: Handlarlama
+  TROPICAL_FISH: Tropisk fisk
+  TURTLE: Sköldpadda
+  VEX: Vex
+  VILLAGER: Bybo
+  VINDICATOR: Försvarare
+  WANDERING_TRADER: Vandrande handlare
+  WARDEN: Vaktmästare
+  WITCH: Häxa
+  WITHER: Wither
+  WITHER_SKELETON: Witherskelett
+  WOLF: Varg
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombiehäst
+  ZOMBIE_NAUTILUS: Zombienautilus
+  ZOMBIE_VILLAGER: Zombiebybo
+  ZOMBIFIED_PIGLIN: Zombifierad Piglin
+
+# Namn på föremåls-spawners (se spawner_items.yml). Lägg till en rad för varje föremål du lägger till där: MATERIAL: Visningsnamn
+item-types:
+  NETHERITE_INGOT: Netheritgöt
+  DIAMOND: Diamant
+  COAL: Kol
+  AMETHYST_SHARD: Ametistskärva
+  EMERALD: Smaragd
+  NETHER_STAR: Netherstjärna
+  TOTEM_OF_UNDYING: Odödlighetstotem

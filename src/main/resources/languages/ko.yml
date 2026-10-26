@@ -1,0 +1,351 @@
+# ===============================
+# Spawner 시스템 한국어
+# ===============================
+
+# 모든 플러그인 메시지의 접두사
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner 곡괭이 설정
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner 곡괭이"
+  lore:
+    - "&#9CA3AF이 곡괭이를 사용하여 스포너를 부술 수 있습니다."
+    - "&#FFE066"
+    - "&#4ADE80남은 사용 횟수: &#F87171%uses%"
+
+# =========================================
+# 모드 태그 (고급 또는 일반)
+# =========================================
+mode-tags:
+  advanced: "Spawner 곡괭이"
+  classic: "실크터치 곡괭이"
+
+# =========================================
+# Spawner 아이템 설정
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% 스포너"
+  lore:
+    - "&#9CA3AF이 스포너를 설치하여 몬스터를 소환하세요."
+    - "&#9CA3AF다음으로만 부술 수 있음: &#FFE066%mode%"
+    - "&#9CA3AF소환 몬스터 종류: &#4ADE80%type%"
+
+# =========================================
+# 스포너 홀로그램 설정
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% 스포너"
+  - "&#9CA3AF%mode%으로 부술 수 있음"
+  - "&#9CA3AF웅크리고 우클릭하여 메뉴를 여세요"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# 몹 홀로그램 설정
+# =========================================
+mob-remove-warning:
+  - "&#F87171이 몹은 제거됩니다"
+  - "&#FFE066해당 지역을 떠나지 않으면 %time%초 내로."
+  
+# =========================================
+# 메뉴 설정 (GUI)
+# =========================================
+menu:
+  title: "&#6B7280스포너 제어판"
+  status:
+    active: "&#4ADE80활성화 ✔"
+    inactive: "&#F87171비활성화 ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&l자동 킬러"
+      lore:
+        - "&#9CA3AF스포너에서 나오는 몹을 자동으로 처치합니다."
+        - "&#9CA3AF보관함과 경험치 흡수도 자동으로 켜집니다."
+        - "&#9CA3AF상태: %status%"
+        - ""
+        - "&#F9FAFB왼쪽 클릭: &#FFE066모드 전환"
+      lore-auto:
+        - "&#9CA3AF스포너에서 나오는 몹을 자동으로 처치합니다."
+        - "&#9CA3AF보관함과 경험치 흡수는 항상 켜져 있습니다."
+        - "&#9CA3AF상태: %status%"
+      lore-no-perm:
+        - "&#9CA3AF스포너에서 나오는 몹을 자동으로 처치합니다."
+        - "&#9CA3AF상태: %status%"
+        - ""
+        - "&#F87171&l이 기능을 사용할 수 없습니다"
+
+    storage:
+      name: "&#38BDF8&l보관함"
+      lore:
+        - "&#9CA3AF자동 처치로 모은 아이템이 여기에 보관됩니다."
+        - "&#9CA3AF사용 슬롯: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFB클릭: &#FFE066보관함 열기"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP 수집기"
+      click: "&#F9FAFB클릭: &#38BDF8경험치 꺼내기"
+      lore:
+        - "&#9CA3AF처치한 몹에서 떨어진 XP를 저장합니다."
+        - ""
+        - "&#9CA3AF상태: %status%"
+        - "&#9CA3AF수집된 XP: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFB왼쪽 클릭: &#FFE066모드 전환"
+        - "&#F9FAFB오른쪽 클릭: &#38BDF8XP 인출"
+      lore-no-perm:
+        - "&#9CA3AF처치한 몹에서 떨어진 XP를 저장합니다."
+        - ""
+        - "&#9CA3AF상태: %status%"
+        - "&#9CA3AF수집된 XP: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&l이 기능을 사용할 수 없습니다"
+
+  messages:
+    no-permission: "&#F87171이 기능을 변경할 권한이 없습니다!"
+    xp-empty: "&#F87171XP 탱크가 비어 있습니다!"
+    xp-collected: "&#4ADE80수집됨: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171먼저 자동 킬러를 활성화해야 합니다!"
+    feature-no-perm: "&#F87171이 기능을 변경할 권한이 없습니다!"
+    perms-changed: "&#F87171권한 변경으로 인해 스포너 기능이 비활성화되었습니다."
+    storage-inventory-full: "&#F87171인벤토리가 가득 찼습니다!"
+    storage-taken: "&#4ADE80보관함에서 아이템 %amount%개를 꺼냈습니다."
+    in-use: "&#F87171다른 플레이어가 이 스포너의 메뉴를 사용 중입니다."
+  storage:
+    title: "&#6B7280스포너 보관함"
+    previous:
+      name: "&#F9FAFB&l이전 페이지"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF 페이지로 이동"
+    next:
+      name: "&#F9FAFB&l다음 페이지"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF 페이지로 이동"
+    take-page:
+      name: "&#4ADE80&l페이지 가져오기"
+      lore:
+        - "&#9CA3AF이 페이지의 모든 아이템을 가져옵니다."
+        - "&#9CA3AF아이템은 다시 넣을 수 없습니다."
+    back:
+      name: "&#F87171&l뒤로"
+      lore:
+        - "&#9CA3AF스포너 메뉴로 돌아갑니다."
+    info:
+      name: "&#38BDF8&l보관함 정보"
+      lore:
+        - "&#9CA3AF페이지: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AF사용 슬롯: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AF아이템을 클릭해 가져가세요."
+  
+# =========================================
+# 스포너 강화 설정
+# =========================================
+# 플레이스홀더: %range% %delay% %xp% %duration% (정보 제목에서는 %index%)
+booster:
+  item:
+    name: "&#F59E0B&l스포너 강화"
+    lore:
+      - "&#9CA3AF이 티켓으로 스포너를 우클릭하면 강화됩니다."
+      - "&#FFE066작동 범위: &#F9FAFB+%range% 블록"
+      - "&#FFE066소환 간격: &#F9FAFB-%delay%초"
+      - "&#FFE066몹 경험치: &#F9FAFB+%xp%%"
+      - "&#FFE066지속 시간: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280스포너 선택"
+    entry: "&#FFE066&l스포너 #%index%"
+    click: "&#F9FAFB클릭: &#FFE066부스터 적용"
+  time:
+    unlimited: "무제한"
+    hour: "시간"
+    minute: "분"
+    second: "초"
+  info:
+    name: "&#F59E0B&l활성 강화"
+    empty: "&#9CA3AF활성화된 강화가 없습니다."
+    entry-title: "&#FFE066&l강화 #%index%"
+
+# =========================================
+# 플러그인 메시지
+# =========================================
+messages:
+  no-permission: "&#F87171이 명령어를 사용할 권한이 없습니다."
+  reload-success: "&#4ADE80Spawner 시스템 설정이 성공적으로 다시 불러와졌습니다."
+  wrong-subcommand: "&#FFE066사용법: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066사용법: /spsystem pickaxegive <플레이어> <1-1000>"
+  usage-givespawner: "&#FFE066사용법: /spsystem givespawner <플레이어> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066사용법: /spsystem givebooster <플레이어> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: 스포너 활성화 범위에 추가되는 블록 수"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: 스폰 간격에서 줄어드는 초 (0 = 없음)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: 스포너 경험치에 추가되는 퍼센트 (0 = 없음)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: 부스트 지속 시간(분) 또는 unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: 지급할 티켓 수 (선택)"
+    - "&#FFE066예시: &#F9FAFB/spsystem givebooster 플레이어 10 5 50 30 &#9CA3AF(범위 +10블록, 딜레이 -5초, 경험치 +50%, 30분)"
+  invalid-mob-type: "&#F87171잘못된 몹 종류: %type%"
+  invalid-item-spawner: "&#F87171잘못된 아이템 스포너: %type%"
+  booster-no-effect: "&#F87171range, delay-seconds, xp-percent 중 하나 이상은 0보다 커야 합니다."
+  booster-disabled: "&#F87171스포너 부스터 시스템이 꺼져 있습니다. config.yml에서 'spawner-booster.enabled: true'로 설정하고 /spsystem reload를 실행하세요."
+  command-disabled: "&#F87171'pickaxegive' 명령은 '고급' 모드에서만 사용할 수 있습니다."
+  player-not-found: "&#F87171플레이어를 찾을 수 없습니다: %player%"
+  not-a-number: "&#F87171사용 횟수는 숫자여야 합니다."
+  max-uses-limit: "&#F87171최대 사용 횟수는 1000회입니다."
+  pickaxe-given-sender: "&#4ADE80%player%님이 %uses%회 사용 가능한 Spawner 곡괭이를 받았습니다."
+  pickaxe-given-recipient: "&#38BDF8특별한 Spawner 곡괭이를 받았습니다!"
+  spawner-collected: "&#4ADE80스포너가 인벤토리에 성공적으로 추가되었습니다!"
+  spawner-break-lost: "&#F87171스포너를 부수는 도중 사라졌습니다! (회수 확률: %chance%%)"
+  spawner-break-no-chance: "&#F87171스포너가 사라졌습니다! 스포너를 회수할 확률이 없습니다."
+  booster-given-sender: "&#4ADE80%player%에게 스포너 강화 티켓 x%amount%장을 지급했습니다."
+  booster-given-recipient: "&#4ADE80스포너 강화 티켓 x%amount%장을 받았습니다!"
+  booster-applied: "&#4ADE80스포너가 강화되었습니다! 범위 +%range%, 소환 간격 -%delay%초, 경험치 +%xp%%, 지속 시간: %duration%."
+  booster-already-active: "&#F87171이 스포너에는 이미 활성화된 강화가 있습니다 (%duration% 남음)."
+  booster-stack-limit: "&#F87171이 스포너에는 이미 최대 강화 수(%max%)가 적용되어 있습니다."
+  booster-delay-too-high: "&#F87171스폰 딜레이는 최대 %max%초까지만 줄일 수 있습니다 (최소 스폰 딜레이: %min%초)."
+  booster-delay-not-reducible: "&#F87171스폰 딜레이가 이미 최소(%min%초)라서 줄일 수 없습니다."
+  booster-delay-maxed: "&#FFE066스폰 딜레이가 이미 가장 낮은 수준이라 딜레이 효과는 적용되지 않았습니다. 다른 효과는 적용되었습니다."
+  booster-delay-partial: "&#FFE066스폰 딜레이가 가장 낮은 수준에 도달하여 -%delay%초만 적용되었습니다. 다른 효과는 적용되었습니다."
+  booster-delay-maxed-no-effect: "&#F87171이 스포너의 스폰 딜레이는 이미 가장 낮은 수준입니다. 티켓이 사용되지 않았습니다."
+  stack-merged: "&#4ADE80스포너 %amount%개를 합쳤습니다. 스택: %stack%/%max%."
+  stack-full: "&#F87171이 스포너 스택은 가득 찼습니다! (최대 %max%)"
+  stack-type-mismatch: "&#F87171같은 종류의 스포너만 합칠 수 있습니다!"
+  stack-collected: "&#4ADE80스포너 %amount%개를 회수했습니다. 스택에 %left%개가 남았습니다."
+  pickaxe-broken: "&#4ADE80Spawner 곡괭이가 깨졌습니다!"
+  natural-spawner-break-denied: "&#F87171자연 생성된 스포너는 보호되어 부술 수 없습니다."
+  natural-spawner-no-permission: "&#F87171자연 생성된 스포너를 부술 권한이 없습니다."
+  sp-pickaxe-only: "&#F87171이 특수 곡괭이는 오직 스포너만 부술 수 있습니다!"
+  inventory-full: "&#4ADE80인벤토리가 가득 차서 아이템이 땅에 떨어졌습니다!"
+  classic-silk-required: "&#F87171스포너는 실크터치 곡괭이로만 부술 수 있습니다!"
+  advanced-pickaxe-required: "&#F87171스포너는 특수 Spawner 곡괭이로만 부술 수 있습니다!"
+  empty-spawner-break-denied: "&#F87171빈 스포너는 부술 수 없습니다!"
+  spawner-given-sender: "&#4ADE80%player%님이 %type% 스포너를 받았습니다."
+  spawner-given-recipient: "&#38BDF8%type% 스포너를 받았습니다!"
+  chunk-limit-exceeded: "&#F87171이 청크에는 더 많은 스포너를 설치할 수 없습니다!"
+  egg-chunk-limit-exceeded: "&#F87171이 청크에서는 %type% 유형의 몹을 최대 %limit%마리만 스폰할 수 있습니다!"
+  stack-egg-denied: "&#F87171스폰 알로 쌓인 스포너의 종류를 바꿀 수 없습니다!"
+  stack-natural-denied: "&#F87171자연 생성 스포너는 합칠 수 없습니다. 부수고 다시 설치하세요."
+  booster-slot-invalid: "&#F87171해당 스포너는 더 이상 스택에 없습니다. 티켓이 반환되었습니다."
+  reload-failed: "&#F87171새로고침에 실패했습니다. 자세한 내용은 콘솔을 확인하세요."
+  
+# =========================================
+# 엔티티 종류
+# =========================================
+entity-types:
+  ALLAY: 알레이
+  ARMADILLO: 아르마딜로
+  ARMOR_STAND: 갑옷 거치대
+  AXOLOTL: 아홀로틀
+  BAT: 박쥐
+  BEE: 벌
+  BLAZE: 블레이즈
+  BOAT: 보트
+  BOGGED: 보그드
+  BREEZE: 브리즈
+  CAMEL: 낙타
+  CAMEL_HUSK: 낙타 허스크
+  CAT: 고양이
+  CAVE_SPIDER: 동굴 거미
+  CHICKEN: 닭
+  COD: 대구
+  COPPER_GOLEM: 구리 골렘
+  COW: 소
+  CREEPER: 크리퍼
+  CREAKING: 삐걱이
+  DOLPHIN: 돌고래
+  DONKEY: 당나귀
+  DROWNED: 드라운드
+  ELDER_GUARDIAN: 엘더 가디언
+  EMPTY: 비어 있음
+  ENDERMAN: 엔더맨
+  ENDERMITE: 엔더마이트
+  ENDER_DRAGON: 엔더 드래곤
+  EVOKER: 어보커
+  EXPERIENCE_BOTTLE: 경험치 병
+  EXPERIENCE_ORB: 경험치 구슬
+  FOX: 여우
+  FROG: 개구리
+  GHAST: 가스트
+  GIANT: 자이언트
+  GLOW_SQUID: 발광 오징어
+  GOAT: 염소
+  GUARDIAN: 가디언
+  HAPPY_GHAST: 행복한 가스트
+  HOGLIN: 호글린
+  HORSE: 말
+  HUSK: 허스크
+  ILLUSIONER: 일루저너
+  IRON_GOLEM: 철 골렘
+  LLAMA: 라마
+  MAGMA_CUBE: 마그마 큐브
+  MINECART: 광산 수레
+  MINECART_CHEST: 상자 광산 수레
+  MINECART_COMMAND: 명령 블록 광산 수레
+  MINECART_FURNACE: 화로 광산 수레
+  MINECART_HOPPER: 깔때기 광산 수레
+  MINECART_SPAWNER: 생성기 광산 수레
+  MINECART_TNT: TNT 광산 수레
+  MOOSHROOM: 무시룸 소
+  MULE: 노새
+  MUSHROOM_COW: 무시룸 소
+  NAUTILUS: 앵무조개
+  OCELOT: 오셀롯
+  PANDA: 팬더
+  PARCHED: 바싹 마른 자
+  PARROT: 앵무새
+  PHANTOM: 팬텀
+  PIG: 돼지
+  PIGLIN: 피글린
+  PIGLIN_BRUTE: 피글린 브루트
+  PILLAGER: 약탈자
+  POLAR_BEAR: 북극곰
+  PUFFERFISH: 복어
+  RABBIT: 토끼
+  RAVAGER: 레이저
+  SALMON: 연어
+  SHEEP: 양
+  SHULKER: 셜커
+  SILVERFISH: 실버피시
+  SKELETON: 스켈레톤
+  SKELETON_HORSE: 스켈레톤 말
+  SLIME: 슬라임
+  SNIFFER: 스니퍼
+  SNOWMAN: 눈골렘
+  SNOW_GOLEM: 눈골렘
+  SPIDER: 거미
+  SQUID: 오징어
+  STRAY: 스트레이
+  STRIDER: 스트라이더
+  SULFUR_CUBE: 유황 큐브
+  TADPOLE: 올챙이
+  TRADER_LLAMA: 상인 라마
+  TROPICAL_FISH: 열대어
+  TURTLE: 거북이
+  VEX: 벡스
+  VILLAGER: 주민
+  VINDICATOR: 빈디케이터
+  WANDERING_TRADER: 떠돌이 상인
+  WARDEN: 워든
+  WITCH: 마녀
+  WITHER: 위더
+  WITHER_SKELETON: 위더 스켈레톤
+  WOLF: 늑대
+  ZOGLIN: 조글린
+  ZOMBIE: 좀비
+  ZOMBIE_HORSE: 좀비 말
+  ZOMBIE_NAUTILUS: 좀비 앵무조개
+  ZOMBIE_VILLAGER: 좀비 주민
+  ZOMBIFIED_PIGLIN: 좀비화된 피글린
+
+# 아이템 스포너 이름 (spawner_items.yml 참고). 그곳에 추가한 아이템마다 한 줄씩 추가하세요: MATERIAL: 표시 이름
+item-types:
+  NETHERITE_INGOT: 네더라이트 주괴
+  DIAMOND: 다이아몬드
+  COAL: 석탄
+  AMETHYST_SHARD: 자수정 조각
+  EMERALD: 에메랄드
+  NETHER_STAR: 네더의 별
+  TOTEM_OF_UNDYING: 불사의 토템

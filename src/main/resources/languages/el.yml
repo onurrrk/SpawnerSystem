@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Ελληνικά
+# ===============================
+
+# Πρόθεμα για όλα τα μηνύματα του plugin
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Ρυθμίσεις Τσεκούρι Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Τσεκούρι"
+  lore:
+    - "&#9CA3AFΧρησιμοποιήστε αυτό το τσεκούρι για να σπάσετε το spawner."
+    - "&#FFE066"
+    - "&#4ADE80Υπόλοιπες χρήσεις: &#F87171%uses%"
+
+# =========================================
+# Ετικέτες λειτουργίας (Προχωρημένο ή Κλασικό)
+# =========================================
+mode-tags:
+  advanced: "Spawner Τσεκούρι"
+  classic: "Τσεκούρι Μεταξωτής Αφή"
+
+# =========================================
+# Ρυθμίσεις Αντικειμένου Spawner
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFΤοποθετήστε αυτό το spawner για να εμφανίσετε τέρατα."
+    - "&#9CA3AFΜπορεί να σπάσει μόνο με: &#FFE066%mode%"
+    - "&#9CA3AFΤύπος οντότητας: &#4ADE80%type%"
+
+# =========================================
+# Ρυθμίσεις Χologram Spawner
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFΜπορεί να καταστραφεί με %mode%"
+  - "&#9CA3AFΣκύψτε και κάντε δεξί κλικ για να ανοίξετε το μενού"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Ρυθμίσεις Ολογράμματος Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Αυτό το mob θα αφαιρεθεί"
+  - "&#FFE066Μέσα σε %time% δευτερόλεπτα αν δεν φύγει από την περιοχή."
+  
+# =========================================
+# Ρυθμίσεις Μενού (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Πίνακας Ελέγχου Spawner"
+  status:
+    active: "&#4ADE80Ενεργό ✔"
+    inactive: "&#F87171Ανενεργό ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lΑυτόματη Θανάτωση"
+      lore:
+        - "&#9CA3AFΘανατώνει αυτόματα πλάσματα από το spawner."
+        - "&#9CA3AFΕνεργοποιεί επίσης την Αποθήκη και τον Συλλέκτη XP."
+        - "&#9CA3AFΚατάσταση: %status%"
+        - ""
+        - "&#F9FAFBΑριστερό κλικ: &#FFE066Αλλαγή λειτουργίας"
+      lore-auto:
+        - "&#9CA3AFΘανατώνει αυτόματα πλάσματα από το spawner."
+        - "&#9CA3AFΗ Αποθήκη και ο Συλλέκτης XP είναι πάντα ενεργοί."
+        - "&#9CA3AFΚατάσταση: %status%"
+      lore-no-perm:
+        - "&#9CA3AFΘανατώνει αυτόματα πλάσματα από το spawner."
+        - "&#9CA3AFΚατάσταση: %status%"
+        - ""
+        - "&#F87171&lΔΕΝ ΜΠΟΡΕΙΤΕ ΝΑ ΧΡΗΣΙΜΟΠΟΙΗΣΕΤΕ ΑΥΤΗ ΤΗ ΛΕΙΤΟΥΡΓΙΑ"
+
+    storage:
+      name: "&#38BDF8&lΑποθήκη"
+      lore:
+        - "&#9CA3AFΤα αντικείμενα που συλλέγει ο Auto Slayer φυλάσσονται εδώ."
+        - "&#9CA3AFΧρησιμοποιούμενες θέσεις: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBΚλικ: &#FFE066Άνοιγμα αποθήκης"
+
+    xp-vacuum:
+      name: "&#4ADE80&lΣυλλογή XP"
+      click: "&#F9FAFBΚλικ: &#38BDF8Ανάληψη XP"
+      lore:
+        - "&#9CA3AFΑποθηκεύει XP από σκοτωμένα πλάσματα."
+        - ""
+        - "&#9CA3AFΚατάσταση: %status%"
+        - "&#9CA3AFΣυλλεχθέντα: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBΑριστερό κλικ: &#FFE066Αλλαγή λειτουργίας"
+        - "&#F9FAFBΔεξί κλικ: &#38BDF8Ανάληψη XP"
+      lore-no-perm:
+        - "&#9CA3AFΑποθηκεύει XP από σκοτωμένα πλάσματα."
+        - ""
+        - "&#9CA3AFΚατάσταση: %status%"
+        - "&#9CA3AFΣυλλεχθέντα: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lΔΕΝ ΜΠΟΡΕΙΤΕ ΝΑ ΧΡΗΣΙΜΟΠΟΙΗΣΕΤΕ ΑΥΤΗ ΤΗ ΛΕΙΤΟΥΡΓΙΑ"
+
+  messages:
+    no-permission: "&#F87171Δεν έχετε άδεια να αλλάξετε αυτή τη λειτουργία!"
+    xp-empty: "&#F87171Η δεξαμενή XP είναι άδεια!"
+    xp-collected: "&#4ADE80Συλλέχθηκαν: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Πρέπει πρώτα να ενεργοποιήσετε την αυτόματη θανάτωση!"
+    feature-no-perm: "&#F87171Δεν έχετε άδεια να αλλάξετε αυτή τη λειτουργία!"
+    perms-changed: "&#F87171Οι λειτουργίες spawner απενεργοποιήθηκαν λόγω αλλαγής των δικαιωμάτων σας."
+    storage-inventory-full: "&#F87171Το inventory σου είναι γεμάτο!"
+    storage-taken: "&#4ADE80Πήρες %amount% αντικείμενο(α) από την αποθήκη."
+    in-use: "&#F87171Κάποιος άλλος χρησιμοποιεί αυτή τη στιγμή το μενού αυτού του spawner."
+  storage:
+    title: "&#6B7280Αποθήκη spawner"
+    previous:
+      name: "&#F9FAFB&lΠροηγούμενη σελίδα"
+      lore:
+        - "&#9CA3AFΜετάβαση στη σελίδα &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lΕπόμενη σελίδα"
+      lore:
+        - "&#9CA3AFΜετάβαση στη σελίδα &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lΛήψη σελίδας"
+      lore:
+        - "&#9CA3AFΠαίρνει όλα τα αντικείμενα αυτής της σελίδας."
+        - "&#9CA3AFΤα αντικείμενα δεν μπορούν να επιστραφούν."
+    back:
+      name: "&#F87171&lΠίσω"
+      lore:
+        - "&#9CA3AFΕπιστροφή στο μενού του spawner."
+    info:
+      name: "&#38BDF8&lΠληροφορίες αποθήκης"
+      lore:
+        - "&#9CA3AFΣελίδα: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFΧρησιμοποιούμενες θέσεις: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFΚάνε κλικ σε ένα αντικείμενο για να το πάρεις."
+  
+# =========================================
+# Ρυθμίσεις ενίσχυσης spawner
+# =========================================
+# Μεταβλητές: %range% %delay% %xp% %duration% (%index% στον τίτλο πληροφοριών)
+booster:
+  item:
+    name: "&#F59E0B&lΕνίσχυση Spawner"
+    lore:
+      - "&#9CA3AFΚάντε δεξί κλικ σε ένα spawner με αυτό το εισιτήριο για να το ενισχύσετε."
+      - "&#FFE066Εμβέλεια: &#F9FAFB+%range% μπλοκ"
+      - "&#FFE066Χρόνος εμφάνισης: &#F9FAFB-%delay% δευτερόλεπτα"
+      - "&#FFE066XP mob: &#F9FAFB+%xp%%"
+      - "&#FFE066Διάρκεια: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Επιλογή spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBΚλικ: &#FFE066Εφαρμογή booster"
+  time:
+    unlimited: "Απεριόριστη"
+    hour: "ω"
+    minute: "λ"
+    second: "δ"
+  info:
+    name: "&#F59E0B&lΕνεργές ενισχύσεις"
+    empty: "&#9CA3AFΚαμία ενεργή ενίσχυση."
+    entry-title: "&#FFE066&lΕνίσχυση #%index%"
+
+# =========================================
+# Μηνύματα Plugin
+# =========================================
+messages:
+  no-permission: "&#F87171Δεν έχετε άδεια να χρησιμοποιήσετε αυτή την εντολή."
+  reload-success: "&#4ADE80Η διαμόρφωση του Spawner συστήματος επαναφορτώθηκε επιτυχώς."
+  wrong-subcommand: "&#FFE066Χρήση: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Χρήση: /spsystem pickaxegive <παίκτης> <1-1000>"
+  usage-givespawner: "&#FFE066Χρήση: /spsystem givespawner <παίκτης> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Χρήση: /spsystem givebooster <παίκτης> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: επιπλέον μπλοκ στην εμβέλεια ενεργοποίησης του spawner"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: δευτερόλεπτα που αφαιρούνται από την καθυστέρηση spawn (0 = κανένα)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: επιπλέον ποσοστό XP από το spawner (0 = κανένα)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: διάρκεια του boost σε λεπτά, ή unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: πόσα εισιτήρια θα δοθούν (προαιρετικό)"
+    - "&#FFE066Παράδειγμα: &#F9FAFB/spsystem givebooster παίκτης 10 5 50 30 &#9CA3AF(+10 μπλοκ, -5 δευτ. καθυστέρηση, +50% XP, 30 λεπτά)"
+  invalid-mob-type: "&#F87171Μη έγκυρος τύπος mob: %type%"
+  invalid-item-spawner: "&#F87171Μη έγκυρο spawner αντικειμένου: %type%"
+  booster-no-effect: "&#F87171Τουλάχιστον μία από τις τιμές range, delay-seconds ή xp-percent πρέπει να είναι μεγαλύτερη από 0."
+  booster-disabled: "&#F87171Το σύστημα booster των spawner είναι απενεργοποιημένο. Ορίστε 'spawner-booster.enabled: true' στο config.yml και εκτελέστε /spsystem reload."
+  command-disabled: "&#F87171Η εντολή 'pickaxegive' είναι διαθέσιμη μόνο σε 'προχωρημένη' λειτουργία."
+  player-not-found: "&#F87171Ο παίκτης δεν βρέθηκε: %player%"
+  not-a-number: "&#F87171Ο αριθμός χρήσεων πρέπει να είναι αριθμός."
+  max-uses-limit: "&#F87171Το μέγιστο πλήθος χρήσεων είναι 1000."
+  pickaxe-given-sender: "&#4ADE80Ο %player% έλαβε Spawner Τσεκούρι με %uses% χρήσεις."
+  pickaxe-given-recipient: "&#38BDF8Έχετε λάβει ένα ειδικό τσεκούρι spawner!"
+  spawner-collected: "&#4ADE80Το spawner προστέθηκε επιτυχώς στο απόθεμά σας!"
+  spawner-break-lost: "&#F87171Ο spawner εξαφανίστηκε κατά το σπάσιμο! (Πιθανότητα ανάκτησης: %chance%%)"
+  spawner-break-no-chance: "&#F87171Ο spawner εξαφανίστηκε! Δεν έχεις καμία πιθανότητα να ανακτάς spawners."
+  booster-given-sender: "&#4ADE80Δώσατε στον %player% x%amount% εισιτήρια ενίσχυσης spawner."
+  booster-given-recipient: "&#4ADE80Λάβατε x%amount% εισιτήρια ενίσχυσης spawner!"
+  booster-applied: "&#4ADE80Το spawner ενισχύθηκε! Εμβέλεια +%range%, χρόνος εμφάνισης -%delay% δ, XP +%xp%%, διάρκεια: %duration%."
+  booster-already-active: "&#F87171Αυτό το spawner έχει ήδη ενεργή ενίσχυση (απομένουν %duration%)."
+  booster-stack-limit: "&#F87171Αυτό το spawner έχει ήδη τον μέγιστο αριθμό ενισχύσεων (%max%)."
+  booster-delay-too-high: "&#F87171Η καθυστέρηση spawn μπορεί να μειωθεί το πολύ κατά %max% δευτερόλεπτα (ελάχιστη καθυστέρηση: %min%δ)."
+  booster-delay-not-reducible: "&#F87171Η καθυστέρηση spawn δεν μπορεί να μειωθεί γιατί είναι ήδη στο ελάχιστο (%min%δ)."
+  booster-delay-maxed: "&#FFE066Η καθυστέρηση spawn είναι ήδη στο χαμηλότερο επίπεδο, οπότε το μέρος της καθυστέρησης δεν εφαρμόστηκε. Τα υπόλοιπα εφέ εφαρμόστηκαν."
+  booster-delay-partial: "&#FFE066Η καθυστέρηση spawn έφτασε στο χαμηλότερο επίπεδο, οπότε εφαρμόστηκε μόνο -%delay%δ. Τα υπόλοιπα εφέ εφαρμόστηκαν."
+  booster-delay-maxed-no-effect: "&#F87171Η καθυστέρηση spawn αυτού του spawner είναι ήδη στο χαμηλότερο επίπεδο. Το εισιτήριο δεν χρησιμοποιήθηκε."
+  stack-merged: "&#4ADE80Συγχωνεύτηκαν %amount% spawner. Στοίβα: %stack%/%max%."
+  stack-full: "&#F87171Αυτή η στοίβα spawner είναι γεμάτη! (μέγ. %max%)"
+  stack-type-mismatch: "&#F87171Μπορείς να συγχωνεύσεις μόνο spawner του ίδιου τύπου!"
+  stack-collected: "&#4ADE80Πήρες %amount% spawner. Απομένουν %left% στη στοίβα."
+  pickaxe-broken: "&#4ADE80Το Spawner Τσεκούρι σας έσπασε!"
+  natural-spawner-break-denied: "&#F87171Οι φυσικοί spawner είναι προστατευμένοι και δεν μπορούν να σπάσουν."
+  natural-spawner-no-permission: "&#F87171Δεν έχεις άδεια να σπάσεις φυσικούς spawners."
+  sp-pickaxe-only: "&#F87171Αυτό το ειδικό τσεκούρι μπορεί να σπάσει μόνο spawner!"
+  inventory-full: "&#4ADE80Το αντικείμενο έπεσε στο έδαφος επειδή το inventory σου είναι γεμάτο!"
+  classic-silk-required: "&#F87171Οι spawner μπορούν να σπάσουν μόνο με Τσεκούρι Μεταξωτής Αφή!"
+  advanced-pickaxe-required: "&#F87171Οι spawner μπορούν να σπάσουν μόνο με ειδικό Spawner Τσεκούρι!"
+  empty-spawner-break-denied: "&#F87171Δεν μπορείτε να σπάσετε έναν άδειο spawner!"
+  spawner-given-sender: "&#4ADE80Ο %player% έλαβε %type% spawner."
+  spawner-given-recipient: "&#38BDF8Έχετε λάβει %type% spawner!"
+  chunk-limit-exceeded: "&#F87171Δεν μπορείς να τοποθετήσεις περισσότερα spawners σε αυτό το chunk!"
+  egg-chunk-limit-exceeded: "&#F87171Σε αυτό το chunk, μπορείς να spawnάρεις μόνο %limit% mob τύπου %type%!"
+  stack-egg-denied: "&#F87171Δεν μπορείς να αλλάξεις τον τύπο ενός στοιβαγμένου spawner με αυγό δημιουργίας!"
+  stack-natural-denied: "&#F87171Οι φυσικοί spawner δεν μπορούν να συγχωνευθούν. Σπάστε τον και τοποθετήστε τον ξανά."
+  booster-slot-invalid: "&#F87171Αυτός ο spawner δεν είναι πια στη στοίβα. Το εισιτήριο επιστράφηκε."
+  reload-failed: "&#F87171Η επαναφόρτωση απέτυχε. Δες την κονσόλα για λεπτομέρειες."
+  
+# =========================================
+# Τύποι Οντοτήτων
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Αρμαντίλο
+  ARMOR_STAND: Βάση Πανοπλίας
+  AXOLOTL: Αξολότλ
+  BAT: Νυχτερίδα
+  BEE: Μέλισσα
+  BLAZE: Blaze
+  BOAT: Βάρκα
+  BOGGED: Βάλτος
+  BREEZE: Αύρα
+  CAMEL: Καμήλα
+  CAMEL_HUSK: Κάμηλος Husk
+  CAT: Γάτα
+  CAVE_SPIDER: Σαρανταποδαρούσα Σπηλαίου
+  CHICKEN: Κοτόπουλο
+  COD: Μπακαλιάρος
+  COPPER_GOLEM: Χάλκινο γκόλεμ
+  COW: Αγελάδα
+  CREEPER: Creeper
+  CREAKING: Τρίζων
+  DOLPHIN: Δελφίνι
+  DONKEY: Γάιδαρος
+  DROWNED: Πνιγμένος
+  ELDER_GUARDIAN: Γηραιός Φύλακας
+  EMPTY: Κενό
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Δράκος του End
+  EVOKER: Επικαλούμενος
+  EXPERIENCE_BOTTLE: Μπουκάλι Εμπειρίας
+  EXPERIENCE_ORB: Σφαίρα Εμπειρίας
+  FOX: Αλεπού
+  FROG: Βάτραχος
+  GHAST: Ghast
+  GIANT: Γίγαντας
+  GLOW_SQUID: Λαμπερό Καλαμάρι
+  GOAT: Κατσίκα
+  GUARDIAN: Φύλακας
+  HAPPY_GHAST: Χαρούμενο γκαστ
+  HOGLIN: Hoglin
+  HORSE: Άλογο
+  HUSK: Husk
+  ILLUSIONER: Ιλλουζιονίστας
+  IRON_GOLEM: Σιδηρούς Golem
+  LLAMA: Λάμα
+  MAGMA_CUBE: Κύβος Μάγματος
+  MINECART: Βαγονέτο
+  MINECART_CHEST: Βαγονέτο με Σεντούκι
+  MINECART_COMMAND: Βαγονέτο με Μπλοκ Εντολών
+  MINECART_FURNACE: Βαγονέτο με Κάμινο
+  MINECART_HOPPER: Βαγονέτο με Χωνί
+  MINECART_SPAWNER: Βαγονέτο με Spawner
+  MINECART_TNT: Βαγονέτο με TNT
+  MOOSHROOM: Αγελάδα Μανιτάρι
+  MULE: Μουλάρι
+  MUSHROOM_COW: Αγελάδα Μανιτάρι
+  NAUTILUS: Ναυτίλος
+  OCELOT: Οσελότ
+  PANDA: Πάντα
+  PARCHED: Αποξηραμένος
+  PARROT: Παπαγάλος
+  PHANTOM: Φάντασμα
+  PIG: Γουρούνι
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Βάρβαρος
+  PILLAGER: Ληστής
+  POLAR_BEAR: Πολική Αρκούδα
+  PUFFERFISH: Ψάρι Φουσκωτό
+  RABBIT: Κουνέλι
+  RAVAGER: Καταστροφέας
+  SALMON: Σολομός
+  SHEEP: Πρόβατο
+  SHULKER: Shulker
+  SILVERFISH: Ασημόψαρο
+  SKELETON: Σκελετός
+  SKELETON_HORSE: Άλογο Σκελετός
+  SLIME: Γλίτσα
+  SNIFFER: Μυξοθήρας
+  SNOWMAN: Χιονάνθρωπος
+  SNOW_GOLEM: Χιονάνθρωπος
+  SPIDER: Αράχνη
+  SQUID: Καλαμάρι
+  STRAY: Αλήτης
+  STRIDER: Strider
+  SULFUR_CUBE: Κύβος θείου
+  TADPOLE: Γυρίνος
+  TRADER_LLAMA: Λάμα Εμπόρου
+  TROPICAL_FISH: Τροπικό Ψάρι
+  TURTLE: Χελώνα
+  VEX: Vex
+  VILLAGER: Χωρικός
+  VINDICATOR: Εκδικητής
+  WANDERING_TRADER: Περιπλανώμενος Έμπορος
+  WARDEN: Φύλακας
+  WITCH: Μάγισσα
+  WITHER: Wither
+  WITHER_SKELETON: Σκελετός Wither
+  WOLF: Λύκος
+  ZOGLIN: Zoglin
+  ZOMBIE: Ζόμπι
+  ZOMBIE_HORSE: Άλογο Ζόμπι
+  ZOMBIE_NAUTILUS: Ναυτίλος ζόμπι
+  ZOMBIE_VILLAGER: Χωρικός Ζόμπi
+  ZOMBIFIED_PIGLIN: Ζομπιφικ
+
+# Ονόματα spawner αντικειμένων (δείτε spawner_items.yml). Προσθέστε μια γραμμή για κάθε αντικείμενο που προσθέτετε εκεί: MATERIAL: Εμφανιζόμενο όνομα
+item-types:
+  NETHERITE_INGOT: Ράβδος Νέδερ
+  DIAMOND: Διαμάντι
+  COAL: Κάρβουνο
+  AMETHYST_SHARD: Θραύσμα αμέθυστου
+  EMERALD: Σμαράγδι
+  NETHER_STAR: Αστέρι του Νέδερ
+  TOTEM_OF_UNDYING: Τοτέμ του αθανάτου

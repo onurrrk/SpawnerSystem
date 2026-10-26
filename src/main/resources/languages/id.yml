@@ -1,0 +1,351 @@
+# ===============================
+# Sistem Spawner Bahasa Indonesia
+# ===============================
+
+# Prefiks untuk semua pesan plugin
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Pengaturan Kapak Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lKapak Spawner"
+  lore:
+    - "&#9CA3AFGunakan kapak ini untuk memecah spawner."
+    - "&#FFE066"
+    - "&#4ADE80Penggunaan tersisa: &#F87171%uses%"
+
+# =========================================
+# Label Mode (Advanced atau Classic)
+# =========================================
+mode-tags:
+  advanced: "Kapak Spawner"
+  classic: "Kapak Sentuhan Sutra"
+
+# =========================================
+# Pengaturan Item Spawner
+# =========================================
+spawner-item:
+  name: "&#4ADE80Spawner %type%"
+  lore:
+    - "&#9CA3AFTempatkan spawner ini untuk memunculkan monster."
+    - "&#9CA3AFHanya bisa dihancurkan dengan: &#FFE066%mode%"
+    - "&#9CA3AFJenis entitas: &#4ADE80%type%"
+
+# =========================================
+# Pengaturan Hologram Spawner
+# =========================================
+spawnable-status:
+  - "&#4ADE80Spawner %type%"
+  - "&#9CA3AFDapat dihancurkan dengan %mode%"
+  - "&#9CA3AFBerjongkok dan klik kanan untuk membuka menu"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Pengaturan Hologram Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Mob ini akan dihapus"
+  - "&#FFE066Dalam %time% d jika tidak meninggalkan area."
+  
+# =========================================
+# Pengaturan Menu (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Panel Kontrol Spawner"
+  status:
+    active: "&#4ADE80Aktif ✔"
+    inactive: "&#F87171Tidak Aktif ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lPembunuh Otomatis"
+      lore:
+        - "&#9CA3AFMembunuh monster dari spawner secara otomatis."
+        - "&#9CA3AFJuga mengaktifkan Penyimpanan dan Penyedot XP."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F9FAFBKlik Kiri: &#FFE066Ubah Mode"
+      lore-auto:
+        - "&#9CA3AFMembunuh monster dari spawner secara otomatis."
+        - "&#9CA3AFPenyimpanan dan Penyedot XP selalu aktif."
+        - "&#9CA3AFStatus: %status%"
+      lore-no-perm:
+        - "&#9CA3AFMembunuh monster dari spawner secara otomatis."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F87171&lKAMU TIDAK BISA MENGGUNAKAN FITUR INI"
+
+    storage:
+      name: "&#38BDF8&lPenyimpanan"
+      lore:
+        - "&#9CA3AFItem yang dikumpulkan Auto Slayer disimpan di sini."
+        - "&#9CA3AFSlot terpakai: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKlik: &#FFE066Buka Penyimpanan"
+
+    xp-vacuum:
+      name: "&#4ADE80&lPengumpul XP"
+      click: "&#F9FAFBKlik: &#38BDF8Ambil XP"
+      lore:
+        - "&#9CA3AFMenyimpan XP yang jatuh dari monster yang dibunuh."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFTerkumpul: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBKlik Kiri: &#FFE066Ubah Mode"
+        - "&#F9FAFBKlik Kanan: &#38BDF8Ambil XP"
+      lore-no-perm:
+        - "&#9CA3AFMenyimpan XP yang jatuh dari monster yang dibunuh."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFTerkumpul: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lKAMU TIDAK BISA MENGGUNAKAN FITUR INI"
+
+  messages:
+    no-permission: "&#F87171Kamu tidak punya izin untuk mengubah fitur ini!"
+    xp-empty: "&#F87171Tangki XP kosong!"
+    xp-collected: "&#4ADE80Terkumpul: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Kamu harus mengaktifkan pembunuh otomatis terlebih dahulu!"
+    feature-no-perm: "&#F87171Kamu tidak punya izin untuk mengubah fitur ini!"
+    perms-changed: "&#F87171Fitur spawner telah dinonaktifkan karena perubahan izinmu."
+    storage-inventory-full: "&#F87171Inventaris kamu penuh!"
+    storage-taken: "&#4ADE80Mengambil %amount% item dari penyimpanan."
+    in-use: "&#F87171Orang lain sedang menggunakan menu spawner ini."
+  storage:
+    title: "&#6B7280Penyimpanan Spawner"
+    previous:
+      name: "&#F9FAFB&lHalaman Sebelumnya"
+      lore:
+        - "&#9CA3AFKe halaman &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lHalaman Berikutnya"
+      lore:
+        - "&#9CA3AFKe halaman &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lAmbil Halaman"
+      lore:
+        - "&#9CA3AFMengambil semua item di halaman ini."
+        - "&#9CA3AFItem tidak dapat dikembalikan."
+    back:
+      name: "&#F87171&lKembali"
+      lore:
+        - "&#9CA3AFKembali ke menu spawner."
+    info:
+      name: "&#38BDF8&lInfo Penyimpanan"
+      lore:
+        - "&#9CA3AFHalaman: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFSlot terpakai: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFKlik item untuk mengambilnya."
+  
+# =========================================
+# Pengaturan Penguat Spawner
+# =========================================
+# Placeholder: %range% %delay% %xp% %duration% (%index% pada judul info)
+booster:
+  item:
+    name: "&#F59E0B&lPenguat Spawner"
+    lore:
+      - "&#9CA3AFKlik kanan spawner dengan tiket ini untuk memperkuatnya."
+      - "&#FFE066Jangkauan kerja: &#F9FAFB+%range% blok"
+      - "&#FFE066Jeda spawn: &#F9FAFB-%delay% detik"
+      - "&#FFE066XP mob: &#F9FAFB+%xp%%"
+      - "&#FFE066Durasi: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Pilih Spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKlik: &#FFE066Terapkan Booster"
+  time:
+    unlimited: "Tanpa batas"
+    hour: "j"
+    minute: "mnt"
+    second: "dtk"
+  info:
+    name: "&#F59E0B&lPenguat Aktif"
+    empty: "&#9CA3AFTidak ada penguat aktif."
+    entry-title: "&#FFE066&lPenguat #%index%"
+
+# =========================================
+# Pesan Plugin
+# =========================================
+messages:
+  no-permission: "&#F87171Anda tidak memiliki izin untuk menggunakan perintah ini."
+  reload-success: "&#4ADE80Konfigurasi Sistem Spawner berhasil dimuat ulang."
+  wrong-subcommand: "&#FFE066Gunakan: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Gunakan: /spsystem pickaxegive <pemain> <1-1000>"
+  usage-givespawner: "&#FFE066Gunakan: /spsystem givespawner <pemain> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Gunakan: /spsystem givebooster <pemain> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: blok tambahan untuk jangkauan aktivasi spawner"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: detik yang dikurangi dari jeda spawn (0 = tidak ada)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: persen XP tambahan dari spawner (0 = tidak ada)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: lama boost dalam menit, atau unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: jumlah tiket yang diberikan (opsional)"
+    - "&#FFE066Contoh: &#F9FAFB/spsystem givebooster pemain 10 5 50 30 &#9CA3AF(+10 blok, -5 dtk jeda, +50% XP, 30 menit)"
+  invalid-mob-type: "&#F87171Tipe mob tidak valid: %type%"
+  invalid-item-spawner: "&#F87171Spawner item tidak valid: %type%"
+  booster-no-effect: "&#F87171Minimal satu dari range, delay-seconds, atau xp-percent harus lebih besar dari 0."
+  booster-disabled: "&#F87171Sistem booster spawner dinonaktifkan. Setel 'spawner-booster.enabled: true' di config.yml lalu jalankan /spsystem reload."
+  command-disabled: "&#F87171Perintah 'pickaxegive' hanya tersedia dalam mode 'advanced'."
+  player-not-found: "&#F87171Pemain tidak ditemukan: %player%"
+  not-a-number: "&#F87171Jumlah penggunaan harus berupa angka."
+  max-uses-limit: "&#F87171Jumlah maksimum penggunaan adalah 1000."
+  pickaxe-given-sender: "&#4ADE80%player% menerima Kapak Spawner dengan %uses% penggunaan."
+  pickaxe-given-recipient: "&#38BDF8Anda menerima Kapak Spawner khusus!"
+  spawner-collected: "&#4ADE80Spawner berhasil ditambahkan ke inventaris Anda!"
+  spawner-break-lost: "&#F87171Spawner menghilang saat dihancurkan! (Peluang pemulihan: %chance%%)"
+  spawner-break-no-chance: "&#F87171Spawner menghilang! Kamu tidak punya peluang memulihkan spawner."
+  booster-given-sender: "&#4ADE80Kamu memberi %player% x%amount% tiket penguat spawner."
+  booster-given-recipient: "&#4ADE80Kamu menerima x%amount% tiket penguat spawner!"
+  booster-applied: "&#4ADE80Spawner diperkuat! Jangkauan +%range%, jeda spawn -%delay% dtk, XP +%xp%%, durasi: %duration%."
+  booster-already-active: "&#F87171Spawner ini sudah memiliki penguat aktif (sisa %duration%)."
+  booster-stack-limit: "&#F87171Spawner ini sudah memiliki jumlah penguat maksimum (%max%)."
+  booster-delay-too-high: "&#F87171Jeda spawn hanya bisa dikurangi maksimal %max% detik (jeda spawn minimum: %min%dtk)."
+  booster-delay-not-reducible: "&#F87171Jeda spawn tidak bisa dikurangi karena sudah di batas minimum (%min%dtk)."
+  booster-delay-maxed: "&#FFE066Jeda spawn sudah di level terendah, jadi bagian jeda tidak diterapkan. Efek lainnya diterapkan."
+  booster-delay-partial: "&#FFE066Jeda spawn mencapai level terendah, jadi hanya -%delay%dtk yang diterapkan. Efek lainnya diterapkan."
+  booster-delay-maxed-no-effect: "&#F87171Jeda spawn spawner ini sudah di level terendah. Tiket tidak digunakan."
+  stack-merged: "&#4ADE80%amount% spawner digabung. Tumpukan: %stack%/%max%."
+  stack-full: "&#F87171Tumpukan spawner ini sudah penuh! (maks. %max%)"
+  stack-type-mismatch: "&#F87171Hanya spawner dengan jenis yang sama yang bisa digabung!"
+  stack-collected: "&#4ADE80Mengambil %amount% spawner. Sisa %left% di tumpukan."
+  pickaxe-broken: "&#4ADE80Kapak Spawner Anda patah!"
+  natural-spawner-break-denied: "&#F87171Spawner alami dilindungi dan tidak dapat dihancurkan."
+  natural-spawner-no-permission: "&#F87171Kamu tidak punya izin untuk menghancurkan spawner alami."
+  sp-pickaxe-only: "&#F87171Kapak khusus ini hanya bisa memecah spawner!"
+  inventory-full: "&#4ADE80Item dijatuhkan ke tanah karena inventarismu penuh!"
+  classic-silk-required: "&#F87171Spawner hanya bisa dihancurkan dengan Kapak Sentuhan Sutra!"
+  advanced-pickaxe-required: "&#F87171Spawner hanya bisa dihancurkan dengan Kapak Spawner khusus!"
+  empty-spawner-break-denied: "&#F87171Anda tidak bisa memecah spawner kosong!"
+  spawner-given-sender: "&#4ADE80%player% menerima spawner %type%."
+  spawner-given-recipient: "&#38BDF8Anda menerima spawner %type%!"
+  chunk-limit-exceeded: "&#F87171Kamu tidak bisa menaruh lebih banyak spawner di chunk ini!"
+  egg-chunk-limit-exceeded: "&#F87171Di chunk ini, kamu hanya bisa memunculkan maksimal %limit% mob bertipe %type%!"
+  stack-egg-denied: "&#F87171Kamu tidak bisa mengubah jenis spawner yang ditumpuk dengan telur spawn!"
+  stack-natural-denied: "&#F87171Spawner alami tidak bisa digabung. Hancurkan lalu pasang lagi untuk menggunakannya."
+  booster-slot-invalid: "&#F87171Spawner itu sudah tidak ada di tumpukan. Tiket dikembalikan."
+  reload-failed: "&#F87171Muat ulang gagal. Periksa konsol untuk detailnya."
+  
+# =========================================
+# Jenis Entitas
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Stand Armor
+  AXOLOTL: Axolotl
+  BAT: Kelelawar
+  BEE: Lebah
+  BLAZE: Blaze
+  BOAT: Perahu
+  BOGGED: Rawa
+  BREEZE: Angin sepoi
+  CAMEL: Unta
+  CAMEL_HUSK: Unta Husk
+  CAT: Kucing
+  CAVE_SPIDER: Laba-laba gua
+  CHICKEN: Ayam
+  COD: Ikan kod
+  COPPER_GOLEM: Golem Tembaga
+  COW: Sapi
+  CREEPER: Creeper
+  CREAKING: Berderit
+  DOLPHIN: Lumba-lumba
+  DONKEY: Keledai
+  DROWNED: Tenggelam
+  ELDER_GUARDIAN: Penjaga tua
+  EMPTY: Kosong
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Naga Ender
+  EVOKER: Pemanggil
+  EXPERIENCE_BOTTLE: Botol pengalaman
+  EXPERIENCE_ORB: Orb pengalaman
+  FOX: Rubah
+  FROG: Katak
+  GHAST: Ghast
+  GIANT: Raksasa
+  GLOW_SQUID: Cumi bercahaya
+  GOAT: Kambing
+  GUARDIAN: Penjaga
+  HAPPY_GHAST: Ghast Bahagia
+  HOGLIN: Hoglin
+  HORSE: Kuda
+  HUSK: Husk
+  ILLUSIONER: Ilusionis
+  IRON_GOLEM: Golem besi
+  LLAMA: Llama
+  MAGMA_CUBE: Kubus magma
+  MINECART: Kereta tambang
+  MINECART_CHEST: Kereta tambang dengan peti
+  MINECART_COMMAND: Kereta tambang dengan blok perintah
+  MINECART_FURNACE: Kereta tambang dengan tungku
+  MINECART_HOPPER: Kereta tambang dengan corong
+  MINECART_SPAWNER: Kereta tambang dengan spawner
+  MINECART_TNT: Kereta tambang dengan TNT
+  MOOSHROOM: Sapi jamur
+  MULE: Bagal
+  MUSHROOM_COW: Sapi jamur
+  NAUTILUS: Nautilus
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Kering Kerontang
+  PARROT: Burung beo
+  PHANTOM: Phantom
+  PIG: Babi
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin brutal
+  PILLAGER: Perampok
+  POLAR_BEAR: Beruang kutub
+  PUFFERFISH: Ikan buntal
+  RABBIT: Kelinci
+  RAVAGER: Perusak
+  SALMON: Ikan salmon
+  SHEEP: Domba
+  SHULKER: Shulker
+  SILVERFISH: Gegat
+  SKELETON: Kerangka
+  SKELETON_HORSE: Kuda kerangka
+  SLIME: Slime
+  SNIFFER: Pengecap
+  SNOWMAN: Manusia salju
+  SNOW_GOLEM: Manusia salju
+  SPIDER: Laba-laba
+  SQUID: Cumi-cumi
+  STRAY: Stray
+  STRIDER: Strider
+  SULFUR_CUBE: Kubus Belerang
+  TADPOLE: Berudu
+  TRADER_LLAMA: Llama pedagang
+  TROPICAL_FISH: Ikan tropis
+  TURTLE: Kura-kura
+  VEX: Vex
+  VILLAGER: Penduduk
+  VINDICATOR: Pembalas
+  WANDERING_TRADER: Pedagang keliling
+  WARDEN: Penjaga
+  WITCH: Penyihir
+  WITHER: Wither
+  WITHER_SKELETON: Kerangka wither
+  WOLF: Serigala
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Kuda zombie
+  ZOMBIE_NAUTILUS: Nautilus Zombi
+  ZOMBIE_VILLAGER: Penduduk zombie
+  ZOMBIFIED_PIGLIN: Piglin terzombifikasi
+
+# Nama spawner item (lihat spawner_items.yml). Tambahkan satu baris untuk setiap item yang kamu tambahkan di sana: MATERIAL: Nama tampilan
+item-types:
+  NETHERITE_INGOT: Batang Netherite
+  DIAMOND: Berlian
+  COAL: Batu Bara
+  AMETHYST_SHARD: Pecahan Kecubung
+  EMERALD: Zamrud
+  NETHER_STAR: Bintang Nether
+  TOTEM_OF_UNDYING: Totem Keabadian

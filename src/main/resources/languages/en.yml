@@ -1,0 +1,349 @@
+# ===============================
+# Spawner System Language File
+# ===============================
+
+# Prefix for all plugin messages
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner Pickaxe Item Settings
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Pickaxe"
+  lore:
+    - "&#9CA3AFUse this pickaxe to break spawners."
+    - "&#FFE066"
+    - "&#4ADE80Uses left: &#F87171%uses%"
+
+# =========================================
+# Mode Tags (Advanced or Classic)
+# =========================================
+mode-tags:
+  advanced: "Spawner Pickaxe"
+  classic: "Silk Touch Pickaxe"
+
+# =========================================
+# Spawner Item Settings
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFPlace this spawner to spawn"
+    - "&#9CA3AFCan be broken with: &#FFE066%mode%"
+    - "&#9CA3AFEntity Type: &#4ADE80%type%"
+ 
+# =========================================
+# Spawner Hologram Settings
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFCan be broken with %mode%"
+  - "&#9CA3AFSneak and right-click to open the menu"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob Hologram Settings
+# =========================================
+mob-remove-warning:
+  - "&#F87171This mob will be removed"
+  - "&#FFE066Within %time%s if it doesn't leave the area."
+
+# =========================================
+# Menu Settings (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner Control Panel"
+  status:
+    active: "&#4ADE80Active ✔"
+    inactive: "&#F87171Inactive ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAuto Slayer"
+      lore:
+        - "&#9CA3AFAutomatically kills mobs from the spawner."
+        - "&#9CA3AFAlso turns on the Storage and XP Vacuum."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F9FAFBLeft-Click: &#FFE066Toggle Mode"
+      lore-auto:
+        - "&#9CA3AFAutomatically kills mobs from the spawner."
+        - "&#9CA3AFStorage and XP Vacuum are always on."
+        - "&#9CA3AFStatus: %status%"
+      lore-no-perm:
+        - "&#9CA3AFAutomatically kills mobs from the spawner."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F87171&lYOU CANNOT USE THIS FEATURE"
+
+    storage:
+      name: "&#38BDF8&lStorage"
+      lore:
+        - "&#9CA3AFItems collected by the Auto Slayer are kept here."
+        - "&#9CA3AFUsed slots: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBClick: &#FFE066Open Storage"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP Vacuum"
+      click: "&#F9FAFBClick: &#38BDF8Withdraw XP"
+      lore:
+        - "&#9CA3AFStores XP dropped from killed mobs."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFCollected: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBLeft-Click: &#FFE066Toggle Mode"
+        - "&#F9FAFBRight-Click: &#38BDF8Withdraw XP"
+      lore-no-perm:
+        - "&#9CA3AFStores XP dropped from killed mobs."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFCollected: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lYOU CANNOT USE THIS FEATURE"
+
+  messages:
+    no-permission: "&#F87171You don't have permission to change this feature!"
+    xp-empty: "&#F87171XP tank is empty!"
+    xp-collected: "&#4ADE80Collected: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171You must enable auto slayer first!"
+    feature-no-perm: "&#F87171You don't have permission to change this feature!"
+    perms-changed: "&#F87171Spawner features have been disabled due to permission changes."
+    storage-inventory-full: "&#F87171Your inventory is full!"
+    storage-taken: "&#4ADE80Took %amount% item(s) from the storage."
+    in-use: "&#F87171Someone else is using this spawner's menu right now."
+
+  storage:
+    title: "&#6B7280Spawner Storage"
+    previous:
+      name: "&#F9FAFB&lPrevious Page"
+      lore:
+        - "&#9CA3AFGo to page &#FFE066%page%"
+    next:
+      name: "&#F9FAFB&lNext Page"
+      lore:
+        - "&#9CA3AFGo to page &#FFE066%page%"
+    take-page:
+      name: "&#4ADE80&lTake Page"
+      lore:
+        - "&#9CA3AFTakes every item on this page."
+        - "&#9CA3AFItems cannot be put back."
+    back:
+      name: "&#F87171&lBack"
+      lore:
+        - "&#9CA3AFReturn to the spawner menu."
+    info:
+      name: "&#38BDF8&lStorage Info"
+      lore:
+        - "&#9CA3AFPage: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFUsed slots: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFClick an item to take it."
+
+# =========================================
+# Spawner Booster Settings
+# =========================================
+# Placeholders: %range% %delay% %xp% %duration% (%index% in the info title)
+booster:
+  item:
+    name: "&#F59E0B&lSpawner Booster"
+    lore:
+      - "&#9CA3AFRight-click a spawner with this ticket to boost it."
+      - "&#FFE066Range: &#F9FAFB+%range% blocks"
+      - "&#FFE066Spawn delay: &#F9FAFB-%delay% seconds"
+      - "&#FFE066Mob XP: &#F9FAFB+%xp%%"
+      - "&#FFE066Duration: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Choose Spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBClick: &#FFE066Apply Booster"
+  time:
+    unlimited: "Unlimited"
+    hour: "h"
+    minute: "m"
+    second: "s"
+  info:
+    name: "&#F59E0B&lActive Boosters"
+    empty: "&#9CA3AFNo active booster."
+    entry-title: "&#FFE066&lBooster #%index%"
+
+# =========================================
+# Plugin Messages
+# =========================================
+messages:
+  no-permission: "&#F87171You don't have permission to use this command."
+  reload-success: "&#4ADE80Spawner system configuration reloaded successfully."
+  wrong-subcommand: "&#FFE066Usage: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Usage: /spsystem pickaxegive <player> <1-1000>"
+  usage-givespawner: "&#FFE066Usage: /spsystem givespawner <player> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Usage: /spsystem givebooster <player> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: extra blocks added to the spawner activation range"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: seconds removed from the spawn delay (0 = none)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: extra percent of XP from the spawner (0 = none)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: how long the boost lasts, in minutes, or unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: how many tickets to give (optional)"
+    - "&#FFE066Example: &#F9FAFB/spsystem givebooster player 10 5 50 30 &#9CA3AF(+10 blocks, -5s delay, +50% XP, 30 minutes)"
+  invalid-mob-type: "&#F87171Invalid mob type: %type%"
+  invalid-item-spawner: "&#F87171Invalid item spawner: %type%"
+  booster-no-effect: "&#F87171At least one of range, delay-seconds or xp-percent must be greater than 0."
+  booster-disabled: "&#F87171The spawner booster system is disabled. Set 'spawner-booster.enabled: true' in config.yml and run /spsystem reload."
+  command-disabled: "&#F87171The 'pickaxegive' command is only available in 'advanced' mode."
+  player-not-found: "&#F87171Player not found: %player%"
+  not-a-number: "&#F87171Usage amount must be a number."
+  max-uses-limit: "&#F87171Maximum usage allowed is 1000."
+  pickaxe-given-sender: "&#4ADE80Given %uses% uses Spawner Pickaxe to %player%."
+  pickaxe-given-recipient: "&#38BDF8You have received a special spawner pickaxe!"
+  spawner-collected: "&#4ADE80Spawner successfully added to your inventory!"
+  spawner-break-lost: "&#F87171The spawner disappeared while you broke it! (Recovery chance: %chance%%)"
+  spawner-break-no-chance: "&#F87171The spawner disappeared! You have no chance to recover spawners."
+  booster-given-sender: "&#4ADE80Gave %player% x%amount% spawner booster ticket(s)."
+  booster-given-recipient: "&#4ADE80You received x%amount% spawner booster ticket(s)!"
+  booster-applied: "&#4ADE80Spawner boosted! Range +%range%, spawn delay -%delay%s, XP +%xp%%, duration: %duration%."
+  booster-already-active: "&#F87171This spawner already has an active booster (%duration% left)."
+  booster-stack-limit: "&#F87171This spawner already has the maximum number of boosters (%max%)."
+  booster-delay-too-high: "&#F87171The spawn delay can be reduced by at most %max% seconds (minimum spawn delay: %min%s)."
+  booster-delay-not-reducible: "&#F87171The spawn delay cannot be reduced because it is already at the minimum (%min%s)."
+  booster-delay-maxed: "&#FFE066The spawn delay is already at its lowest level, so the delay part was not applied. The other effects were applied."
+  booster-delay-partial: "&#FFE066The spawn delay reached its lowest level, so only -%delay%s was applied. The other effects were applied."
+  booster-delay-maxed-no-effect: "&#F87171The spawn delay of this spawner is already at its lowest level. The ticket was not used."
+  stack-merged: "&#4ADE80Merged %amount% spawner(s). Stack: %stack%/%max%."
+  stack-full: "&#F87171This spawner stack is full! (max %max%)"
+  stack-type-mismatch: "&#F87171You can only merge spawners of the same type!"
+  stack-collected: "&#4ADE80Collected %amount% spawner(s). %left% left in the stack."
+  pickaxe-broken: "&#4ADE80Your spawner pickaxe broke!"
+  natural-spawner-break-denied: "&#F87171Natural spawners are protected and cannot be broken."
+  natural-spawner-no-permission: "&#F87171You do not have permission to break natural spawners."
+  sp-pickaxe-only: "&#F87171This special pickaxe can only be used to break spawners!"
+  inventory-full: "&#4ADE80Item dropped on the ground because your inventory is full!"
+  classic-silk-required: "&#F87171You can only break spawners with a Silk Touch enchanted pickaxe!"
+  advanced-pickaxe-required: "&#F87171You can only break spawners with the special Spawner Pickaxe!"
+  empty-spawner-break-denied: "&#F87171You cannot break this empty spawner!"
+  spawner-given-sender: "&#4ADE80Gave %type% spawner to %player%."
+  spawner-given-recipient: "&#38BDF8You received a %type% spawner!"
+  chunk-limit-exceeded: "&#F87171You cannot place more spawners in this chunk!"
+  egg-chunk-limit-exceeded: "&#F87171You cannot spawn more than %limit% mobs of type %type% in this chunk!"
+  stack-egg-denied: "&#F87171You cannot change the type of a stacked spawner with a spawn egg!"
+  stack-natural-denied: "&#F87171Natural spawners cannot be merged. Break it and place it again to use it."
+  booster-slot-invalid: "&#F87171That spawner is no longer in the stack. The ticket was returned."
+  reload-failed: "&#F87171Reload failed. Check the console for details."
+  
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Armor Stand
+  AXOLOTL: Axolotl
+  BAT: Bat
+  BEE: Bee
+  BLAZE: Blaze
+  BOAT: Boat
+  BOGGED: Bogged
+  BREEZE: Breeze
+  CAMEL: Camel
+  CAMEL_HUSK: Camel Husk
+  CAT: Cat
+  CAVE_SPIDER: Cave Spider
+  CHICKEN: Chicken
+  COD: Cod
+  COPPER_GOLEM: Copper Golem
+  COW: Cow
+  CREEPER: Creeper
+  CREAKING: Creaking
+  DOLPHIN: Dolphin
+  DONKEY: Donkey
+  DROWNED: Drowned
+  ELDER_GUARDIAN: Elder Guardian
+  EMPTY: Empty
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Ender Dragon
+  EVOKER: Evoker
+  EXPERIENCE_BOTTLE: Experience Bottle
+  EXPERIENCE_ORB: Experience Orb
+  FOX: Fox
+  FROG: Frog
+  GHAST: Ghast
+  GIANT: Giant
+  GLOW_SQUID: Glow Squid
+  GOAT: Goat
+  GUARDIAN: Guardian
+  HAPPY_GHAST: Happy Ghast
+  HOGLIN: Hoglin
+  HORSE: Horse
+  HUSK: Husk
+  ILLUSIONER: Illusioner
+  IRON_GOLEM: Iron Golem
+  LLAMA: Llama
+  MAGMA_CUBE: Magma Cube
+  MINECART: Minecart
+  MINECART_CHEST: Minecart with Chest
+  MINECART_COMMAND: Minecart with Command Block
+  MINECART_FURNACE: Minecart with Furnace
+  MINECART_HOPPER: Minecart with Hopper
+  MINECART_SPAWNER: Minecart with Spawner
+  MINECART_TNT: Minecart with TNT
+  MOOSHROOM: Mushroom Cow
+  MULE: Mule
+  MUSHROOM_COW: Mushroom Cow
+  NAUTILUS: Nautilus
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Parched
+  PARROT: Parrot
+  PHANTOM: Phantom
+  PIG: Pig
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brute
+  PILLAGER: Pillager
+  POLAR_BEAR: Polar Bear
+  PUFFERFISH: Pufferfish
+  RABBIT: Rabbit
+  RAVAGER: Ravager
+  SALMON: Salmon
+  SHEEP: Sheep
+  SHULKER: Shulker
+  SILVERFISH: Silverfish
+  SKELETON: Skeleton
+  SKELETON_HORSE: Skeleton Horse
+  SLIME: Slime
+  SNIFFER: Sniffer
+  SNOWMAN: Snowman
+  SNOW_GOLEM: Snowman
+  SPIDER: Spider
+  SQUID: Squid
+  STRAY: Stray
+  STRIDER: Strider
+  SULFUR_CUBE: Sulfur Cube
+  TADPOLE: Tadpole
+  TRADER_LLAMA: Trader Llama
+  TROPICAL_FISH: Tropical Fish
+  TURTLE: Turtle
+  VEX: Vex
+  VILLAGER: Villager
+  VINDICATOR: Vindicator
+  WANDERING_TRADER: Wandering Trader
+  WARDEN: Warden
+  WITCH: Witch
+  WITHER: Wither
+  WITHER_SKELETON: Wither Skeleton
+  WOLF: Wolf
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombie Horse
+  ZOMBIE_NAUTILUS: Zombie Nautilus
+  ZOMBIE_VILLAGER: Zombie Villager
+  ZOMBIFIED_PIGLIN: Zombified Piglin
+
+# Names of item spawners (see spawner_items.yml). Add one line per item you add there: MATERIAL: Display name
+item-types:
+  NETHERITE_INGOT: Netherite Ingot
+  DIAMOND: Diamond
+  COAL: Coal
+  AMETHYST_SHARD: Amethyst Shard
+  EMERALD: Emerald
+  NETHER_STAR: Nether Star
+  TOTEM_OF_UNDYING: Totem of Undying

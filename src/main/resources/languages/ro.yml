@@ -1,0 +1,351 @@
+# ===============================
+# Fișierul de Limbă al Sistemului de Spawnere
+# ===============================
+
+# Prefix pentru toate mesajele pluginului
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Setările Itemului de Târnacop pentru Spawnere
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lTârnacop de Spawnere"
+  lore:
+    - "&#9CA3AFFolosește acest târnacop pentru a spawne spawnere."
+    - "&#FFE066"
+    - "&#4ADE80Utilizări rămase: &#F87171%uses%"
+
+# =========================================
+# Etichete de Mod (Avansat sau Clasic)
+# =========================================
+mode-tags:
+  advanced: "Târnacop de Spawnere"
+  classic: "Târnacop cu Atingeri de Mătase"
+
+# =========================================
+# Setările Itemului Spawner
+# =========================================
+spawner-item:
+  name: "&#4ADE80Spawner %type%"
+  lore:
+    - "&#9CA3AFPlasează acest spawner pentru a genera"
+    - "&#9CA3AFPoate fi spart cu: &#FFE066%mode%"
+    - "&#9CA3AFTip entitate: &#4ADE80%type%"
+
+# =========================================
+# Setările Hologramelor pentru Spawnere
+# =========================================
+spawnable-status:
+  - "&#4ADE80Spawner %type%"
+  - "&#9CA3AFPoate fi spart cu %mode%"
+  - "&#9CA3AFAplecați-vă și faceți clic dreapta pentru a deschide meniul"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Setări Hologram pentru Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Acest mob va fi eliminat"
+  - "&#FFE066În %time% s dacă nu părăsește zona."
+  
+# =========================================
+# Setări Meniu (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Panou de Control Spawner"
+  status:
+    active: "&#4ADE80Activ ✔"
+    inactive: "&#F87171Inactiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lUcigaș Automat"
+      lore:
+        - "&#9CA3AFOmoară automat creaturile din spawner."
+        - "&#9CA3AFPornește și Depozitul și Aspiratorul de XP."
+        - "&#9CA3AFStare: %status%"
+        - ""
+        - "&#F9FAFBClic stânga: &#FFE066Schimbă modul"
+      lore-auto:
+        - "&#9CA3AFOmoară automat creaturile din spawner."
+        - "&#9CA3AFDepozitul și Aspiratorul de XP sunt mereu pornite."
+        - "&#9CA3AFStare: %status%"
+      lore-no-perm:
+        - "&#9CA3AFOmoară automat creaturile din spawner."
+        - "&#9CA3AFStare: %status%"
+        - ""
+        - "&#F87171&lNU POȚI FOLOSI ACEASTĂ CARACTERISTICĂ"
+
+    storage:
+      name: "&#38BDF8&lDepozit"
+      lore:
+        - "&#9CA3AFObiectele adunate de Auto Slayer sunt păstrate aici."
+        - "&#9CA3AFSloturi folosite: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBClick: &#FFE066Deschide depozitul"
+
+    xp-vacuum:
+      name: "&#4ADE80&lColector XP"
+      click: "&#F9FAFBClick: &#38BDF8Retrage XP"
+      lore:
+        - "&#9CA3AFStochează XP-ul căzut de la creaturile ucise."
+        - ""
+        - "&#9CA3AFStare: %status%"
+        - "&#9CA3AFColectat: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBClic stânga: &#FFE066Schimbă modul"
+        - "&#F9FAFBClic dreapta: &#38BDF8Retrage XP"
+      lore-no-perm:
+        - "&#9CA3AFStochează XP-ul căzut de la creaturile ucise."
+        - ""
+        - "&#9CA3AFStare: %status%"
+        - "&#9CA3AFColectat: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lNU POȚI FOLOSI ACEASTĂ CARACTERISTICĂ"
+
+  messages:
+    no-permission: "&#F87171Nu ai permisiunea să schimbi această caracteristică!"
+    xp-empty: "&#F87171Rezervorul de XP este gol!"
+    xp-collected: "&#4ADE80Colectat: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Trebuie mai întâi să activezi ucigașul automat!"
+    feature-no-perm: "&#F87171Nu ai permisiunea să schimbi această caracteristică!"
+    perms-changed: "&#F87171Caracteristicile spawnerului au fost dezactivate din cauza modificărilor permisiunilor tale."
+    storage-inventory-full: "&#F87171Inventarul tău este plin!"
+    storage-taken: "&#4ADE80Ai luat %amount% obiect(e) din depozit."
+    in-use: "&#F87171Altcineva folosește chiar acum meniul acestui spawner."
+  storage:
+    title: "&#6B7280Depozitul spawnerului"
+    previous:
+      name: "&#F9FAFB&lPagina anterioară"
+      lore:
+        - "&#9CA3AFMergi la pagina &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lPagina următoare"
+      lore:
+        - "&#9CA3AFMergi la pagina &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lIa pagina"
+      lore:
+        - "&#9CA3AFIa toate obiectele de pe această pagină."
+        - "&#9CA3AFObiectele nu pot fi puse înapoi."
+    back:
+      name: "&#F87171&lÎnapoi"
+      lore:
+        - "&#9CA3AFÎntoarce-te la meniul spawnerului."
+    info:
+      name: "&#38BDF8&lInformații depozit"
+      lore:
+        - "&#9CA3AFPagina: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFSloturi folosite: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFDă click pe un obiect pentru a-l lua."
+  
+# =========================================
+# Setări amplificator spawner
+# =========================================
+# Variabile: %range% %delay% %xp% %duration% (%index% în titlul de informații)
+booster:
+  item:
+    name: "&#F59E0B&lAmplificator spawner"
+    lore:
+      - "&#9CA3AFClick dreapta pe un spawner cu acest bilet pentru a-l amplifica."
+      - "&#FFE066Rază: &#F9FAFB+%range% blocuri"
+      - "&#FFE066Timp de apariție: &#F9FAFB-%delay% secunde"
+      - "&#FFE066XP de la mobi: &#F9FAFB+%xp%%"
+      - "&#FFE066Durată: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Alege spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBClick: &#FFE066Aplică booster"
+  time:
+    unlimited: "Nelimitat"
+    hour: "h"
+    minute: "min"
+    second: "s"
+  info:
+    name: "&#F59E0B&lAmplificări active"
+    empty: "&#9CA3AFNicio amplificare activă."
+    entry-title: "&#FFE066&lAmplificare #%index%"
+
+# =========================================
+# Mesaje ale Pluginului
+# =========================================
+messages:
+  no-permission: "&#F87171Nu ai permisiunea de a utiliza această comandă."
+  reload-success: "&#4ADE80Configurația sistemului de spawnere a fost reîncărcată cu succes."
+  wrong-subcommand: "&#FFE066Utilizare: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Utilizare: /spsystem pickaxegive <jucător> <1-1000>"
+  usage-givespawner: "&#FFE066Utilizare: /spsystem givespawner <jucător> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Utilizare: /spsystem givebooster <jucător> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: blocuri suplimentare adăugate la raza de activare a spawnerului"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: secunde scăzute din întârzierea de spawn (0 = niciuna)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: procent suplimentar de XP de la spawner (0 = niciunul)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: durata boostului în minute sau unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: câte bilete să dai (opțional)"
+    - "&#FFE066Exemplu: &#F9FAFB/spsystem givebooster jucător 10 5 50 30 &#9CA3AF(+10 blocuri, -5 s întârziere, +50% XP, 30 de minute)"
+  invalid-mob-type: "&#F87171Tip de mob invalid: %type%"
+  invalid-item-spawner: "&#F87171Spawner de obiect invalid: %type%"
+  booster-no-effect: "&#F87171Cel puțin una dintre valorile range, delay-seconds sau xp-percent trebuie să fie mai mare decât 0."
+  booster-disabled: "&#F87171Sistemul de boostere pentru spawnere este dezactivat. Setează 'spawner-booster.enabled: true' în config.yml și rulează /spsystem reload."
+  command-disabled: "&#F87171Comanda 'pickaxegive' este disponibilă doar în modul 'avansat'."
+  player-not-found: "&#F87171Jucător negăsit: %player%"
+  not-a-number: "&#F87171Numărul de utilizări trebuie să fie un număr."
+  max-uses-limit: "&#F87171Numărul maxim de utilizări permis este 1000."
+  pickaxe-given-sender: "&#4ADE80Ai dat un Târnacop de Spawnere cu %uses% utilizări lui %player%."
+  pickaxe-given-recipient: "&#38BDF8Ai primit un târnacop special pentru spawnere!"
+  spawner-collected: "&#4ADE80Spawner adăugat cu succes în inventar!"
+  spawner-break-lost: "&#F87171Spawnerul a dispărut la spargere! (Șansă de recuperare: %chance%%)"
+  spawner-break-no-chance: "&#F87171Spawnerul a dispărut! Nu ai nicio șansă să recuperezi spawnere."
+  booster-given-sender: "&#4ADE80I-ai dat lui %player% x%amount% bilet(e) de amplificare spawner."
+  booster-given-recipient: "&#4ADE80Ai primit x%amount% bilet(e) de amplificare spawner!"
+  booster-applied: "&#4ADE80Spawner amplificat! Rază +%range%, timp de apariție -%delay% s, XP +%xp%%, durată: %duration%."
+  booster-already-active: "&#F87171Acest spawner are deja o amplificare activă (mai sunt %duration%)."
+  booster-stack-limit: "&#F87171Acest spawner are deja numărul maxim de amplificări (%max%)."
+  booster-delay-too-high: "&#F87171Întârzierea de spawn poate fi redusă cu cel mult %max% secunde (întârziere minimă: %min%s)."
+  booster-delay-not-reducible: "&#F87171Întârzierea de spawn nu poate fi redusă deoarece este deja la minim (%min%s)."
+  booster-delay-maxed: "&#FFE066Întârzierea de spawn este deja la cel mai scăzut nivel, deci partea de întârziere nu a fost aplicată. Celelalte efecte au fost aplicate."
+  booster-delay-partial: "&#FFE066Întârzierea de spawn a atins cel mai scăzut nivel, deci a fost aplicat doar -%delay%s. Celelalte efecte au fost aplicate."
+  booster-delay-maxed-no-effect: "&#F87171Întârzierea de spawn a acestui spawner este deja la cel mai scăzut nivel. Biletul nu a fost folosit."
+  stack-merged: "&#4ADE80%amount% spawner(e) combinat(e). Stivă: %stack%/%max%."
+  stack-full: "&#F87171Această stivă de spawnere este plină! (max. %max%)"
+  stack-type-mismatch: "&#F87171Poți combina doar spawnere de același tip!"
+  stack-collected: "&#4ADE80Ai primit %amount% spawner(e). Au rămas %left% în stivă."
+  pickaxe-broken: "&#4ADE80Târnacopul tău de spawnere s-a rupt!"
+  natural-spawner-break-denied: "&#F87171Spawnerele naturale sunt protejate și nu pot fi sparte."
+  natural-spawner-no-permission: "&#F87171Nu ai permisiunea de a sparge spawnere naturale."
+  sp-pickaxe-only: "&#F87171Acest târnacop special poate fi folosit doar pentru a sparge spawnere!"
+  inventory-full: "&#4ADE80Obiectul a fost aruncat pe pământ deoarece inventarul tău este plin!"
+  classic-silk-required: "&#F87171Poți sparge spawnerele doar cu un târnacop fermecat cu Atingeri de Mătase!"
+  advanced-pickaxe-required: "&#F87171Poți sparge spawnerele doar cu Târnacopul special de Spawnere!"
+  empty-spawner-break-denied: "&#F87171Nu poți sparge acest spawner gol!"
+  spawner-given-sender: "&#4ADE80Ai dat un spawner %type% lui %player%."
+  spawner-given-recipient: "&#38BDF8Ai primit un spawner %type%!"
+  chunk-limit-exceeded: "&#F87171Nu poți plasa mai multe spawnere în acest chunk!"
+  egg-chunk-limit-exceeded: "&#F87171În acest chunk, poți spawna doar %limit% mobs de tipul %type%!"
+  stack-egg-denied: "&#F87171Nu poți schimba tipul unui spawner stivuit cu un ou de spawn!"
+  stack-natural-denied: "&#F87171Spawnerele naturale nu pot fi combinate. Sparge-l și pune-l din nou."
+  booster-slot-invalid: "&#F87171Acel spawner nu mai este în stivă. Biletul a fost returnat."
+  reload-failed: "&#F87171Reîncărcarea a eșuat. Verifică consola pentru detalii."
+  
+# =========================================
+# Tipuri de Entități
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Suport de armură
+  AXOLOTL: Axolotl
+  BAT: Liliac
+  BEE: Albină
+  BLAZE: Blaze
+  BOAT: Barcă
+  BOGGED: Mlaștină
+  BREEZE: Briză
+  CAMEL: Cămilă
+  CAMEL_HUSK: Cămilă Husk
+  CAT: Pisică
+  CAVE_SPIDER: Păianjen de peșteră
+  CHICKEN: Găină
+  COD: Cod
+  COPPER_GOLEM: Golem de cupru
+  COW: Vacă
+  CREEPER: Creeper
+  CREAKING: Scârțâitor
+  DOLPHIN: Delfin
+  DONKEY: Măgar
+  DROWNED: Înecat
+  ELDER_GUARDIAN: Gardian Bătrân
+  EMPTY: Gol
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dragonul Ender
+  EVOKER: Evocator
+  EXPERIENCE_BOTTLE: Sticlă de experiență
+  EXPERIENCE_ORB: Sferă de experiență
+  FOX: Vulpe
+  FROG: Broască
+  GHAST: Ghast
+  GIANT: Uriaș
+  GLOW_SQUID: Calmar luminos
+  GOAT: Capră
+  GUARDIAN: Gardian
+  HAPPY_GHAST: Ghast fericit
+  HOGLIN: Hoglin
+  HORSE: Cal
+  HUSK: Husk
+  ILLUSIONER: Iluzionist
+  IRON_GOLEM: Golem de fier
+  LLAMA: Lama
+  MAGMA_CUBE: Cub de magmă
+  MINECART: Vagonetă
+  MINECART_CHEST: Vagonetă cu cufăr
+  MINECART_COMMAND: Vagonetă cu bloc de comenzi
+  MINECART_FURNACE: Vagonetă cu cuptor
+  MINECART_HOPPER: Vagonetă cu pâlnie
+  MINECART_SPAWNER: Vagonetă cu generator
+  MINECART_TNT: Vagonetă cu TNT
+  MOOSHROOM: Vacă cu ciuperci
+  MULE: Catâr
+  MUSHROOM_COW: Vacă cu ciuperci
+  NAUTILUS: Nautil
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Uscat
+  PARROT: Papagal
+  PHANTOM: Fantomă
+  PIG: Porc
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin brutal
+  PILLAGER: Jefuitor
+  POLAR_BEAR: Urs polar
+  PUFFERFISH: Pește balon
+  RABBIT: Iepure
+  RAVAGER: Devastator
+  SALMON: Somon
+  SHEEP: Oaie
+  SHULKER: Shulker
+  SILVERFISH: Peștișor argintiu
+  SKELETON: Schelet
+  SKELETON_HORSE: Cal schelet
+  SLIME: Slime
+  SNIFFER: Mirositor
+  SNOWMAN: Om de zăpadă
+  SNOW_GOLEM: Om de zăpadă
+  SPIDER: Păianjen
+  SQUID: Calmar
+  STRAY: Rătăcitor
+  STRIDER: Străjer
+  SULFUR_CUBE: Cub de sulf
+  TADPOLE: Mormoloc
+  TRADER_LLAMA: Lama negustorului
+  TROPICAL_FISH: Pește tropical
+  TURTLE: Țestoasă
+  VEX: Vex
+  VILLAGER: Sătean
+  VINDICATOR: Răzbunător
+  WANDERING_TRADER: Negustor ambulant
+  WARDEN: Gardian
+  WITCH: Vrăjitoare
+  WITHER: Wither
+  WITHER_SKELETON: Schelet wither
+  WOLF: Lup
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Cal zombie
+  ZOMBIE_NAUTILUS: Nautil zombi
+  ZOMBIE_VILLAGER: Sătean zombie
+  ZOMBIFIED_PIGLIN: Piglin zombificat
+
+# Numele spawnerelor de obiecte (vezi spawner_items.yml). Adaugă o linie pentru fiecare obiect adăugat acolo: MATERIAL: Nume afișat
+item-types:
+  NETHERITE_INGOT: Lingou de netherit
+  DIAMOND: Diamant
+  COAL: Cărbune
+  AMETHYST_SHARD: Cristal de ametist
+  EMERALD: Smarald
+  NETHER_STAR: Steaua Nether
+  TOTEM_OF_UNDYING: Totemul nemuririi

@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System 日本語 (Japanese)
+# ===============================
+
+# プラグインメッセージの接頭辞
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# スポナーピッケルの設定
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lスポナーピッケル"
+  lore:
+    - "&#9CA3AFスポナーを壊すにはこのピッケルを使ってください。"
+    - "&#FFE066"
+    - "&#4ADE80残り使用回数: &#F87171%uses%"
+
+# =========================================
+# モードタグ（高度またはクラシック）
+# =========================================
+mode-tags:
+  advanced: "スポナーピッケル"
+  classic: "シルクタッチのピッケル"
+
+# =========================================
+# スポナーアイテム設定
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% スポナー"
+  lore:
+    - "&#9CA3AFこのスポナーを置くとモンスターを生成します。"
+    - "&#9CA3AF以下でのみ破壊可能: &#FFE066%mode%"
+    - "&#9CA3AFモンスターの種類: &#4ADE80%type%"
+
+# =========================================
+# スポナー ホログラム設定
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% スポナー"
+  - "&#9CA3AF%mode% で壊すことができます"
+  - "&#9CA3AFしゃがんで右クリックでメニューを開きます"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# モブ ホログラム設定
+# =========================================
+mob-remove-warning:
+  - "&#F87171このモブは削除されます"
+  - "&#FFE066エリアから出ない場合、%time%秒以内に"
+  
+# =========================================
+# メニュー設定 (GUI)
+# =========================================
+menu:
+  title: "&#6B7280スポナーコントロールパネル"
+  status:
+    active: "&#4ADE80アクティブ ✔"
+    inactive: "&#F87171非アクティブ ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lオートキラー"
+      lore:
+        - "&#9CA3AFスポナーから出てくるモブを自動で倒します。"
+        - "&#9CA3AFストレージとXP吸引も自動でオンになります。"
+        - "&#9CA3AF状態: %status%"
+        - ""
+        - "&#F9FAFB左クリック: &#FFE066モード切り替え"
+      lore-auto:
+        - "&#9CA3AFスポナーから出てくるモブを自動で倒します。"
+        - "&#9CA3AFストレージとXP吸引は常にオンです。"
+        - "&#9CA3AF状態: %status%"
+      lore-no-perm:
+        - "&#9CA3AFスポナーから出てくるモブを自動で倒します。"
+        - "&#9CA3AF状態: %status%"
+        - ""
+        - "&#F87171&lこの機能は使用できません"
+
+    storage:
+      name: "&#38BDF8&lストレージ"
+      lore:
+        - "&#9CA3AFオートスレイヤーで集めたアイテムはここに保管されます。"
+        - "&#9CA3AF使用スロット： &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBクリック： &#FFE066ストレージを開く"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP回収機"
+      click: "&#F9FAFBクリック： &#38BDF8XPを引き出す"
+      lore:
+        - "&#9CA3AF倒したモブからドロップしたXPを貯めます。"
+        - ""
+        - "&#9CA3AF状態: %status%"
+        - "&#9CA3AF貯まったXP: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFB左クリック: &#FFE066モード切り替え"
+        - "&#F9FAFB右クリック: &#38BDF8XPを引き出す"
+      lore-no-perm:
+        - "&#9CA3AF倒したモブからドロップしたXPを貯めます。"
+        - ""
+        - "&#9CA3AF状態: %status%"
+        - "&#9CA3AF貯まったXP: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lこの機能は使用できません"
+
+  messages:
+    no-permission: "&#F87171この機能を変更する権限がありません！"
+    xp-empty: "&#F87171XPタンクは空です！"
+    xp-collected: "&#4ADE80回収しました: &#4ADE80%xp% XP！"
+    req-auto-slayer: "&#F87171最初にオートキラーを有効にしてください！"
+    feature-no-perm: "&#F87171この機能を変更する権限がありません！"
+    perms-changed: "&#F87171権限が変更されたため、スポナー機能は無効になりました。"
+    storage-inventory-full: "&#F87171インベントリがいっぱいです！"
+    storage-taken: "&#4ADE80ストレージからアイテムを %amount% 個取り出しました。"
+    in-use: "&#F87171このスポナーのメニューは現在ほかのプレイヤーが使用中です。"
+  storage:
+    title: "&#6B7280スポナーストレージ"
+    previous:
+      name: "&#F9FAFB&l前のページ"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF ページへ移動"
+    next:
+      name: "&#F9FAFB&l次のページ"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF ページへ移動"
+    take-page:
+      name: "&#4ADE80&lページを取る"
+      lore:
+        - "&#9CA3AFこのページのすべてのアイテムを取り出します。"
+        - "&#9CA3AFアイテムは戻せません。"
+    back:
+      name: "&#F87171&l戻る"
+      lore:
+        - "&#9CA3AFスポナーメニューに戻ります。"
+    info:
+      name: "&#38BDF8&lストレージ情報"
+      lore:
+        - "&#9CA3AFページ： &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AF使用スロット： &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFアイテムをクリックして取り出します。"
+  
+# =========================================
+# スポナー強化の設定
+# =========================================
+# プレースホルダー：%range% %delay% %xp% %duration%（情報タイトルでは %index%）
+booster:
+  item:
+    name: "&#F59E0B&lスポナー強化チケット"
+    lore:
+      - "&#9CA3AFこのチケットでスポナーを右クリックすると強化されます。"
+      - "&#FFE066稼働範囲：&#F9FAFB+%range% ブロック"
+      - "&#FFE066出現間隔：&#F9FAFB-%delay% 秒"
+      - "&#FFE066モブの経験値：&#F9FAFB+%xp%%"
+      - "&#FFE066期間：&#F9FAFB%duration%"
+  select:
+    title: "&#6B7280スポナーを選択"
+    entry: "&#FFE066&lスポナー #%index%"
+    click: "&#F9FAFBクリック： &#FFE066ブースターを使う"
+  time:
+    unlimited: "無期限"
+    hour: "時間"
+    minute: "分"
+    second: "秒"
+  info:
+    name: "&#F59E0B&l有効な強化"
+    empty: "&#9CA3AF有効な強化はありません。"
+    entry-title: "&#FFE066&l強化 #%index%"
+
+# =========================================
+# プラグインメッセージ
+# =========================================
+messages:
+  no-permission: "&#F87171このコマンドを実行する権限がありません。"
+  reload-success: "&#4ADE80Spawner システムの設定を正常に再読み込みしました。"
+  wrong-subcommand: "&#FFE066使用法: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066使用法: /spsystem pickaxegive <プレイヤー> <1-1000>"
+  usage-givespawner: "&#FFE066使用法: /spsystem givespawner <プレイヤー> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066使用法: /spsystem givebooster <プレイヤー> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: スポナーの起動範囲に追加するブロック数"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: スポーン間隔から引く秒数 (0 = なし)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: スポナーのXPに追加する割合(%) (0 = なし)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: ブーストの持続時間(分)、または unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: 配布するチケットの枚数 (省略可)"
+    - "&#FFE066例: &#F9FAFB/spsystem givebooster プレイヤー 10 5 50 30 &#9CA3AF(範囲+10ブロック、間隔-5秒、XP+50%、30分間)"
+  invalid-mob-type: "&#F87171無効なモブの種類: %type%"
+  invalid-item-spawner: "&#F87171無効なアイテムスポナー: %type%"
+  booster-no-effect: "&#F87171range、delay-seconds、xp-percent のうち少なくとも1つは0より大きくする必要があります。"
+  booster-disabled: "&#F87171スポナーブースターシステムは無効です。config.yml で 'spawner-booster.enabled: true' に設定し、/spsystem reload を実行してください。"
+  command-disabled: "&#F87171'pickaxegive' コマンドは 'advanced' モードでのみ使用可能です。"
+  player-not-found: "&#F87171プレイヤーが見つかりません: %player%"
+  not-a-number: "&#F87171使用回数は数字でなければなりません。"
+  max-uses-limit: "&#F87171最大使用回数は1000です。"
+  pickaxe-given-sender: "&#4ADE80%player% に %uses% 回使用可能なスポナーピッケルを付与しました。"
+  pickaxe-given-recipient: "&#38BDF8特別なスポナーピッケルを受け取りました！"
+  spawner-collected: "&#4ADE80スポナーがインベントリに正常に追加されました！"
+  spawner-break-lost: "&#F87171スポナーは破壊時に消えました！（回収確率：%chance%%）"
+  spawner-break-no-chance: "&#F87171スポナーは消えました！あなたにはスポナーを回収できる確率がありません。"
+  booster-given-sender: "&#4ADE80%player% にスポナー強化チケットを x%amount% 枚渡しました。"
+  booster-given-recipient: "&#4ADE80スポナー強化チケットを x%amount% 枚受け取りました！"
+  booster-applied: "&#4ADE80スポナーを強化しました！範囲 +%range%、出現間隔 -%delay% 秒、経験値 +%xp%%、期間：%duration%。"
+  booster-already-active: "&#F87171このスポナーにはすでに有効な強化があります（残り %duration%）。"
+  booster-stack-limit: "&#F87171このスポナーの強化数はすでに上限です（%max%）。"
+  booster-delay-too-high: "&#F87171スポーン間隔は最大 %max% 秒までしか短縮できません（最小スポーン間隔：%min%秒）。"
+  booster-delay-not-reducible: "&#F87171スポーン間隔はすでに最小（%min%秒）のため、短縮できません。"
+  booster-delay-maxed: "&#FFE066スポーン間隔はすでに最低レベルのため、間隔の効果は適用されませんでした。他の効果は適用されました。"
+  booster-delay-partial: "&#FFE066スポーン間隔が最低レベルに達したため、-%delay%秒のみ適用されました。他の効果は適用されました。"
+  booster-delay-maxed-no-effect: "&#F87171このスポナーのスポーン間隔はすでに最低レベルです。チケットは使用されませんでした。"
+  stack-merged: "&#4ADE80スポナーを %amount% 個統合しました。スタック：%stack%/%max%。"
+  stack-full: "&#F87171このスポナーのスタックは満杯です！（最大 %max%）"
+  stack-type-mismatch: "&#F87171同じ種類のスポナーしか統合できません！"
+  stack-collected: "&#4ADE80スポナーを %amount% 個回収しました。スタックに %left% 個残っています。"
+  pickaxe-broken: "&#4ADE80スポナーピッケルが壊れました！"
+  natural-spawner-break-denied: "&#F87171自然生成されたスポナーは保護されており、破壊できません。"
+  natural-spawner-no-permission: "&#F87171自然生成されたスポナーを破壊する権限がありません。"
+  sp-pickaxe-only: "&#F87171この特別なピッケルはスポナー専用です！"
+  inventory-full: "&#4ADE80インベントリが満杯のため、アイテムが地面に落とされました！"
+  classic-silk-required: "&#F87171スポナーはシルクタッチのピッケルでのみ破壊可能です！"
+  advanced-pickaxe-required: "&#F87171スポナーは特別なスポナーピッケルでのみ破壊可能です！"
+  empty-spawner-break-denied: "&#F87171空のスポナーは破壊できません！"
+  spawner-given-sender: "&#4ADE80%player% に %type% スポナーを付与しました。"
+  spawner-given-recipient: "&#38BDF8%type% スポナーを受け取りました！"
+  chunk-limit-exceeded: "&#F87171このチャンクにはこれ以上スポナーを設置できません!"
+  egg-chunk-limit-exceeded: "&#F87171このチャンクでは、%type% を最大 %limit% 体までスポーンできます！"
+  stack-egg-denied: "&#F87171スタックされたスポナーの種類はスポーンエッグで変更できません！"
+  stack-natural-denied: "&#F87171自然生成のスポナーは統合できません。壊して置き直してください。"
+  booster-slot-invalid: "&#F87171そのスポナーはもうスタックに含まれていません。チケットは返却されました。"
+  reload-failed: "&#F87171リロードに失敗しました。詳細はコンソールを確認してください。"
+  
+# =========================================
+# エンティティの種類
+# =========================================
+entity-types:
+  ALLAY: アレイ
+  ARMADILLO: アルマジロ
+  ARMOR_STAND: 防具立て
+  AXOLOTL: ウーパールーパー
+  BAT: コウモリ
+  BEE: ミツバチ
+  BLAZE: ブレイズ
+  BOAT: ボート
+  BOGGED: ボグド
+  BREEZE: ブリーズ
+  CAMEL: ラクダ
+  CAMEL_HUSK: ハスクラクダ
+  CAT: 猫
+  CAVE_SPIDER: 洞窟のクモ
+  CHICKEN: ニワトリ
+  COD: タラ
+  COPPER_GOLEM: 銅のゴーレム
+  COW: 牛
+  CREEPER: クリーパー
+  CREAKING: きしむ
+  DOLPHIN: イルカ
+  DONKEY: ロバ
+  DROWNED: ドラウンド
+  ELDER_GUARDIAN: エルダーガーディアン
+  EMPTY: 空
+  ENDERMAN: エンダーマン
+  ENDERMITE: エンダーマイト
+  ENDER_DRAGON: エンダードラゴン
+  EVOKER: エヴォーカー
+  EXPERIENCE_BOTTLE: 経験値の瓶
+  EXPERIENCE_ORB: 経験値のオーブ
+  FOX: キツネ
+  FROG: カエル
+  GHAST: ガスト
+  GIANT: ジャイアント
+  GLOW_SQUID: グロウイカ
+  GOAT: ヤギ
+  GUARDIAN: ガーディアン
+  HAPPY_GHAST: ハッピーガスト
+  HOGLIN: ホグリン
+  HORSE: 馬
+  HUSK: ハスク
+  ILLUSIONER: イリュージョナー
+  IRON_GOLEM: アイアンゴーレム
+  LLAMA: ラマ
+  MAGMA_CUBE: マグマキューブ
+  MINECART: トロッコ
+  MINECART_CHEST: チェスト付きトロッコ
+  MINECART_COMMAND: コマンドブロック付きトロッコ
+  MINECART_FURNACE: かまど付きトロッコ
+  MINECART_HOPPER: ホッパー付きトロッコ
+  MINECART_SPAWNER: スポナー付きトロッコ
+  MINECART_TNT: TNT付きトロッコ
+  MOOSHROOM: ムーシュルーム牛
+  MULE: ラバ
+  MUSHROOM_COW: ムーシュルーム牛
+  NAUTILUS: オウムガイ
+  OCELOT: オセロット
+  PANDA: パンダ
+  PARCHED: パーチド
+  PARROT: オウム
+  PHANTOM: ファントム
+  PIG: 豚
+  PIGLIN: ピグリン
+  PIGLIN_BRUTE: ピグリンブルート
+  PILLAGER: ピリジャー
+  POLAR_BEAR: シロクマ
+  PUFFERFISH: フグ
+  RABBIT: ウサギ
+  RAVAGER: ラヴェジャー
+  SALMON: サーモン
+  SHEEP: 羊
+  SHULKER: シュルカー
+  SILVERFISH: シルバーフィッシュ
+  SKELETON: スケルトン
+  SKELETON_HORSE: スケルトン馬
+  SLIME: スライム
+  SNIFFER: 嗅ぎタケ
+  SNOWMAN: 雪だるま
+  SNOW_GOLEM: 雪だるま
+  SPIDER: クモ
+  SQUID: イカ
+  STRAY: ストレイ
+  STRIDER: ストライダー
+  SULFUR_CUBE: 硫黄キューブ
+  TADPOLE: オタマジャクシ
+  TRADER_LLAMA: 行商人のラマ
+  TROPICAL_FISH: 熱帯魚
+  TURTLE: カメ
+  VEX: ベックス
+  VILLAGER: 村人
+  VINDICATOR: ヴィンディケーター
+  WANDERING_TRADER: 行商人
+  WARDEN: ウォーデン
+  WITCH: 魔女
+  WITHER: ウィザー
+  WITHER_SKELETON: ウィザースケルトン
+  WOLF: オオカミ
+  ZOGLIN: ゾグリン
+  ZOMBIE: ゾンビ
+  ZOMBIE_HORSE: ゾンビ馬
+  ZOMBIE_NAUTILUS: ゾンビオウムガイ
+  ZOMBIE_VILLAGER: ゾンビ村人
+  ZOMBIFIED_PIGLIN: ゾンビピグリン
+
+# アイテムスポナーの名前（spawner_items.yml を参照）。そこに追加したアイテムごとに1行追加します：MATERIAL: 表示名
+item-types:
+  NETHERITE_INGOT: ネザライトインゴット
+  DIAMOND: ダイヤモンド
+  COAL: 石炭
+  AMETHYST_SHARD: アメジストの欠片
+  EMERALD: エメラルド
+  NETHER_STAR: ネザースター
+  TOTEM_OF_UNDYING: 不死のトーテム

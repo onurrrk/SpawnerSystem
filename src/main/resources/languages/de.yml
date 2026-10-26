@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Sprachdatei
+# ===============================
+
+# Präfix für alle Plugin-Nachrichten
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner-Spitzhacke Einstellungen
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Spitzhacke"
+  lore:
+    - "&#9CA3AFBenutze diese Spitzhacke, um Spawner abzubauen."
+    - "&#FFE066"
+    - "&#4ADE80Verbleibende Nutzungen: &#F87171%uses%"
+
+# =========================================
+# Mod-Tags (Erweitert oder Klassisch)
+# =========================================
+mode-tags:
+  advanced: "Spawner Spitzhacke"
+  classic: "Behutsamkeit Spitzhacke"
+
+# =========================================
+# Spawner-Gegenstand Einstellungen
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFPlatziere diesen Spawner, um Kreaturen zu spawnen."
+    - "&#9CA3AFKann nur mit folgendem abgebaut werden: &#FFE066%mode%"
+    - "&#9CA3AFEntity-Typ: &#4ADE80%type%"
+
+# =========================================
+# Spawner-Hologramm-Einstellungen
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFKann mit %mode% abgebaut werden"
+  - "&#9CA3AFSchleichen und rechtsklicken, um das Menü zu öffnen"
+  - "%status%"
+  
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob-Hologramm-Einstellungen
+# =========================================
+mob-remove-warning:
+  - "&#F87171Dieser Mob wird entfernt"
+  - "&#FFE066Innerhalb von %time% s, wenn er das Gebiet nicht verlässt."
+  
+# =========================================
+# Menü-Einstellungen (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner-Kontrollzentrum"
+  status:
+    active: "&#4ADE80Aktiv ✔"
+    inactive: "&#F87171Inaktiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAutomatisches Töten"
+      lore:
+        - "&#9CA3AFTötet automatisch Kreaturen aus dem Spawner."
+        - "&#9CA3AFSchaltet auch das Lager und den XP-Sauger ein."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F9FAFBLinksklick: &#FFE066Modus wechseln"
+      lore-auto:
+        - "&#9CA3AFTötet automatisch Kreaturen aus dem Spawner."
+        - "&#9CA3AFLager und XP-Sauger sind immer eingeschaltet."
+        - "&#9CA3AFStatus: %status%"
+      lore-no-perm:
+        - "&#9CA3AFTötet automatisch Kreaturen aus dem Spawner."
+        - "&#9CA3AFStatus: %status%"
+        - ""
+        - "&#F87171&lDU KANNST DIESE FUNKTION NICHT NUTZEN"
+
+    storage:
+      name: "&#38BDF8&lLager"
+      lore:
+        - "&#9CA3AFVom Auto-Töter gesammelte Items werden hier aufbewahrt."
+        - "&#9CA3AFBelegte Slots: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKlick: &#FFE066Lager öffnen"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP-Sammlung"
+      click: "&#F9FAFBKlick: &#38BDF8XP abholen"
+      lore:
+        - "&#9CA3AFSpeichert XP von getöteten Kreaturen."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFGesammelt: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBLinksklick: &#FFE066Modus wechseln"
+        - "&#F9FAFBRechtsklick: &#38BDF8XP abholen"
+      lore-no-perm:
+        - "&#9CA3AFSpeichert XP von getöteten Kreaturen."
+        - ""
+        - "&#9CA3AFStatus: %status%"
+        - "&#9CA3AFGesammelt: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lDU KANNST DIESE FUNKTION NICHT NUTZEN"
+
+  messages:
+    no-permission: "&#F87171Du hast keine Berechtigung, diese Funktion zu ändern!"
+    xp-empty: "&#F87171XP-Behälter ist leer!"
+    xp-collected: "&#4ADE80Gesammelt: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Aktiviere zuerst das automatische Töten!"
+    feature-no-perm: "&#F87171Du hast keine Berechtigung, diese Funktion zu ändern!"
+    perms-changed: "&#F87171Spawner-Funktionen wurden aufgrund geänderter Berechtigungen deaktiviert."
+    storage-inventory-full: "&#F87171Dein Inventar ist voll!"
+    storage-taken: "&#4ADE80%amount% Item(s) aus dem Lager genommen."
+    in-use: "&#F87171Das Menü dieses Spawners wird gerade von jemand anderem benutzt."
+  storage:
+    title: "&#6B7280Spawner-Lager"
+    previous:
+      name: "&#F9FAFB&lVorherige Seite"
+      lore:
+        - "&#9CA3AFGehe zu Seite &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lNächste Seite"
+      lore:
+        - "&#9CA3AFGehe zu Seite &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lSeite nehmen"
+      lore:
+        - "&#9CA3AFNimmt alle Items dieser Seite."
+        - "&#9CA3AFItems können nicht zurückgelegt werden."
+    back:
+      name: "&#F87171&lZurück"
+      lore:
+        - "&#9CA3AFZurück zum Spawner-Menü."
+    info:
+      name: "&#38BDF8&lLager-Info"
+      lore:
+        - "&#9CA3AFSeite: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFBelegte Slots: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFKlicke auf ein Item, um es zu nehmen."
+  
+# =========================================
+# Spawner-Booster Einstellungen
+# =========================================
+# Platzhalter: %range% %delay% %xp% %duration% (%index% im Info-Titel)
+booster:
+  item:
+    name: "&#F59E0B&lSpawner-Booster"
+    lore:
+      - "&#9CA3AFRechtsklicke einen Spawner mit diesem Ticket, um ihn zu verstärken."
+      - "&#FFE066Reichweite: &#F9FAFB+%range% Blöcke"
+      - "&#FFE066Spawn-Zeit: &#F9FAFB-%delay% Sekunden"
+      - "&#FFE066Mob-XP: &#F9FAFB+%xp%%"
+      - "&#FFE066Dauer: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Spawner wählen"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKlick: &#FFE066Booster anwenden"
+  time:
+    unlimited: "Unbegrenzt"
+    hour: "Std"
+    minute: "Min"
+    second: "Sek"
+  info:
+    name: "&#F59E0B&lAktive Booster"
+    empty: "&#9CA3AFKein aktiver Booster."
+    entry-title: "&#FFE066&lBooster #%index%"
+
+# =========================================
+# Plugin-Nachrichten
+# =========================================
+messages:
+  no-permission: "&#F87171Du hast keine Berechtigung, diesen Befehl auszuführen."
+  reload-success: "&#4ADE80Spawner-System Konfiguration erfolgreich neu geladen."
+  wrong-subcommand: "&#FFE066Verwendung: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Verwendung: /spsystem pickaxegive <Spieler> <1-1000>"
+  usage-givespawner: "&#FFE066Verwendung: /spsystem givespawner <Spieler> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Verwendung: /spsystem givebooster <Spieler> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: zusätzliche Blöcke für die Aktivierungsreichweite des Spawners"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: Sekunden, die von der Spawn-Verzögerung abgezogen werden (0 = keine)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: zusätzliche Prozent der XP vom Spawner (0 = keine)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: Dauer des Boosts in Minuten oder unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: Anzahl der Tickets (optional)"
+    - "&#FFE066Beispiel: &#F9FAFB/spsystem givebooster Spieler 10 5 50 30 &#9CA3AF(+10 Blöcke, -5 s Verzögerung, +50 % XP, 30 Minuten)"
+  invalid-mob-type: "&#F87171Ungültiger Mob-Typ: %type%"
+  invalid-item-spawner: "&#F87171Ungültiger Item-Spawner: %type%"
+  booster-no-effect: "&#F87171Mindestens einer der Werte range, delay-seconds oder xp-percent muss größer als 0 sein."
+  booster-disabled: "&#F87171Das Spawner-Booster-System ist deaktiviert. Setze 'spawner-booster.enabled: true' in der config.yml und führe /spsystem reload aus."
+  command-disabled: "&#F87171Der Befehl 'pickaxegive' ist nur im 'erweiterten' Modus verfügbar."
+  player-not-found: "&#F87171Spieler nicht gefunden: %player%"
+  not-a-number: "&#F87171Die Anzahl muss eine Zahl sein."
+  max-uses-limit: "&#F87171Maximale Anzahl an Nutzungen ist 1000."
+  pickaxe-given-sender: "&#4ADE80%player% wurde eine Spawner Spitzhacke mit %uses% Nutzungen gegeben."
+  pickaxe-given-recipient: "&#38BDF8Du hast eine spezielle Spawner-Spitzhacke erhalten!"
+  spawner-collected: "&#4ADE80Spawner erfolgreich in dein Inventar hinzugefügt!"
+  spawner-break-lost: "&#F87171Der Spawner ist beim Abbauen verschwunden! (Bergungschance: %chance%%)"
+  spawner-break-no-chance: "&#F87171Der Spawner ist verschwunden! Du hast keine Chance, Spawner zu bergen."
+  booster-given-sender: "&#4ADE80%player% hat x%amount% Spawner-Booster-Ticket(s) erhalten."
+  booster-given-recipient: "&#4ADE80Du hast x%amount% Spawner-Booster-Ticket(s) erhalten!"
+  booster-applied: "&#4ADE80Spawner verstärkt! Reichweite +%range%, Spawn-Zeit -%delay% s, XP +%xp%%, Dauer: %duration%."
+  booster-already-active: "&#F87171Dieser Spawner hat bereits einen aktiven Booster (noch %duration%)."
+  booster-stack-limit: "&#F87171Dieser Spawner hat bereits die maximale Anzahl an Boostern (%max%)."
+  booster-delay-too-high: "&#F87171Die Spawn-Verzögerung kann um höchstens %max% Sekunden verkürzt werden (minimale Spawn-Verzögerung: %min%s)."
+  booster-delay-not-reducible: "&#F87171Die Spawn-Verzögerung kann nicht verkürzt werden, da sie bereits das Minimum erreicht hat (%min%s)."
+  booster-delay-maxed: "&#FFE066Die Spawn-Verzögerung ist bereits auf dem niedrigsten Wert, daher wurde der Verzögerungsteil nicht angewendet. Die anderen Effekte wurden angewendet."
+  booster-delay-partial: "&#FFE066Die Spawn-Verzögerung hat den niedrigsten Wert erreicht, daher wurden nur -%delay%s angewendet. Die anderen Effekte wurden angewendet."
+  booster-delay-maxed-no-effect: "&#F87171Die Spawn-Verzögerung dieses Spawners ist bereits auf dem niedrigsten Wert. Das Ticket wurde nicht verbraucht."
+  stack-merged: "&#4ADE80%amount% Spawner zusammengeführt. Stapel: %stack%/%max%."
+  stack-full: "&#F87171Dieser Spawner-Stapel ist voll! (max. %max%)"
+  stack-type-mismatch: "&#F87171Es können nur Spawner desselben Typs zusammengeführt werden!"
+  stack-collected: "&#4ADE80%amount% Spawner erhalten. %left% verbleiben im Stapel."
+  pickaxe-broken: "&#4ADE80Deine Spawner-Spitzhacke ist zerbrochen!"
+  natural-spawner-break-denied: "&#F87171Natürliche Spawner sind geschützt und können nicht abgebaut werden."
+  natural-spawner-no-permission: "&#F87171Du hast keine Berechtigung, natürliche Spawner abzubauen."
+  sp-pickaxe-only: "&#F87171Diese spezielle Spitzhacke kann nur zum Abbauen von Spawnern verwendet werden!"
+  inventory-full: "&#4ADE80Der Gegenstand wurde auf den Boden geworfen, weil dein Inventar voll ist!"
+  classic-silk-required: "&#F87171Spawner können nur mit einer Seidenberührung-Spitzhacke abgebaut werden!"
+  advanced-pickaxe-required: "&#F87171Spawner können nur mit der speziellen Spawner Spitzhacke abgebaut werden!"
+  empty-spawner-break-denied: "&#F87171Du kannst diesen leeren Spawner nicht abbauen!"
+  spawner-given-sender: "&#4ADE80%player% wurde ein %type% Spawner gegeben."
+  spawner-given-recipient: "&#38BDF8Du hast einen %type% Spawner erhalten!"
+  chunk-limit-exceeded: "&#F87171Du kannst in diesem Chunk keine weiteren Spawner platzieren!"
+  egg-chunk-limit-exceeded: "&#F87171In diesem Chunk kannst du maximal %limit% Mob-Spawns vom Typ %type% haben!"
+  stack-egg-denied: "&#F87171Der Typ eines gestapelten Spawners kann nicht mit einem Spawn-Ei geändert werden!"
+  stack-natural-denied: "&#F87171Natürliche Spawner können nicht zusammengeführt werden. Abbauen und neu platzieren, dann geht es."
+  booster-slot-invalid: "&#F87171Dieser Spawner ist nicht mehr im Stapel. Das Ticket wurde zurückgegeben."
+  reload-failed: "&#F87171Neuladen fehlgeschlagen. Details stehen in der Konsole."
+  
+# =========================================
+# Entity-Typen
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Gürteltier
+  ARMOR_STAND: Rüstungsständer
+  AXOLOTL: Axolotl
+  BAT: Fledermaus
+  BEE: Biene
+  BLAZE: Lohe
+  BOAT: Boot
+  BOGGED: Sumpfiger
+  BREEZE: Brise
+  CAMEL: Kamel
+  CAMEL_HUSK: Kamel-Wüstenzombie
+  CAT: Katze
+  CAVE_SPIDER: Höhlenspinne
+  CHICKEN: Huhn
+  COD: Kabeljau
+  COPPER_GOLEM: Kupfergolem
+  COW: Kuh
+  CREEPER: Creeper
+  CREAKING: Knarz
+  DOLPHIN: Delphin
+  DONKEY: Esel
+  DROWNED: Ertrunkener
+  ELDER_GUARDIAN: Großer Wächter
+  EMPTY: Leer
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdrache
+  EVOKER: Magier
+  EXPERIENCE_BOTTLE: Erfahrungsflasche
+  EXPERIENCE_ORB: Erfahrungskugel
+  FOX: Fuchs
+  FROG: Frosch
+  GHAST: Ghast
+  GIANT: Riese
+  GLOW_SQUID: Leuchttintenfisch
+  GOAT: Ziege
+  GUARDIAN: Wächter
+  HAPPY_GHAST: Glücklicher Ghast
+  HOGLIN: Hoglin
+  HORSE: Pferd
+  HUSK: Wüstenzombie
+  ILLUSIONER: Illusionist
+  IRON_GOLEM: Eisengolem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmawürfel
+  MINECART: Lore
+  MINECART_CHEST: Lore mit Truhe
+  MINECART_COMMAND: Lore mit Befehlsblock
+  MINECART_FURNACE: Lore mit Ofen
+  MINECART_HOPPER: Lore mit Trichter
+  MINECART_SPAWNER: Lore mit Spawner
+  MINECART_TNT: Lore mit TNT
+  MOOSHROOM: Pilzkuh
+  MULE: Maultier
+  MUSHROOM_COW: Pilzkuh
+  NAUTILUS: Nautilus
+  OCELOT: Ozelot
+  PANDA: Panda
+  PARCHED: Ausgedörrter
+  PARROT: Papagei
+  PHANTOM: Phantom
+  PIG: Schwein
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin-Barbar
+  PILLAGER: Plünderer
+  POLAR_BEAR: Eisbär
+  PUFFERFISH: Kugelfisch
+  RABBIT: Hase
+  RAVAGER: Verwüster
+  SALMON: Lachs
+  SHEEP: Schaf
+  SHULKER: Shulker
+  SILVERFISH: Silberfischchen
+  SKELETON: Skelett
+  SKELETON_HORSE: Skelettpferd
+  SLIME: Schleim
+  SNIFFER: Schnüffler
+  SNOWMAN: Schneemann
+  SNOW_GOLEM: Schneemann
+  SPIDER: Spinne
+  SQUID: Tintenfisch
+  STRAY: Streuner
+  STRIDER: Schreiter
+  SULFUR_CUBE: Schwefelwürfel
+  TADPOLE: Kaulquappe
+  TRADER_LLAMA: Händlerlama
+  TROPICAL_FISH: Tropenfisch
+  TURTLE: Schildkröte
+  VEX: Plagegeist
+  VILLAGER: Dorfbewohner
+  VINDICATOR: Verteidiger
+  WANDERING_TRADER: Wanderhändler
+  WARDEN: Wächter
+  WITCH: Hexe
+  WITHER: Wither
+  WITHER_SKELETON: Witherskelett
+  WOLF: Wolf
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombiepferd
+  ZOMBIE_NAUTILUS: Zombie-Nautilus
+  ZOMBIE_VILLAGER: Zombiedorfbewohner
+  ZOMBIFIED_PIGLIN: Zombifizierter Piglin
+
+# Namen der Item-Spawner (siehe spawner_items.yml). Füge für jedes dort hinzugefügte Item eine Zeile hinzu: MATERIAL: Anzeigename
+item-types:
+  NETHERITE_INGOT: Netherit-Barren
+  DIAMOND: Diamant
+  COAL: Kohle
+  AMETHYST_SHARD: Amethystscherbe
+  EMERALD: Smaragd
+  NETHER_STAR: Netherstern
+  TOTEM_OF_UNDYING: Totem der Unsterblichkeit

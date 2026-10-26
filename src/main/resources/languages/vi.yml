@@ -1,0 +1,351 @@
+# ===============================
+# Tập Tin Ngôn Ngữ Hệ Thống Spawner
+# ===============================
+
+# Tiền tố cho tất cả thông báo của plugin
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Cài Đặt Vật Phẩm Cúp Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lCúp Phá Spawner"
+  lore:
+    - "&#9CA3AFDùng cúp này để phá spawner."
+    - "&#FFE066"
+    - "&#4ADE80Số lần dùng còn lại: &#F87171%uses%"
+
+# =========================================
+# Thẻ Chế Độ (Nâng Cao hoặc Cổ Điển)
+# =========================================
+mode-tags:
+  advanced: "Cúp Phá Spawner"
+  classic: "Cúp có Phù Phép Silk Touch"
+
+# =========================================
+# Cài Đặt Vật Phẩm Spawner
+# =========================================
+spawner-item:
+  name: "&#4ADE80Spawner %type%"
+  lore:
+    - "&#9CA3AFĐặt spawer này để spawn"
+    - "&#9CA3AFCó thể phá bằng: &#FFE066%mode%"
+    - "&#9CA3AFLoại sinh vật: &#4ADE80%type%"
+
+# =========================================
+# Cài Đặt Hologram Spawner
+# =========================================
+spawnable-status:
+  - "&#4ADE80Spawner %type%"
+  - "&#9CA3AFCó thể phá bằng %mode%"
+  - "&#9CA3AFCúi xuống và nhấp chuột phải để mở menu"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Cài Đặt Hologram Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Mob này sẽ bị xóa"
+  - "&#FFE066Trong vòng %time% giây nếu không rời khỏi khu vực."
+  
+# =========================================
+# Cài đặt Menu (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Bảng Điều Khiển Spawner"
+  status:
+    active: "&#4ADE80Hoạt động ✔"
+    inactive: "&#F87171Không hoạt động ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lTự Động Tiêu Diệt"
+      lore:
+        - "&#9CA3AFTự động giết quái vật từ spawner."
+        - "&#9CA3AFĐồng thời bật Kho chứa và Hút XP."
+        - "&#9CA3AFTrạng thái: %status%"
+        - ""
+        - "&#F9FAFBClick Chuột Trái: &#FFE066Chuyển Chế Độ"
+      lore-auto:
+        - "&#9CA3AFTự động giết quái vật từ spawner."
+        - "&#9CA3AFKho chứa và Hút XP luôn được bật."
+        - "&#9CA3AFTrạng thái: %status%"
+      lore-no-perm:
+        - "&#9CA3AFTự động giết quái vật từ spawner."
+        - "&#9CA3AFTrạng thái: %status%"
+        - ""
+        - "&#F87171&lBẠN KHÔNG THỂ DÙNG TÍNH NĂNG NÀY"
+
+    storage:
+      name: "&#38BDF8&lKho chứa"
+      lore:
+        - "&#9CA3AFVật phẩm do Tự động tiêu diệt thu thập được lưu ở đây."
+        - "&#9CA3AFÔ đã dùng: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBNhấp: &#FFE066Mở kho chứa"
+
+    xp-vacuum:
+      name: "&#4ADE80&lThu Gom XP"
+      click: "&#F9FAFBNhấp: &#38BDF8Rút XP"
+      lore:
+        - "&#9CA3AFLưu trữ XP rơi ra từ quái vật bị giết."
+        - ""
+        - "&#9CA3AFTrạng thái: %status%"
+        - "&#9CA3AFĐã thu gom: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBClick Chuột Trái: &#FFE066Chuyển Chế Độ"
+        - "&#F9FAFBClick Chuột Phải: &#38BDF8Rút XP"
+      lore-no-perm:
+        - "&#9CA3AFLưu trữ XP rơi ra từ quái vật bị giết."
+        - ""
+        - "&#9CA3AFTrạng thái: %status%"
+        - "&#9CA3AFĐã thu gom: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lBẠN KHÔNG THỂ DÙNG TÍNH NĂNG NÀY"
+
+  messages:
+    no-permission: "&#F87171Bạn không có quyền thay đổi tính năng này!"
+    xp-empty: "&#F87171Bình chứa XP trống rỗng!"
+    xp-collected: "&#4ADE80Đã thu gom: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Bạn phải bật Tự Động Tiêu Diệt trước!"
+    feature-no-perm: "&#F87171Bạn không có quyền thay đổi tính năng này!"
+    perms-changed: "&#F87171Các tính năng spawner đã bị vô hiệu do thay đổi quyền hạn của bạn."
+    storage-inventory-full: "&#F87171Túi đồ của bạn đã đầy!"
+    storage-taken: "&#4ADE80Đã lấy %amount% vật phẩm từ kho chứa."
+    in-use: "&#F87171Hiện có người khác đang dùng menu của spawner này."
+  storage:
+    title: "&#6B7280Kho chứa spawner"
+    previous:
+      name: "&#F9FAFB&lTrang trước"
+      lore:
+        - "&#9CA3AFĐến trang &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lTrang sau"
+      lore:
+        - "&#9CA3AFĐến trang &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lLấy trang"
+      lore:
+        - "&#9CA3AFLấy tất cả vật phẩm trên trang này."
+        - "&#9CA3AFKhông thể đặt vật phẩm trở lại."
+    back:
+      name: "&#F87171&lQuay lại"
+      lore:
+        - "&#9CA3AFQuay lại menu spawner."
+    info:
+      name: "&#38BDF8&lThông tin kho chứa"
+      lore:
+        - "&#9CA3AFTrang: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFÔ đã dùng: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFNhấp vào vật phẩm để lấy."
+  
+# =========================================
+# Cài đặt tăng cường Spawner
+# =========================================
+# Biến giữ chỗ: %range% %delay% %xp% %duration% (%index% trong tiêu đề thông tin)
+booster:
+  item:
+    name: "&#F59E0B&lTăng cường Spawner"
+    lore:
+      - "&#9CA3AFNhấp chuột phải vào spawner bằng vé này để tăng cường."
+      - "&#FFE066Phạm vi hoạt động: &#F9FAFB+%range% khối"
+      - "&#FFE066Thời gian sinh: &#F9FAFB-%delay% giây"
+      - "&#FFE066XP quái: &#F9FAFB+%xp%%"
+      - "&#FFE066Thời lượng: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Chọn spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBNhấp: &#FFE066Áp dụng booster"
+  time:
+    unlimited: "Không giới hạn"
+    hour: "giờ"
+    minute: "phút"
+    second: "giây"
+  info:
+    name: "&#F59E0B&lTăng cường đang hoạt động"
+    empty: "&#9CA3AFKhông có tăng cường nào đang hoạt động."
+    entry-title: "&#FFE066&lTăng cường #%index%"
+
+# =========================================
+# Thông Báo Plugin
+# =========================================
+messages:
+  no-permission: "&#F87171Bạn không có quyền sử dụng lệnh này."
+  reload-success: "&#4ADE80Cấu hình hệ thống spawner đã được tải lại thành công."
+  wrong-subcommand: "&#FFE066Cách dùng: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Cách dùng: /spsystem pickaxegive <người chơi> <1-1000>"
+  usage-givespawner: "&#FFE066Cách dùng: /spsystem givespawner <người chơi> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Cách dùng: /spsystem givebooster <người chơi> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: số khối cộng thêm vào phạm vi kích hoạt của spawner"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: số giây trừ khỏi thời gian chờ spawn (0 = không)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: phần trăm XP cộng thêm từ spawner (0 = không)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: thời gian boost tính bằng phút, hoặc unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: số vé cần tặng (tùy chọn)"
+    - "&#FFE066Ví dụ: &#F9FAFB/spsystem givebooster người chơi 10 5 50 30 &#9CA3AF(+10 khối, -5 giây chờ, +50% XP, 30 phút)"
+  invalid-mob-type: "&#F87171Loại mob không hợp lệ: %type%"
+  invalid-item-spawner: "&#F87171Spawner vật phẩm không hợp lệ: %type%"
+  booster-no-effect: "&#F87171Ít nhất một trong range, delay-seconds hoặc xp-percent phải lớn hơn 0."
+  booster-disabled: "&#F87171Hệ thống booster spawner đang tắt. Hãy đặt 'spawner-booster.enabled: true' trong config.yml rồi chạy /spsystem reload."
+  command-disabled: "&#F87171Lệnh 'pickaxegive' chỉ khả dụng trong chế độ 'nâng cao'."
+  player-not-found: "&#F87171Không tìm thấy người chơi: %player%"
+  not-a-number: "&#F87171Số lần sử dụng phải là một con số."
+  max-uses-limit: "&#F87171Số lần sử dụng tối đa được cho phép là 1000."
+  pickaxe-given-sender: "&#4ADE80Đã đưa Cúp Phá Spawner có %uses% lần dùng cho %player%."
+  pickaxe-given-recipient: "&#38BDF8Bạn đã nhận được một cây cúp phá spawner đặc biệt!"
+  spawner-collected: "&#4ADE80Đã thêm spawner vào kho đồ thành công!"
+  spawner-break-lost: "&#F87171Spawner đã biến mất khi bị phá! (Tỉ lệ thu hồi: %chance%%)"
+  spawner-break-no-chance: "&#F87171Spawner đã biến mất! Bạn không có cơ hội thu hồi spawner."
+  booster-given-sender: "&#4ADE80Bạn đã đưa cho %player% x%amount% vé tăng cường spawner."
+  booster-given-recipient: "&#4ADE80Bạn nhận được x%amount% vé tăng cường spawner!"
+  booster-applied: "&#4ADE80Spawner đã được tăng cường! Phạm vi +%range%, thời gian sinh -%delay% giây, XP +%xp%%, thời lượng: %duration%."
+  booster-already-active: "&#F87171Spawner này đã có tăng cường đang hoạt động (còn %duration%)."
+  booster-stack-limit: "&#F87171Spawner này đã đạt số lượng tăng cường tối đa (%max%)."
+  booster-delay-too-high: "&#F87171Thời gian chờ spawn chỉ có thể giảm tối đa %max% giây (thời gian chờ tối thiểu: %min% giây)."
+  booster-delay-not-reducible: "&#F87171Không thể giảm thời gian chờ spawn vì đã ở mức tối thiểu (%min% giây)."
+  booster-delay-maxed: "&#FFE066Thời gian chờ spawn đã ở mức thấp nhất nên phần thời gian không được áp dụng. Các hiệu ứng khác đã được áp dụng."
+  booster-delay-partial: "&#FFE066Thời gian chờ spawn đã đạt mức thấp nhất nên chỉ áp dụng -%delay% giây. Các hiệu ứng khác đã được áp dụng."
+  booster-delay-maxed-no-effect: "&#F87171Thời gian chờ spawn của spawner này đã ở mức thấp nhất. Vé chưa được sử dụng."
+  stack-merged: "&#4ADE80Đã gộp %amount% spawner. Chồng: %stack%/%max%."
+  stack-full: "&#F87171Chồng spawner này đã đầy! (tối đa %max%)"
+  stack-type-mismatch: "&#F87171Chỉ có thể gộp các spawner cùng loại!"
+  stack-collected: "&#4ADE80Đã thu %amount% spawner. Còn %left% trong chồng."
+  pickaxe-broken: "&#4ADE80Cúp phá spawner của bạn đã hỏng!"
+  natural-spawner-break-denied: "&#F87171Spawner tự nhiên được bảo vệ và không thể phá."
+  natural-spawner-no-permission: "&#F87171Bạn không có quyền phá spawner tự nhiên."
+  sp-pickaxe-only: "&#F87171Cúp đặc biệt này chỉ có thể được dùng để phá spawner!"
+  inventory-full: "&#4ADE80Vật phẩm đã bị rơi xuống đất vì túi đồ của bạn đầy!"
+  classic-silk-required: "&#F87171Bạn chỉ có thể phá spawner bằng một cây cúp được phù phép Silk Touch!"
+  advanced-pickaxe-required: "&#F87171Bạn chỉ có thể phá spawner bằng Cúp Phá Spawner đặc biệt!"
+  empty-spawner-break-denied: "&#F87171Bạn không thể phá spawner trống này!"
+  spawner-given-sender: "&#4ADE80Đã đưa spawner %type% cho %player%."
+  spawner-given-recipient: "&#38BDF8Bạn đã nhận được một spawner %type%!"
+  chunk-limit-exceeded: "&#F87171Bạn không thể đặt thêm máy sinh quái trong chunk này nữa!"
+  egg-chunk-limit-exceeded: "&#F87171Trong chunk này, bạn chỉ có thể spawn tối đa %limit% mob loại %type%!"
+  stack-egg-denied: "&#F87171Bạn không thể đổi loại của spawner đã gộp bằng trứng sinh vật!"
+  stack-natural-denied: "&#F87171Spawner tự nhiên không thể gộp. Hãy phá và đặt lại để dùng."
+  booster-slot-invalid: "&#F87171Spawner đó không còn trong chồng nữa. Vé đã được hoàn lại."
+  reload-failed: "&#F87171Tải lại thất bại. Xem bảng điều khiển để biết chi tiết."
+  
+# =========================================
+# Loại Thực Thể
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Thú có mai
+  ARMOR_STAND: Giá treo giáp
+  AXOLOTL: Kỳ giông Mexico
+  BAT: Dơi
+  BEE: Ong
+  BLAZE: Quỷ lửa
+  BOAT: Thuyền
+  BOGGED: Đầm lầy
+  BREEZE: Gió nhẹ
+  CAMEL: Lạc đà
+  CAMEL_HUSK: Lạc Đà Husk
+  CAT: Mèo
+  CAVE_SPIDER: Nhện hang động
+  CHICKEN: Gà
+  COD: Cá tuyết
+  COPPER_GOLEM: Golem Đồng
+  COW: Bò
+  CREEPER: Creeper
+  CREAKING: Có tiếng kêu
+  DOLPHIN: Cá heo
+  DONKEY: Lừa
+  DROWNED: Kẻ chết đuối
+  ELDER_GUARDIAN: Người bảo vệ già
+  EMPTY: Trống
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Rồng Ender
+  EVOKER: Kẻ triệu hồi
+  EXPERIENCE_BOTTLE: Chai kinh nghiệm
+  EXPERIENCE_ORB: Quả cầu kinh nghiệm
+  FOX: Cáo
+  FROG: Ếch
+  GHAST: Ghast
+  GIANT: Người khổng lồ
+  GLOW_SQUID: Mực phát sáng
+  GOAT: Dê
+  GUARDIAN: Người bảo vệ
+  HAPPY_GHAST: Ghast Vui Vẻ
+  HOGLIN: Hoglin
+  HORSE: Ngựa
+  HUSK: Xác khô
+  ILLUSIONER: Ảo thuật gia
+  IRON_GOLEM: Người sắt
+  LLAMA: Lạc đà không bướu
+  MAGMA_CUBE: Khối magma
+  MINECART: Xe mỏ
+  MINECART_CHEST: Xe mỏ có rương
+  MINECART_COMMAND: Xe mỏ có khối lệnh
+  MINECART_FURNACE: Xe mỏ có lò nung
+  MINECART_HOPPER: Xe mỏ có phễu
+  MINECART_SPAWNER: Xe mỏ có spawner
+  MINECART_TNT: Xe mỏ có TNT
+  MOOSHROOM: Bò nấm
+  MULE: Con la
+  MUSHROOM_COW: Bò nấm
+  NAUTILUS: Ốc Anh Vũ
+  OCELOT: Mèo rừng
+  PANDA: Gấu trúc
+  PARCHED: Khô Khốc
+  PARROT: Vẹt
+  PHANTOM: Ảo ảnh
+  PIG: Heo
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin hung dữ
+  PILLAGER: Kẻ cướp
+  POLAR_BEAR: Gấu Bắc Cực
+  PUFFERFISH: Cá nóc
+  RABBIT: Thỏ
+  RAVAGER: Kẻ tàn phá
+  SALMON: Cá hồi
+  SHEEP: Cừu
+  SHULKER: Shulker
+  SILVERFISH: Bạc
+  SKELETON: Bộ xương
+  SKELETON_HORSE: Ngựa xương
+  SLIME: Chất nhờn
+  SNIFFER: Kẻ đánh hơi
+  SNOWMAN: Người tuyết
+  SNOW_GOLEM: Người tuyết
+  SPIDER: Nhện
+  SQUID: Mực
+  STRAY: Kẻ lang thang
+  STRIDER: Kẻ sải bước
+  SULFUR_CUBE: Khối Lập Phương Lưu Huỳnh
+  TADPOLE: Nòng nọc
+  TRADER_LLAMA: Lạc đà thương nhân
+  TROPICAL_FISH: Cá nhiệt đới
+  TURTLE: Rùa
+  VEX: Vex
+  VILLAGER: Dân làng
+  VINDICATOR: Kẻ bênh vực
+  WANDERING_TRADER: Thương nhân lang thang
+  WARDEN: Quản giáo
+  WITCH: Phù thủy
+  WITHER: Wither
+  WITHER_SKELETON: Bộ xương Wither
+  WOLF: Sói
+  ZOGLIN: Zoglin
+  ZOMBIE: Thây ma
+  ZOMBIE_HORSE: Ngựa thây ma
+  ZOMBIE_NAUTILUS: Ốc Anh Vũ Zombie
+  ZOMBIE_VILLAGER: Dân làng thây ma
+  ZOMBIFIED_PIGLIN: Piglin thây ma
+
+# Tên spawner vật phẩm (xem spawner_items.yml). Thêm một dòng cho mỗi vật phẩm bạn thêm ở đó: MATERIAL: Tên hiển thị
+item-types:
+  NETHERITE_INGOT: Thỏi Netherite
+  DIAMOND: Kim Cương
+  COAL: Than
+  AMETHYST_SHARD: Mảnh Thạch Anh Tím
+  EMERALD: Ngọc Lục Bảo
+  NETHER_STAR: Sao Nether
+  TOTEM_OF_UNDYING: Vật Tổ Bất Tử

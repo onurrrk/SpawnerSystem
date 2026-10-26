@@ -1,0 +1,59 @@
+# ====================================================================================================
+# Item spawners: spawners that produce an item instead of a mob.
+# They are always in Auto Slayer mode (no mobs are spawned, the loot below is dropped directly).
+#
+# Give one with:  /sps givespawner <player> item <MATERIAL> [amount]   (e.g. /sps givespawner Steve item DIAMOND 5)
+#
+# Each key is a Material name. Add your own sections, the plugin never removes them.
+# New default sections shipped with plugin updates are added automatically; the entries inside
+# the "loot" list of a section you already have are never touched.
+# ====================================================================================================
+
+NETHERITE_INGOT:
+  experience: 1
+  loot:
+    NETHERITE_INGOT:
+      amount: 1-1
+      chance: 100.0
+
+DIAMOND:
+  experience: 1
+  loot:
+    DIAMOND:
+      amount: 1-1
+      chance: 100.0
+
+COAL:
+  experience: 1
+  loot:
+    COAL:
+      amount: 1-1
+      chance: 100.0
+
+AMETHYST_SHARD:
+  experience: 1
+  loot:
+    AMETHYST_SHARD:
+      amount: 1-1
+      chance: 100.0
+
+EMERALD:
+  experience: 1
+  loot:
+    EMERALD:
+      amount: 1-1
+      chance: 100.0
+
+NETHER_STAR:
+  experience: 1
+  loot:
+    NETHER_STAR:
+      amount: 1-1
+      chance: 100.0
+
+TOTEM_OF_UNDYING:
+  experience: 1
+  loot:
+    TOTEM_OF_UNDYING:
+      amount: 1-1
+      chance: 100.0

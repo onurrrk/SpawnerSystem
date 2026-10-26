@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Magyar
+# ===============================
+
+# Prefix minden plugin üzenethez
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner csákány beállítások
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Csákány"
+  lore:
+    - "&#9CA3AFHasználd ezt a csákányt a spawner megtöréséhez."
+    - "&#FFE066"
+    - "&#4ADE80Maradék használat: &#F87171%uses%"
+
+# =========================================
+# Mód címkék (Fejlett vagy Klasszikus)
+# =========================================
+mode-tags:
+  advanced: "Spawner Csákány"
+  classic: "Selyem Tapintás Csákány"
+
+# =========================================
+# Spawner tárgy beállítások
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFEzzel a spawnerrel mobokat hozhatsz létre."
+    - "&#9CA3AFCsak a következővel törhető: &#FFE066%mode%"
+    - "&#9CA3AFEntity típus: &#4ADE80%type%"
+
+# =========================================
+# Spawner hologram beállítások
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFTörhető %mode% használatával"
+  - "&#9CA3AFGuggolj és jobb klikk a menü megnyitásához"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob Hologram Beállítások
+# =========================================
+mob-remove-warning:
+  - "&#F87171Ez a mob eltávolításra kerül"
+  - "&#FFE066%time% másodpercen belül, ha nem hagyja el a területet."
+  
+# =========================================
+# Menü Beállítások (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner Vezérlőpult"
+  status:
+    active: "&#4ADE80Aktív ✔"
+    inactive: "&#F87171Inaktív ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAuto Gyilkos"
+      lore:
+        - "&#9CA3AFAutomatikusan megöli a spawnerből jövő lényeket."
+        - "&#9CA3AFBekapcsolja a Raktárat és az XP-szívót is."
+        - "&#9CA3AFÁllapot: %status%"
+        - ""
+        - "&#F9FAFBBal klikk: &#FFE066Mód váltás"
+      lore-auto:
+        - "&#9CA3AFAutomatikusan megöli a spawnerből jövő lényeket."
+        - "&#9CA3AFA Raktár és az XP-szívó mindig be van kapcsolva."
+        - "&#9CA3AFÁllapot: %status%"
+      lore-no-perm:
+        - "&#9CA3AFAutomatikusan megöli a spawnerből jövő lényeket."
+        - "&#9CA3AFÁllapot: %status%"
+        - ""
+        - "&#F87171&lNEM HASZNÁLHATOD EZT A FUNKCIÓT"
+
+    storage:
+      name: "&#38BDF8&lRaktár"
+      lore:
+        - "&#9CA3AFAz Auto Slayer által gyűjtött tárgyak itt tárolódnak."
+        - "&#9CA3AFHasznált helyek: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKattintás: &#FFE066Raktár megnyitása"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP Gyűjtő"
+      click: "&#F9FAFBKattintás: &#38BDF8XP kivétele"
+      lore:
+        - "&#9CA3AFTárolja a megölt lényekből kieső XP-ket."
+        - ""
+        - "&#9CA3AFÁllapot: %status%"
+        - "&#9CA3AFÖsszegyűjtött: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBBal klikk: &#FFE066Mód váltás"
+        - "&#F9FAFBjobb klikk: &#38BDF8XP felvétele"
+      lore-no-perm:
+        - "&#9CA3AFTárolja a megölt lényekből kieső XP-ket."
+        - ""
+        - "&#9CA3AFÁllapot: %status%"
+        - "&#9CA3AFÖsszegyűjtött: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lNEM HASZNÁLHATOD EZT A FUNKCIÓT"
+
+  messages:
+    no-permission: "&#F87171Nincs jogosultságod ennek a funkciónak a megváltoztatásához!"
+    xp-empty: "&#F87171Az XP tartály üres!"
+    xp-collected: "&#4ADE80Összegyűjtve: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Először be kell kapcsolnod az auto gyilkost!"
+    feature-no-perm: "&#F87171Nincs jogosultságod ennek a funkciónak a megváltoztatásához!"
+    perms-changed: "&#F87171A spawner funkciók letiltásra kerültek a jogosultságaid megváltozása miatt."
+    storage-inventory-full: "&#F87171Tele van a leltárad!"
+    storage-taken: "&#4ADE80%amount% tárgy kivéve a raktárból."
+    in-use: "&#F87171Valaki más éppen ennek a spawnernek a menüjét használja."
+  storage:
+    title: "&#6B7280Spawner raktár"
+    previous:
+      name: "&#F9FAFB&lElőző oldal"
+      lore:
+        - "&#9CA3AFUgrás a(z) &#FFE066%page%&#9CA3AF. oldalra"
+    next:
+      name: "&#F9FAFB&lKövetkező oldal"
+      lore:
+        - "&#9CA3AFUgrás a(z) &#FFE066%page%&#9CA3AF. oldalra"
+    take-page:
+      name: "&#4ADE80&lOldal kivétele"
+      lore:
+        - "&#9CA3AFKiveszi az oldal összes tárgyát."
+        - "&#9CA3AFA tárgyak nem tehetők vissza."
+    back:
+      name: "&#F87171&lVissza"
+      lore:
+        - "&#9CA3AFVissza a spawner menübe."
+    info:
+      name: "&#38BDF8&lRaktár infó"
+      lore:
+        - "&#9CA3AFOldal: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFHasznált helyek: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFKattints egy tárgyra a kivételhez."
+  
+# =========================================
+# Spawner erősítő beállítások
+# =========================================
+# Helyőrzők: %range% %delay% %xp% %duration% (%index% az információs címben)
+booster:
+  item:
+    name: "&#F59E0B&lSpawner erősítő"
+    lore:
+      - "&#9CA3AFKattints jobb gombbal egy spawnerre ezzel a jeggyel az erősítéshez."
+      - "&#FFE066Hatótáv: &#F9FAFB+%range% blokk"
+      - "&#FFE066Megjelenési idő: &#F9FAFB-%delay% másodperc"
+      - "&#FFE066Mob XP: &#F9FAFB+%xp%%"
+      - "&#FFE066Időtartam: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Spawner kiválasztása"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKattintás: &#FFE066Booster alkalmazása"
+  time:
+    unlimited: "Korlátlan"
+    hour: "ó"
+    minute: "p"
+    second: "mp"
+  info:
+    name: "&#F59E0B&lAktív erősítések"
+    empty: "&#9CA3AFNincs aktív erősítés."
+    entry-title: "&#FFE066&lErősítés #%index%"
+
+# =========================================
+# Plugin üzenetek
+# =========================================
+messages:
+  no-permission: "&#F87171Nincs engedélyed a parancs használatára."
+  reload-success: "&#4ADE80A Spawner rendszer konfigurációja sikeresen újratöltve."
+  wrong-subcommand: "&#FFE066Használat: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Használat: /spsystem pickaxegive <játékos> <1-1000>"
+  usage-givespawner: "&#FFE066Használat: /spsystem givespawner <játékos> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Használat: /spsystem givebooster <játékos> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: extra blokk a spawner aktiválási hatótávjához"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: másodpercek levonva a spawn késleltetésből (0 = nincs)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: extra XP százalék a spawnertől (0 = nincs)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: a boost időtartama percben, vagy unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: hány jegyet adjon (opcionális)"
+    - "&#FFE066Példa: &#F9FAFB/spsystem givebooster játékos 10 5 50 30 &#9CA3AF(+10 blokk, -5 mp késleltetés, +50% XP, 30 perc)"
+  invalid-mob-type: "&#F87171Érvénytelen mobtípus: %type%"
+  invalid-item-spawner: "&#F87171Érvénytelen tárgy-spawner: %type%"
+  booster-no-effect: "&#F87171A range, delay-seconds és xp-percent közül legalább egynek 0-nál nagyobbnak kell lennie."
+  booster-disabled: "&#F87171A spawner booster rendszer ki van kapcsolva. Állítsd 'spawner-booster.enabled: true' értékre a config.yml-ben, majd futtasd a /spsystem reload parancsot."
+  command-disabled: "&#F87171A 'pickaxegive' parancs csak a 'fejlett' módban elérhető."
+  player-not-found: "&#F87171A játékos nem található: %player%"
+  not-a-number: "&#F87171A használatok számának számnak kell lennie."
+  max-uses-limit: "&#F87171A maximális használatok száma 1000."
+  pickaxe-given-sender: "&#4ADE80%player% kapott %uses% használatú Spawner Csákányt."
+  pickaxe-given-recipient: "&#38BDF8Egy speciális spawner csákányt kaptál!"
+  spawner-collected: "&#4ADE80A spawner sikeresen hozzáadva a készletedhez!"
+  spawner-break-lost: "&#F87171A spawner eltűnt a kitörés közben! (Visszaszerzési esély: %chance%%)"
+  spawner-break-no-chance: "&#F87171A spawner eltűnt! Nincs esélyed spawnereket visszaszerezni."
+  booster-given-sender: "&#4ADE80Adtál %player% játékosnak x%amount% spawner erősítő jegyet."
+  booster-given-recipient: "&#4ADE80Kaptál x%amount% spawner erősítő jegyet!"
+  booster-applied: "&#4ADE80Spawner megerősítve! Hatótáv +%range%, megjelenési idő -%delay% mp, XP +%xp%%, időtartam: %duration%."
+  booster-already-active: "&#F87171Ennek a spawnernek már van aktív erősítése (%duration% van hátra)."
+  booster-stack-limit: "&#F87171Ennek a spawnernek már a maximális számú erősítése van (%max%)."
+  booster-delay-too-high: "&#F87171A spawn késleltetés legfeljebb %max% másodperccel csökkenthető (minimális spawn késleltetés: %min% mp)."
+  booster-delay-not-reducible: "&#F87171A spawn késleltetés nem csökkenthető, mert már a minimumon van (%min% mp)."
+  booster-delay-maxed: "&#FFE066A spawn késleltetés már a legalacsonyabb szinten van, ezért a késleltetési rész nem lett alkalmazva. A többi hatás alkalmazva lett."
+  booster-delay-partial: "&#FFE066A spawn késleltetés elérte a legalacsonyabb szintet, ezért csak -%delay% mp lett alkalmazva. A többi hatás alkalmazva lett."
+  booster-delay-maxed-no-effect: "&#F87171Ennek a spawnernek a spawn késleltetése már a legalacsonyabb szinten van. A jegy nem lett felhasználva."
+  stack-merged: "&#4ADE80%amount% spawner összevonva. Halom: %stack%/%max%."
+  stack-full: "&#F87171Ez a spawnerhalom tele van! (max. %max%)"
+  stack-type-mismatch: "&#F87171Csak azonos típusú spawnereket lehet összevonni!"
+  stack-collected: "&#4ADE80%amount% spawner visszavéve. %left% maradt a halomban."
+  pickaxe-broken: "&#4ADE80A Spawner Csákány eltört!"
+  natural-spawner-break-denied: "&#F87171A természetes spawner védett és nem törhető."
+  natural-spawner-no-permission: "&#F87171Nincs jogosultságod természetes spawnerek kitöréséhez."
+  sp-pickaxe-only: "&#F87171Ez a speciális csákány csak spawnerhez használható!"
+  inventory-full: "&#4ADE80A tárgy a földre került, mert a csomagod megtelt!"
+  classic-silk-required: "&#F87171A spawner csak Selyem Tapintás Csákánnyal törhető!"
+  advanced-pickaxe-required: "&#F87171A spawner csak speciális Spawner Csákánnyal törhető!"
+  empty-spawner-break-denied: "&#F87171Üres spawner nem törhető!"
+  spawner-given-sender: "&#4ADE80%player% kapott %type% spawnert."
+  spawner-given-recipient: "&#38BDF8Egy %type% spawnert kaptál!"
+  chunk-limit-exceeded: "&#F87171Nem helyezhetsz el több spawnert ebben a chunkban!"
+  egg-chunk-limit-exceeded: "&#F87171Ebben a chunkban maximum %limit% %type% típusú mobot spawnolhatsz!"
+  stack-egg-denied: "&#F87171Egy halmozott spawner típusát nem módosíthatod idézőtojással!"
+  stack-natural-denied: "&#F87171A természetes spawnerek nem vonhatók össze. Törd össze, majd helyezd le újra."
+  booster-slot-invalid: "&#F87171Az a spawner már nincs a halmban. A jegy visszakerült hozzád."
+  reload-failed: "&#F87171Az újratöltés sikertelen. A részletekért nézd meg a konzolt."
+  
+# =========================================
+# Entity Típusok
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Páncélállvány
+  AXOLOTL: Axolotl
+  BAT: Denevér
+  BEE: Méh
+  BLAZE: Blaze
+  BOAT: Csónak
+  BOGGED: Mocsaras
+  BREEZE: Szellő
+  CAMEL: Teve
+  CAMEL_HUSK: Teve Husk
+  CAT: Macska
+  CAVE_SPIDER: Barlangi Pók
+  CHICKEN: Csirke
+  COD: Tőkehal
+  COPPER_GOLEM: Réz golem
+  COW: Tehén
+  CREEPER: Creeper
+  CREAKING: Recsegő
+  DOLPHIN: Delfin
+  DONKEY: Szamár
+  DROWNED: Fülöncsípett
+  ELDER_GUARDIAN: Idős Őrző
+  EMPTY: Üres
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Sárkányúr
+  EVOKER: Idéző
+  EXPERIENCE_BOTTLE: Tapasztalati Üveg
+  EXPERIENCE_ORB: Tapasztalati Gömb
+  FOX: Róka
+  FROG: Béka
+  GHAST: Ghast
+  GIANT: Óriás
+  GLOW_SQUID: Világító Tintahal
+  GOAT: Kecske
+  GUARDIAN: Őrző
+  HAPPY_GHAST: Boldog ghast
+  HOGLIN: Hoglin
+  HORSE: Ló
+  HUSK: Husk
+  ILLUSIONER: Illúzionista
+  IRON_GOLEM: Vasgólem
+  LLAMA: Láma
+  MAGMA_CUBE: Magmakocka
+  MINECART: Bányászati kocsi
+  MINECART_CHEST: Ládás bányászkocsi
+  MINECART_COMMAND: Parancsblokkos bányászkocsi
+  MINECART_FURNACE: Kemencés bányászkocsi
+  MINECART_HOPPER: Tölcséres bányászkocsi
+  MINECART_SPAWNER: Spawneres bányászkocsi
+  MINECART_TNT: TNT-s bányászkocsi
+  MOOSHROOM: Gomba tehén
+  MULE: Öszvér
+  MUSHROOM_COW: Gomba tehén
+  NAUTILUS: Nautilusz
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Kiszáradt
+  PARROT: Papagáj
+  PHANTOM: Fantom
+  PIG: Malac
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brutális
+  PILLAGER: Fosztogató
+  POLAR_BEAR: Jegesmedve
+  PUFFERFISH: Gömbhal
+  RABBIT: Nyúl
+  RAVAGER: Pusztító
+  SALMON: Lazac
+  SHEEP: Juht
+  SHULKER: Shulker
+  SILVERFISH: Ezüstmoly
+  SKELETON: Csontváz
+  SKELETON_HORSE: Csontváz ló
+  SLIME: Nyálkagömb
+  SNIFFER: Szaglászó
+  SNOWMAN: Hóember
+  SNOW_GOLEM: Hóember
+  SPIDER: Pók
+  SQUID: Tintahal
+  STRAY: Kóbor
+  STRIDER: Strider
+  SULFUR_CUBE: Kénkocka
+  TADPOLE: Ebihal
+  TRADER_LLAMA: Kereskedő láma
+  TROPICAL_FISH: Trópusi hal
+  TURTLE: Teknős
+  VEX: Vex
+  VILLAGER: Falusi
+  VINDICATOR: Megtorló
+  WANDERING_TRADER: Vándorkereskedő
+  WARDEN: Felügyelő
+  WITCH: Boszorkány
+  WITHER: Wither
+  WITHER_SKELETON: Wither csontváz
+  WOLF: Farkas
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombi
+  ZOMBIE_HORSE: Zombi ló
+  ZOMBIE_NAUTILUS: Zombi nautilusz
+  ZOMBIE_VILLAGER: Zombi falusi
+  ZOMBIFIED_PIGLIN: Zombifikált Piglin
+
+# Tárgy spawnerek nevei (lásd spawner_items.yml). Minden ott hozzáadott tárgyhoz adj hozzá egy sort: MATERIAL: Megjelenített név
+item-types:
+  NETHERITE_INGOT: Netherit tömb
+  DIAMOND: Gyémánt
+  COAL: Szén
+  AMETHYST_SHARD: Ametiszt szilánk
+  EMERALD: Smaragd
+  NETHER_STAR: Nether csillag
+  TOTEM_OF_UNDYING: Halhatatlanság totemje

@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Azərbaycan (Azerbaijani)
+# ===============================
+
+# Plugin mesajlarının ön eki
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Spawner kazması ayarları
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Kazması"
+  lore:
+    - "&#9CA3AFSpawner-i qırmaq üçün bu kazmanı istifadə edin."
+    - "&#FFE066"
+    - "&#4ADE80Qalan istifadə: &#F87171%uses%"
+
+# =========================================
+# Mod etiketləri (İnkişaf etmiş və ya Klasik)
+# =========================================
+mode-tags:
+  advanced: "Spawner Kazması"
+  classic: "İpək Toxunuşlu Kazma"
+
+# =========================================
+# Spawner əşyası ayarları
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFBu spawner-i yerləşdirərək canavar çıxara bilərsiniz."
+    - "&#9CA3AFYalnız bununla qırıla bilər: &#FFE066%mode%"
+    - "&#9CA3AFCanavar növü: &#4ADE80%type%"
+
+# =========================================
+# Spawner Hologram Ayarları
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AF%mode% ilə qırmaq olar"
+  - "&#9CA3AFMenyunu açmaq üçün çömbəlüb sağ klikləyin"
+  - "%status%"
+  
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Mob Hologram Ayarları
+# =========================================
+mob-remove-warning:
+  - "&#F87171Bu mob silinəcək"
+  - "&#FFE066Əgər ərazini tərk etməsə, %time% saniyə ərzində."
+  
+# =========================================
+# Menü Ayarları (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Spawner İdarə Paneli"
+  status:
+    active: "&#4ADE80Aktiv ✔"
+    inactive: "&#F87171Passiv ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAvtomatik Öldürmə"
+      lore:
+        - "&#9CA3AFSpawnerdan çıxan məxluqları avtomatik öldürür."
+        - "&#9CA3AFAnbarı və XP toplamanı da avtomatik açır."
+        - "&#9CA3AFVəziyyət: %status%"
+        - ""
+        - "&#F9FAFBSol-Tık: &#FFE066Rejimi Dəyiş"
+      lore-auto:
+        - "&#9CA3AFSpawnerdan çıxan məxluqları avtomatik öldürür."
+        - "&#9CA3AFAnbar və XP toplama həmişə açıqdır."
+        - "&#9CA3AFVəziyyət: %status%"
+      lore-no-perm:
+        - "&#9CA3AFSpawnerdan çıxan məxluqları avtomatik öldürür."
+        - "&#9CA3AFVəziyyət: %status%"
+        - ""
+        - "&#F87171&lBU XÜSUSİYYƏTİ İSTİFADƏ EDƏ BİLMƏZSİNİZ"
+
+    storage:
+      name: "&#38BDF8&lAnbar"
+      lore:
+        - "&#9CA3AFAvto Öldürmə ilə yığılan əşyalar burada saxlanılır."
+        - "&#9CA3AFDolu slot: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKlik: &#FFE066Anbarı aç"
+
+    xp-vacuum:
+      name: "&#4ADE80&lXP Toplama"
+      click: "&#F9FAFBKlik: &#38BDF8XP-ni çək"
+      lore:
+        - "&#9CA3AFÖldürülən məxluqlardan düşən XP-ləri saxlayır."
+        - ""
+        - "&#9CA3AFVəziyyət: %status%"
+        - "&#9CA3AFToplanan: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBSol-Tık: &#FFE066Rejimi Dəyiş"
+        - "&#F9FAFBSağ-Tık: &#38BDF8XP-ni Çək"
+      lore-no-perm:
+        - "&#9CA3AFÖldürülən məxluqlardan düşən XP-ləri saxlayır."
+        - ""
+        - "&#9CA3AFVəziyyət: %status%"
+        - "&#9CA3AFToplanan: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lBU XÜSUSİYYƏTİ İSTİFADƏ EDƏ BİLMƏZSİNİZ"
+
+  messages:
+    no-permission: "&#F87171Bu xüsusiyyəti dəyişməyə icazəniz yoxdur!"
+    xp-empty: "&#F87171XP anbarı boşdur!"
+    xp-collected: "&#4ADE80Toplandı: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Əvvəlcə avtomatik öldürməni aktivləşdirin!"
+    feature-no-perm: "&#F87171Bu xüsusiyyəti dəyişməyə icazəniz yoxdur!"
+    perms-changed: "&#F87171İcazələriniz dəyişdiyi üçün spawner xüsusiyyətləri söndürüldü."
+    storage-inventory-full: "&#F87171İnventarın doludur!"
+    storage-taken: "&#4ADE80Anbardan %amount% əşya götürüldü."
+    in-use: "&#F87171Bu spawnerin menyusundan hazırda başqa biri istifadə edir."
+  storage:
+    title: "&#6B7280Spawner anbarı"
+    previous:
+      name: "&#F9FAFB&lƏvvəlki səhifə"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF. səhifəyə get"
+    next:
+      name: "&#F9FAFB&lNövbəti səhifə"
+      lore:
+        - "&#9CA3AF&#FFE066%page%&#9CA3AF. səhifəyə get"
+    take-page:
+      name: "&#4ADE80&lSəhifəni götür"
+      lore:
+        - "&#9CA3AFBu səhifədəki bütün əşyaları götürür."
+        - "&#9CA3AFƏşyaları geri qoymaq olmaz."
+    back:
+      name: "&#F87171&lGeri"
+      lore:
+        - "&#9CA3AFSpawner menyusuna qayıt."
+    info:
+      name: "&#38BDF8&lAnbar məlumatı"
+      lore:
+        - "&#9CA3AFSəhifə: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFDolu slot: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFGötürmək üçün əşyaya klikləyin."
+  
+# =========================================
+# Spawner Gücləndirici Ayarları
+# =========================================
+# Yer tutucular: %range% %delay% %xp% %duration% (məlumat başlığında %index%)
+booster:
+  item:
+    name: "&#F59E0B&lSpawner Gücləndirici"
+    lore:
+      - "&#9CA3AFGücləndirmək üçün bu biletlə spawnerə sağ klikləyin."
+      - "&#FFE066İşləmə məsafəsi: &#F9FAFB+%range% blok"
+      - "&#FFE066Yaranma müddəti: &#F9FAFB-%delay% saniyə"
+      - "&#FFE066Mob XP: &#F9FAFB+%xp%%"
+      - "&#FFE066Müddət: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Spawner seç"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKlik: &#FFE066Booster tətbiq et"
+  time:
+    unlimited: "Limitsiz"
+    hour: "saat"
+    minute: "dəq"
+    second: "san"
+  info:
+    name: "&#F59E0B&lAktiv Gücləndirmələr"
+    empty: "&#9CA3AFAktiv gücləndirmə yoxdur."
+    entry-title: "&#FFE066&lGücləndirmə #%index%"
+
+# =========================================
+# Plugin mesajları
+# =========================================
+messages:
+  no-permission: "&#F87171Bu əmri icra etmək üçün icazəniz yoxdur."
+  reload-success: "&#4ADE80Spawner sistemi uğurla yenidən yükləndi."
+  wrong-subcommand: "&#FFE066İstifadə: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066İstifadə: /spsystem pickaxegive <oyuncu> <1-1000>"
+  usage-givespawner: "&#FFE066İstifadə: /spsystem givespawner <oyuncu> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066İstifadə: /spsystem givebooster <oyuncu> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: spawnerin aktivləşmə məsafəsinə əlavə olunan bloklar"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: spawn gecikməsindən çıxılan saniyələr (0 = yoxdur)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: spawnerdən gələn XP-yə əlavə faiz (0 = yoxdur)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: boostun müddəti dəqiqə ilə və ya unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: veriləcək bilet sayı (ixtiyari)"
+    - "&#FFE066Nümunə: &#F9FAFB/spsystem givebooster oyuncu 10 5 50 30 &#9CA3AF(+10 blok, -5 san gecikmə, +50% XP, 30 dəqiqə)"
+  invalid-mob-type: "&#F87171Yanlış mob növü: %type%"
+  invalid-item-spawner: "&#F87171Yanlış əşya spawneri: %type%"
+  booster-no-effect: "&#F87171range, delay-seconds və ya xp-percent dəyərlərindən ən azı biri 0-dan böyük olmalıdır."
+  booster-disabled: "&#F87171Spawner booster sistemi söndürülüb. config.yml-də 'spawner-booster.enabled: true' edin və /spsystem reload işlədin."
+  command-disabled: "&#F87171'pickaxegive' əmri yalnız 'advanced' rejimdə istifadə edilə bilər."
+  player-not-found: "&#F87171Oyunçu tapılmadı: %player%"
+  not-a-number: "&#F87171İstifadə sayı rəqəm olmalıdır."
+  max-uses-limit: "&#F87171Maksimum istifadə sayı 1000-dir."
+  pickaxe-given-sender: "&#4ADE80%player% oyunçusuna %uses% istifadəlik Spawner Kazması verildi."
+  pickaxe-given-recipient: "&#38BDF8Xüsusi bir spawner kazması aldınız!"
+  spawner-collected: "&#4ADE80Spawner uğurla inventarınıza əlavə edildi!"
+  spawner-break-lost: "&#F87171Spawner sındırılarkən yoxa çıxdı! (Bərpa şansı: %chance%%)"
+  spawner-break-no-chance: "&#F87171Spawner yoxa çıxdı! Spawner bərpa etmək şansınız yoxdur."
+  booster-given-sender: "&#4ADE80%player% oyunçusuna x%amount% spawner gücləndirmə bileti verildi."
+  booster-given-recipient: "&#4ADE80x%amount% spawner gücləndirmə bileti aldınız!"
+  booster-applied: "&#4ADE80Spawner gücləndirildi! Məsafə +%range%, yaranma müddəti -%delay% san, XP +%xp%%, müddət: %duration%."
+  booster-already-active: "&#F87171Bu spawnerdə artıq aktiv gücləndirmə var (%duration% qalıb)."
+  booster-stack-limit: "&#F87171Bu spawnerdə artıq maksimum gücləndirmə sayı var (%max%)."
+  booster-delay-too-high: "&#F87171Doğma müddəti ən çox %max% saniyə azaldıla bilər (minimum doğma müddəti: %min%san)."
+  booster-delay-not-reducible: "&#F87171Doğma müddəti artıq minimum səviyyədədir (%min%san), azaldıla bilməz."
+  booster-delay-maxed: "&#FFE066Doğma müddəti artıq ən aşağı səviyyədədir, buna görə müddət hissəsi tətbiq olunmadı. Digər effektlər tətbiq olundu."
+  booster-delay-partial: "&#FFE066Doğma müddəti ən aşağı səviyyəyə çatdı, buna görə yalnız -%delay%san tətbiq olundu. Digər effektlər tətbiq olundu."
+  booster-delay-maxed-no-effect: "&#F87171Bu spawnerin doğma müddəti artıq ən aşağı səviyyədədir. Bilet istifadə olunmadı."
+  stack-merged: "&#4ADE80%amount% spawner birləşdirildi. Yığın: %stack%/%max%."
+  stack-full: "&#F87171Bu spawner yığını doludur! (maksimum %max%)"
+  stack-type-mismatch: "&#F87171Yalnız eyni növ spawnerləri birləşdirmək olar!"
+  stack-collected: "&#4ADE80%amount% spawner götürüldü. Yığında %left% qaldı."
+  pickaxe-broken: "&#4ADE80Spawner kazmanız qırıldı!"
+  natural-spawner-break-denied: "&#F87171Təbii spawner-lar qorunur və qırıla bilməz."
+  natural-spawner-no-permission: "&#F87171Təbii spawnerləri sındırmaq üçün icazəniz yoxdur."
+  sp-pickaxe-only: "&#F87171Bu xüsusi kazma yalnız spawner qırmaq üçün istifadə edilə bilər!"
+  inventory-full: "&#4ADE80Əşya inventarın dolu olduğu üçün yerə atıldı!"
+  classic-silk-required: "&#F87171Spawner-ları yalnız İpək Toxunuşlu kazma ilə qıra bilərsiniz!"
+  advanced-pickaxe-required: "&#F87171Spawner-ları yalnız xüsusi Spawner Kazması ilə qıra bilərsiniz!"
+  empty-spawner-break-denied: "&#F87171Boş spawner-ları qıra bilməzsiniz!"
+  spawner-given-sender: "&#4ADE80%player% oyunçusuna %type% spawner verildi."
+  spawner-given-recipient: "&#38BDF8Bir %type% spawner aldınız!"
+  chunk-limit-exceeded: "&#F87171Bu chunkda daha çox spawner yerləşdirə bilməzsiniz!"
+  egg-chunk-limit-exceeded: "&#F87171Bu chunkda %type% növündən ən çox %limit% mob spavn edə bilərsiniz!"
+  stack-egg-denied: "&#F87171Yığılmış spawnerin növünü spawn yumurtası ilə dəyişmək olmaz!"
+  stack-natural-denied: "&#F87171Təbii spawnerlər birləşdirilə bilməz. Qırıb yenidən qoyun."
+  booster-slot-invalid: "&#F87171Bu spawner artıq yığının içində deyil. Bilet geri qaytarıldı."
+  reload-failed: "&#F87171Yenidən yükləmə uğursuz oldu. Təfərrüatlar üçün konsola baxın."
+  
+# =========================================
+# Varlıq Növləri
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Zireh Asılqanı
+  AXOLOTL: Aksolotl
+  BAT: Yarasa
+  BEE: Arı
+  BLAZE: Blaze
+  BOAT: Qayıq
+  BOGGED: Bataqlıq İskeleti
+  BREEZE: Briz
+  CAMEL: Dəvə
+  CAMEL_HUSK: Kavrulmuş Dəvə
+  CAT: Pişik
+  CAVE_SPIDER: Mağara Hörümçəyi
+  CHICKEN: Toyuq
+  COD: Treska
+  COPPER_GOLEM: Mis Qolem
+  COW: İnək
+  CREEPER: Creeper
+  CREAKING: Cırıltı
+  DOLPHIN: Delfin
+  DONKEY: Eşşək
+  DROWNED: Batmış
+  ELDER_GUARDIAN: Yaşlı Gözətçi
+  EMPTY: Boş
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Ender Əjdahası
+  EVOKER: Evoker
+  EXPERIENCE_BOTTLE: Təcrübə Şüşəsi
+  EXPERIENCE_ORB: Təcrübə Topu
+  FOX: Tülkü
+  FROG: Qurbağa
+  GHAST: Ghast
+  GIANT: Nəhəng
+  GLOW_SQUID: Parlayan Kalmar
+  GOAT: Keçi
+  GUARDIAN: Gözətçi
+  HAPPY_GHAST: Xoşbəxt Ghast
+  HOGLIN: Hoqlin
+  HORSE: At
+  HUSK: Quru
+  ILLUSIONER: İllüziyaçı
+  IRON_GOLEM: Dəmir Golem
+  LLAMA: Lama
+  MAGMA_CUBE: Maqma Kubu
+  MINECART: Vagon
+  MINECART_CHEST: Sandıqlı Vagon
+  MINECART_COMMAND: Əmr Bloklu Vagon
+  MINECART_FURNACE: Sobalı Vagon
+  MINECART_HOPPER: Haznəli Vagon
+  MINECART_SPAWNER: Spawnerli Vagon
+  MINECART_TNT: TNT-li Vagon
+  MOOSHROOM: Göbələk İnəyi
+  MULE: Qatır
+  MUSHROOM_COW: Göbələk İnəyi
+  NAUTILUS: Nautilus
+  OCELOT: Oselot
+  PANDA: Panda
+  PARCHED: Qurumuş
+  PARROT: Tutuquşu
+  PHANTOM: Fantom
+  PIG: Donuz
+  PIGLIN: Piqlin
+  PIGLIN_BRUTE: Piqlin Brutu
+  PILLAGER: Yağmacı
+  POLAR_BEAR: Qütb Ayısı
+  PUFFERFISH: Şişən Balıq
+  RABBIT: Dovşan
+  RAVAGER: Dağıdıcı
+  SALMON: Qızılbalıq
+  SHEEP: Qoyun
+  SHULKER: Şalker
+  SILVERFISH: Gümüş Balığı
+  SKELETON: Skelet
+  SKELETON_HORSE: Skelet At
+  SLIME: Slaym
+  SNIFFER: İyləyici
+  SNOWMAN: Qar Adamı
+  SNOW_GOLEM: Qar Adamı
+  SPIDER: Hörümçək
+  SQUID: Kalmar
+  STRAY: Avara
+  STRIDER: Strayder
+  SULFUR_CUBE: Kükürd Kubu
+  TADPOLE: Çömçəquyruq
+  TRADER_LLAMA: Tacir Laması
+  TROPICAL_FISH: Tropik Balıq
+  TURTLE: Tısbağa
+  VEX: Veks
+  VILLAGER: Kəndli
+  VINDICATOR: Müdafiəçi
+  WANDERING_TRADER: Səyyar Tacir
+  WARDEN: Mühafizəçi
+  WITCH: Cadugər
+  WITHER: Vizer
+  WITHER_SKELETON: Vizer Skeleti
+  WOLF: Canavar
+  ZOGLIN: Zoqlin
+  ZOMBIE: Zombi
+  ZOMBIE_HORSE: Zombi At
+  ZOMBIE_NAUTILUS: Zombi Nautilus
+  ZOMBIE_VILLAGER: Zombi Kəndli
+  ZOMBIFIED_PIGLIN: Zombiləşmiş Piqlin
+
+# Əşya spawnerlərinin adları (bax: spawner_items.yml). Orada əlavə etdiyin hər əşya üçün bir sətir əlavə et: MATERIAL: Göstərilən ad
+item-types:
+  NETHERITE_INGOT: Netherit Külçə
+  DIAMOND: Almaz
+  COAL: Kömür
+  AMETHYST_SHARD: Ametist Parçası
+  EMERALD: Zümrüd
+  NETHER_STAR: Nether Ulduzu
+  TOTEM_OF_UNDYING: Ölümsüzlük Totemi

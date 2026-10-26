@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Čeština
+# ===============================
+
+# Prefix pro všechny zprávy pluginu
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Nastavení Spawnovacího Krumpáče
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Krumpáč"
+  lore:
+    - "&#9CA3AFPoužijte tento krumpáč k rozbití spawneru."
+    - "&#FFE066"
+    - "&#4ADE80Zbývající použití: &#F87171%uses%"
+
+# =========================================
+# Tagy režimu (Pokročilý nebo Klasický)
+# =========================================
+mode-tags:
+  advanced: "Spawner Krumpáč"
+  classic: "Krumpáč Hedvábný Dotek"
+
+# =========================================
+# Nastavení Spawnovacího Předmětu
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFUmístěním tohoto spawneru se spawnuje mob."
+    - "&#9CA3AFLze rozbít pouze tímto: &#FFE066%mode%"
+    - "&#9CA3AFTyp entity: &#4ADE80%type%"
+    
+# =========================================
+# Nastavení hologramu spawneru
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner"
+  - "&#9CA3AFLze zničit pomocí %mode%"
+  - "&#9CA3AFPřikrč se a klikni pravým tlačítkem pro otevření menu"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Nastavení Hologramu Moba
+# =========================================
+mob-remove-warning:
+  - "&#F87171Tento mob bude odstraněn"
+  - "&#FFE066Do %time% s, pokud neopustí oblast."
+  
+# =========================================
+# Nastavení Menu (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Ovládací panel Spawneru"
+  status:
+    active: "&#4ADE80Aktivní ✔"
+    inactive: "&#F87171Neaktivní ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lAutomatické zabíjení"
+      lore:
+        - "&#9CA3AFAutomaticky zabíjí tvory ze spawneru."
+        - "&#9CA3AFZapne také Úložiště a Sběrač XP."
+        - "&#9CA3AFStav: %status%"
+        - ""
+        - "&#F9FAFBLevý klik: &#FFE066Změnit režim"
+      lore-auto:
+        - "&#9CA3AFAutomaticky zabíjí tvory ze spawneru."
+        - "&#9CA3AFÚložiště a Sběrač XP jsou vždy zapnuté."
+        - "&#9CA3AFStav: %status%"
+      lore-no-perm:
+        - "&#9CA3AFAutomaticky zabíjí tvory ze spawneru."
+        - "&#9CA3AFStav: %status%"
+        - ""
+        - "&#F87171&lTUTO FUNKCI NEMŮŽETE POUŽÍT"
+
+    storage:
+      name: "&#38BDF8&lÚložiště"
+      lore:
+        - "&#9CA3AFPředměty nasbírané Auto Slayerem se ukládají zde."
+        - "&#9CA3AFPoužité sloty: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBKliknutí: &#FFE066Otevřít úložiště"
+
+    xp-vacuum:
+      name: "&#4ADE80&lSběr XP"
+      click: "&#F9FAFBKliknutí: &#38BDF8Vybrat XP"
+      lore:
+        - "&#9CA3AFUkládá XP z zabitých tvorů."
+        - ""
+        - "&#9CA3AFStav: %status%"
+        - "&#9CA3AFNasbíráno: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBLevý klik: &#FFE066Změnit režim"
+        - "&#F9FAFBPravý klik: &#38BDF8Vybrat XP"
+      lore-no-perm:
+        - "&#9CA3AFUkládá XP z zabitých tvorů."
+        - ""
+        - "&#9CA3AFStav: %status%"
+        - "&#9CA3AFNasbíráno: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lTUTO FUNKCI NEMŮŽETE POUŽÍT"
+
+  messages:
+    no-permission: "&#F87171Nemáte oprávnění změnit tuto funkci!"
+    xp-empty: "&#F87171Zásobník XP je prázdný!"
+    xp-collected: "&#4ADE80Sebráno: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Nejprve zapněte automatické zabíjení!"
+    feature-no-perm: "&#F87171Nemáte oprávnění změnit tuto funkci!"
+    perms-changed: "&#F87171Funkce spawneru byly zakázány kvůli změně vašich oprávnění."
+    storage-inventory-full: "&#F87171Máš plný inventář!"
+    storage-taken: "&#4ADE80Z úložiště vzato předmětů: %amount%."
+    in-use: "&#F87171Menu tohoto spawneru právě používá někdo jiný."
+  storage:
+    title: "&#6B7280Úložiště spawneru"
+    previous:
+      name: "&#F9FAFB&lPředchozí strana"
+      lore:
+        - "&#9CA3AFPřejít na stranu &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lDalší strana"
+      lore:
+        - "&#9CA3AFPřejít na stranu &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lVzít stranu"
+      lore:
+        - "&#9CA3AFVezme všechny předměty na této straně."
+        - "&#9CA3AFPředměty nelze vrátit zpět."
+    back:
+      name: "&#F87171&lZpět"
+      lore:
+        - "&#9CA3AFZpět do menu spawneru."
+    info:
+      name: "&#38BDF8&lInfo o úložišti"
+      lore:
+        - "&#9CA3AFStrana: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFPoužité sloty: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFKliknutím na předmět ho vezmeš."
+  
+# =========================================
+# Nastavení zesílení spawneru
+# =========================================
+# Zástupné symboly: %range% %delay% %xp% %duration% (%index% v názvu informací)
+booster:
+  item:
+    name: "&#F59E0B&lZesílení spawneru"
+    lore:
+      - "&#9CA3AFKlikni pravým tlačítkem na spawner touto vstupenkou, abys ho zesílil."
+      - "&#FFE066Dosah: &#F9FAFB+%range% bloků"
+      - "&#FFE066Doba spawnu: &#F9FAFB-%delay% sekund"
+      - "&#FFE066XP z mobů: &#F9FAFB+%xp%%"
+      - "&#FFE066Trvání: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Vybrat spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBKliknutí: &#FFE066Použít booster"
+  time:
+    unlimited: "Neomezeně"
+    hour: "h"
+    minute: "min"
+    second: "s"
+  info:
+    name: "&#F59E0B&lAktivní zesílení"
+    empty: "&#9CA3AFŽádné aktivní zesílení."
+    entry-title: "&#FFE066&lZesílení #%index%"
+
+# =========================================
+# Zprávy pluginu
+# =========================================
+messages:
+  no-permission: "&#F87171Nemáte oprávnění použít tento příkaz."
+  reload-success: "&#4ADE80Konfigurace Spawner systému byla úspěšně načtena."
+  wrong-subcommand: "&#FFE066Použití: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Použití: /spsystem pickaxegive <hráč> <1-1000>"
+  usage-givespawner: "&#FFE066Použití: /spsystem givespawner <hráč> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Použití: /spsystem givebooster <hráč> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: bloky navíc přidané k aktivačnímu dosahu spawneru"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: sekundy odečtené od zpoždění spawnu (0 = žádné)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: procenta XP navíc ze spawneru (0 = žádné)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: doba trvání boostu v minutách nebo unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: kolik lístků dát (volitelné)"
+    - "&#FFE066Příklad: &#F9FAFB/spsystem givebooster hráč 10 5 50 30 &#9CA3AF(+10 bloků, -5 s zpoždění, +50 % XP, 30 minut)"
+  invalid-mob-type: "&#F87171Neplatný typ moba: %type%"
+  invalid-item-spawner: "&#F87171Neplatný spawner předmětů: %type%"
+  booster-no-effect: "&#F87171Alespoň jedna z hodnot range, delay-seconds nebo xp-percent musí být větší než 0."
+  booster-disabled: "&#F87171Systém boosterů spawnerů je vypnutý. Nastavte 'spawner-booster.enabled: true' v config.yml a spusťte /spsystem reload."
+  command-disabled: "&#F87171Příkaz 'pickaxegive' je dostupný pouze v 'pokročilém' režimu."
+  player-not-found: "&#F87171Hráč nenalezen: %player%"
+  not-a-number: "&#F87171Počet použití musí být číslo."
+  max-uses-limit: "&#F87171Maximální počet použití je 1000."
+  pickaxe-given-sender: "&#4ADE80%player% obdržel Spawner Krumpáč s %uses% použití."
+  pickaxe-given-recipient: "&#38BDF8Obdrželi jste speciální spawner krumpáč!"
+  spawner-collected: "&#4ADE80Spawner úspěšně přidán do inventáře!"
+  spawner-break-lost: "&#F87171Spawner zmizel při rozbití! (Šance na záchranu: %chance%%)"
+  spawner-break-no-chance: "&#F87171Spawner zmizel! Nemáš žádnou šanci spawnery zachránit."
+  booster-given-sender: "&#4ADE80Dal jsi hráči %player% vstupenky na zesílení spawneru: x%amount%."
+  booster-given-recipient: "&#4ADE80Získal jsi vstupenky na zesílení spawneru: x%amount%!"
+  booster-applied: "&#4ADE80Spawner zesílen! Dosah +%range%, doba spawnu -%delay% s, XP +%xp%%, trvání: %duration%."
+  booster-already-active: "&#F87171Tento spawner už má aktivní zesílení (zbývá %duration%)."
+  booster-stack-limit: "&#F87171Tento spawner už má maximální počet zesílení (%max%)."
+  booster-delay-too-high: "&#F87171Prodlevu spawnu lze snížit nejvýše o %max% sekund (minimální prodleva: %min% s)."
+  booster-delay-not-reducible: "&#F87171Prodlevu spawnu nelze snížit, protože je již na minimu (%min% s)."
+  booster-delay-maxed: "&#FFE066Prodleva spawnu je již na nejnižší úrovni, proto nebyla část prodlevy použita. Ostatní efekty byly použity."
+  booster-delay-partial: "&#FFE066Prodleva spawnu dosáhla nejnižší úrovně, proto bylo použito pouze -%delay% s. Ostatní efekty byly použity."
+  booster-delay-maxed-no-effect: "&#F87171Prodleva spawnu tohoto spawneru je již na nejnižší úrovni. Lístek nebyl použit."
+  stack-merged: "&#4ADE80Sloučeno spawnerů: %amount%. Stoh: %stack%/%max%."
+  stack-full: "&#F87171Tento stoh spawnerů je plný! (max. %max%)"
+  stack-type-mismatch: "&#F87171Sloučit lze pouze spawnery stejného typu!"
+  stack-collected: "&#4ADE80Vzato spawnerů: %amount%. Ve stohu zbývá %left%."
+  pickaxe-broken: "&#4ADE80Váš Spawner Krumpáč se zlomil!"
+  natural-spawner-break-denied: "&#F87171Přírodní spawnery jsou chráněné a nelze je rozbít."
+  natural-spawner-no-permission: "&#F87171Nemáš oprávnění ničit přírodní spawnery."
+  sp-pickaxe-only: "&#F87171Tento speciální krumpáč může rozbíjet pouze spawner!"
+  inventory-full: "&#4ADE80Předmět byl shozen na zem, protože tvůj inventář je plný!"
+  classic-silk-required: "&#F87171Spawner lze rozbít pouze hedvábným krumpáčem!"
+  advanced-pickaxe-required: "&#F87171Spawner lze rozbít pouze speciálním Spawner Krumpáčem!"
+  empty-spawner-break-denied: "&#F87171Nelze rozbít prázdný spawner!"
+  spawner-given-sender: "&#4ADE80%player% obdržel %type% spawner."
+  spawner-given-recipient: "&#38BDF8Obdrželi jste %type% spawner!"
+  chunk-limit-exceeded: "&#F87171V tomto chunku nemůžeš umístit více spawnerů!"
+  egg-chunk-limit-exceeded: "&#F87171V tomto chunku můžeš spawnout pouze %limit% mobů typu %type%!"
+  stack-egg-denied: "&#F87171Typ naskládaného spawneru nelze změnit vejcem přivolání!"
+  stack-natural-denied: "&#F87171Přirozené spawnery nelze sloučit. Rozbij ho a polož znovu."
+  booster-slot-invalid: "&#F87171Tento spawner už není ve stacku. Lístek byl vrácen."
+  reload-failed: "&#F87171Přenačtení selhalo. Podrobnosti najdeš v konzoli."
+  
+# =========================================
+# Typy Entit
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Pásovec
+  ARMOR_STAND: Stojan na zbroj
+  AXOLOTL: Axolotl
+  BAT: Netopýr
+  BEE: Včela
+  BLAZE: Síto
+  BOAT: Člun
+  BOGGED: Bažinatý
+  BREEZE: Vánek
+  CAMEL: Velbloud
+  CAMEL_HUSK: Velbloud husk
+  CAT: Kočka
+  CAVE_SPIDER: Jeskynní pavouk
+  CHICKEN: Slepice
+  COD: Treska
+  COPPER_GOLEM: Měděný golem
+  COW: Kráva
+  CREEPER: Creeper
+  CREAKING: Vrzavý
+  DOLPHIN: Delfín
+  DONKEY: Osel
+  DROWNED: Utopenec
+  ELDER_GUARDIAN: Starší Strážce
+  EMPTY: Prázdný
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Enderdrak
+  EVOKER: Vyzývatel
+  EXPERIENCE_BOTTLE: Láhev zkušeností
+  EXPERIENCE_ORB: Koule zkušeností
+  FOX: Liška
+  FROG: Žába
+  GHAST: Ghast
+  GIANT: Obr
+  GLOW_SQUID: Světélkující chobotnice
+  GOAT: Koza
+  GUARDIAN: Strážce
+  HAPPY_GHAST: Šťastný ghast
+  HOGLIN: Hoglin
+  HORSE: Kůň
+  HUSK: Pustiník
+  ILLUSIONER: Iluzionista
+  IRON_GOLEM: Železný golem
+  LLAMA: Lama
+  MAGMA_CUBE: Magmová kostka
+  MINECART: Vozík
+  MINECART_CHEST: Vozík s truhlou
+  MINECART_COMMAND: Vozík s příkazovým blokem
+  MINECART_FURNACE: Vozík s pecí
+  MINECART_HOPPER: Vozík s násypkou
+  MINECART_SPAWNER: Vozík se spawnerem
+  MINECART_TNT: Vozík s TNT
+  MOOSHROOM: Houbová kráva
+  MULE: Mula
+  MUSHROOM_COW: Houbová kráva
+  NAUTILUS: Nautilus
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Vyschlý
+  PARROT: Papoušek
+  PHANTOM: Přízrak
+  PIG: Prase
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brut
+  PILLAGER: Nájezdník
+  POLAR_BEAR: Lední medvěd
+  PUFFERFISH: Čtverzubec
+  RABBIT: Králík
+  RAVAGER: Pustošitel
+  SALMON: Losos
+  SHEEP: Ovce
+  SHULKER: Shulker
+  SILVERFISH: Rybenka
+  SKELETON: Kostlivec
+  SKELETON_HORSE: Kostěný kůň
+  SLIME: Sliz
+  SNIFFER: Čenicháč
+  SNOWMAN: Sněhulák
+  SNOW_GOLEM: Sněhulák
+  SPIDER: Pavouk
+  SQUID: Chobotnice
+  STRAY: Tulák
+  STRIDER: Chodec
+  SULFUR_CUBE: Sírová kostka
+  TADPOLE: Pulec
+  TRADER_LLAMA: Obchodní lama
+  TROPICAL_FISH: Tropická ryba
+  TURTLE: Želva
+  VEX: Protiva
+  VILLAGER: Vesničan
+  VINDICATOR: Mstitel
+  WANDERING_TRADER: Potulný obchodník
+  WARDEN: Strážce
+  WITCH: Čarodějnice
+  WITHER: Wither
+  WITHER_SKELETON: Wither kostlivec
+  WOLF: Vlk
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Zombie kůň
+  ZOMBIE_NAUTILUS: Zombie nautilus
+  ZOMBIE_VILLAGER: Zombie vesničan
+  ZOMBIFIED_PIGLIN: Zombifikovaný Piglin
+
+# Názvy spawnerů předmětů (viz spawner_items.yml). Přidej řádek pro každý předmět, který tam přidáš: MATERIAL: Zobrazený název
+item-types:
+  NETHERITE_INGOT: Netheritový ingot
+  DIAMOND: Diamant
+  COAL: Uhlí
+  AMETHYST_SHARD: Ametystový střep
+  EMERALD: Smaragd
+  NETHER_STAR: Netherová hvězda
+  TOTEM_OF_UNDYING: Totem nesmrtelnosti

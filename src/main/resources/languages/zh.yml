@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System 简体中文 (Chinese)
+# ===============================
+
+# 插件消息前缀
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# 刷怪笼镐设置
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&l刷怪笼镐"
+  lore:
+    - "&#9CA3AF使用此镐来破坏刷怪笼。"
+    - "&#FFE066"
+    - "&#4ADE80剩余使用次数: &#F87171%uses%"
+
+# =========================================
+# 模式标签（高级或经典）
+# =========================================
+mode-tags:
+  advanced: "刷怪笼镐"
+  classic: "丝触镐"
+
+# =========================================
+# 刷怪笼物品设置
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% 刷怪笼"
+  lore:
+    - "&#9CA3AF放置此刷怪笼以生成怪物。"
+    - "&#9CA3AF只能使用: &#FFE066%mode% 来破坏"
+    - "&#9CA3AF怪物类型: &#4ADE80%type%"
+
+# =========================================
+# 刷怪笼全息显示设置
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% 刷怪笼"
+  - "&#9CA3AF可用 %mode% 破坏"
+  - "&#9CA3AF蹲下并右键单击以打开菜单"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# 生物全息显示设置
+# =========================================
+mob-remove-warning:
+  - "&#F87171此生物将被移除"
+  - "&#FFE066如果在 %time% 秒内不离开该区域。"
+  
+# =========================================
+# 菜单设置 (GUI)
+# =========================================
+menu:
+  title: "&#6B7280刷怪笼控制面板"
+  status:
+    active: "&#4ADE80开启 ✔"
+    inactive: "&#F87171关闭 ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&l自动击杀"
+      lore:
+        - "&#9CA3AF自动击杀刷怪笼生成的生物。"
+        - "&#9CA3AF同时开启仓库和经验吸收。"
+        - "&#9CA3AF状态: %status%"
+        - ""
+        - "&#F9FAFB左键点击: &#FFE066切换模式"
+      lore-auto:
+        - "&#9CA3AF自动击杀刷怪笼生成的生物。"
+        - "&#9CA3AF仓库和经验吸收始终开启。"
+        - "&#9CA3AF状态: %status%"
+      lore-no-perm:
+        - "&#9CA3AF自动击杀刷怪笼生成的生物。"
+        - "&#9CA3AF状态: %status%"
+        - ""
+        - "&#F87171&l你不能使用此功能"
+
+    storage:
+      name: "&#38BDF8&l仓库"
+      lore:
+        - "&#9CA3AF自动击杀收集到的物品会存放在这里。"
+        - "&#9CA3AF已用格数： &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFB点击： &#FFE066打开仓库"
+
+    xp-vacuum:
+      name: "&#4ADE80&l经验收集"
+      click: "&#F9FAFB点击： &#38BDF8提取经验"
+      lore:
+        - "&#9CA3AF储存被击杀生物掉落的经验值。"
+        - ""
+        - "&#9CA3AF状态: %status%"
+        - "&#9CA3AF已收集: &#FFE066%xp% 经验"
+        - ""
+        - "&#F9FAFB左键点击: &#FFE066切换模式"
+        - "&#F9FAFB右键点击: &#38BDF8取出经验"
+      lore-no-perm:
+        - "&#9CA3AF储存被击杀生物掉落的经验值。"
+        - ""
+        - "&#9CA3AF状态: %status%"
+        - "&#9CA3AF已收集: &#FFE066%xp% 经验"
+        - ""
+        - "&#F87171&l你不能使用此功能"
+
+  messages:
+    no-permission: "&#F87171你没有权限更改此功能！"
+    xp-empty: "&#F87171经验罐是空的！"
+    xp-collected: "&#4ADE80已收集: &#4ADE80%xp% 经验！"
+    req-auto-slayer: "&#F87171你必须先开启自动击杀！"
+    feature-no-perm: "&#F87171你没有权限更改此功能！"
+    perms-changed: "&#F87171由于你的权限发生变化，刷怪笼功能已被禁用。"
+    storage-inventory-full: "&#F87171你的背包已满！"
+    storage-taken: "&#4ADE80已从仓库取出 %amount% 个物品。"
+    in-use: "&#F87171其他玩家正在使用这个刷怪笼的菜单。"
+  storage:
+    title: "&#6B7280刷怪笼仓库"
+    previous:
+      name: "&#F9FAFB&l上一页"
+      lore:
+        - "&#9CA3AF前往第 &#FFE066%page%&#9CA3AF 页"
+    next:
+      name: "&#F9FAFB&l下一页"
+      lore:
+        - "&#9CA3AF前往第 &#FFE066%page%&#9CA3AF 页"
+    take-page:
+      name: "&#4ADE80&l取出本页"
+      lore:
+        - "&#9CA3AF取出本页的所有物品。"
+        - "&#9CA3AF物品无法放回。"
+    back:
+      name: "&#F87171&l返回"
+      lore:
+        - "&#9CA3AF返回刷怪笼菜单。"
+    info:
+      name: "&#38BDF8&l仓库信息"
+      lore:
+        - "&#9CA3AF页码： &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AF已用格数： &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AF点击物品即可取出。"
+  
+# =========================================
+# 刷怪笼强化设置
+# =========================================
+# 占位符：%range% %delay% %xp% %duration%（信息标题中使用 %index%）
+booster:
+  item:
+    name: "&#F59E0B&l刷怪笼强化券"
+    lore:
+      - "&#9CA3AF手持此券右键刷怪笼即可强化。"
+      - "&#FFE066工作范围：&#F9FAFB+%range% 格"
+      - "&#FFE066刷新间隔：&#F9FAFB-%delay% 秒"
+      - "&#FFE066生物经验：&#F9FAFB+%xp%%"
+      - "&#FFE066持续时间：&#F9FAFB%duration%"
+  select:
+    title: "&#6B7280选择刷怪笼"
+    entry: "&#FFE066&l刷怪笼 #%index%"
+    click: "&#F9FAFB点击： &#FFE066使用增益券"
+  time:
+    unlimited: "无限"
+    hour: "小时"
+    minute: "分钟"
+    second: "秒"
+  info:
+    name: "&#F59E0B&l生效中的强化"
+    empty: "&#9CA3AF没有生效的强化。"
+    entry-title: "&#FFE066&l强化 #%index%"
+
+# =========================================
+# 插件消息
+# =========================================
+messages:
+  no-permission: "&#F87171您没有权限使用此命令。"
+  reload-success: "&#4ADE80Spawner 系统配置已成功重新加载。"
+  wrong-subcommand: "&#FFE066用法: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066用法: /spsystem pickaxegive <玩家> <1-1000>"
+  usage-givespawner: "&#FFE066用法: /spsystem givespawner <玩家> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066用法: /spsystem givebooster <玩家> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: 增加到刷怪笼激活范围的方块数"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: 从生成延迟中减少的秒数 (0 = 无)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: 刷怪笼额外经验百分比 (0 = 无)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: 加成持续的分钟数,或 unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: 发放的票券数量 (可选)"
+    - "&#FFE066示例: &#F9FAFB/spsystem givebooster 玩家 10 5 50 30 &#9CA3AF(范围+10格、延迟-5秒、经验+50%、持续30分钟)"
+  invalid-mob-type: "&#F87171无效的生物类型: %type%"
+  invalid-item-spawner: "&#F87171无效的物品刷怪笼: %type%"
+  booster-no-effect: "&#F87171range、delay-seconds、xp-percent 中至少有一个必须大于 0。"
+  booster-disabled: "&#F87171刷怪笼加成系统已关闭。请在 config.yml 中设置 'spawner-booster.enabled: true' 并执行 /spsystem reload。"
+  command-disabled: "&#F87171'pickaxegive' 命令只能在 '高级' 模式下使用。"
+  player-not-found: "&#F87171找不到玩家: %player%"
+  not-a-number: "&#F87171使用次数必须为数字。"
+  max-uses-limit: "&#F87171最大使用次数为 1000。"
+  pickaxe-given-sender: "&#4ADE80已给予 %player% %uses% 次使用的刷怪笼镐。"
+  pickaxe-given-recipient: "&#38BDF8您已获得一把特殊刷怪笼镐！"
+  spawner-collected: "&#4ADE80刷怪笼已成功添加到您的背包！"
+  spawner-break-lost: "&#F87171刷怪笼在破坏时消失了！（回收几率：%chance%%）"
+  spawner-break-no-chance: "&#F87171刷怪笼消失了！你没有回收刷怪笼的几率。"
+  booster-given-sender: "&#4ADE80已给予 %player% x%amount% 张刷怪笼强化券。"
+  booster-given-recipient: "&#4ADE80你获得了 x%amount% 张刷怪笼强化券！"
+  booster-applied: "&#4ADE80刷怪笼已强化！范围 +%range%，刷新间隔 -%delay% 秒，经验 +%xp%%，持续时间：%duration%。"
+  booster-already-active: "&#F87171这个刷怪笼已有生效的强化（剩余 %duration%）。"
+  booster-stack-limit: "&#F87171这个刷怪笼的强化数量已达上限（%max%）。"
+  booster-delay-too-high: "&#F87171生成延迟最多只能减少 %max% 秒（最小生成延迟：%min% 秒）。"
+  booster-delay-not-reducible: "&#F87171生成延迟已是最小值（%min% 秒），无法再减少。"
+  booster-delay-maxed: "&#FFE066生成延迟已降到最低，因此未应用延迟部分，其他效果已应用。"
+  booster-delay-partial: "&#FFE066生成延迟已降到最低，因此只应用了 -%delay% 秒，其他效果已应用。"
+  booster-delay-maxed-no-effect: "&#F87171该刷怪笼的生成延迟已降到最低，票券未被使用。"
+  stack-merged: "&#4ADE80已合并 %amount% 个刷怪笼。堆叠：%stack%/%max%。"
+  stack-full: "&#F87171这个刷怪笼堆叠已满！（最多 %max% 个）"
+  stack-type-mismatch: "&#F87171只能合并相同类型的刷怪笼！"
+  stack-collected: "&#4ADE80已收回 %amount% 个刷怪笼，堆叠中还剩 %left% 个。"
+  pickaxe-broken: "&#4ADE80刷怪笼镐已损坏！"
+  natural-spawner-break-denied: "&#F87171自然生成的刷怪笼受到保护，无法破坏。"
+  natural-spawner-no-permission: "&#F87171你没有权限破坏自然生成的刷怪笼。"
+  sp-pickaxe-only: "&#F87171此特殊镐只能用于破坏刷怪笼！"
+  inventory-full: "&#4ADE80由于你的背包已满，物品被丢弃在地上！"
+  classic-silk-required: "&#F87171刷怪笼只能用丝触镐破坏！"
+  advanced-pickaxe-required: "&#F87171刷怪笼只能用特殊刷怪笼镐破坏！"
+  empty-spawner-break-denied: "&#F87171无法破坏空的刷怪笼！"
+  spawner-given-sender: "&#4ADE80已给予 %player% %type% 刷怪笼。"
+  spawner-given-recipient: "&#38BDF8您已获得 %type% 刷怪笼！"
+  chunk-limit-exceeded: "&#F87171你不能在这个区块放置更多刷怪箱了!"
+  egg-chunk-limit-exceeded: "&#F87171在此区块中，你最多只能生成 %limit% 只 %type% 生物！"
+  stack-egg-denied: "&#F87171无法使用刷怪蛋更改已堆叠刷怪笼的类型！"
+  stack-natural-denied: "&#F87171自然生成的刷怪笼无法合并。请先破坏再重新放置后使用。"
+  booster-slot-invalid: "&#F87171该刷怪笼已不在堆叠中，票券已退还。"
+  reload-failed: "&#F87171重载失败，请查看控制台了解详情。"
+  
+# =========================================
+# 实体类型
+# =========================================
+entity-types:
+  ALLAY: 悦灵
+  ARMADILLO: 犰狳
+  ARMOR_STAND: 盔甲架
+  AXOLOTL: 美西螈
+  BAT: 蝙蝠
+  BEE: 蜜蜂
+  BLAZE: 烈焰人
+  BOAT: 船
+  BOGGED: 沼泽
+  BREEZE: 微风
+  CAMEL: 骆驼
+  CAMEL_HUSK: 尸壳骆驼
+  CAT: 猫
+  CAVE_SPIDER: 洞穴蜘蛛
+  CHICKEN: 鸡
+  COD: 鳕鱼
+  COPPER_GOLEM: 铜傀儡
+  COW: 牛
+  CREEPER: 苦力怕
+  CREAKING: 吱吱作响
+  DOLPHIN: 海豚
+  DONKEY: 驴
+  DROWNED: 溺尸
+  ELDER_GUARDIAN: 远古守卫者
+  EMPTY: 空
+  ENDERMAN: 末影人
+  ENDERMITE: 末影螨
+  ENDER_DRAGON: 末影龙
+  EVOKER: 唤魔者
+  EXPERIENCE_BOTTLE: 经验瓶
+  EXPERIENCE_ORB: 经验球
+  FOX: 狐狸
+  FROG: 青蛙
+  GHAST: 恶魂
+  GIANT: 巨人
+  GLOW_SQUID: 发光鱿鱼
+  GOAT: 山羊
+  GUARDIAN: 守卫者
+  HAPPY_GHAST: 快乐恶魂
+  HOGLIN: 疣猪兽
+  HORSE: 马
+  HUSK: 尸壳
+  ILLUSIONER: 幻术师
+  IRON_GOLEM: 铁傀儡
+  LLAMA: 羊驼
+  MAGMA_CUBE: 岩浆怪
+  MINECART: 矿车
+  MINECART_CHEST: 运输矿车
+  MINECART_COMMAND: 命令方块矿车
+  MINECART_FURNACE: 动力矿车
+  MINECART_HOPPER: 漏斗矿车
+  MINECART_SPAWNER: 刷怪笼矿车
+  MINECART_TNT: TNT矿车
+  MOOSHROOM: 哞菇
+  MULE: 骡
+  MUSHROOM_COW: 哞菇
+  NAUTILUS: 鹦鹉螺
+  OCELOT: 豹猫
+  PANDA: 熊猫
+  PARCHED: 干渴者
+  PARROT: 鹦鹉
+  PHANTOM: 幻翼
+  PIG: 猪
+  PIGLIN: 猪灵
+  PIGLIN_BRUTE: 猪灵蛮兵
+  PILLAGER: 掠夺者
+  POLAR_BEAR: 北极熊
+  PUFFERFISH: 河豚
+  RABBIT: 兔子
+  RAVAGER: 劫掠兽
+  SALMON: 鲑鱼
+  SHEEP: 绵羊
+  SHULKER: 潜影贝
+  SILVERFISH: 蠹虫
+  SKELETON: 骷髅
+  SKELETON_HORSE: 骷髅马
+  SLIME: 史莱姆
+  SNIFFER: 嗅探兽
+  SNOWMAN: 雪傀儡
+  SNOW_GOLEM: 雪傀儡
+  SPIDER: 蜘蛛
+  SQUID: 鱿鱼
+  STRAY: 流浪者
+  STRIDER: 炽足兽
+  SULFUR_CUBE: 硫磺立方体
+  TADPOLE: 蝌蚪
+  TRADER_LLAMA: 行商羊驼
+  TROPICAL_FISH: 热带鱼
+  TURTLE: 海龟
+  VEX: 恼鬼
+  VILLAGER: 村民
+  VINDICATOR: 卫道士
+  WANDERING_TRADER: 流浪商人
+  WARDEN: 监守者
+  WITCH: 女巫
+  WITHER: 凋灵
+  WITHER_SKELETON: 凋灵骷髅
+  WOLF: 狼
+  ZOGLIN: 僵尸疣猪兽
+  ZOMBIE: 僵尸
+  ZOMBIE_HORSE: 僵尸马
+  ZOMBIE_NAUTILUS: 僵尸鹦鹉螺
+  ZOMBIE_VILLAGER: 僵尸村民
+  ZOMBIFIED_PIGLIN: 僵尸猪灵
+
+# 物品刷怪笼的名称（见 spawner_items.yml）。你在那里添加的每个物品都要加一行：MATERIAL: 显示名称
+item-types:
+  NETHERITE_INGOT: 下界合金锭
+  DIAMOND: 钻石
+  COAL: 煤炭
+  AMETHYST_SHARD: 紫水晶碎片
+  EMERALD: 绿宝石
+  NETHER_STAR: 下界之星
+  TOTEM_OF_UNDYING: 不死图腾

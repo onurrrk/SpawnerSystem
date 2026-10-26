@@ -1,0 +1,416 @@
+# =========================================
+# Spawner System Settings
+# =========================================
+
+# Plugin version that last used this file. It is managed automatically, do not edit it.
+version: "2.0.0"
+
+# =========================================
+# General Settings
+# =========================================
+
+# Plugin language configuration
+# Supported: "en","tr","de","es","ru","zh","ja","az","fr","ar","nl","id","hy","it","gd","sv","ky","ko","hu","cs","el","pt","ro","pl","uk","vi","th","fa"
+language: en
+
+# Check Modrinth for new plugin versions and notify operators
+update-checker: true
+
+# Send anonymous usage statistics to bStats (https://bstats.org).
+# Set to false to disable it completely. Applies after a server restart.
+bstats-enabled: true
+
+# =========================================
+# Operation Mode & Spawner Breaking
+# =========================================
+
+# Choose the plugin operation mode:
+# system: "classic"
+#   - Spawners can be broken only with Silk Touch enchanted pickaxes.
+#   - Natural spawners can be broken if natural-spawner-break is true.
+#
+# system: "advanced"
+#   - Spawners can be broken only with the special "Spawner Pickaxe" obtained via /spsystem pickaxegive.
+#   - Natural spawners can be broken if natural-spawner-break is true.
+system: "advanced"
+
+# Allow natural (generated) spawners to be broken if true
+natural-spawner-break: true
+# Only used when natural-spawner-break is true.
+# false -> everyone can break natural spawners
+# true  -> only players with the permission "spawner.break.natural" can break them,
+#          everyone else receives the "natural-spawner-no-permission" message from the language file
+natural-spawner-break-permission-required: false
+
+# Empty Spawner Breaking system
+allow-empty-spawner-break: true
+
+# =========================================
+# Spawner Break Chance Settings
+# =========================================
+
+# Spawner break chance system
+# When enabled, the chance to receive the spawner back when breaking it depends on the player's permissions:
+#   spawnersystem.chance.<number>   e.g. spawnersystem.chance.50 = 50% chance
+#   Values above 100 count as 100, values below 0 count as 0.
+#   spawnersystem.chance.*          = 100% chance
+#   If a player has several of these permissions, the highest one is used.
+#   Players with "spawner.admin" (operators by default) always get the spawner back.
+# If the roll fails the spawner is destroyed and the player gets the "spawner-break-lost" message
+# (or "spawner-break-no-chance" when the chance is 0); both messages can be edited in the language files.
+spawner-break-chance:
+  enabled: false
+  # Chance (0-100) for players that have no spawnersystem.chance.<number> permission at all
+  default-chance: 0
+
+# =========================================
+# Spawner Hologram Settings
+# =========================================
+
+# Enable or disable the hologram above spawners
+hologram-enabled: true
+# Determines the maximum distance (in blocks) at which players can see the holograms.
+# Adjust this value according to your server's performance.
+# Default: 8.0
+hologram-distance: 8.0
+# Should holograms be visible through walls?
+# true:  Visible through walls (X-Ray), but entities take visual priority.
+# false: Hidden if blocked by a solid block.
+SeeThrough: true
+
+# =========================================
+# Logging Settings
+# =========================================
+
+# Enable or disable logging of spawner place and break actions
+logs-enabled: true
+# How should the time be displayed in log files and Discord webhook messages?
+# "auto" -> follows the server's system time zone and language (12h or 24h, whichever the system uses)
+# "24h"  -> 13:45:07   |   "12h" -> 01:45:07 PM
+# This setting affects both the JSON log files under logs/ and the
+# timestamp shown in Discord embeds sent via discord.yml.
+log-time-format: "auto"
+
+# =========================================
+# Spawner Settings (Mob & Item Spawners)
+# =========================================
+
+# DEFAULT -> settings for mob spawners (spawners that spawn mobs, loot comes from loot.yml)
+# ITEM    -> settings for item spawners (spawners that drop items directly, loot comes from spawner_items.yml)
+# Spawner boosters work on both types and add on top of the values of the matching section.
+Spawners:
+  # -----------------------------------------
+  # Mob Spawner Settings
+  # -----------------------------------------
+  DEFAULT:
+    # Detection range around the spawner for active players (the spawner will activate if a player is within this range)
+    range: 16
+    # Spawn cycle in ticks (20 ticks = 1 second)
+    delay: 500
+    # Number of mobs spawned per cycle
+    amount: 4
+    # Limit for this mob type in the entire chunk; the spawner will stop if this limit is reached.
+    # IMPORTANT: this same number is ALSO used as the chunk limit for animal breeding and for spawn egg usage
+    # (for ALL mobs, not only spawner mobs) and as the limit of chunk-mob-culling below.
+    max-mobs-per-chunk: 4
+    # How max-mobs-per-chunk is counted:
+    # "chunk"   -> every spawner in a chunk shares one limit per mob type (default)
+    # "spawner" -> every spawner has its own limit; max-mobs-per-chunk is then the number of mobs one spawner can keep alive in its chunk
+    limit-mode: "chunk"
+    # Horizontal (X/Z) spawning radius (not used for the loot in V2, because the spawn conditions are ignored there)
+    spawn-horizontal-radius: 4
+
+  # -----------------------------------------
+  # Item Spawner Settings
+  # (the items, amounts and XP of every item spawner are edited in spawner_items.yml)
+  # -----------------------------------------
+  ITEM:
+    # Detection range around the spawner for active players
+    range: 16
+    # Drop cycle in ticks (20 ticks = 1 second)
+    delay: 500
+    # Horizontal (X/Z) radius used by the spawner for its drop attempts
+    spawn-horizontal-radius: 4
+    # Should item spawners also give XP? The XP amount of every item is set with "experience" in spawner_items.yml.
+    # true  -> XP is dropped (or stored when the XP Vacuum of the menu is on)
+    # false -> item spawners never give XP
+    give-xp: true
+
+# =========================================
+# Chunk Mob Culling Settings
+# =========================================
+
+# System for managing animals that exceed the mob limit in a chunk.
+# If limit-mode is "chunk", the limit for each mob type in a chunk is max-mobs-per-chunk.
+# If limit-mode is "spawner", the limit for each mob type in a chunk is max-mobs-per-chunk multiplied by the number of spawners in that chunk (never lower than max-mobs-per-chunk). Mobs above that number are warned and removed after the warning time.
+chunk-mob-culling:
+  # Set to true to enable this feature.
+  enabled: true
+  # The time given for the mob to leave the chunk (in seconds).
+  warning-duration-seconds: 20
+  # How often the server will check mob density in chunks (in ticks, 20 ticks = 1 second).
+  check-interval-ticks: 100
+  # The culling system will only apply to these mob types.
+  # Add or remove any mob type from this list. Use uppercase names from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+  # Mobs that are never counted and never removed by the culling system.
+  # true  -> this group is protected
+  # false -> this group is treated like any other mob
+  # leashed: mobs that are held on a lead
+  ignore-leashed: true
+  # named: mobs that have a custom name (name tag)
+  ignore-named: true
+  # tamed: pets and tamed animals (wolves, cats, parrots, horses and so on)
+  ignore-tamed: true
+  # Remove every entry and write only - "ALL" to apply the culling system to every mob type.
+  valid-mobs:
+    - "COW"
+    - "SHEEP"
+    - "PIG"
+    - "CHICKEN"
+    - "RABBIT"
+    - "VILLAGER"
+
+# =========================================
+# Chunk Spawner Limit Settings
+# =========================================
+
+chunk-limits:
+  # Is the chunk spawner limit enabled?
+  enabled: true
+  # false -> mob spawners and item spawners share one limit ("spawner-limit" below)
+  # true  -> mob spawners and item spawners have their own separate limits
+  #          ("mob-spawner-limit" and "item-spawner-limit" below)
+  separate-limits: false
+  # For all three limits below: -1 means UNLIMITED (no limit at all), 0 means none can be placed,
+  # any other positive number is the maximum.
+  # Maximum number of spawners (mob + item together) allowed per chunk. Used when separate-limits is false.
+  # -1 = unlimited
+  spawner-limit: 5
+  # Maximum number of mob spawners allowed per chunk. Used when separate-limits is true.
+  # -1 = unlimited
+  mob-spawner-limit: 5
+  # Maximum number of item spawners allowed per chunk. Used when separate-limits is true.
+  # -1 = unlimited
+  item-spawner-limit: 5
+  # false -> the limits above are shared by all spawner types
+  # true  -> every spawner type has its own limit in a chunk: every mob type (cow, zombie, ...) and every item
+  #          spawner type can have up to the limit above. Example: with a limit of 5 you can place 5 cow spawners
+  #          and 5 zombie spawners in the same chunk.
+  # Merged spawners count with their stack size (see spawner-stacking).
+  per-mob-type: false
+
+# =========================================
+# Passive (Brainless) Mob Settings
+# =========================================
+
+# This setting makes mobs from spawners completely passive
+# - AI is disabled, they will not attack or move
+# - NPC interactions remain functional (they behave like villagers)
+nerf-spawner-mobs: false
+
+# =========================================
+# Spawner Menu Settings (Shift + Right Click)
+# =========================================
+
+# MASTER SWITCH of the whole spawner menu system. It is used by BOTH V1 and V2.
+# true  -> the menu system is on, and spawner-menu-type below decides how it works.
+# false -> the menu system is completely OFF, in V1 and in V2. Nothing that is connected to the menu works:
+#            - Shift + Right Click does not open any menu.
+#            - The storage, the Auto Slayer and the XP Vacuum are all off. Nothing is collected inside a spawner.
+#            - Mob spawners work like normal spawners: they really spawn their mobs, and the normal spawn
+#              conditions of the game apply (light, time of day, free space and so on). The mob limits
+#              (max-mobs-per-chunk), nerf-spawner-mobs and chunk-mob-culling work as usual.
+#            - Item spawners keep working, but they drop their items and XP on the ground.
+#            - The Active boosters clock is not shown, because there is no menu. The booster system itself
+#              (spawner-booster) is separate and keeps working.
+#            - Items and XP that are already stored inside a spawner are NOT deleted. They stay inside the spawner
+#              and come back when you turn the menu on again. While the menu is off nobody can reach them, and they
+#              are not dropped when the spawner is broken (spawner-drop-stored-on-break does not apply).
+#            - spawner-menu-type, spawner-storage.enabled and spawner-auto-slayer.enabled have no effect.
+#            - V2 ignoring the spawn conditions (see V2 below) is off too, because that is a part of the V2 menu.
+# After changing it run /spsystem reload.
+#
+# V1 ONLY. Storage and Auto Slayer have their own enabled setting in the sections below. A feature that is
+# switched off is not shown in the menu (its slot stays empty). The XP Vacuum has no setting of its own, it
+# always follows Auto Slayer (Auto Slayer on -> XP bottle is shown, Auto Slayer off -> XP bottle is hidden).
+# The Booster clock follows spawner-booster.enabled (this one is used by both V1 and V2).
+#
+# Only one player can have the menu (or the storage page) of a spawner open at a time. While someone is using it,
+# other players who try to open the same spawner get a message and the menu does not open.
+spawner-menu: true
+
+# Menu type selection. Choose one of: V1, V2   (default: V1)
+#
+# V2 (fully automatic, nobody manages anything, no permission needed):
+#   - Shift + Right Click on a spawner opens the "Spawner Control Panel". The title shows how many spawners
+#     are merged in that spawner, for example "Spawner Control Panel (20)" (see spawner-stacking below).
+#   - Everything is always on and cannot be switched by the players:
+#       Auto Slayer -> every mob spawner always kills its mobs instantly and gives the loot (loot.yml).
+#                      The Auto Slayer icon in the menu is only an information icon, clicking it does nothing.
+#       Storage     -> the loot is always collected in the spawner storage (size: spawner-storage.max-pages).
+#       XP Vacuum   -> the XP of the kills is always collected, click the XP bottle to withdraw it.
+#   - No permission is checked at all: the spawner.menu permission is NOT needed, there is no "manager" of a
+#     spawner and no permission re-check on spawn cycles. Every player can open the menu, open the storage and
+#     withdraw the XP. (Only one player can use a spawner menu at a time.)
+#   - Besides the master switch spawner-menu, the only setting that still has an effect on the menu is
+#     spawner-booster.enabled (below):
+#       true  -> the Active boosters clock is shown in the menu
+#       false -> the clock is hidden
+#   - These settings are IGNORED in V2 (they only work in V1): spawner-storage.enabled and
+#     spawner-auto-slayer.enabled. spawner-menu is NOT ignored: when it is false the whole menu system is off,
+#     also in V2 (see spawner-menu above).
+#   - SPAWN CONDITIONS ARE IGNORED in V2. The spawners do not wait for the normal spawn conditions of the game.
+#     Example: a zombie spawner normally spawns only in the dark (at night), in V2 it works in the daytime too.
+#     Light level, time of day, difficulty, the block under the mob and the free space around the spawner
+#     are not checked at all, because no real mob is spawned. This is true for mob spawners and item spawners.
+#     What still matters: a player must be inside the activation range (range), the spawn delay (delay),
+#     boosters, spawner stacking and the storage limit. The spawner works as long as the chunk is loaded.
+#   - Item spawners work the same as always (only the spawn conditions are ignored for them too).
+#   - Mob spawners that were placed in V1 with Auto Slayer off start auto slaying in V2. If you go back to V1
+#     they use their old saved state again.
+#
+# V1 (default - permission based - works together with LuckPerms):
+#   - Same menu, but the players manage the features themselves, and every V1 setting in this file is used
+#     (spawner-menu, spawner-storage.enabled, spawner-auto-slayer.enabled).
+#   - The Auto Slayer button is controlled with permission nodes, so any permission plugin works,
+#     and LuckPerms is supported natively:
+#       spawner.menu   -> may switch Auto Slayer on and off
+#       spawner.admin  -> may change everything (operators have it by default)
+#     Players without permission can open the menu and look, but cannot change anything.
+#   - The player who switches Auto Slayer on is saved as the "manager" of that spawner.
+#     On every spawn cycle the permission of the manager is checked again (an online player is
+#     checked directly, an offline player through the LuckPerms API with a small cache).
+#     If the manager lost the permission, Auto Slayer of that spawner is switched off automatically
+#     and the manager is told about it.
+#   - Menu layout (second row, left to right):
+#       2nd slot  -> Storage chest (opens the storage page, see spawner-storage below)
+#       4th slot  -> Auto Slayer   (left click: on/off, turning it on also turns on the XP collecting)
+#       6th slot  -> XP Vacuum     (left click or right click: withdraw the stored XP, there is no on/off for it)
+#       8th slot  -> Active boosters clock (only shown when spawner-booster.enabled is true)
+spawner-menu-type: "V1"
+
+# What happens to the items and the XP stored inside a spawner (storage + XP vacuum) when the spawner is broken?
+# (used by both V1 and V2)
+# false -> they are deleted together with the spawner, nothing is dropped
+# true  -> the stored items and the stored XP are dropped at the place of the spawner
+# Only features that are enabled count (V1): if spawner-storage.enabled is false, the stored items no longer exist,
+# and if spawner-auto-slayer.enabled is false, the XP vacuum is off so no stored XP exists. In V2 both always exist.
+# If spawner-menu is false this setting is ignored: nothing stored is dropped (and nothing is deleted until the spawner is broken).
+spawner-drop-stored-on-break: false
+
+# =========================================
+# Spawner Storage Settings (Chest in the Menu)
+# =========================================
+
+# V1 ONLY for the enabled setting (in V2 the storage is always on). max-pages is used by both V1 and V2.
+# If spawner-menu is false the storage is off in V1 and V2 (the stored items are kept, but nobody can reach them).
+# The chest in the menu opens the storage of the spawner. It works like the storage page of SmartSpawner:
+#   - While Auto Slayer is on (always in V2, and for item spawners) the loot is NOT dropped on the ground,
+#     it is collected inside the spawner storage instead.
+#   - Items can only be taken out (click an item, "Take Page" button). Nothing can be put back.
+#   - The storage has pages, use the arrows at the bottom to move between them.
+#   - Opening the chest plays the chest open sound, closing it plays the chest close sound.
+#   - The size of the storage is set with max-pages (every page has 45 slots).
+#   - The storage keeps filling until it is really full: every stack is filled up to its maximum size
+#     (for example 64) before the spawner stops. Only when there is no free slot left and no stack has any room,
+#     the spawner pauses (no loot, no XP) until some space is free. Items that do not fit anymore are discarded.
+#   - If you lower max-pages while a spawner holds more items than the new size allows, that spawner stays paused
+#     until enough items are taken out so that it fits again.
+#   - If the spawner is broken, everything inside the storage is deleted, unless spawner-drop-stored-on-break is true.
+#   - If you set enabled to false, everything that is stored in the storages is deleted for good
+#     (on /spsystem reload and whenever a chunk with spawners loads). Items stored before cannot be reached anymore.
+spawner-storage:
+  # V1 ONLY (ignored in V2, the storage is always on there)
+  # true  -> loot is collected in the storage and the chest is shown in the menu
+  # false -> old behaviour, loot is dropped on the ground and the chest is hidden
+  enabled: true
+  # Number of pages the storage of one spawner has. Every page always has 45 slots (1 slot = 1 item stack),
+  # so 1 page = 45 slots, 2 pages = 90 slots and so on.
+  # Allowed values: 1-100
+  max-pages: 1
+
+# =========================================
+# Spawner Auto Slayer Settings (Sword in the Menu)
+# =========================================
+
+# V1: the sword in the menu turns the Auto Slayer of a mob spawner on or off (it is off for new spawners).
+# V2: Auto Slayer is always on for every mob spawner, nobody can switch it, and this whole section is ignored.
+# While it is on, the spawner does not spawn mobs, it kills them instantly and gives the loot (loot.yml),
+# and the XP of the kills is collected automatically in the spawner (the XP Vacuum).
+# The XP Vacuum has no setting of its own, it is tied to this setting: when Auto Slayer is on the XP bottle is
+# shown in the menu and the XP is stored, when Auto Slayer is off the XP bottle is hidden and XP drops as orbs.
+# An Auto Slayer spawner does not care about the mob limit of the chunk (max-mobs-per-chunk), because no real
+# mob is spawned. In V1 the game still looks for a free spot around the spawner like for normal spawns, so the
+# spawner needs free space and the normal spawn conditions (see spawn-horizontal-radius in the spawner settings).
+# In V2 the spawn conditions and the free space are ignored completely (see the V2 notes at spawner-menu-type).
+# If spawner-menu is false, Auto Slayer is off in V1 and V2 and mob spawners spawn real mobs.
+# Item spawners are always automatic and cannot be switched off.
+spawner-auto-slayer:
+  # V1 ONLY (ignored in V2)
+  # true  -> the sword is shown in the menu, Auto Slayer can be used, and the XP bottle is shown
+  # false -> the sword and the XP bottle are hidden and mob spawners work like normal spawners (mobs are really spawned)
+  enabled: true
+
+# =========================================
+# Spawner Stacking Settings (Merging Spawners)
+# =========================================
+
+# Spawners of the same type can be merged into one spawner block. A merged spawner gives the loot and the XP of
+# every spawner inside of it at once.
+#   - Right click a spawner with a spawner of the same type in your hand: 1 spawner is merged.
+#   - Sneak (shift) + right click with the spawners in your hand: all the spawners in your hand are merged
+#     (as many as the maximum allows). The menu does not open while you hold a spawner.
+#   - To open the menu, sneak + right click with something else in your hand (or with an empty hand).
+#   - Breaking a merged spawner gives 1 spawner and the rest stays placed. Breaking it while sneaking gives all of
+#     them except the last one, which stays placed.
+#   - Merged spawners count with their stack size for the chunk spawner limit (chunk-limits above).
+#   - Spawners of different types cannot be merged.
+# If this is false, spawners cannot be merged, and holding a spawner while sneaking opens the menu again.
+spawner-stacking:
+  enabled: true
+  # Maximum number of spawners in one merged spawner. Use -1 for unlimited.
+  max-stack: 5
+
+# =========================================
+# Spawner Booster Settings
+# =========================================
+
+# Spawner booster tickets
+# Create a ticket with: /sps givebooster <player> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]
+#   range          -> extra blocks added to the spawner activation range
+#   delay-seconds  -> seconds removed from the spawn delay
+#   xp-percent     -> extra percent of the XP from mobs of that spawner (also applies to auto-kill and menu XP)
+#                     (for item spawners it only works when Spawners.ITEM.give-xp is true)
+#   minutes        -> how long the boost lasts, or "unlimited"
+# Right-click a spawner (mob or item spawner) with the ticket to apply it.
+# The command only works when "enabled" below is true. After changing it run /spsystem reload.
+# Besides spawner-menu, this is the only setting that still controls the menu in V2: when it is true the Active
+# boosters clock is shown in the menu, when it is false the clock is hidden (V1 and V2 behave the same here).
+# If spawner-menu is false there is no menu, so no clock is shown, but the boosters themselves keep working.
+spawner-booster:
+  enabled: true
+  # false -> a spawner can only hold one booster at a time
+  # true  -> several tickets can be used on the same spawner. Every ticket keeps its own duration,
+  # range, delay and XP values are added together and each ticket ends on its own.
+  allow-stacking: false
+  # Maximum number of tickets on one spawner at the same time (only used when allow-stacking is true)
+  max-stacked-boosters: 5
+  # The spawn delay can never be reduced below this many seconds, no matter how big the boost is.
+  # This also limits the tickets: the highest delay-seconds value you can write on a ticket is
+  # (spawn delay in seconds - min-spawn-delay-seconds). Example: delay 500 ticks (25s) and a minimum of 2s
+  # means you can create tickets with at most 23 seconds. When several tickets are used on the same spawner
+  # the total reduction can never go past that limit: a ticket that would go past it is shortened, and a
+  # ticket whose delay part cannot be applied at all still applies its range and XP parts.
+  min-spawn-delay-seconds: 2
+  # Merged spawners (see spawner-stacking): how are the tickets used?
+  # false -> a ticket boosts the whole merged spawner, every spawner inside of it gets the boost
+  # true  -> (default) when you right click a merged spawner with a ticket, a menu opens where you choose which of the
+  #          merged spawners gets the boost (the menu has pages, hover a spawner to see its boosters).
+  #          Every merged spawner can hold its own boosters. A spawner that is not merged is boosted directly.
+  per-spawner-boost: true
+  # What happens to the boosters of a spawner when the spawner is broken?
+  # true  -> every booster comes back as a ticket with the time it has left (unlimited stays unlimited).
+  #          It goes to the inventory of the player, or drops on the ground if the inventory is full.
+  #          When a merged spawner is broken only the boosters of the broken spawner(s) come back.
+  # false -> the boosters are lost
+  return-on-break: true

@@ -1,0 +1,351 @@
+# ===============================
+# Spawner System Gàidhlig
+# ===============================
+
+# Riochdaichidh seo an toiseach air gach teachdaireachd a' bhogha
+prefix: "&8[&#38BDF8Spawner&#7DD3FCSystem&8] &r"
+
+# =========================================
+# Roghainnean Piocais Spawner
+# =========================================
+spawner-pickaxe-item:
+  name: "&#38BDF8&lSpawner Piocais"
+  lore:
+    - "&#9CA3AFCleachd an piocais seo gus an spawner a bhriseadh."
+    - "&#FFE066"
+    - "&#4ADE80Cleachdan air fhàgail: &#F87171%uses%"
+
+# =========================================
+# Tìdean Mòd (Adhartais no Clasagan)
+# =========================================
+mode-tags:
+  advanced: "Spawner Piocais"
+  classic: "Piocais Touch Silk"
+
+# =========================================
+# Roghainnean Eideamh Spawner
+# =========================================
+spawner-item:
+  name: "&#4ADE80%type% Spawner"
+  lore:
+    - "&#9CA3AFCuir an spawner seo gus na beathaichean a chur a' dol."
+    - "&#9CA3AFChan fhaod e ach a bhriste le: &#FFE066%mode%"
+    - "&#9CA3AFSeòrsa an eintiteach: &#4ADE80%type%" 
+
+# =========================================
+# Suidheachaidhean Hologram Spawner
+# =========================================
+spawnable-status:
+  - "&#4ADE80%type% Spawner" 
+  - "&#9CA3AFFaodar a bhriseadh le %mode%"
+  - "&#9CA3AFLùb is cliog deas gus am menu fhosgladh"
+  - "%status%"
+
+can_spawn: "&#4ADE80(✓)"
+cannot_spawn: "&#F87171(!)"
+
+# =========================================
+# Suidheachaidhean Hologram Mob
+# =========================================
+mob-remove-warning:
+  - "&#F87171Thèid am mob seo a thoirt air falbh"
+  - "&#FFE066Ann an %time% s mura fàg e an t-sòn."
+  
+# =========================================
+# Roghainnean Clàr (GUI)
+# =========================================
+menu:
+  title: "&#6B7280Pannal Smachd Spawner"
+  status:
+    active: "&#4ADE80Gnìomhach ✔"
+    inactive: "&#F87171Neo-ghnìomhach ✖"
+    
+  items:
+    auto-slayer:
+      name: "&#F59E0B&lMarbhadh Fèin-ghluasadach"
+      lore:
+        - "&#9CA3AFMarbs gu fèin-ghluasadach creutairean bhon spawner."
+        - "&#9CA3AFCuiridh e air an Stòras agus an Sùgadair XP cuideachd."
+        - "&#9CA3AFInbhe: %status%"
+        - ""
+        - "&#F9FAFBCliog clì: &#FFE066Atharraich Modh"
+      lore-auto:
+        - "&#9CA3AFMarbs gu fèin-ghluasadach creutairean bhon spawner."
+        - "&#9CA3AFTha an Stòras agus an Sùgadair XP air an-còmhnaidh."
+        - "&#9CA3AFInbhe: %status%"
+      lore-no-perm:
+        - "&#9CA3AFMarbs gu fèin-ghluasadach creutairean bhon spawner."
+        - "&#9CA3AFInbhe: %status%"
+        - ""
+        - "&#F87171&lCHA NUR URNUIMH A' CHLEACHDADH SEO A CHLEACHDADH"
+
+    storage:
+      name: "&#38BDF8&lStòras"
+      lore:
+        - "&#9CA3AFThèid na rudan a chruinnicheas an Auto Slayer a chumail an seo."
+        - "&#9CA3AFSlotan air an cleachdadh: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#F9FAFBBriog: &#FFE066Fosgail an Stòras"
+
+    xp-vacuum:
+      name: "&#4ADE80&lCruinniche XP"
+      click: "&#F9FAFBBriog: &#38BDF8Thoir a-mach XP"
+      lore:
+        - "&#9CA3AFStòraichean XP a thuit bho chreutairean marbhte."
+        - ""
+        - "&#9CA3AFInbhe: %status%"
+        - "&#9CA3AFCruinnichte: &#FFE066%xp% XP"
+        - ""
+        - "&#F9FAFBCliog clì: &#FFE066Atharraich Modh"
+        - "&#F9FAFBCliog deas: &#38BDF8Tarruing XP"
+      lore-no-perm:
+        - "&#9CA3AFStòraichean XP a thuit bho chreutairean marbhte."
+        - ""
+        - "&#9CA3AFInbhe: %status%"
+        - "&#9CA3AFCruinnichte: &#FFE066%xp% XP"
+        - ""
+        - "&#F87171&lCHA NUR URNUIMH A' CHLEACHDADH SEO A CHLEACHDADH"
+
+  messages:
+    no-permission: "&#F87171Chan eil cead agad an fheart seo atharrachadh!"
+    xp-empty: "&#F87171Tha tanca XP falamh!"
+    xp-collected: "&#4ADE80Chruinnichear: &#4ADE80%xp% XP!"
+    req-auto-slayer: "&#F87171Feumaidh tu marbhadh fèin-ghluasadach a chur an gnìomh an-toiseach!"
+    feature-no-perm: "&#F87171Chan eil cead agad an fheart seo atharrachadh!"
+    perms-changed: "&#F87171Chaidh feartan spawner a chur à gnìomh air sgàth atharrachaidhean cead."
+    storage-inventory-full: "&#F87171Tha d' bhathar-clàraidh làn!"
+    storage-taken: "&#4ADE80Thog thu %amount% rud(an) às an stòras."
+    in-use: "&#F87171Tha cuideigin eile a' cleachdadh clàr-taice an spawner seo an-dràsta."
+  storage:
+    title: "&#6B7280Stòras an spawner"
+    previous:
+      name: "&#F9FAFB&lAn duilleag roimhe"
+      lore:
+        - "&#9CA3AFRach gu duilleag &#FFE066%page%&#9CA3AF"
+    next:
+      name: "&#F9FAFB&lAnath-duilleag"
+      lore:
+        - "&#9CA3AFRach gu duilleag &#FFE066%page%&#9CA3AF"
+    take-page:
+      name: "&#4ADE80&lThoir an duilleag"
+      lore:
+        - "&#9CA3AFBheir seo a h-uile rud air an duilleag seo."
+        - "&#9CA3AFChan urrainn dhut rudan a chuir air ais."
+    back:
+      name: "&#F87171&lAir ais"
+      lore:
+        - "&#9CA3AFtill gu clàr-taice an spawner."
+    info:
+      name: "&#38BDF8&lFiosrachadh an stòrais"
+      lore:
+        - "&#9CA3AFDuilleag: &#FFE066%page%&#9CA3AF/&#FFE066%pages%"
+        - "&#9CA3AFSlotan air an cleachdadh: &#FFE066%used%&#9CA3AF/&#FFE066%max%"
+        - ""
+        - "&#9CA3AFBriog air rud airson a thogail."
+  
+# =========================================
+# Roghainnean Brosnachadh Spawner
+# =========================================
+# Luchd-ionaid: %range% %delay% %xp% %duration% (%index% ann an tiotal an fhiosrachaidh)
+booster:
+  item:
+    name: "&#F59E0B&lBrosnachadh Spawner"
+    lore:
+      - "&#9CA3AFDèan briogadh deas air spawner leis an tiogaid seo gus a bhrosnachadh."
+      - "&#FFE066Raon obrach: &#F9FAFB+%range% bloc"
+      - "&#FFE066Ùine breith: &#F9FAFB-%delay% diog"
+      - "&#FFE066XP mob: &#F9FAFB+%xp%%"
+      - "&#FFE066Faid: &#F9FAFB%duration%"
+  select:
+    title: "&#6B7280Tagh spawner"
+    entry: "&#FFE066&lSpawner #%index%"
+    click: "&#F9FAFBBriog: &#FFE066Cuir booster an sàs"
+  time:
+    unlimited: "Gun chrìoch"
+    hour: "u"
+    minute: "m"
+    second: "d"
+  info:
+    name: "&#F59E0B&lBrosnachaidhean gnìomhach"
+    empty: "&#9CA3AFChan eil brosnachadh gnìomhach ann."
+    entry-title: "&#FFE066&lBrosnachadh #%index%"
+
+# =========================================
+# Teachdaireachdan an Bhogha
+# =========================================
+messages:
+  no-permission: "&#F87171Chan eil cead agad an t-slugad seo a chleachdadh."
+  reload-success: "&#4ADE80Chaidh an suidheachadh air an Spawner System ath-luchdadh le soirbheachas."
+  wrong-subcommand: "&#FFE066Cleachd: /spsystem <reload|pickaxegive|givespawner|givebooster>"
+  wrong-pickaxe-usage: "&#FFE066Cleachd: /spsystem pickaxegive <cluicheadair> <1-1000>" 
+  usage-givespawner: "&#FFE066Cleachd: /spsystem givespawner <cluicheadair> <mob|item> <type> [amount]"
+  usage-givebooster:
+    - "&#FFE066Cleachd: /spsystem givebooster <cluicheadair> <range> <delay-seconds> <xp-percent> <minutes|unlimited> [amount]"
+    - "&#9CA3AF- &#F9FAFBrange&#9CA3AF: blocaichean a bharrachd airson raon gnìomhachaidh an spawner"
+    - "&#9CA3AF- &#F9FAFBdelay-seconds&#9CA3AF: diogan air an toirt far dàil an spawn (0 = chan eil gin)"
+    - "&#9CA3AF- &#F9FAFBxp-percent&#9CA3AF: ceudad a bharrachd de XP on spawner (0 = chan eil gin)"
+    - "&#9CA3AF- &#F9FAFBminutes|unlimited&#9CA3AF: fad a' bhoost ann am mionaidean, no unlimited"
+    - "&#9CA3AF- &#F9FAFBamount&#9CA3AF: co mheud tiogaid a bheir thu seachad (roghainneil)"
+    - "&#FFE066Eisimpleir: &#F9FAFB/spsystem givebooster cluicheadair 10 5 50 30 &#9CA3AF(+10 blocaichean, -5 diogan de dhàil, +50% XP, 30 mionaid)"
+  invalid-mob-type: "&#F87171Seòrsa mob mì-dhligheach: %type%"
+  invalid-item-spawner: "&#F87171Spawner nì mì-dhligheach: %type%"
+  booster-no-effect: "&#F87171Feumaidh co-dhiù fear de range, delay-seconds no xp-percent a bhith nas motha na 0."
+  booster-disabled: "&#F87171Tha an siostam booster spawner dheth. Suidhich 'spawner-booster.enabled: true' ann an config.yml agus ruith /spsystem reload."
+  command-disabled: "&#F87171Chan eil an t-slugad 'pickaxegive' ri fhaighinn ach anns a' mhòd 'adhartais'."
+  player-not-found: "&#F87171Cha deach an cluicheadair a lorg: %player%"
+  not-a-number: "&#F87171Feumaidh àireamh nan cleachdan a bhith àireamh."
+  max-uses-limit: "&#F87171Tha na cleachdan mu dheireadh aig 1000."
+  pickaxe-given-sender: "&#4ADE80Chaidh spawner piocais a thoirt dhan %player% le %uses% cleachdadh."
+  pickaxe-given-recipient: "&#38BDF8Chaidh spawner piocais sònraichte a thoirt dhut!"
+  spawner-collected: "&#4ADE80Chaidh an spawner a chur dhan stòr le soirbheachas!" 
+  spawner-break-lost: "&#F87171Chaidh an spawner à sealladh nuair a bhris thu e! (Cothrom faighinn air ais: %chance%%)"
+  spawner-break-no-chance: "&#F87171Chaidh an spawner à sealladh! Chan eil cothrom agad spawners fhaighinn air ais."
+  booster-given-sender: "&#4ADE80Thug thu x%amount% tiogaid brosnachaidh spawner do %player%."
+  booster-given-recipient: "&#4ADE80Fhuair thu x%amount% tiogaid brosnachaidh spawner!"
+  booster-applied: "&#4ADE80Chaidh an spawner a bhrosnachadh! Raon +%range%, ùine breith -%delay% diog, XP +%xp%%, faid: %duration%."
+  booster-already-active: "&#F87171Tha brosnachadh gnìomhach aig an spawner seo mu thràth (%duration% air fhàgail)."
+  booster-stack-limit: "&#F87171Tha an àireamh as motha de bhrosnachaidhean aig an spawner seo mu thràth (%max%)."
+  booster-delay-too-high: "&#F87171Chan urrainnear dàil an spawn a lùghdachadh barrachd air %max% diogan (an dàil as lugha: %min%s)."
+  booster-delay-not-reducible: "&#F87171Chan urrainnear dàil an spawn a lùghdachadh oir tha e aig an ìre as lugha mu thràth (%min%s)."
+  booster-delay-maxed: "&#FFE066Tha dàil an spawn aig an ìre as ìsle mu thràth, mar sin cha deach pàirt na dàil a chur an sàs. Chaidh na buaidhean eile a chur an sàs."
+  booster-delay-partial: "&#FFE066Ràinig dàil an spawn an ìre as ìsle, mar sin cha deach ach -%delay%s a chur an sàs. Chaidh na buaidhean eile a chur an sàs."
+  booster-delay-maxed-no-effect: "&#F87171Tha dàil spawn an spawner seo aig an ìre as ìsle mu thràth. Cha deach an tiogaid a chleachdadh."
+  stack-merged: "&#4ADE80Chaidh %amount% spawner a cheangal. Cruach: %stack%/%max%."
+  stack-full: "&#F87171Tha a' chruach spawner seo làn! (as motha %max%)"
+  stack-type-mismatch: "&#F87171Chan urrainn dhut ach spawners den aon seòrsa a cheangal!"
+  stack-collected: "&#4ADE80Fhuair thu %amount% spawner. Tha %left% air fhàgail sa chruach."
+  pickaxe-broken: "&#4ADE80Bhris do Spawner Piocais!"
+  natural-spawner-break-denied: "&#F87171Tha na spawner nàdurrach mar dhìon agus cha ghabh iad a bhriste."
+  natural-spawner-no-permission: "&#F87171Chan eil cead agad spawners nàdarra a bhriseadh."
+  sp-pickaxe-only: "&#F87171Chan fhaod an piocais sònraichte seo ach spawner a bhriste!"
+  inventory-full: "&#4ADE80Thuit an nì air an làr oir tha do chlàr làn."
+  classic-silk-required: "&#F87171Chan fhaod spawner ach a bhriste le Piocais Touch Silk!"
+  advanced-pickaxe-required: "&#F87171Chan fhaod spawner ach a bhriste le Spawner Piocais sònraichte!"
+  empty-spawner-break-denied: "&#F87171Chan fhaod thu spawner falamh a bhriste!"
+  spawner-given-sender: "&#4ADE80Chaidh %type% spawner a thoirt dhan %player%."
+  spawner-given-recipient: "&#38BDF8Fhuair thu %type% spawner!"
+  chunk-limit-exceeded: "&#F87171Chan urrainn dhut barrachd spawners a chur anns a' chunk seo!"
+  egg-chunk-limit-exceeded: "&#F87171Ann an chunk seo, chan fhaod thu ach %limit% mob de sheòrsa %type% a chur a-mach!"
+  stack-egg-denied: "&#F87171Chan urrainn dhut seòrsa spawner càrnaichte atharrachadh le ugh spawn!"
+  stack-natural-denied: "&#F87171Chan urrainn spawners nàdarra a cheangal ri chèile. Brisidh agus cuir air ais e."
+  booster-slot-invalid: "&#F87171Chan eil an spawner sin sa chàrn tuilleadh. Chaidh an tiocaid a thilleadh."
+  reload-failed: "&#F87171Dh'fhàillig an ath-luchdachadh. Thoir sùil air a' chonsail."
+  
+# =========================================
+# Seòrsaichean Eintiteach
+# =========================================
+entity-types:
+  ALLAY: Allay
+  ARMADILLO: Armadillo
+  ARMOR_STAND: Seasair Armachd
+  AXOLOTL: Axolotl
+  BAT: Ialtag
+  BEE: Seillean
+  BLAZE: Lasair
+  BOAT: Bàta
+  BOGGED: Bogach
+  BREEZE: Sèid
+  CAMEL: Càmhal
+  CAMEL_HUSK: Càmhal Husk
+  CAT: Cat
+  CAVE_SPIDER: Damhan-allaidh Uamha
+  CHICKEN: Cearc
+  COD: Todhar
+  COPPER_GOLEM: Gholem copair
+  COW: Bò
+  CREEPER: Creeper
+  CREAKING: Crìon
+  DOLPHIN: Leumadair
+  DONKEY: Asal
+  DROWNED: Bàthte
+  ELDER_GUARDIAN: Freiceadanair Sean
+  EMPTY: Falamh
+  ENDERMAN: Enderman
+  ENDERMITE: Endermite
+  ENDER_DRAGON: Dràgon Ender
+  EVOKER: Eòlasach
+  EXPERIENCE_BOTTLE: Botal Eòlais
+  EXPERIENCE_ORB: Orb Eòlais
+  FOX: Sionnach
+  FROG: Losgann
+  GHAST: Ghast
+  GIANT: Famhair
+  GLOW_SQUID: Sgiodag Soilleir
+  GOAT: Gobhar
+  GUARDIAN: Freiceadanair
+  HAPPY_GHAST: Ghast sona
+  HOGLIN: Hoglin
+  HORSE: Each
+  HUSK: Cochall
+  ILLUSIONER: Foillseach
+  IRON_GOLEM: Golem Iarainn
+  LLAMA: Llama
+  MAGMA_CUBE: Ciùb Magma
+  MINECART: Cairt-mèinn
+  MINECART_CHEST: Cairt-mèinn le Ciste
+  MINECART_COMMAND: Cairt-mèinn le Bloc Àithne
+  MINECART_FURNACE: Cairt-mèinn le Fùirneis
+  MINECART_HOPPER: Cairt-mèinn le Drabhailt
+  MINECART_SPAWNER: Cairt-mèinn le Spawner
+  MINECART_TNT: Cairt-mèinn le TNT
+  MOOSHROOM: Bò Balgan-buachair
+  MULE: Leth-asal
+  MUSHROOM_COW: Bò Balgan-buachair
+  NAUTILUS: Nautilus
+  OCELOT: Ocelot
+  PANDA: Panda
+  PARCHED: Tioram
+  PARROT: Pearraid
+  PHANTOM: Taibhse
+  PIG: Muc
+  PIGLIN: Piglin
+  PIGLIN_BRUTE: Piglin Brùideil
+  PILLAGER: Creachadair
+  POLAR_BEAR: Mathan Bàn
+  PUFFERFISH: Iasg Sèide
+  RABBIT: Coineanach
+  RAVAGER: Sloightear
+  SALMON: Bradan
+  SHEEP: Caora
+  SHULKER: Shulker
+  SILVERFISH: Iasg Airgid
+  SKELETON: Cnàimhneach
+  SKELETON_HORSE: Each Cnàimhneach
+  SLIME: Slime
+  SNIFFER: Faireachdainn
+  SNOWMAN: Bodach-sneachda
+  SNOW_GOLEM: Bodach-sneachda
+  SPIDER: Damhan-allaidh
+  SQUID: Sgiodag
+  STRAY: Fògarrach
+  STRIDER: Coisiche
+  SULFUR_CUBE: Ciùb pronnasg
+  TADPOLE: Toadpole
+  TRADER_LLAMA: Llama Malairt
+  TROPICAL_FISH: Iasg Tropaigeach
+  TURTLE: Turtar
+  VEX: Buaireadair
+  VILLAGER: Saoranach
+  VINDICATOR: Dìonadair
+  WANDERING_TRADER: Malairteach Siubhail
+  WARDEN: Maor
+  WITCH: Bana-bhuidseach
+  WITHER: Wither
+  WITHER_SKELETON: Cnàimhneach Wither
+  WOLF: Madadh-allaidh
+  ZOGLIN: Zoglin
+  ZOMBIE: Zombie
+  ZOMBIE_HORSE: Each Zombie
+  ZOMBIE_NAUTILUS: Nautilus Zombaidh
+  ZOMBIE_VILLAGER: Saoranach Zombie
+  ZOMBIFIED_PIGLIN: Piglin Zombie
+
+# Ainmean spawner nan nithean (faic spawner_items.yml). Cuir loidhne ris airson gach rud a chuireas tu ris an sin: MATERIAL: Ainm taisbeanaidh
+item-types:
+  NETHERITE_INGOT: Slige netherite
+  DIAMOND: Daoimean
+  COAL: Gual
+  AMETHYST_SHARD: Criomag amethyst
+  EMERALD: Emerald
+  NETHER_STAR: Reul an Nether
+  TOTEM_OF_UNDYING: Totem na neo-bhàsmhorachd

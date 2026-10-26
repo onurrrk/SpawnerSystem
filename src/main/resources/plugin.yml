@@ -1,0 +1,31 @@
+name: SpawnerSystem
+version: ${project.version}
+main: me.spawner.Spawner
+api-version: '1.19'
+author: onurr_k
+description: Advanced and configurable spawner plugin.
+folia-supported: true
+softdepend:
+  - LuckPerms
+  - floodgate
+  - Geyser-Spigot
+
+commands:
+  spsystem:
+    description: Main command for the Spawner System.
+    aliases: [sps]
+    permission: spawner.admin
+
+permissions:
+  spawner.admin:
+    description: Allows use of all /spsystem subcommands and the spawner menu.
+    default: op
+  spawner.menu:
+    description: Only used by menu type V1, allows switching the Auto Slayer in the spawner menu. Not needed in menu type V2.
+    default: op
+  spawner.break.natural:
+    description: Allows breaking natural (generated) spawners when natural-spawner-break-permission-required is true in config.yml.
+    default: op
+  spawnersystem.chance.*:
+    description: Grants a 100% chance to get the spawner back when breaking it (see spawner-break-chance in config.yml). Use spawnersystem.chance.<number> for a lower chance.
+    default: false
