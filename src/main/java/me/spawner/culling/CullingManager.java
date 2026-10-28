@@ -62,7 +62,6 @@ public final class CullingManager {
         }
     }
 
-    private static final long TRACKED_PERIOD_TICKS = 10L;
     private static final long FOLIA_RUN_PERIOD_TICKS = 2L;
     private static final long PRESENCE_TTL_MS = 300_000L;
     private static final long HOT_TTL_MS = 30_000L;
@@ -98,14 +97,7 @@ public final class CullingManager {
 
         if (Scheduler.isFolia()) {
             loadedChunks.clear();
-            try {
-                for (World world : Bukkit.getWorlds()) {
-                    for (Chunk chunk : world.getLoadedChunks()) {
-                        loadedChunks.add(new ChunkRef(world.getUID(), chunk.getX(), chunk.getZ()));
-                    }
-                }
-            } catch (Throwable ignored) {
-            }
+            seedLoadedChunks();
             taskHandle = Scheduler.runAsyncTaskTimer(plugin, this::foliaTick, 20L, FOLIA_RUN_PERIOD_TICKS);
         } else {
             tracked.clear();
@@ -114,7 +106,37 @@ public final class CullingManager {
                     track(living);
                 }
             }
-            taskHandle = Scheduler.runAsyncTaskTimer(plugin, this::trackedSweep, 20L, TRACKED_PERIOD_TICKS);
+            taskHandle = Scheduler.runAsyncTaskTimer(plugin, this::trackedSweep, 20L,
+                    Math.max(1L, plugin.settings().cullingCheckInterval));
+        }
+    }
+
+    private void seedLoadedChunks() {
+        boolean fallback = false;
+        for (World world : Bukkit.getWorlds()) {
+            try {
+                for (Chunk chunk : world.getLoadedChunks()) {
+                    loadedChunks.add(new ChunkRef(world.getUID(), chunk.getX(), chunk.getZ()));
+                }
+            } catch (Throwable t) {
+                fallback = true;
+            }
+        }
+        if (!fallback) return;
+
+        final int radius = Math.min(16, Math.max(2, Bukkit.getViewDistance()) + 1);
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            Scheduler.runEntityTask(plugin, player, () -> {
+                World world = player.getWorld();
+                Location at = player.getLocation();
+                int centerX = at.getBlockX() >> 4;
+                int centerZ = at.getBlockZ() >> 4;
+                for (int dx = -radius; dx <= radius; dx++) {
+                    for (int dz = -radius; dz <= radius; dz++) {
+                        loadedChunks.add(new ChunkRef(world.getUID(), centerX + dx, centerZ + dz));
+                    }
+                }
+            });
         }
     }
 

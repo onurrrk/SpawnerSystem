@@ -2,6 +2,7 @@ package me.spawner.menu;
 
 import me.spawner.Spawner;
 import me.spawner.booster.BoosterManager;
+import me.spawner.hologram.Hologram;
 import me.spawner.storage.SpawnerStorage;
 import me.spawner.utils.ColorUtils;
 import me.spawner.utils.LootConfig;
@@ -499,7 +500,16 @@ public class SpawnerMenu implements Listener {
             spawner.update();
         }
 
-        produce(spawner, itemType, groups, blockDelay);
+        boolean produced = produce(spawner, itemType, groups, blockDelay);
+
+        Hologram hologram = plugin.holograms().get(spawner.getLocation());
+        if (hologram != null) {
+            if (produced) {
+                hologram.recordSuccessfulSpawn(spawner);
+            } else {
+                hologram.recordBlocked(spawner);
+            }
+        }
     }
 
     private void resetVanillaDelay(CreatureSpawner spawner) {
@@ -652,7 +662,7 @@ public class SpawnerMenu implements Listener {
         if (dirty) {
             spawner.update();
         }
-        if (storageChanged) {
+        if (storageChanged && plugin.storageMenu().hasViewers(spawner.getLocation())) {
             plugin.storageMenu().notifyViewers(spawner.getLocation(), storage.snapshotEntries(storedEntries, storageMax));
         }
         return true;

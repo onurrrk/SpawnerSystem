@@ -13,6 +13,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.persistence.PersistentDataType;
 
@@ -27,6 +28,10 @@ public final class BoosterListener implements Listener {
     @EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
     public void onTicketUse(PlayerInteractEvent event) {
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK || event.getHand() == null) return;
+        if (event.getHand() == EquipmentSlot.OFF_HAND
+                && plugin.boosters().readTicket(event.getPlayer().getInventory().getItemInMainHand()) != null) {
+            return;
+        }
 
         Block block = event.getClickedBlock();
         ItemStack item = event.getItem();
@@ -58,7 +63,7 @@ public final class BoosterListener implements Listener {
         if (!result.applied()) return;
 
         if (item.getAmount() <= 1) {
-            if (event.getHand() == org.bukkit.inventory.EquipmentSlot.OFF_HAND) {
+            if (event.getHand() == EquipmentSlot.OFF_HAND) {
                 player.getInventory().setItemInOffHand(null);
             } else {
                 player.getInventory().setItemInMainHand(null);

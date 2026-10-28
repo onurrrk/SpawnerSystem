@@ -68,7 +68,13 @@ public final class PluginSettings {
         plugin.reloadConfig();
         FileConfiguration cfg = plugin.getConfig();
 
-        systemMode = cfg.getString("system", "advanced").trim().toLowerCase(Locale.ROOT);
+        String requestedMode = cfg.getString("system", "advanced").trim().toLowerCase(Locale.ROOT);
+        if (!requestedMode.equals("advanced") && !requestedMode.equals("classic")) {
+            plugin.getLogger().warning("config.yml: 'system' is \"" + requestedMode
+                    + "\" but it must be \"advanced\" or \"classic\". Using \"advanced\".");
+            requestedMode = "advanced";
+        }
+        systemMode = requestedMode;
         String requestedMenuType = cfg.getString("spawner-menu-type", "V1").trim().toUpperCase(Locale.ROOT);
         if (!requestedMenuType.equals("V1") && !requestedMenuType.equals("V2")) {
             plugin.getLogger().warning("config.yml: 'spawner-menu-type' is \"" + requestedMenuType

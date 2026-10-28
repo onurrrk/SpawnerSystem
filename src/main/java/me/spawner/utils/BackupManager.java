@@ -43,6 +43,19 @@ public final class BackupManager {
         }
     }
 
+    public static boolean hasBackupFor(JavaPlugin plugin, String oldVersion) {
+        File backupDir = new File(plugin.getDataFolder(), BACKUP_FOLDER);
+        File[] zips = backupDir.listFiles((dir, name) -> name.endsWith(".zip"));
+        if (zips == null) return false;
+
+        String label = oldVersion == null || oldVersion.isBlank() || oldVersion.equals(UNKNOWN_VERSION) ? "unknown" : oldVersion;
+        String prefix = "v" + label.replaceAll("[^A-Za-z0-9._-]", "_") + "_";
+        for (File zip : zips) {
+            if (zip.getName().startsWith(prefix)) return true;
+        }
+        return false;
+    }
+
     private static File createBackup(File dataFolder, String oldVersion) throws IOException {
         File backupDir = new File(dataFolder, BACKUP_FOLDER);
         if (!backupDir.exists() && !backupDir.mkdirs()) {

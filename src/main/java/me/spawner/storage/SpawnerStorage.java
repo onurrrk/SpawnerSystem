@@ -13,9 +13,11 @@ import org.bukkit.util.io.BukkitObjectOutputStream;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputFilter;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -67,6 +69,43 @@ public final class SpawnerStorage {
     private final NamespacedKey xpKey;
     private final Set<String> warned = ConcurrentHashMap.newKeySet();
 
+    private record CachedRead(String raw, List<Entry> entries) {
+    }
+
+    private static final int READ_CACHE_LIMIT = 1024;
+    private final Map<String, CachedRead> readCache = new ConcurrentHashMap<>();
+
+    private static final String[] DENIED_PREFIXES = {
+            "java.lang.reflect.", "java.lang.invoke.", "java.lang.Runtime", "java.lang.Process",
+            "java.util.PriorityQueue", "java.rmi.", "java.net.", "java.beans.", "javax.", "jdk.", "sun.", "com.sun.",
+            "org.apache.", "org.codehaus.", "org.springframework.", "org.hibernate.", "org.mozilla.", "org.python.",
+            "bsh.", "clojure.", "groovy.", "com.mchange.", "com.fasterxml.", "org.jboss.", "org.omg.", "org.w3c.",
+            "org.xml."
+    };
+
+    private static final ObjectInputFilter STORAGE_FILTER = info -> {
+        if (info.depth() > 128 || info.arrayLength() > 16_000_000L || info.references() > 4_000_000L) {
+            return ObjectInputFilter.Status.REJECTED;
+        }
+        Class<?> type = info.serialClass();
+        if (type == null) {
+            return ObjectInputFilter.Status.UNDECIDED;
+        }
+        while (type.isArray()) {
+            type = type.getComponentType();
+        }
+        if (type.isPrimitive()) {
+            return ObjectInputFilter.Status.UNDECIDED;
+        }
+        String name = type.getName();
+        for (String prefix : DENIED_PREFIXES) {
+            if (name.startsWith(prefix)) {
+                return ObjectInputFilter.Status.REJECTED;
+            }
+        }
+        return ObjectInputFilter.Status.UNDECIDED;
+    };
+
     public SpawnerStorage(Spawner plugin) {
         this.plugin = plugin;
         this.itemsKey = new NamespacedKey(plugin, "storage_items");
@@ -104,6 +143,7 @@ public final class SpawnerStorage {
     private Entry decode(String part) throws Exception {
         try (BukkitObjectInputStream in = new BukkitObjectInputStream(
                 new ByteArrayInputStream(Base64.getDecoder().decode(part)))) {
+            in.setObjectInputFilter(STORAGE_FILTER);
             Object object = in.readObject();
             long amount = in.readLong();
             if (object instanceof ItemStack stack && amount > 0) {
@@ -128,6 +168,15 @@ public final class SpawnerStorage {
         if (raw == null || raw.isEmpty()) return list;
 
         if (raw.startsWith(FORMAT_PREFIX)) {
+            String cacheKey = cacheKey(spawner);
+            CachedRead cached = readCache.get(cacheKey);
+            if (cached != null && cached.raw().equals(raw)) {
+                for (Entry entry : cached.entries()) {
+                    list.add(new Entry(entry.template, entry.amount));
+                }
+                return list;
+            }
+
             String body = raw.substring(FORMAT_PREFIX.length());
             for (String part : body.split(";")) {
                 if (part.isEmpty()) continue;
@@ -142,12 +191,15 @@ public final class SpawnerStorage {
             }
             if (!list.unreadable.isEmpty()) {
                 warnUnreadable(spawner, list.unreadable.size() + " unreadable stack(s)");
+            } else {
+                remember(cacheKey, raw, list);
             }
             return list;
         }
 
         try (BukkitObjectInputStream in = new BukkitObjectInputStream(
                 new ByteArrayInputStream(Base64.getDecoder().decode(raw)))) {
+            in.setObjectInputFilter(STORAGE_FILTER);
             int count = in.readInt();
             for (int i = 0; i < count; i++) {
                 Object object = in.readObject();
@@ -172,6 +224,7 @@ public final class SpawnerStorage {
         }
         if (entries.isEmpty() && unreadable.isEmpty()) {
             spawner.getPersistentDataContainer().remove(itemsKey);
+            readCache.remove(cacheKey(spawner));
             return;
         }
         try {
@@ -180,11 +233,31 @@ public final class SpawnerStorage {
                 parts.add(encode(entry));
             }
             parts.addAll(unreadable);
-            spawner.getPersistentDataContainer().set(itemsKey, PersistentDataType.STRING,
-                    FORMAT_PREFIX + String.join(";", parts));
+            String raw = FORMAT_PREFIX + String.join(";", parts);
+            spawner.getPersistentDataContainer().set(itemsKey, PersistentDataType.STRING, raw);
+            if (unreadable.isEmpty()) {
+                remember(cacheKey(spawner), raw, entries);
+            } else {
+                readCache.remove(cacheKey(spawner));
+            }
         } catch (Exception e) {
             plugin.getLogger().warning("Could not save spawner storage data: " + e.getMessage());
         }
+    }
+
+    private String cacheKey(CreatureSpawner spawner) {
+        return spawner.getWorld().getName() + "," + spawner.getX() + "," + spawner.getY() + "," + spawner.getZ();
+    }
+
+    private void remember(String key, String raw, List<Entry> entries) {
+        if (readCache.size() >= READ_CACHE_LIMIT) {
+            readCache.clear();
+        }
+        List<Entry> copy = new ArrayList<>(entries.size());
+        for (Entry entry : entries) {
+            copy.add(new Entry(entry.template, entry.amount));
+        }
+        readCache.put(key, new CachedRead(raw, copy));
     }
 
     public int usedSlots(List<Entry> entries) {

@@ -7,6 +7,7 @@ import me.spawner.utils.Scheduler;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.World;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.inventory.ItemStack;
@@ -535,6 +536,8 @@ public final class BoosterManager {
 
     private void expire(Location loc, long expiresAt) {
         scheduled.remove(Hologram.locationKey(loc), expiresAt);
+        World world = loc.getWorld();
+        if (world == null || !world.isChunkLoaded(loc.getBlockX() >> 4, loc.getBlockZ() >> 4)) return;
         if (loc.getBlock().getType() != Material.SPAWNER) return;
         if (!(loc.getBlock().getState() instanceof CreatureSpawner state)) return;
 

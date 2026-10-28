@@ -20,10 +20,18 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public final class SpawnerBreakListener implements Listener {
     private static final String NATURAL_BREAK_PERMISSION = "spawner.break.natural";
+
+    private record PendingBreak(CreatureSpawner state, String itemType, EntityType brokenType,
+                                boolean lost, double chance, ItemStack tool) {
+    }
+
+    private final Map<BlockBreakEvent, PendingBreak> pendingBreaks = new ConcurrentHashMap<>();
 
     private final Spawner plugin;
 
@@ -75,10 +83,6 @@ public final class SpawnerBreakListener implements Listener {
             event.setCancelled(true);
             return;
         }
-        if (stack <= 1 && isAdvancedMode()) {
-            consumePickaxeUse(player, itemInHand, 1);
-        }
-
         double chance = 100.0;
         boolean lost = false;
         if (plugin.settings().breakChanceEnabled) {
@@ -89,6 +93,33 @@ public final class SpawnerBreakListener implements Listener {
         if (stack > 1) {
             breakStacked(event, player, block, spawnerState, itemType, brokenType, stack, chance, itemInHand);
             return;
+        }
+
+        event.setDropItems(false);
+        event.setExpToDrop(0);
+        pendingBreaks.put(event, new PendingBreak(spawnerState, itemType, brokenType, lost, chance, itemInHand.clone()));
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR)
+    public void onSpawnerBreakCommit(BlockBreakEvent event) {
+        PendingBreak pending = pendingBreaks.remove(event);
+        if (pending == null || event.isCancelled()) return;
+
+        Player player = event.getPlayer();
+        Block block = event.getBlock();
+        if (block.getType() != Material.SPAWNER) return;
+
+        CreatureSpawner spawnerState = pending.state();
+        String itemType = pending.itemType();
+        EntityType brokenType = pending.brokenType();
+        boolean lost = pending.lost();
+        double chance = pending.chance();
+
+        if (isAdvancedMode()) {
+            ItemStack current = player.getInventory().getItemInMainHand();
+            if (plugin.items().isSpawnerPickaxe(current)) {
+                consumePickaxeUse(player, current, 1);
+            }
         }
 
         plugin.holograms().removeForSpawner(block.getLocation());
@@ -102,21 +133,12 @@ public final class SpawnerBreakListener implements Listener {
         }
 
         plugin.jsonLogger().log(player, block, lost ? "LOST" : "BROKE");
-        event.setDropItems(false);
-        event.setExpToDrop(0);
 
         if (lost) {
             String key = chance <= 0.0 ? "spawner-break-no-chance" : "spawner-break-lost";
             player.sendMessage(plugin.language().message(key).replace("%chance%", BreakChance.format(chance)));
         } else {
-            ItemStack spawnerItem;
-            if (itemType != null) {
-                spawnerItem = plugin.items().createItemSpawner(itemType);
-            } else if (brokenType != null) {
-                spawnerItem = plugin.items().createSpawnerItem(brokenType);
-            } else {
-                spawnerItem = plugin.items().createEmptySpawner();
-            }
+            ItemStack spawnerItem = spawnerItemFor(itemType, brokenType);
             if (plugin.items().giveOrDrop(player, spawnerItem)) {
                 player.sendMessage(plugin.language().message("spawner-collected"));
             }
@@ -125,7 +147,7 @@ public final class SpawnerBreakListener implements Listener {
         String typeName = itemType != null
                 ? SpawnerItems.ITEM_PREFIX + itemType
                 : (brokenType != null ? brokenType.name() : "UNKNOWN");
-        plugin.webhooks().sendBreakWebhook(player, block.getLocation(), typeName, itemInHand);
+        plugin.webhooks().sendBreakWebhook(player, block.getLocation(), typeName, pending.tool());
     }
 
     private ItemStack spawnerItemFor(String itemType, EntityType brokenType) {

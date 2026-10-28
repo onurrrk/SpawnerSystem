@@ -43,25 +43,31 @@ public final class ConfigUpdater {
                 && !Version.fromString(lastRunVersion).equals(Version.fromString(currentVersion));
         List<ConfigMigrator.Change> changes = Collections.emptyList();
         if (versionChanged) {
-            if (BackupManager.backup(plugin, lastRunVersion)) {
+            if (BackupManager.hasBackupFor(plugin, lastRunVersion) || BackupManager.backup(plugin, lastRunVersion)) {
                 changes = ConfigMigrator.pendingChanges(plugin, Version.fromString(lastRunVersion));
             } else {
                 versionLocked = true;
             }
         }
 
-        updateFile(plugin, "config.yml", configFile, changes);
-        updateFile(plugin, "discord.yml", new File(dataFolder, "discord.yml"), changes);
+        boolean allUpdated = updateFile(plugin, "config.yml", configFile, changes);
+        allUpdated &= updateFile(plugin, "discord.yml", new File(dataFolder, "discord.yml"), changes);
         if (versionChanged) {
-            updateFile(plugin, "loot.yml", new File(dataFolder, "loot.yml"), changes);
+            allUpdated &= updateFile(plugin, "loot.yml", new File(dataFolder, "loot.yml"), changes);
         }
-        updateFile(plugin, "spawner_items.yml", new File(dataFolder, "spawner_items.yml"), changes);
+        allUpdated &= updateFile(plugin, "spawner_items.yml", new File(dataFolder, "spawner_items.yml"), changes);
 
         File[] languageFiles = new File(dataFolder, "languages").listFiles((dir, name) -> name.endsWith(".yml"));
         if (languageFiles != null) {
             for (File languageFile : languageFiles) {
-                updateFile(plugin, "languages/" + languageFile.getName(), languageFile, changes);
+                allUpdated &= updateFile(plugin, "languages/" + languageFile.getName(), languageFile, changes);
             }
+        }
+
+        if (versionChanged && !allUpdated) {
+            versionLocked = true;
+            plugin.getLogger().warning("Some files could not be updated. The version stays unchanged, so the update"
+                    + " will be retried on the next start/reload. Fix the files mentioned above to finish it.");
         }
     }
 
@@ -129,13 +135,13 @@ public final class ConfigUpdater {
         }
     }
 
-    private static void updateFile(JavaPlugin plugin, String resourceName, File target, List<ConfigMigrator.Change> changes) {
-        if (!target.exists()) return;
+    private static boolean updateFile(JavaPlugin plugin, String resourceName, File target, List<ConfigMigrator.Change> changes) {
+        if (!target.exists()) return true;
 
         try {
             List<String> templateLines;
             try (InputStream in = plugin.getResource(resourceName)) {
-                if (in == null) return;
+                if (in == null) return true;
                 templateLines = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8))
                         .lines().collect(Collectors.toList());
             }
@@ -148,7 +154,7 @@ public final class ConfigUpdater {
                 templateYaml.loadFromString(String.join("\n", templateLines));
             } catch (Exception e) {
                 plugin.getLogger().warning(target.getName() + " could not be checked and was left untouched: " + e.getMessage());
-                return;
+                return false;
             }
 
             int migrated = ConfigMigrator.apply(plugin, resourceName, expectedYaml, changes);
@@ -158,21 +164,21 @@ public final class ConfigUpdater {
             }
 
             List<String> merged = YamlTemplateMerger.merge(templateLines, sourceLines);
-            if (merged.equals(userLines)) return;
+            if (merged.equals(userLines)) return true;
 
             YamlConfiguration mergedYaml = new YamlConfiguration();
             try {
                 mergedYaml.loadFromString(String.join("\n", merged));
             } catch (Exception e) {
                 plugin.getLogger().warning(target.getName() + " could not be checked and was left untouched: " + e.getMessage());
-                return;
+                return false;
             }
 
             for (String path : expectedYaml.getKeys(true)) {
                 if (expectedYaml.isConfigurationSection(path) || expectedYaml.get(path) == null) continue;
                 if (!Objects.equals(expectedYaml.get(path), mergedYaml.get(path))) {
                     plugin.getLogger().warning(target.getName() + " was left untouched because updating it would change \"" + path + "\".");
-                    return;
+                    return false;
                 }
             }
 
@@ -190,8 +196,10 @@ public final class ConfigUpdater {
             if (added > 0) details.add(added + " new key(s) added");
             if (migrated > 0) details.add(migrated + " migration(s) applied");
             plugin.getLogger().info("Updated " + target.getName() + (details.isEmpty() ? "" : " (" + String.join(", ", details) + ")"));
+            return true;
         } catch (IOException e) {
             plugin.getLogger().warning("Could not update " + target.getName() + ": " + e.getMessage());
+            return false;
         }
     }
 }

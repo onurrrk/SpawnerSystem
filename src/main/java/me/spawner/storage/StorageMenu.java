@@ -197,6 +197,11 @@ public final class StorageMenu implements Listener {
         inventory.setItem(SLOT_INFO, button(Material.PAPER, "menu.storage.info", values));
     }
 
+    public boolean hasViewers(Location location) {
+        Set<StorageHolder> set = viewers.get(locationKey(location));
+        return set != null && !set.isEmpty();
+    }
+
     public void notifyViewers(Location location, SpawnerStorage.Snapshot snapshot) {
         Set<StorageHolder> set = viewers.get(locationKey(location));
         if (set == null || set.isEmpty()) return;

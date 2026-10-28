@@ -10,6 +10,7 @@ import org.bukkit.block.CreatureSpawner;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.SpawnerSpawnEvent;
 import org.bukkit.persistence.PersistentDataType;
@@ -27,13 +28,7 @@ public final class SpawnerSpawnListener implements Listener {
         if (spawner == null) return;
         if (plugin.spawnerSettings().ignoresConditions(spawner)) return;
 
-        if (plugin.items().itemSpawnerType(spawner) != null) {
-            Hologram itemHologram = plugin.holograms().get(spawner.getLocation());
-            if (itemHologram != null) {
-                itemHologram.recordSuccessfulSpawn(spawner);
-            }
-            return;
-        }
+        if (plugin.items().itemSpawnerType(spawner) != null) return;
 
         EntityType type = spawner.getSpawnedType();
         if (type == null) return;
@@ -50,14 +45,11 @@ public final class SpawnerSpawnListener implements Listener {
 
         boolean perSpawner = plugin.settings().perSpawnerLimit;
         String ownerId = perSpawner ? ownerId(spawner) : null;
-        ChunkMobCounter.ChunkCount chunkCount = perSpawner
-                ? plugin.mobCounter().get(spawner.getChunk(), type, plugin.keys().spawnerOwner, ownerId)
-                : plugin.mobCounter().get(spawner.getChunk(), type);
+        ChunkMobCounter.ChunkCount chunkCount = chunkCountFor(spawner, type);
         if (chunkCount.count.get() >= plugin.settings().maxMobsPerChunk) {
             event.setCancelled(true);
             return;
         }
-        chunkCount.count.incrementAndGet();
 
         PDCUtils.setBoolean(event.getEntity().getPersistentDataContainer(), plugin.keys().spawnerBorn, true);
 
@@ -81,6 +73,31 @@ public final class SpawnerSpawnListener implements Listener {
             PDCUtils.setBoolean(livingEntity.getPersistentDataContainer(), plugin.keys().nerfedMob, true);
             MobNerf.apply(livingEntity, type);
         }
+    }
+
+    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    public void onSpawnerSpawnCommitted(SpawnerSpawnEvent event) {
+        CreatureSpawner spawner = event.getSpawner();
+        if (spawner == null) return;
+        if (plugin.spawnerSettings().ignoresConditions(spawner)) return;
+        if (plugin.items().itemSpawnerType(spawner) != null) return;
+
+        EntityType type = spawner.getSpawnedType();
+        if (type == null) return;
+
+        if (plugin.settings().autoSlayerEnabled
+                && (plugin.settings().menuV2
+                || PDCUtils.getBoolean(spawner.getPersistentDataContainer(), plugin.keys().autoKill, false))) {
+            return;
+        }
+
+        chunkCountFor(spawner, type).count.incrementAndGet();
+    }
+
+    private ChunkMobCounter.ChunkCount chunkCountFor(CreatureSpawner spawner, EntityType type) {
+        return plugin.settings().perSpawnerLimit
+                ? plugin.mobCounter().get(spawner.getChunk(), type, plugin.keys().spawnerOwner, ownerId(spawner))
+                : plugin.mobCounter().get(spawner.getChunk(), type);
     }
 
     private static String ownerId(CreatureSpawner spawner) {
