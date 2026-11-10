@@ -98,7 +98,7 @@ public final class CullingManager {
         if (Scheduler.isFolia()) {
             loadedChunks.clear();
             seedLoadedChunks();
-            taskHandle = Scheduler.runAsyncTaskTimer(plugin, this::foliaTick, 20L, FOLIA_RUN_PERIOD_TICKS);
+            taskHandle = Scheduler.runDetachedTaskTimer(plugin, this::foliaTick, 20L, FOLIA_RUN_PERIOD_TICKS);
         } else {
             tracked.clear();
             for (World world : Bukkit.getWorlds()) {
@@ -106,7 +106,7 @@ public final class CullingManager {
                     track(living);
                 }
             }
-            taskHandle = Scheduler.runAsyncTaskTimer(plugin, this::trackedSweep, 20L,
+            taskHandle = Scheduler.runDetachedTaskTimer(plugin, this::trackedSweep, 20L,
                     Math.max(1L, plugin.settings().cullingCheckInterval));
         }
     }
@@ -214,6 +214,10 @@ public final class CullingManager {
         return settings.cullingIgnoreTamed && mob instanceof Tameable tameable && tameable.isTamed();
     }
 
+    private static int scaled(int base, int spawners) {
+        return (int) Math.min(Integer.MAX_VALUE, (long) base * Math.max(1, spawners));
+    }
+
     private int limitFor(ChunkRef ref, Chunk chunk) {
         int base = plugin.settings().maxMobsPerChunk;
         if (!plugin.settings().perSpawnerLimit) {
@@ -223,17 +227,17 @@ public final class CullingManager {
         long now = System.currentTimeMillis();
         SpawnerCount cached = spawnerCounts.get(ref);
         if (cached != null && cached.expires() >= now) {
-            return base * Math.max(1, cached.value());
+            return scaled(base, cached.value());
         }
 
         if (chunk != null) {
             int value = ChunkUtils.countStacked(chunk, null, plugin.stacks().stackKey(), null);
             spawnerCounts.put(ref, new SpawnerCount(value, now + SPAWNER_COUNT_TTL_MS));
-            return base * Math.max(1, value);
+            return scaled(base, value);
         }
 
         refreshSpawnerCount(ref);
-        return cached == null ? -1 : base * Math.max(1, cached.value());
+        return cached == null ? -1 : scaled(base, cached.value());
     }
 
     private void refreshSpawnerCount(ChunkRef ref) {
