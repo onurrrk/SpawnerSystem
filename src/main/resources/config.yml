@@ -112,6 +112,7 @@ Spawners:
     # Limit for this mob type in the entire chunk; the spawner will stop if this limit is reached.
     # IMPORTANT: this same number is ALSO used as the chunk limit for animal breeding and for spawn egg usage
     # (for ALL mobs, not only spawner mobs) and as the limit of chunk-mob-culling below.
+    # Set to -1 for NO LIMIT: spawners, breeding, spawn eggs and chunk-mob-culling will not limit mobs by this number anymore.
     max-mobs-per-chunk: 4
     # How max-mobs-per-chunk is counted:
     # "chunk"   -> every spawner in a chunk shares one limit per mob type (default)
@@ -168,7 +169,6 @@ chunk-mob-culling:
     - "PIG"
     - "CHICKEN"
     - "RABBIT"
-    - "VILLAGER"
 
 # =========================================
 # Chunk Spawner Limit Settings
