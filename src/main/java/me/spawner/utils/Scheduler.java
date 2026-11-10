@@ -100,7 +100,7 @@ public final class Scheduler {
         return Bukkit.getScheduler().runTaskTimer(plugin, task, delayTicks, periodTicks);
     }
 
-    public static Object runAsyncTaskTimer(Plugin plugin, Runnable task, long delayTicks, long periodTicks) {
+    public static Object runDetachedTaskTimer(Plugin plugin, Runnable task, long delayTicks, long periodTicks) {
         if (!plugin.isEnabled()) return null;
         if (IS_FOLIA) {
             return FoliaImpl.runAsyncTimer(plugin, task, Math.max(1, delayTicks) * 50L, Math.max(1, periodTicks) * 50L);

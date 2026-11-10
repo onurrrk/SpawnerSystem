@@ -81,6 +81,8 @@ public final class YamlTemplateMerger {
                         ? (u.children.isEmpty() ? t.indent + 2 : u.children.get(0).indent + delta)
                         : t.children.get(0).indent;
                 mergeNodes(t.children, u.children, out, childTarget);
+            } else if (t.section && t.key.equals(CURATED_SECTION) && isEmptyHeader(u)) {
+                emit(u, delta, out);
             } else if (t.section && isEmptyHeader(u)) {
                 emit(t, 0, out);
             } else if (!t.section && !u.section) {

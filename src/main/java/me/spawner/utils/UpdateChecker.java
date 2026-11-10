@@ -122,9 +122,11 @@ public final class UpdateChecker implements Listener {
     private void announce() {
         sendUpdateMessage(Bukkit.getConsoleSender());
         for (Player player : Bukkit.getOnlinePlayers()) {
-            if (player.isOp()) {
-                sendUpdateMessage(player);
-            }
+            Scheduler.runEntityTask(plugin, player, () -> {
+                if (player.isOnline() && player.isOp()) {
+                    sendUpdateMessage(player);
+                }
+            });
         }
     }
 
