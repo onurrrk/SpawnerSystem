@@ -105,6 +105,7 @@ public final class SpawnerSettingsApplier {
         boolean wiped = plugin.storage().wipeDisabled(spawner);
         boolean itemSpawner = isItemSpawner(spawner);
         int delay = effectiveDelay(spawner);
+        int vanillaDelay = Math.min(delay, 32767);
         int range = effectiveRange(spawner);
         boolean ignoring = ignoresConditions(spawner);
         if (ignoring) {
@@ -132,18 +133,18 @@ public final class SpawnerSettingsApplier {
             }
         }
 
-        if (!carrierChanged && !boostCleared && !wiped && !delayDrift && spawner.getMinSpawnDelay() == delay && spawner.getMaxSpawnDelay() == delay
+        if (!carrierChanged && !boostCleared && !wiped && !delayDrift && spawner.getMinSpawnDelay() == vanillaDelay && spawner.getMaxSpawnDelay() == vanillaDelay
                 && spawner.getSpawnCount() == amount && spawner.getMaxNearbyEntities() == 999
                 && spawner.getRequiredPlayerRange() == range && spawner.getSpawnRange() == radius) {
             return;
         }
 
-        if (delay > spawner.getMaxSpawnDelay()) {
-            spawner.setMaxSpawnDelay(delay);
-            spawner.setMinSpawnDelay(delay);
+        if (vanillaDelay > spawner.getMaxSpawnDelay()) {
+            spawner.setMaxSpawnDelay(vanillaDelay);
+            spawner.setMinSpawnDelay(vanillaDelay);
         } else {
-            spawner.setMinSpawnDelay(delay);
-            spawner.setMaxSpawnDelay(delay);
+            spawner.setMinSpawnDelay(vanillaDelay);
+            spawner.setMaxSpawnDelay(vanillaDelay);
         }
 
         spawner.setSpawnCount(amount);
