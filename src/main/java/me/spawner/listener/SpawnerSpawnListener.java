@@ -33,16 +33,6 @@ public final class SpawnerSpawnListener implements Listener {
         EntityType type = spawner.getSpawnedType();
         if (type == null) return;
 
-        if (plugin.settings().autoSlayerEnabled
-                && (plugin.settings().menuV2
-                || PDCUtils.getBoolean(spawner.getPersistentDataContainer(), plugin.keys().autoKill, false))) {
-            Hologram autoHologram = plugin.holograms().get(spawner.getLocation());
-            if (autoHologram != null) {
-                autoHologram.recordSuccessfulSpawn(spawner);
-            }
-            return;
-        }
-
         boolean perSpawner = plugin.settings().perSpawnerLimit;
         String ownerId = perSpawner ? ownerId(spawner) : null;
         ChunkMobCounter.ChunkCount chunkCount = chunkCountFor(spawner, type);
@@ -84,12 +74,6 @@ public final class SpawnerSpawnListener implements Listener {
 
         EntityType type = spawner.getSpawnedType();
         if (type == null) return;
-
-        if (plugin.settings().autoSlayerEnabled
-                && (plugin.settings().menuV2
-                || PDCUtils.getBoolean(spawner.getPersistentDataContainer(), plugin.keys().autoKill, false))) {
-            return;
-        }
 
         chunkCountFor(spawner, type).count.incrementAndGet();
     }

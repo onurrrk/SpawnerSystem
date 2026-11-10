@@ -42,6 +42,7 @@ public final class MobLimitListener implements Listener {
 
         Block block = event.getClickedBlock();
         if (block.getType() != Material.SPAWNER) {
+            if (block.getType().isInteractable() && !event.getPlayer().isSneaking()) return;
             handleSpawnEgg(event.getPlayer(), event.getItem(), block.getChunk(), event);
             return;
         }
@@ -73,7 +74,7 @@ public final class MobLimitListener implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(ignoreCancelled = true)
     public void onSpawnEggOnEntity(PlayerInteractEntityEvent event) {
         Player player = event.getPlayer();
         ItemStack item = event.getHand() == EquipmentSlot.OFF_HAND
