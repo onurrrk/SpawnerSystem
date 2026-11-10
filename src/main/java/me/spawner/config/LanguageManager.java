@@ -57,9 +57,12 @@ public final class LanguageManager {
     }
 
     private void loadSelectedLanguage() {
-        String lang = plugin.getConfig().getString("language", "en");
+        String lang = plugin.getConfig().getString("language", "en").trim();
         File folder = new File(plugin.getDataFolder(), "languages");
         File file = new File(folder, lang + ".yml");
+        if (!file.exists()) {
+            file = new File(folder, lang.toLowerCase(java.util.Locale.ROOT) + ".yml");
+        }
         if (!file.exists()) {
             file = new File(folder, "en.yml");
         }

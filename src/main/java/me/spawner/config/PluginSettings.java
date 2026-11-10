@@ -11,8 +11,8 @@ import java.util.Set;
 
 public final class PluginSettings {
     public volatile String systemMode = "advanced";
-    public volatile String menuType = "V2";
-    public volatile boolean menuV2 = true;
+    public volatile String menuType = "V1";
+    public volatile boolean menuV2 = false;
     public volatile boolean menuEnabled;
     public volatile boolean dropStoredOnBreak;
     public volatile boolean storageEnabled;
@@ -78,8 +78,8 @@ public final class PluginSettings {
         String requestedMenuType = cfg.getString("spawner-menu-type", "V1").trim().toUpperCase(Locale.ROOT);
         if (!requestedMenuType.equals("V1") && !requestedMenuType.equals("V2")) {
             plugin.getLogger().warning("config.yml: 'spawner-menu-type' is \"" + requestedMenuType
-                    + "\" but it must be \"V1\" or \"V2\". Using \"V2\".");
-            requestedMenuType = "V2";
+                    + "\" but it must be \"V1\" or \"V2\". Using \"V1\".");
+            requestedMenuType = "V1";
         }
         menuType = requestedMenuType;
         menuV2 = menuType.equals("V2");
@@ -106,7 +106,7 @@ public final class PluginSettings {
         }
         ignoreSpawnConditions = menuEnabled && menuV2;
         storageMaxPages = Math.max(1, Math.min(100, cfg.getInt("spawner-storage.max-pages", 1)));
-        naturalSpawnerBreak = cfg.getBoolean("natural-spawner-break", false);
+        naturalSpawnerBreak = cfg.getBoolean("natural-spawner-break", true);
         naturalBreakPermissionRequired = cfg.getBoolean("natural-spawner-break-permission-required", false);
         boosterEnabled = cfg.getBoolean("spawner-booster.enabled", true);
         boosterAllowStacking = cfg.getBoolean("spawner-booster.allow-stacking", false);
@@ -123,14 +123,15 @@ public final class PluginSettings {
         allowEmptySpawnerBreak = cfg.getBoolean("allow-empty-spawner-break", true);
         range = cfg.getInt("Spawners.DEFAULT.range", 16);
         delay = cfg.getInt("Spawners.DEFAULT.delay", 500);
-        amount = cfg.getInt("Spawners.DEFAULT.amount", 3);
-        maxMobsPerChunk = cfg.getInt("Spawners.DEFAULT.max-mobs-per-chunk", 4);
+        amount = cfg.getInt("Spawners.DEFAULT.amount", 4);
+        int configuredMaxMobs = cfg.getInt("Spawners.DEFAULT.max-mobs-per-chunk", 4);
+        maxMobsPerChunk = configuredMaxMobs < 0 ? Integer.MAX_VALUE : configuredMaxMobs;
         String limitMode = cfg.getString("Spawners.DEFAULT.limit-mode", "chunk").trim().toLowerCase(Locale.ROOT);
         perSpawnerLimit = limitMode.equals("spawner");
         if (!limitMode.equals("chunk") && !limitMode.equals("spawner")) {
             plugin.getLogger().warning("config.yml: 'limit-mode' must be \"chunk\" or \"spawner\" but was \"" + limitMode + "\". Using \"chunk\".");
         }
-        hRadius = cfg.getInt("Spawners.DEFAULT.spawn-horizontal-radius", 3);
+        hRadius = cfg.getInt("Spawners.DEFAULT.spawn-horizontal-radius", 4);
         itemRange = cfg.getInt("Spawners.ITEM.range", range);
         itemDelay = cfg.getInt("Spawners.ITEM.delay", delay);
         itemHRadius = cfg.getInt("Spawners.ITEM.spawn-horizontal-radius", hRadius);
@@ -140,7 +141,7 @@ public final class PluginSettings {
         separateChunkLimits = cfg.getBoolean("chunk-limits.separate-limits", false);
         mobSpawnerLimitPerChunk = cfg.getInt("chunk-limits.mob-spawner-limit", spawnerLimitPerChunk);
         itemSpawnerLimitPerChunk = cfg.getInt("chunk-limits.item-spawner-limit", spawnerLimitPerChunk);
-        nerfMobs = cfg.getBoolean("nerf-spawner-mobs", true);
+        nerfMobs = cfg.getBoolean("nerf-spawner-mobs", false);
 
         if (maxMobsPerChunk < amount) {
             plugin.getLogger().warning("config.yml: 'max-mobs-per-chunk' (" + maxMobsPerChunk
